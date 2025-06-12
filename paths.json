@@ -1,11 +1,8 @@
 {
   "mappings": [
     "/content/ab-test/:/",
-    "/content/ab-test/configuration:/.helix/config.json",
-    "/content/ab-test/headers:/.helix/headers.json",
-    "/content/ab-test/metadata:/metadata.json",
-    "/content/ab-test/placeholders:/placeholders.json",
-    "/content/ab-test.resource/enrichment/enrichment.json:/enrichment/enrichment.json"
+    "/content/ab-test/configuration:/.helix/config.json",,
+    "/content/ab-test/metadata:/metadata.json"
   ],
   "includes": [
     "/content/ab-test/"
