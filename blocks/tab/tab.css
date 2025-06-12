@@ -1,0 +1,337 @@
+.tab-container,
+.tab-container button {
+  font-family: AvenirLTPro-Medium, arial, sans-serif;font-weight: 400;
+}
+
+.tab-container .tabs-list {
+  max-width: 100%;
+  font-size: var(--body-font-size-xs);
+  justify-content: center;
+  padding: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.tab-container .tabs-panel {
+  padding: 0;
+  margin: 0;
+}
+
+.tab-container .tab-card-wrapper {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.tab-container .tab-card-wrapper > div {
+border-radius:  4px;
+border: 1px solid #E4E4E4;
+background: #FFF;
+padding-left: 12px;
+padding-right: 12px;
+}
+
+.tab-container .tab-style-list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-bottom: 16px;
+}
+
+.tab-container .tab-card-wrapper p {
+  margin: 0;
+  padding: 0 0 16px;
+  font-size: 14px;
+font-weight: 400;
+line-height: 19.6px;
+margin-top: 12px;
+}
+
+.tab-container .filter-label p{
+  color:#000;
+font-size: 20px;
+font-weight: 400;
+line-height: 24px;
+margin-top: 48px;
+margin-bottom: 0;
+}
+
+.tab-container .button-container{
+  margin: 0;
+}
+
+.tab-container .button-container a.button:any-link {
+    color: #295EDB;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 140%;
+    background: none;
+    margin: 48px 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    font-family: AvenirLTPro-Book, arial, sans-serif;
+    border: 0;
+    height: unset;
+}
+
+.tab-container .tab {
+  text-align: center;
+}
+
+.tab-container .tab-brand-wrapper {
+  display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+
+.tab-container .tabs-list button {
+  flex: 0 0 max-content;
+  margin-right: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: solid 2px var(--color-dark-warm);
+  border-radius: 0;
+  padding: 8px 12px;
+  color: initial;
+  transition: background-color 0.2s;
+  background: none;
+  min-width: 100px;
+}
+
+.tab-container .tabs-list button:last-child {
+  margin-right: 0;
+}
+
+.tab-container .tabs-list button:focus {
+outline: 1px solid var(--link-color);
+    outline-offset: 3px;
+    margin: 4px;
+}
+
+
+.tab-container .tabs-list button:hover {
+  border-bottom: 2px solid var(--link-hover-color);
+}
+
+.tab-container .tabs-list button p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: center;
+}
+
+.tab-container .tab-panel-content {
+  overflow-x: auto;
+}
+
+.tab-container .tabs-list button[aria-selected='true'] {
+  border-bottom: 2px solid var(--link-color);
+  cursor: initial;
+  font-family: AvenirLTPro-Heavy, arial, sans-serif;
+  font-weight: 900;
+}
+
+.tab-container .tabs-list button[aria-selected='true'] p {
+  line-height: 22.4px;
+  font-weight: 900;
+}
+
+main .section.tab-container {
+    gap: 48px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 64px;
+    margin: 0;
+}
+
+.tab-container .tabs-panel[aria-hidden='true'] {
+  display: none;
+}
+
+
+.tab-container.tabs-contained .tabs-list button {
+background-color: #E4E4E4;
+border-bottom:0;
+border-top: solid 2px transparent;
+padding: 8px 16px;
+}
+
+.tab-container.tabs-contained .tabs-list{
+  gap: 1px;
+}
+
+.tab-container.tabs-contained .tabs-list button:hover {
+  border-top: 2px solid var(--link-hover-color);
+  background: none;
+}
+
+.tab-container.tabs-contained .tabs-list button[aria-selected='true'] {
+  border-top: 2px solid var(--link-color);
+  border-bottom:0;
+  background: none;
+  cursor: initial;
+}
+
+.tab-container .tab-style-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px 0 rgba(0 0 0 / 20%);
+  display: inline-flex;
+  padding: 2px;
+}
+
+.tab-container .tab-style-color {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  border-radius: 2px;
+}
+
+.tab-container[data-alignment="tabs-left"] .tabs-list {
+  justify-content: left;
+    margin: 0;
+}
+
+.tab-container[data-alignment="tabs-left"] .tab {
+  text-align: left;
+}
+
+.tab-container[data-alignment="tabs-left"] .tab-card-wrapper,
+.tab-container[data-alignment="tabs-left"] .tab-brand-wrapper,
+.tab-container[data-alignment="tabs-left"] .button-container a.button:any-link {
+  justify-content: left;
+}
+
+@media (width < 1230px) {
+  .tab-container .tab-card-wrapper {
+    justify-content: left;
+  }
+}
+
+@media (width < 900px) {
+  .tab-container .tabs-list {
+    font-size: var(--body-font-size-m);
+  }
+
+  main > .section > .tabs-panel {
+  margin: 0;
+  }
+
+  .tab-container .tab-card-wrapper {
+    justify-content: left;
+  }
+
+  .tab-container .filter-label p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .tab-container .button-container a.button:any-link {
+    font-size: 14px;
+    letter-spacing: 0.28px;
+    line-height: normal;
+    height: unset;
+  }
+
+  .tab-container .tab-brand-wrapper {
+    margin-top: 16px;
+    justify-content: left;
+  }
+
+  main .section.tab-container {
+    gap: 24px;
+    padding: 24px 16px;
+  }
+
+  .tab-container .tab-style-list {
+    padding-bottom: 12px;
+  }
+
+  .tab-container .tab-card-wrapper p {
+    padding: 12px;
+  }
+}
+
+/* Eyeglass World */
+.brand-eye .tab-container,.brand-eye .tab-container button{
+  font-family: Graphik-Regular, arial, sans-serif;
+}
+
+.brand-eye .tab-container .tabs-list button[aria-selected='true'] p {
+    font-weight: 600;
+}
+
+.brand-eye .tab-container .tabs-list button[aria-selected='true'] {
+   border-bottom: 2px solid var(--ew-main-blue);
+   font-family: Graphik-Semibold, arial, sans-serif;
+}
+
+.brand-eye .tab-container .button-container a.button:any-link {
+  font-family: Graphik-Regular, arial, sans-serif;
+}
+
+.brand-eye .tab-container .tabs-list button:hover {
+  border-bottom: 2px solid var(--ew-link-hover);
+}
+
+.brand-eye .tab-container .tabs-list button:focus {
+  outline: 1px solid var(--ew-main-blue);
+}
+
+
+/* Vista Optical */
+
+.brand-vi .tab-container,.brand-vi .tab-container button{
+  font-family: MYRIADPRO-REGULAR, arial, sans-serif;
+}
+
+.brand-vi .tab-container .tabs-list button[aria-selected='true'] {
+   border-bottom: 2px solid var(--vista-blue);
+   font-family: MYRIADPRO-SEMIBOLD, arial, sans-serif;
+}
+
+.brand-vi .tab-container .button-container a.button:any-link {
+  font-family: MYRIADPRO-REGULAR, arial, sans-serif;
+}
+
+.brand-vi .tab-container .tabs-list button:hover {
+  border-bottom: 2px solid var(--vista-link-hover);
+}
+
+.brand-vi .tab-container .tabs-list button:focus {
+  outline: 1px solid var(--vista-blue);
+}
+
+
+/* Discount Contacts */
+
+.brand-dc .tab-container,.brand-dc .tab-container button{
+  font-family:  Gilroy-Regular, arial, sans-serif;
+}
+
+.brand-dc .tab-container .tabs-list button[aria-selected='true'] {
+   border-bottom: 2px solid var(--dc-main-orange);
+   font-family:  Gilroy-Semibold, arial, sans-serif;
+}
+
+.brand-dc .tab-container .button-container a.button:any-link {
+  font-family:  Gilroy-Regular, arial, sans-serif;
+}
+
+.brand-dc .tab-container .tabs-list button:hover {
+  border-bottom: 2px solid var(--dc-link-hover);
+}
+
+.brand-dc .tab-container .tabs-list button:focus {
+  outline: 1px solid var(--dc-main-orange);
+}

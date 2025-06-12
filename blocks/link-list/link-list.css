@@ -1,0 +1,172 @@
+footer .link-list-wrapper ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer .link-list-wrapper.vertical,
+footer .link-list-wrapper.horizontal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-block: 1px solid var(--background-color);
+}
+
+footer .link-list-wrapper.horizontal .link-list-title {
+    margin: 0 2rem 0.75rem 0;
+    color: var(--background-color);
+    font-weight: 800;
+    line-height: 24px;
+    margin-bottom: 0;
+    margin-right: 2rem;
+    font-size: 20px;
+
+}
+
+footer .link-list-wrapper.vertical .link-list-title {
+    font-family: var(--avenir);
+    display: block;
+    position: relative;
+    margin: 16px 0;
+    color: var(--background-color);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 24px;
+    word-break: break-all;
+    text-transform: none;
+}
+
+footer .link-list-wrapper.vertical .link-list-title::after {
+    position: absolute;
+    right: 0;
+    content: "+";
+    transition: transform .5s ease-in-out;
+    font-size: 1.5rem;
+    color: var(--background-color);
+    font-style: normal;
+    font-weight: 400;
+    height: 12px;
+    width: 12px;
+    line-height: 1;
+    outline: 1px solid transparent;
+}
+
+footer .link-list-wrapper.vertical .link-list-title.expand::after{
+    content: "-";
+    font-size: 32px;
+    right: -2px;
+}
+
+footer .link-list-wrapper.vertical .link-list-detail {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease;
+}
+
+footer .link-list-wrapper.horizontal .link-list-detail {
+    display: inline-block;
+}
+
+footer .link-list-wrapper.vertical .link-list-detail ul li {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.6px;
+    margin: 16px 0;
+}
+
+footer .footer .horizontal .link-list-detail ul li, footer .footer .horizontal .link-list-detail ul li a {
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15.4px;
+    color: var(--background-color);
+}
+
+footer .link-list-wrapper.vertical .link-list-detail ul li, footer .link-list-wrapper.vertical .link-list-detail ul li a, footer .footer .link-list-wrapper.horizontal .link-list-detail ul li{
+    color: var(--background-color);
+}
+
+footer .link-list-wrapper.vertical .link-list-detail ul li:nth-child(1) {
+    margin-top: 0;
+}
+
+footer .link-list-wrapper.horizontal {
+    justify-content: flex-end;
+    padding: 24px 8px;
+    text-align: center;
+}
+
+footer .footer .link-list-wrapper.horizontal .link-list-detail ul {
+    display: flex;
+    gap: 24px;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+/* tablet */
+@media (width >= 768px){
+    footer .link-list-wrapper.vertical{
+        display: inline-flex;
+        flex-direction: row;
+        vertical-align: top;
+        padding: 0 24px;
+        width: 33.3%;
+        border: unset;
+    }
+
+    footer .link-list-wrapper.horizontal {
+        text-align: end;
+        padding: 24px 0;
+    }
+
+    footer .link-list-wrapper.horizontal .link-list-title {
+        display: inline-block;
+    }
+
+    footer .link-list-wrapper.vertical .link-list-title {
+        font-size: 16px;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.32px;
+        margin-top: 0;
+    }
+
+    footer .link-list-wrapper.vertical .link-list-title::after{
+        display: none;
+    }
+
+    footer .link-list-wrapper.vertical .link-list-detail {
+        display: block;
+        max-height: fit-content;
+        height: auto;
+    }
+
+    footer .link-list-wrapper.vertical .link-list-detail ul {
+        /* margin-bottom: 3rem; */
+        padding: 0;
+    }
+
+    footer .link-list-wrapper.vertical .link-list-detail ul li{
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* large desktop */
+@media (width >= 1280px) {
+    footer .link-list-wrapper.vertical .link-list-detail ul li {
+        font-size: 11px;
+        color: var(--background-color);
+        font-weight: 400;
+        line-height: 15.4px;
+        font-style: normal;
+       }
+
+    footer .link-list-wrapper.vertical{
+        display: inline-flex;
+        flex-direction: row;
+        vertical-align: top;
+        padding: 0 24px;
+        width: 16%;
+    }
+}

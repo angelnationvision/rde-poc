@@ -1,31 +1,675 @@
-.cards-container .cards-wrapper {
-  margin-top: var(--spacing-xbig);
-}
+.cards-wrapper {
+  padding: 48px 64px !important;
+  }
+  
+  .cards-wrapper:has(.cards:not(
+    .two-cards-one-row,
+    .three-cards-one-row,
+    .four-cards-two-rows,
+    .five-cards-two-rows,
+    .three-cards-two-rows
+  )) {
+    padding: 0 32px !important;
+  }
+  
+  .cards > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+  }
+  
+  .cards-img-metadata, .cards-img-no-alt, .cards-id, .cards-card-body, .cards-btn-target, .cards-img-aspect-ratio{
+    display: none;
+  }
+  
+  .cards > ul > li {
+    border: 1px solid #E4E4E4;
+    background-color: var(--background-color);
+    border-radius: 4px;
+  }
+  
+  .cards > ul > li:not(:has(.cards-card-image)) .cards-card-pretitle p {
+    margin-top: 24px;
+  }
 
-.cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: var(--spacing-medium);
-}
+  /* stylelint-disable-next-line selector-not-notation */
+  .cards > ul > li:not(:has(.cards-card-image)):not(:has(.cards-card-pretitle)) .cards-card-title p {
+    margin-top: 24px;
+  }
 
-.cards > ul > li {
-  border: var(--shape-border-width-1) solid var(--color-neutral-500);
-  background-color: var(--background-color);
-}
+  /* stylelint-disable-next-line selector-not-notation */
+  .cards > ul > li:not(:has(.cards-card-image)):not(:has(.cards-card-pretitle)):not(:has(.cards-card-title)) .cards-card-subtitle p {
+    margin-top: 24px;
+  }
 
-.cards .cards-card-body {
-  margin: var(--spacing-small);
-}
+  /* stylelint-disable-next-line selector-not-notation */
+  .cards > ul > li:not(:has(.cards-card-image)):not(:has(.cards-card-pretitle)):not(:has(.cards-card-title)):not(:has(.cards-card-subtitle)) .cards-card-body-text p {
+    margin-top: 24px;
+  }
 
-.cards .cards-card-image {
-  line-height: 0;
-}
-
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
+  /* stylelint-disable-next-line selector-not-notation */
+  .cards > ul > li:not(:has(.cards-card-image)):not(:has(.cards-card-pretitle)):not(:has(.cards-card-title)):not(:has(.cards-card-subtitle)):not(:has(.cards-card-body-text)) .cards-card-buttoncontainer {
+    margin-top: 24px;
+  }
+  
+  .cards .cards-card-image {
+    line-height: 0;
+    margin: 24px;
+  }
+  
+  .cards > ul > li img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  
+  .cards > ul > li.aspect-ratio-16-9 img {
+    aspect-ratio: 16 / 9;
+  }
+  
+  .cards > ul > li.aspect-ratio-4-3 img {
+    aspect-ratio: 4 / 3;
+  }
+  
+  .cards > ul > li.aspect-ratio-1-1 img {
+    aspect-ratio: 1 / 1;  
+  }
+  
+  .cards > ul > li.aspect-ratio-3-4 img {
+    aspect-ratio: 3 / 4;
+  }
+  
+  .cards > ul > li.aspect-ratio-9-16 img {
+    aspect-ratio: 9 / 16;
+  }
+  
+  .card ul .last-card {
+    padding: 10px;
+  }
+  
+  /* America’s Best */
+  
+  .cards > ul > li .cards-card-pretitle p {
+    color: var(--color-dark-warm);
+    font-family: var(--avenir-black);
+    font-weight: var(--font-weight-xtra-bold);
+    font-size: var(--body-font-size-xxs);
+    font-style: normal;
+    line-height: 140%;
+    letter-spacing: 0;
+    margin: 0 24px 8px;
+  }
+  
+  .cards > ul > li .cards-card-title p {
+    color: var(--color-black);
+    font-family: var(--avenir-black);
+    font-weight: var(--font-weight-xtra-bold);
+    font-size: var(--body-font-size-xxxl);
+    font-style: normal;
+    line-height: 58px;
+    letter-spacing: -0.48px;
+    margin: 0 24px 16px;
+  }
+  
+  .cards > ul > li .cards-card-subtitle p {
+    color: var(--color-dark-warm);
+    font-family: var(--avenir-black);
+    font-weight: var(--font-weight-xtra-bold);
+    font-size: var(--body-font-size-xl);
+    font-style: normal;
+    line-height: 22px;
+    margin: 0 24px 16px;
+  }
+  
+  .cards > ul > li .cards-card-body-text p {
+    color: var(--color-darkest-warm);
+    font-family: var(--avenir-roman);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-base);
+    font-style: normal;
+    line-height: 22px;
+    margin: 0 24px 16px;
+  }
+  
+  .cards > ul > li .cards-card-buttoncontainer {
+    display: flex;
+    margin: 0 24px 24px;
+    gap: 16px;
+  }
+  
+  .cards ul li .cards-card-buttoncontainer p {
+    margin: 0;
+  }
+  
+  /* Two Cards One Row */
+  
+  .cards.two-cards-one-row  > ul  {
+    grid-template-columns: repeat(2, 1fr); 
+    margin: 0 87px;
+    padding: 0 24px;
+  }
+  
+  .cards.two-cards-one-row .cards-card-title p{
+    font-size: var(--body-font-size-xxl);
+    line-height: 40px;
+    letter-spacing: -0.32px;
+  }
+  
+  .cards.two-cards-one-row .cards-card-buttoncontainer .cards-cta a{
+    margin: 0;
+  }
+  
+  /* Three Cards One Row */
+  
+  .cards.three-cards-one-row  > ul  {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+  
+  .cards.three-cards-one-row .cards-card-title p{
+    font-size: var(--body-font-size-xxl);
+    line-height: 40px;
+    letter-spacing: -0.32px;
+  }
+  
+  .cards.three-cards-one-row .cards-card-buttoncontainer .cards-cta a{
+    margin: 0;
+  }
+  
+  /* Four Cards Two Rows */
+  
+  .cards.four-cards-two-rows > ul {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 87px;
+    padding: 0 24px;
+  }
+  
+  .cards.four-cards-two-rows .cards-card-title p{
+    font-size: var(--body-font-size-xxl);
+    line-height: 40px;
+    letter-spacing: -0.32px;
+  }
+  
+  .cards.four-cards-two-rows .cards-card-buttoncontainer .cards-cta a{
+    margin: 0;
+  }
+  
+  /* Five Cards Two Rows */
+  .cards.five-cards-two-rows > ul {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .cards.five-cards-two-rows > ul > li:nth-child(5n+1){
+    grid-column: span 3;
+    margin-left: 111px;
+  }
+  
+  .cards.five-cards-two-rows > ul > li:nth-child(5n+2) {
+    grid-column: span 3;
+    margin-right: 111px;
+  }
+  
+  .cards.five-cards-two-rows > ul > li:nth-child(5n+3),
+  .cards.five-cards-two-rows > ul > li:nth-child(5n+4),
+  .cards.five-cards-two-rows > ul > li:nth-child(5n+5) {
+    grid-column: span 2;
+  }
+  
+  .cards.five-cards-two-rows .cards-card-title p{
+    font-size: var(--body-font-size-xxl);
+    line-height: 40px;
+    letter-spacing: -0.32px;
+  }
+  
+  .cards.five-cards-two-rows .cards-card-buttoncontainer .cards-cta a{
+    margin: 0;
+  }
+  
+  /* Eyeglass World */
+  
+  .brand-eye .cards > ul > li .cards-card-pretitle p {
+    font-family: var(--body-font-family);
+    font-weight: 400;
+  }
+  
+  .brand-eye .cards > ul > li .cards-card-title p {
+    font-family: var(--body-font-family);
+    font-weight: 400;
+  }
+  
+  .brand-eye .cards > ul > li .cards-card-subtitle p {
+    font-family: var(--body-font-family);
+    font-weight: 400;
+  }
+  
+  .brand-eye .cards > ul > li .cards-card-body-text p {
+    font-family: var(--body-font-family);
+  }
+  
+  /* Vista Optical */
+  
+  .brand-vi .cards > ul > li .cards-card-pretitle p {
+    font-family: var(--body-font-family);
+    font-weight: 400;
+  }
+  
+  .brand-vi .cards > ul > li .cards-card-title p {
+    font-family: var(--body-font-family);
+    font-weight: 400;
+  }
+  
+  .brand-vi .cards > ul > li .cards-card-subtitle p {
+    font-family: var(--body-font-family);
+    font-weight: 500;
+  }
+  
+  .brand-vi .cards > ul > li .cards-card-body-text p {
+    font-family: var(--body-font-family);
+  }
+  
+  /* Three Cards Two Rows */
+  
+  .cards.three-cards-two-rows {
+    margin: 0 87px;
+    padding: 0 24px;
+  }
+  
+  .cards.three-cards-two-rows > ul{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .cards.three-cards-two-rows > ul > li:nth-child(3n + 1) {
+    grid-column: span 2;
+    text-align: center;
+  }
+  
+  .cards.three-cards-two-rows > ul > li:nth-child(3n + 1) .cards-card-buttoncontainer {
+    justify-content: center;
+  }
+  
+  .cards.three-cards-two-rows > ul > li:nth-child(3n + 2),
+  .cards.three-cards-two-rows > ul > li:nth-child(3n + 3) {
+    grid-column: span 1;
+  }
+  
+  .cards.three-cards-two-rows > ul > li:nth-child(3n + 1) .cards-card-title p {
+    font-size: var(--body-font-size-xxl);
+    line-height: var(--line-height-xs);
+    letter-spacing: -0.32px;
+    margin: 0 24px 16px;
+  }
+  
+  .cards.three-cards-two-rows .cards-card-buttoncontainer .cards-cta a{
+    margin: 0;
+  }
+  
+  @media (width <= 900px) {
+    .cards-wrapper {
+      padding: 24px 16px !important;
+    }
+  
+    .cards-wrapper:has(.cards:not(
+    .two-cards-one-row,
+    .three-cards-one-row,
+    .four-cards-two-rows,
+    .five-cards-two-rows,
+    .three-cards-two-rows
+  )) { padding: 0 24px !important;
+    }
+    
+    .cards .cards-card-image {
+      margin: 16px;
+    }
+    
+    .cards > ul > li:not(:has(.cards-card-image)) .cards-card-pretitle p {
+      margin-top: 16px;
+    }
+  
+    .cards > ul > li .cards-card-pretitle p {
+      margin: 0 16px 4px;
+      font-size: var(--body-font-size-xxs);
+    }
+    
+    .cards > ul > li .cards-card-title p {
+      font-size: var(--body-font-size-xxl-1);
+      margin: 0 16px 12px;
+      letter-spacing: -0.36px;
+    }
+    
+    .cards > ul > li .cards-card-subtitle p {
+      font-size: var(--body-font-size-m-1);
+      margin: 0 16px 12px;
+      line-height: 22px;
+    }
+    
+    .cards > ul > li .cards-card-body-text p {
+      margin: 0 16px 12px;
+    }
+    
+    .cards > ul > li .cards-card-buttoncontainer {
+      display: block;
+      margin: 0 16px 16px;
+    }
+    
+    .cards > ul > li  .cards-card-buttoncontainer .cards-cta:nth-of-type(1) a{
+      margin: 0 !important;
+      margin-bottom: 12px !important;
+    }
+    
+    .cards > ul > li .cards-card-buttoncontainer .cards-cta:nth-of-type(2) a{
+      margin: 0 !important;
+    }
+  
+    /* Two Cards One Row */
+  
+  .cards.two-cards-one-row  > ul  {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+  }
+  
+  .cards.two-cards-one-row .cards-card-image {
+    margin: 24px 24px 16px;
+  }
+  
+  .cards.two-cards-one-row .cards-card-pretitle p{
+    margin: 0 24px 4px;
+  }
+  
+  .cards.two-cards-one-row .cards-card-title p{
+    margin: 0 24px 12px;
+    font-size: var(--body-font-size-xxl-1);
+    line-height: 58px;
+    letter-spacing: -0.36px;
+  }
+  
+  .cards.two-cards-one-row .cards-card-subtitle p{
+    margin: 0 24px 12px;
+    font-weight: var(--font-weight-xtra-bold);
+  }
+  
+  .cards.two-cards-one-row .cards-card-body-text p{
+    margin: 0 24px 12px;
+  }
+  
+  .cards.two-cards-one-row .cards-card-buttoncontainer {
+    margin: 0 24px 24px;
+  }
+  
+  .cards.two-cards-one-row .cards-card-buttoncontainer .cards-cta:nth-of-type(1) a{
+    margin: 0;
+    margin-bottom: 12px;
+  }
+  
+  .cards.two-cards-one-row .cards-card-buttoncontainer .cards-cta:nth-of-type(2) a{
+    margin: 0;
+  }
+  
+  /* Three Cards One Row */
+  
+  .cards.three-cards-one-row  > ul  {
+    grid-template-columns: 1fr; 
+  }
+  
+  .cards.three-cards-one-row .cards-card-image {
+    margin: 24px 24px 16px;
+  }
+  
+  .cards.three-cards-one-row .cards-card-pretitle p{
+    margin: 0 24px 4px;
+  }
+  
+  .cards.three-cards-one-row .cards-card-title p{
+    margin: 0 24px 12px;
+    font-size: var(--body-font-size-xxl-1);
+    line-height: 58px;
+    letter-spacing: -0.36px;
+  }
+  
+  .cards.three-cards-one-row .cards-card-subtitle p{
+    margin: 0 24px 12px;
+    font-weight: var(--font-weight-xtra-bold);
+  }
+  
+  .cards.three-cards-one-row .cards-card-body-text p{
+    margin: 0 24px 12px;
+  }
+  
+  .cards.three-cards-one-row .cards-card-buttoncontainer {
+    margin: 0 24px 24px;
+  }
+  
+  .cards.three-cards-one-row .cards-card-buttoncontainer .cards-cta:nth-of-type(1) a{
+    margin: 0;
+    margin-bottom: 12px;
+  }
+  
+  .cards.three-cards-one-row .cards-card-buttoncontainer .cards-cta:nth-of-type(2) a{
+    margin: 0;
+  }
+  
+  /* Four Cards Two Rows */
+  
+  .cards.four-cards-two-rows > ul {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+  }
+  
+  .cards.four-cards-two-rows .cards-card-image {
+    margin: 24px 24px 16px;
+  }
+  
+  .cards.four-cards-two-rows .cards-card-pretitle p{
+    margin: 0 24px 4px;
+  }
+  
+  .cards.four-cards-two-rows .cards-card-title p{
+    margin: 0 24px 12px;
+    font-size: var(--body-font-size-xxl-1);
+    line-height: 58px;
+    letter-spacing: -0.36px;
+  }
+  
+  .cards.four-cards-two-rows .cards-card-subtitle p{
+    margin: 0 24px 12px;
+    font-weight: var(--font-weight-xtra-bold);
+  }
+  
+  .cards.four-cards-two-rows .cards-card-body-text p{
+    margin: 0 24px 12px;
+  }
+  
+  .cards.four-cards-two-rows .cards-card-buttoncontainer {
+    margin: 0 24px 24px;
+  }
+  
+  .cards.four-cards-two-rows .cards-card-buttoncontainer .cards-cta:nth-of-type(1) a{
+    margin: 0;
+    margin-bottom: 12px;
+  }
+  
+  .cards.four-cards-two-rows .cards-card-buttoncontainer .cards-cta:nth-of-type(2) a{
+    margin: 0;
+  }
+  
+  /* Five Cards Two Rows */
+  .cards.five-cards-two-rows > ul {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+  }
+  
+  .cards.five-cards-two-rows > ul > li:nth-child(5n+1) {
+    grid-column: unset;
+    margin-left: 0;
+  }
+  
+  .cards.five-cards-two-rows > ul > li:nth-child(5n+2) {
+    grid-column: unset;
+    margin-right: 0;
+  }
+  
+  .cards.five-cards-two-rows > ul > li:nth-child(5n+3), 
+  .cards.five-cards-two-rows > ul > li:nth-child(5n+4), 
+  .cards.five-cards-two-rows > ul > li:nth-child(5n+5) {
+    grid-column: unset;
+  }
+  
+  .cards.five-cards-two-rows .cards-card-image {
+    margin: 24px 24px 16px;
+  }
+  
+  .cards.five-cards-two-rows .cards-card-pretitle p{
+    margin: 0 24px 4px;
+  }
+  
+  .cards.five-cards-two-rows .cards-card-title p{
+    margin: 0 24px 12px;
+    font-size: var(--body-font-size-xxl-1);
+    line-height: 58px;
+    letter-spacing: -0.36px;
+  }
+  
+  .cards.five-cards-two-rows .cards-card-subtitle p{
+    margin: 0 24px 12px;
+    font-weight: var(--font-weight-xtra-bold);
+  }
+  
+  .cards.five-cards-two-rows .cards-card-body-text p{
+    margin: 0 24px 12px;
+  }
+  
+  .cards.five-cards-two-rows .cards-card-buttoncontainer {
+    margin: 0 24px 24px;
+  }
+  
+  .cards.five-cards-two-rows .cards-card-buttoncontainer .cards-cta:nth-of-type(1) a{
+    margin: 0;
+    margin-bottom: 12px;
+  }
+  
+  .cards.five-cards-two-rows .cards-card-buttoncontainer .cards-cta:nth-of-type(2) a{
+    margin: 0;
+  }
+  
+  /* Three Cards Two Rows */
+  .cards.three-cards-two-rows {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cards.three-cards-two-rows > ul{
+    grid-template-columns: 1fr;
+  }
+  
+  .cards.three-cards-two-rows > ul > li:nth-child(3n + 1) {
+    grid-column: unset;
+  }
+  
+  .cards.three-cards-two-rows .cards-card-image {
+    margin: 24px 24px 16px;
+  }
+  
+  .cards.three-cards-two-rows .cards-card-pretitle p{
+    margin: 0 24px 4px;
+  }
+  
+  .cards.three-cards-two-rows .cards-card-title p{
+    margin: 0 24px 12px;
+    font-size: var(--body-font-size-xxl-1);
+    line-height: 58px;
+    letter-spacing: -0.36px;
+  }
+  
+  .cards.three-cards-two-rows .cards-card-subtitle p{
+    margin: 0 24px 12px;
+    font-weight: var(--font-weight-xtra-bold);
+  }
+  
+  .cards.three-cards-two-rows .cards-card-body-text p{
+    margin: 0 24px 12px;
+  }
+  
+  .cards.three-cards-two-rows .cards-card-buttoncontainer {
+    margin: 0 24px 24px;
+  }
+  
+  .cards.three-cards-two-rows .cards-card-buttoncontainer .cards-cta:nth-of-type(1) a{
+    margin: 0;
+    margin-bottom: 12px;
+  }
+  
+  .cards.three-cards-two-rows .cards-card-buttoncontainer .cards-cta:nth-of-type(2) a{
+    margin: 0;
+  }
+  
+  /* Eyeglass World */
+  
+  .brand-eye .cards > ul > li .cards-card-pretitle p {
+    font-family: var(--body-font-family);
+    font-weight: 600;
+  }
+  
+  .brand-eye .cards > ul > li .cards-card-title p {
+    font-family: var(--body-font-family);
+    font-weight: 700;
+  }
+  
+  .brand-eye .cards > ul > li .cards-card-subtitle p {
+    font-family: var(--body-font-family);
+    font-weight: 700;
+  }
+  
+  .brand-eye .cards > ul > li .cards-card-body-text p {
+    font-family: var(--body-font-family);
+  }
+  
+  /* Vista Optical */
+  
+  .brand-vi .cards > ul > li .cards-card-pretitle p {
+    font-family: var(--body-font-family);
+    font-weight: var(--font-weight-xtra-bold);
+  }
+  
+  .brand-vi .cards > ul > li .cards-card-title p {
+    font-family: var(--body-font-family);
+    font-weight: var(--font-weight-xtra-bold);
+  }
+  
+  .brand-vi .cards > ul > li .cards-card-subtitle p {
+    font-family: var(--body-font-family);
+    font-weight: var(--font-weight-xtra-bold);
+  }
+  
+  .brand-vi .cards > ul > li .cards-card-body-text p {
+    font-family: var(--body-font-family);
+  }
+  }
+  
+  @media (width >= 901px) {
+    .cards.two-cards-one-row > ul > li .cards-card-buttoncontainer,
+    .cards.three-cards-one-row > ul > li .cards-card-buttoncontainer,
+    .cards.four-cards-two-rows > ul > li .cards-card-buttoncontainer,
+    .cards.five-cards-two-rows > ul > li .cards-card-buttoncontainer,
+    .cards.three-cards-two-rows > ul > li .cards-card-buttoncontainer {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+    
+    .cards > ul > li .cards-card-buttoncontainer .cards-cta.text-btn,
+    .cards > ul > li .cards-card-buttoncontainer .cards-cta.link-btn {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+    
+    }

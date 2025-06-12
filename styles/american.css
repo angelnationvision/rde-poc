@@ -1,0 +1,135 @@
+
+
+
+@import url('./styles.css');
+
+/* Brand: America's Best */
+
+.brand-ab {
+    --font-family-ab: "Avenir", roboto, roboto-fallback, sans-serif; 
+  }
+
+/* Heading */
+
+h1, h2, h3,.s-medium, .s-bold, .b-regular, .b1-regular, .b1-bold,
+.b2-regular, .b2-bold, .b3-regular,
+.b3-bold, .button-medium, .f-regular, .f-bold,.link{
+        font-family: var(--font-family-ab);
+   }
+
+.brand-ab h1{
+    font-weight: var(--font-weight-bold);
+    font-size: var(--body-font-size-xxxxl);
+    line-height: var(--line-height-m);
+    letter-spacing: var(--letter-spacing);
+}
+
+.brand-ab h2{
+    font-weight: var(--font-weight-bold);
+    font-size:var(--body-font-size-xxxl);
+    line-height: var(--line-height-s);
+    letter-spacing: var(--letter-spacing);
+}
+
+.brand-ab h3{
+    font-weight: var(--font-weight-bold);
+    font-size: var(--body-font-size-xxl);
+    line-height:   var(--line-height-xs);
+    letter-spacing: var(--letter-spacing);
+}
+
+/* subtitle */
+
+.brand-ab .s-medium{
+    font-weight: var(--font-weight-medium);
+}
+
+.brand-ab .s-bold {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+}
+
+/* Big body */
+
+.brand-ab .b-regular{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--body-font-size-xl);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+}
+
+.brand-ab .b1-regular{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--body-font-size-xs);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+}
+
+.brand-ab .b1-bold{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--body-font-size-xxs);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+}
+
+.brand-ab .b2-regular{
+    font-weight: var(--font-weight-regular);
+    font-size: var(--body-font-size-xxxs);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+}
+
+.brand-ab .b2-bold{
+    font-weight: var(--font-weight-bold);
+    font-size: var(--body-font-size-xs);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+}
+
+.brand-ab .b3-regular{
+    font-weight: var(--font-weight-bold);
+    font-size: var(--body-font-size-xxs);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+}
+
+.brand-ab .b3-bold{
+    font-weight: var(--font-weight-bold);
+    font-size: var(--body-font-size-xxxs);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+}
+
+.brand-ab .button-medium{
+    font-size:var(--body-font-size-xs);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing-m);
+}
+
+/* footnotes */
+
+.brand-ab .f-regular{
+    font-weight: var(--font-weight-regular);
+    font-size:var( --body-font-size-xxxxs) ;
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing-s);
+}
+
+.brand-ab .f-bold{
+    font-weight: var(--font-weight-bold);
+    font-size: var(--body-font-size-xxxxs);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing-s);
+}
+
+/* Link */
+
+.brand-ab .link{
+    font-weight: var(--font-weight-xtra-boldbold);
+    font-size: var(--body-font-size-xs);
+    line-height: var( --line-height-l);
+    letter-spacing: var(--letter-spacing-s);
+}
