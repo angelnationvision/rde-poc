@@ -8,6 +8,6 @@
     "/content/ab-test.resource/enrichment/enrichment.json:/enrichment/enrichment.json"
   ],
   "includes": [
-    "/content/aem-boilerplate-commerce/"
+    "/content/ab-test/"
   ]
 }
