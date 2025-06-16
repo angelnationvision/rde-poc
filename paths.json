@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/ab-test/:/",
-    "/content/ab-test/configuration:/.helix/config.json",,
-    "/content/ab-test/metadata:/metadata.json"
+    "/content/rde-poc/:/",
+    "/content/rde-poc/configuration:/.helix/config.json",,
+    "/content/rde-poc/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/ab-test/"
+    "/content/rde-poc/"
   ]
 }
