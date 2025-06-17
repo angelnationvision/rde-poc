@@ -90,8 +90,67 @@
           {
             "name": "secondary",
             "value": "secondary"
+          },
+          {
+            "name": "text-btn",
+            "value": "text-btn"
+          },
+          {
+            "name": "link-btn",
+            "value": "link-btn"
           }
         ]
+      },
+      {
+        "component": "select",
+        "label": "Only if secondary/primary is selected the following opotions should appear:",
+        "name": "brand_style",
+        "valueType": "string",
+        "condition": {
+          "or": [
+            {
+              "===": [
+                {
+                  "var": "linkType"
+                },
+                "secondary"
+              ]
+            },
+            {
+              "===": [
+                {
+                  "var": "linkType"
+                },
+                "primary"
+              ]
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "America's Best",
+            "value": "americas"
+          },
+          {
+            "name": "Eyeglass World",
+            "value": "eyeglass"
+          },
+          {
+            "name": "Discount Contacts",
+            "value": "discountcontacts"
+          },
+          {
+            "name": "Vista Optical",
+            "value": "vistaopt"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "label": "secondary variant button",
+        "description": "Rectangular button",
+        "name": "secondary-variantBtn",
+        "valueType": "boolean"
       }
     ]
   },
