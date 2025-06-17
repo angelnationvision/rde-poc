@@ -435,15 +435,199 @@
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
+        "label": "Alternative text for accessibility",
+        "description": "Enter Alt text for the authored image."
+      },
+      {
+        "component": "boolean",
+        "label": "Inherit alternative text from page",
+        "name": "Inheritalternativetextfrompage",
+        "valueType": "boolean",
+        "description": "Use the alternative description of the linked asset value of the description metadata in DAM."
+      },
+      {
+        "component": "boolean",
+        "label": "Don’t provide an alternative text",
+        "name": "Dontprovideanalternativetext",
+        "valueType": "boolean",
+        "description": "Select this for decorative images."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrow",
+        "label": "Eyebrow",
+        "description": "Enter the Eyebrow text."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "description": "Enter the title text."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "subtitle",
+        "label": "Subtitle",
+        "description": "Enter the Subtitle text."
       },
       {
         "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "valueType": "string",
+        "name": "description",
+        "label": "Description",
+        "description": "Enter the Description."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "id",
+        "label": "ID",
+        "description": "This option allows to control the unique identifier of the component in the HTML and in the Data Layer."
+      },
+      {
+        "component": "aem-content",
+        "name": "ctapath",
+        "label": "CTA Path"
+      },
+      {
+        "component": "text",
+        "name": "ctapathText",
+        "label": "CTA 1"
+      },
+      {
+        "component": "select",
+        "name": "ctavariation",
+        "label": "Type",
+        "options": [
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "input",
+            "value": "primary-variant"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "input secondary",
+            "value": "secondary-variant"
+          },
+          {
+            "name": "text-btn",
+            "value": "text-btn"
+          },
+          {
+            "name": "link-btn",
+            "value": "link-btn"
+          }
+        ]
+      },
+      {
+        "component": "aem-content",
+        "name": "ctapath1",
+        "label": "CTA Path"
+      },
+      {
+        "component": "text",
+        "name": "ctapath1Text",
+        "label": "CTA 2"
+      },
+      {
+        "component": "select",
+        "name": "ctavariation1",
+        "label": "Type",
+        "options": [
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "input",
+            "value": "primary-variant"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "input secondary",
+            "value": "secondary-variant"
+          },
+          {
+            "name": "text-btn",
+            "value": "text-btn"
+          },
+          {
+            "name": "link-btn",
+            "value": "link-btn"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "label": "Open link in new tab",
+        "name": "Openlinkinnewtab",
+        "valueType": "boolean",
+        "description": "If enabled, the link will open in a new browser tab."
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Styles",
+        "description": "Use the drop-down to select the styles that you want to apply to the Block.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Right Alignment Background Image Full Bleed",
+            "value": "hero-right-bleed"
+          },
+          {
+            "name": "Left Alignment Background Image Full Bleed",
+            "value": "hero-left-bleed"
+          },
+          {
+            "name": "Top Alignment Foreground Image Full Bleed",
+            "value": "hero-top-bleed"
+          },
+          {
+            "name": "Bottom Alignment Foreground Image Full Bleed",
+            "value": "hero-bottom-bleed"
+          },
+          {
+            "name": "Center Alignment Background Image Full Bleed",
+            "value": "hero-center-bleed"
+          },
+          {
+            "name": "Right Alignment Foreground Image Full Bleed",
+            "value": "hero-img-left-bleed"
+          },
+          {
+            "name": "Left Alignment Foreground Image Full Bleed",
+            "value": "hero-img-right-bleed"
+          },
+          {
+            "name": "Right Alignment Foreground Image No Full Bleed",
+            "value": "hero-img-left-nofull-bleed"
+          },
+          {
+            "name": "Left Alignment Foreground Image No Full Bleed",
+            "value": "hero-img-right-nofull-bleed"
+          },
+          {
+            "name": "Top Alignment Foreground Image No Full Bleed",
+            "value": "hero-top-nofull-bleed"
+          },
+          {
+            "name": "Bottom Alignment Foreground Image No Full Bleed",
+            "value": "hero-bottom-nofull-bleed"
+          }
+        ]
       }
     ]
   },
