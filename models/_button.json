@@ -50,6 +50,14 @@
             {
               "name": "secondary",
               "value": "secondary"
+            },
+            {
+              "name": "text-btn",
+              "value": "text-btn"
+            },
+            {
+              "name": "link-btn",
+              "value": "link-btn"
             }
           ]
         }
