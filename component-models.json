@@ -246,6 +246,47 @@
       }
     ]
   },
+    {
+    "id": "accordion",
+    "fields": [
+      {
+        "component": "boolean",
+        "name": "accordionCollapse",
+        "label": "Enable collapse",
+        "valueType": "boolean",
+        "description": "If enabled, the first acccordion Item will be expanded by default",
+        "value": true
+      },
+      {
+        "component": "text",
+        "label": "collapse accordion",
+        "name": "accordionCollapseType",
+        "valueType": "string",
+        "value": "h2",
+        "hidden": true
+      }
+    ]
+  },
+  {
+    "id": "accordion-item",
+    "fields": [
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "accordionItemLabel",
+        "label": "Accordion Item Label",
+        "value": "",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "accordion-item-copy-text",
+        "value": "",
+        "label": "Copy Text"
+      }
+    ]
+  },
   {
     "id": "commerce-account-header",
     "fields": [
