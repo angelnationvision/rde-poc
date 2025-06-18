@@ -37,6 +37,8 @@
       "cards",
       "columns",
       "fragment",
+      "accordion",
+      "accordion-list",
       "product-teaser",
       "product-recommendations"
     ]
