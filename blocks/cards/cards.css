@@ -1,5 +1,7 @@
 .cards-wrapper {
   padding: 48px 64px !important;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
   }
   
   .cards-wrapper:has(.cards:not(

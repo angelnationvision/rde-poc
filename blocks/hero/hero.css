@@ -3,9 +3,9 @@ img {
 }
 
 .hero-container .hero-wrapper {
-  max-width: unset;
+  max-width: 1440px !important;
   padding: 0 !important;
-  margin: 0 !important;
+  margin: 0 auto !important;
 }
 
 .hero.block {

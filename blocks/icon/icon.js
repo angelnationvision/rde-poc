@@ -1,9 +1,10 @@
 /* eslint-disable */
-const iconList = {
+export const iconList = {
   facebook: '/icons/facebook.png',
   twitter: '/icons/x-logo.png',
   instagram: '/icons/instagram.png',
-  youtube: '/icons/youtube.png'
+  youtube: '/icons/youtube.png',
+  infoMark: '/icons/info-mark.svg'
 };
 
 export function generateIconDOM(props) {

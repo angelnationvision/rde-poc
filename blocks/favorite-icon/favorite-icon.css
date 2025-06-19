@@ -1,0 +1,119 @@
+.favorite-icon .fav-signout-group .fav-message p {
+  color: var(--color-black);
+  font-family: var(--body-font-family);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 140%;
+  margin: 0;
+}
+
+.fav-signout-group > div:nth-child(2),
+.fav-signout-group > div:nth-child(3) {
+  display: inline-block;
+  gap: 0.625rem;
+}
+
+.favorite-icon .fav-signout-group .fav-signin .button-container a {
+  margin-right: 0.313rem;
+  color: var(--link-color);
+  text-align: center;
+  font-family: var(--body-font-family);
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 140%;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+}
+
+.favorite-icon .fav-signin-group .fav-title > div p {
+  color: var(--color-black);
+  font-family: var(--body-font-family);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 140%;
+  margin: 0.75rem 0;
+}
+
+.favorite-icon .fav-signin-group .fav-viewall-btn > div p a {
+  display: flex;
+  padding: 0.75rem 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 0.5rem;
+  background: var(--link-color);
+}
+
+.fav-viewall-btn > div p {
+  margin: 0;
+}
+
+.fav-signout-group .fav-signin p,
+.fav-signout-group .fav-note p {
+  margin: 0.75rem 0;
+}
+
+.fav-signin-group {
+  display: none;
+}
+
+.fav-modal svg {
+  position: absolute;
+  top: -0.4375rem;
+  right: 1rem;
+  width: 1rem;
+  height: 0.5rem;
+}
+
+.fav-modal {
+  position: absolute;
+  top: 8.75rem;
+  right: 7.5rem;
+  background: var(--color-white);
+  padding: 0.75rem;
+  z-index: 1000;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.625rem rgb(0 0 0 / 30%);
+  width: 20rem;
+}
+
+@media (min-width: 900px) and (max-width: 1440px) {
+  .favorite-icon-container .default-content-wrapper .fav-mobile-icon {
+    display: none;
+  }
+
+  .fav-modal {
+    right: 7.5rem;
+    left: unset;
+  }
+
+  .fav-modal .modal-content {
+    max-width: 25rem;
+  }
+
+  .fav-modal .modal-content .fav-title {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--color-black);
+  }
+}
+
+@media (min-width: 1441px) {
+  .favorite-icon-container .default-content-wrapper .fav-mobile-icon {
+    display: none;
+  }
+
+  .fav-modal {
+    right: 0;
+    left: 55rem;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}

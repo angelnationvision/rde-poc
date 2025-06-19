@@ -1,7 +1,8 @@
-export default async function decoratefav() {
+export default async function decoratefav(favIconContainer, favIconWrapper) {
   const favicon = document.querySelector('.nav-tools .icon-favourite-icon');
   const pfavicon = document.querySelector('.nav-tools p:has(.icon-favourite-icon)');
   const faviconactive = document.querySelector('.nav-tools p:has(.icon-favourite-icon-active)');
+
   // FAVICON MODAL + OVERLAY
   const overlay = document.createElement('div');
   overlay.className = 'modal-overlay fav-overlay';
@@ -12,14 +13,43 @@ export default async function decoratefav() {
   modal.className = 'fav-modal';
   modal.style.display = 'none';
   modal.innerHTML = `
-  <div class="modal-content">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="8" viewBox="0 0 16 8" fill="none">
-      <path d="M16 7.31982H0L6.58579 0.734038C7.36684 -0.0470109 8.63317 -0.0470109 9.41421 0.734038L16 7.31982Z" fill="white"/>
-    </svg>
-    <p class="fav-title b2-bold">You have 0 Favorites.</p>
-  </div>
-`;
+    <div class="modal-content">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="8" viewBox="0 0 16 8" fill="none">
+        <path d="M16 7.31982H0L6.58579 0.734038C7.36684 -0.0470109 8.63317 -0.0470109 9.41421 0.734038L16 7.31982Z" fill="white"/>
+      </svg>
+    </div>
+  `;
+
+  const children = Array.from(favIconWrapper.children);
+
+  const firstWrapper = document.createElement('div');
+  firstWrapper.classList.add('fav-signout-group');
+
+  const secondWrapper = document.createElement('div');
+  secondWrapper.classList.add('fav-signin-group');
+
+  const signoutElement = ['fav-message', 'fav-signin', 'fav-note'];
+  const signinElement = ['fav-title', 'fav-viewall-btn'];
+
+  children.slice(0, 3).forEach((child, i) => {
+    child.classList.add(signoutElement[i]);
+    firstWrapper.appendChild(child);
+  });
+
+  children.slice(3).forEach((child, i) => {
+    child.classList.add(signinElement[i]);
+    secondWrapper.appendChild(child);
+  });
+
+  favIconWrapper.append(firstWrapper, secondWrapper);
+  modal.append(favIconWrapper);
   document.body.append(modal);
+
+  const link = favIconWrapper.querySelector('.fav-signin a');
+  if (link) {
+    link.classList.remove('button');
+    link.classList.add('text-btn');
+  }
 
   function showModal() {
     modal.style.display = 'block';

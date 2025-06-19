@@ -1,15 +1,15 @@
-function updateCarousel(index, listItems) {
+export function updateCarousel(index, listItems) {
   listItems.forEach(item => item.classList.remove('active'));
   listItems[index].classList.add('active');
 }
 
-function scrollRight(currentIndex, listItems) {
+export function scrollRight(currentIndex, listItems) {
   const nextIndex = (currentIndex + 1) % listItems.length;
   updateCarousel(nextIndex, listItems);
   return nextIndex;
 }
 
-function scrollLeft(currentIndex, listItems) {
+export function scrollLeft(currentIndex, listItems) {
   const prevIndex = (currentIndex - 1 + listItems.length) % listItems.length;
   updateCarousel(prevIndex, listItems);
   return prevIndex;

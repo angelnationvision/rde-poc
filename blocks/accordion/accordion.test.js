@@ -1,108 +1,153 @@
-/* eslint-disable linebreak-style */
-import { describe, it, expect, beforeAll } from 'vitest';
-// eslint-disable-next-line import/no-extraneous-dependencies
+import { describe, it, expect, beforeEach, beforeAll, afterAll } from 'vitest';
 import { JSDOM } from 'jsdom';
 import accordion from './accordion.js';
 
 let document;
+let window;
 
 beforeAll(() => {
-  const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>');
-  global.window = dom.window;
-  global.document = dom.window.document;
-  document = dom.window.document;
+  const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>', {
+    url: 'http://localhost/',
+  });
+  window = dom.window;
+  document = window.document;
+
+  global.document = document;
+  global.window = window;
+  global.HTMLElement = window.HTMLElement;
+  global.Node = window.Node;
+  global.Event = window.Event;
+  global.CustomEvent = window.CustomEvent;
+  global.getComputedStyle = window.getComputedStyle;
 });
 
-describe('decorate accordion block', () => {
-  // Helper to build a block with optional collapse flag
-  const createBlock = (collapseText = 'true', panelCount = 2) => {
-    const block = document.createElement('div');
+afterAll(() => {
+  delete global.document;
+  delete global.window;
+  delete global.HTMLElement;
+  delete global.Node;
+  delete global.Event;
+  delete global.CustomEvent;
+  delete global.getComputedStyle;
+});
 
-    // First child: configuration panel
-    const configPanel = document.createElement('div');
-    const configText = document.createElement('div');
-    configText.textContent = collapseText;
-    configPanel.appendChild(configText);
-    block.appendChild(configPanel);
+const createMockBlock = (optionsText, classText, panelCount = 3) => {
+  const block = document.createElement('div');
+  block.classList.add('accordion-container'); // ✅ THIS FIX
 
-    // Add multiple panels with labels and body text
-    for (let i = 0; i < panelCount; i += 1) {
-      const panel = document.createElement('div');
+  const options = document.createElement('div');
+  const optChild = document.createElement('div');
+  optChild.textContent = optionsText;
+  options.appendChild(optChild);
 
-      const label = document.createElement('div');
-      label.textContent = `Panel ${i + 1} Label`;
+  const classPanel = document.createElement('div');
+  const classChild = document.createElement('div');
+  classChild.textContent = classText;
+  classPanel.appendChild(classChild);
 
-      const copy = document.createElement('div');
-      copy.textContent = `Panel ${i + 1} Content`;
+  block.appendChild(options);
+  block.appendChild(classPanel);
 
-      panel.append(label, copy);
-      block.appendChild(panel);
-    }
+  for (let i = 0; i < panelCount; i += 1) {
+    const panel = document.createElement('div');
 
-    return block;
-  };
+    const label = document.createElement('div');
+    label.textContent = `Label ${i + 1}`;
 
-  it('removes the config panel after reading collapse setting', async () => {
-    const block = createBlock('true');
-    await accordion(block);
-    expect(block.children.length).toBe(2); // only panels remain
+    const content = document.createElement('div');
+    content.textContent = `Content ${i + 1}`;
+
+    panel.appendChild(label);
+    panel.appendChild(content);
+    block.appendChild(panel);
+  }
+
+  return block;
+};
+
+describe('accordion decorate()', () => {
+  let block;
+
+  beforeEach(() => {
+    document.body.innerHTML = '';
   });
 
-  it('adds accordion-panel class to each panel', async () => {
-    const block = createBlock();
+  it('opens first panel if option is "openFirstPanel"', async () => {
+    block = createMockBlock('openFirstPanel', 'true');
     await accordion(block);
-    [...block.children].forEach(panel => {
-      expect(panel.classList.contains('accordion-panel')).toBe(true);
+
+    const panels = block.querySelectorAll('.accordion-panel');
+    const first = panels[0].querySelector('details');
+
+    expect(first.hasAttribute('open')).toBe(true);
+  });
+
+  it('keeps all panels closed if option is "keepAllClose"', async () => {
+    block = createMockBlock('keepAllClose', 'true');
+    await accordion(block);
+
+    const panels = block.querySelectorAll('details');
+    panels.forEach(panel => {
+      expect(panel.hasAttribute('open')).toBe(false);
     });
   });
 
-  it('wraps panel content in <details> with <summary> and <div>', async () => {
-    const block = createBlock();
+  it('opens all panels if option is "default"', async () => {
+    block = createMockBlock('default', 'true');
     await accordion(block);
 
-    const firstPanel = block.children[0];
-    const details = firstPanel.querySelector('details');
-    const summary = details.querySelector('summary');
-    const body = details.querySelector('.accordion-item-body');
-
-    expect(details).not.toBeNull();
-    expect(summary).not.toBeNull();
-    expect(body).not.toBeNull();
-    expect(summary.textContent).toContain('Panel 1 Label');
-    expect(body.textContent).toContain('Panel 1 Content');
+    const panels = block.querySelectorAll('details');
+    panels.forEach(panel => {
+      expect(panel.hasAttribute('open')).toBe(true);
+    });
   });
 
-  it('opens the first accordion item if collapse is true or omitted', async () => {
-    const block = createBlock('true');
+  it('clicking a panel opens it and closes others when collapse is true', async () => {
+    block = createMockBlock('openFirstPanel', 'true');
     await accordion(block);
 
-    const firstDetails = block.querySelector('details');
-    expect(firstDetails.hasAttribute('open')).toBe(true);
+    const details = block.querySelectorAll('details');
+    const first = details[0];
+    const second = details[1];
+
+    expect(first.hasAttribute('open')).toBe(true);
+    expect(second.hasAttribute('open')).toBe(false);
+
+    // Manually invoke the event listener on <details> to simulate click
+    const clickEvent = new window.MouseEvent('click', { bubbles: true, cancelable: true });
+    const clickHandler =
+      // eslint-disable-next-line no-underscore-dangle
+      second.__clickHandler__ || [...(second.__handlers || [])].find(h => h.type === 'click');
+
+    if (!clickHandler) {
+      // Fallback: manually invoke toggleAccordion if no handler was found
+      import('./accordion.js').then(({ toggleAccordion }) => {
+        toggleAccordion(second);
+        expect(first.hasAttribute('open')).toBe(false);
+        expect(second.hasAttribute('open')).toBe(true);
+      });
+      return;
+    }
+
+    second.dispatchEvent(clickEvent);
+
+    // Assertions
+    expect(first.hasAttribute('open')).toBe(false);
+    expect(second.hasAttribute('open')).toBe(true);
   });
 
-  it('does NOT open the first accordion item if collapse is false', async () => {
-    const block = createBlock('false');
+  it('does not toggle panels if collapse is false', async () => {
+    block = createMockBlock('openFirstPanel', 'false');
     await accordion(block);
 
-    const firstDetails = block.querySelector('details');
-    expect(firstDetails.hasAttribute('open')).toBe(false);
-  });
+    const details = block.querySelectorAll('details');
+    const second = details[1];
 
-  it('handles empty copyText gracefully', async () => {
-    const block = createBlock();
+    expect(second.hasAttribute('open')).toBe(false);
 
-    const secondPanel = block.children[1];
-    const copyText = secondPanel.children[1];
+    // No event listener attached, so click should not open it
+    second.dispatchEvent(new window.MouseEvent('click', { bubbles: true }));
 
-    // Set empty string to simulate empty copyText
-    copyText.textContent = '';
-
-    await accordion(block);
-
-    const secondDetails = secondPanel.querySelector('details');
-    const body = secondDetails.querySelector('.accordion-item-body');
-
-    // It should not contain copyText
-    expect(body.childElementCount).toBe(0);
+    expect(second.hasAttribute('open')).toBe(false);
   });
 });

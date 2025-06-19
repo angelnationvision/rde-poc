@@ -1,7 +1,7 @@
 :root {
  --gilroy: "Gilroy-Regular", sans-serif;
  --avenir: "Avenir", sans-serif;
- --Myriad-Pro: "MYRIADPRO-REGULAR", sans-serif;
+ --myriad-pro: "MYRIADPRO-REGULAR", sans-serif;
  --graphik: "Graphik-Regular", sans-serif;
 }
 
@@ -22,6 +22,7 @@ padding:  20px 64px;
 align-items: center;
 gap: 16px;
 }
+
 .breadcrumb .breadcrumb-nav a,
 header .breadcrumb-nav .breadcrumb a {
   text-decoration: none;
@@ -78,12 +79,13 @@ header .breadcrumb-nav .breadcrumb a {
 
 /* vista d */
 .brand-vi .breadcrumb .breadcrumb-nav a,
-header .breadcrumb-nav .breadcrumb a{
-  font-family: var(--Myriad-Pro);
+/* header .breadcrumb-nav .breadcrumb a{
+  font-family: var(--myriad-pro);
   font-weight: 400;
   color: #21356E;
   font-size: 16px;
-}
+} */
+
 .brand-vi .breadcrumb .icon {
   width: 24px;
   height: 24px;
@@ -102,6 +104,7 @@ header .breadcrumb-nav .breadcrumb a{
   font-size: 16px;
   color: #E12726;
 }
+
 .brand-eye .breadcrumb a.active {
   color: var(--color-dark-warm);
   pointer-events: none;
@@ -125,6 +128,7 @@ font-family: var(--gilroy);
 font-size:  16px;
 font-weight: 400;
 }
+
 .brand-dc .breadcrumb a.active {
   color: var(--color-dark-warm);
   pointer-events: none;
@@ -137,9 +141,10 @@ font-weight: 400;
 .brand-vi .breadcrumb .breadcrumb-nav a,
 header .breadcrumb-nav .breadcrumb a{
 color:  #21356E;
-font-family: var(--Myriad-Pro);
+font-family: var(--myriad-pro);
 font-weight: 400;
 }
+
 .brand-vi .breadcrumb a.active {
   color: var(--color-dark-warm);
   pointer-events: none;
@@ -161,7 +166,7 @@ font-weight: 400;
 
 /* american */
 
-@media  (max-width: 900px) {
+@media (width <= 900px) {
 .breadcrumb.logo.block
 {
   display: flex;
@@ -185,8 +190,7 @@ header .breadcrumb-nav .breadcrumb a {
   display: flex;
   color:  #625E59;
   text-align: center;
-  font-family: var(--Avenir);
-  color: var(--link-color);
+  font-family: var(--avenir);
   font-size:  14px;
   font-style: normal;
   font-weight: 800;
@@ -224,12 +228,12 @@ header .breadcrumb-nav .breadcrumb a{
 
 /* vista */
 
-.brand-vi .breadcrumb .breadcrumb-nav a,
+/* .brand-vi .breadcrumb .breadcrumb-nav a,
 header .breadcrumb-nav .breadcrumb a{
-  font-family: var(--Myriad-Pro);
+  font-family: var(--myriad-pro);
   font-weight: 400;
   color: #21356E;
-}
+} */
 
 /* discount */
 

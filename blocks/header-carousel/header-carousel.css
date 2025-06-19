@@ -2,9 +2,13 @@
 
 .header-carousel {
     width: 100%;
-    position: relative;
-    top: -21px;
-    margin-bottom: 12px;
+
+   /* position: relative; */
+
+    /* top: -21px; */
+    
+   /* margin-bottom: 12px; */
+   padding-bottom: 12px;
 }
 
 .header-carousel .carousel-items {
@@ -31,22 +35,24 @@
     font-weight: 800;
     line-height: 14px;
     opacity: 0;
+    pointer-events: none;
     position: absolute;
     list-style: none;
-    padding: 0 8px;
     text-align: center;
     transition: opacity 0.2s ease-in-out;
 }
 
 .header-carousel .carousel-items ul li.active {
+    pointer-events: auto;
     opacity: 1;
 }
 
 .header-carousel .prev-btn-left, .header-carousel .next-btn-right, .header-carousel .prev-btn-left:focus, .header-carousel .next-btn-right:focus, .header-carousel .prev-btn-left:hover, .header-carousel .next-btn-right:hover{
     all: unset;
+    display: flex;
 }
 
-.header-carousel button {
+.header-carousel button::before {
     width: 12px;
     height: 12px;
 }
@@ -69,6 +75,15 @@
         width: 431px;
         position: unset;
         margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .header-carousel .carousel-items {
+        align-items: center;
+    }
+
+    .header-carousel .carousel-items ul {
+        margin-top: 4px;
     }
 
     .header-carousel .carousel-items ul li {
