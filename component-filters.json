@@ -106,7 +106,7 @@
   },
   {
     "id": "accordion",
-    "components": ["accordion-item", "button"]
+    "components": ["accordion-item", "button", "teaser", "title", "cards", "columns", "section"]
   },
   {
     "id": "accordion-item",
