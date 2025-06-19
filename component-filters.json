@@ -1,30 +1,7 @@
 [
-  {
+ {
     "id": "main",
-    "components": [
-      "section"
-    ]
-  },
-  {
-    "id": "columns-main",
-    "components": [
-      "columns-section"
-    ]
-  },
-  {
-    "id": "accordion",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title",
-      "hero",
-      "cards",
-      "columns",
-      "fragment",
-      "product-teaser",
-      "product-recommendations"
-    ]
+    "components": ["section", "header-section", "navigation-section", "footer-section", "tab-section"]
   },
   {
     "id": "section",
@@ -32,31 +9,120 @@
       "text",
       "image",
       "button",
+      "button-nvi",
       "title",
       "hero",
       "cards",
       "columns",
+      "link-list",
+      "icon-link-list",
       "fragment",
+      "teaser",
       "accordion",
-      "accordion-item",
-      "product-teaser",
-      "product-recommendations"
+      "navigation",
+      "header-carousel",
+      "logo",
+      "contact-form",
+      "multi-columns",
+      "breadcrumb",
+      "global-search",
+      "modal"
     ]
   },
   {
-    "id": "enrichment-section",
+    "id": "header-section",
+    "components": ["section"]
+  },
+  {
+    "id": "navigation-section",
     "components": [
+      "section",
+      "navigation",
       "text",
       "image",
-      "button",
-      "title",
-      "hero",
-      "cards",
-      "columns",
       "fragment",
-      "product-teaser",
-      "product-recommendations"
+      "teaser",
+      "accordion",
+      "logo",
+      "navigation-search",
+      "favorite-icon"
     ]
+  },
+  {
+    "id": "tab-section",
+    "components": ["tab"]
+  },
+  {
+    "id": "cards",
+    "components": ["card"]
+  },
+  {
+    "id": "navigation",
+    "components": [
+      "navigation-image-list",
+      "navigation-link-list",
+      "navigation-card",
+      "button-nvi"
+    ]
+  },
+  {
+    "id": "footer-section",
+    "components": [
+      "title",
+      "icon-link-list",
+      "link-list"
+    ]
+  },
+  {
+    "id": "icon-link-list",
+    "components": ["icon"]
+  },
+  {
+    "id": "link-list",
+    "components": [],
+    "rte": {
+      "format": [],
+      "alignment": [],
+      "indentation": [],
+      "sr_script": [],
+      "list": ["bullist"],
+      "insert": ["link"],
+      "advanced": [],
+      "extensions": [],
+      "editor": []
+    }
+  },
+  {
+    "id": "logo",
+    "components": ["logo"]
+  },
+  {
+    "id": "columns",
+    "components": ["column"]
+  },
+  {
+    "id": "column",
+    "components": ["text", "image", "button", "button-nvi", "cards", "title", "teaser"]
+  },
+  {
+    "id": "accordion",
+    "components": ["accordion-item"]
+  },
+  {
+    "id": "accordion-item",
+    "components": ["text", "image", "button", "cards", "title", "teaser"]
+  },
+  {
+    "id": "multi-columns",
+    "components": ["multi-column"]
+  },
+  {
+    "id": "breadcrumb",
+    "components": ["breadcrumb-item"]
+  },
+  {
+    "id": "tab",
+    "components": ["tab-card-item", "tab-image-item"]
   },
   {
     "id": "plp-section",
