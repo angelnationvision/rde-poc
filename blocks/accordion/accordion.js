@@ -28,7 +28,7 @@ export default async function decorate(block) {
 
   [...restPanels].forEach((panel, i) => {
     const [accordionLabel, copyText] = [...panel.children];
-    panel.classList.add('accordion-panel angeltest');
+    panel.classList.add('accordion-panel-test');
     panel.setAttribute('tabindex', '0');
     const summary = document.createElement('summary');
     if (accordionLabel) {
@@ -36,7 +36,8 @@ export default async function decorate(block) {
       summary.append(accordionLabel);
     }
     const body = document.createElement('div');
-    body.className = 'accordion-item-body';
+    body.className = 'accordion-item-body-test';
+
     if (copyText?.textContent.trim() !== '') {
       body.append(copyText);
     }
