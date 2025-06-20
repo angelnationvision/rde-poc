@@ -35,12 +35,21 @@ export default async function decorate(block) {
       summary.className = 'accordion-item-label';
       summary.append(accordionLabel);
     }
+    
+
     const body = document.createElement('div');
     body.className = 'accordion-item-body-test';
 
-    if (copyText?.textContent.trim() !== '') {
-      body.append(copyText);
+    panel.setAttribute('tabindex', '0');
+    const summary = document.createElement('summary');
+    if (accordionLabel) {
+      summary.className = 'accordion-item-label';
+      summary.append(accordionLabel);
     }
+
+   /* if (copyText?.textContent.trim() !== '') {
+      body.append(copyText);
+    }*/
 
     const details = document.createElement('details');
     details.className = 'accordion-item';
