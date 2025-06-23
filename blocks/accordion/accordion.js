@@ -28,28 +28,18 @@ export default async function decorate(block) {
 
   [...restPanels].forEach((panel, i) => {
     const [accordionLabel, copyText] = [...panel.children];
-    panel.classList.add('accordion-panel-test');
+    panel.classList.add('accordion-panel org');
     panel.setAttribute('tabindex', '0');
     const summary = document.createElement('summary');
     if (accordionLabel) {
       summary.className = 'accordion-item-label';
       summary.append(accordionLabel);
     }
-    
-
     const body = document.createElement('div');
-    body.className = 'accordion-item-body-test';
-
-    panel.setAttribute('tabindex', '0');
-    const summary = document.createElement('summary');
-    if (accordionLabel) {
-      summary.className = 'accordion-item-label';
-      summary.append(accordionLabel);
-    }
-
-   /* if (copyText?.textContent.trim() !== '') {
+    body.className = 'accordion-item-body';
+    if (copyText?.textContent.trim() !== '') {
       body.append(copyText);
-    }*/
+    }
 
     const details = document.createElement('details');
     details.className = 'accordion-item';
@@ -71,5 +61,3 @@ export default async function decorate(block) {
     panel.append(details);
   });
 }
-
-
