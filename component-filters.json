@@ -110,7 +110,7 @@
   },
   {
     "id": "accordion-item",
-    "components": ["text", "image", "button", "cards", "title", "teaser"]
+    "components": ["text", "image", "button", "title", "teaser"]
   },
   {
     "id": "multi-columns",
