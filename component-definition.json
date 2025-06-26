@@ -77,6 +77,21 @@
             }
           }
         },
+          {
+          "title": "Tab Sections",
+          "id": "tab-section",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "model": "tab-section",
+                  "filter": "tab-section"
+                }
+              }
+            }
+          }
+        },
         {
           "title": "Columns Section",
           "id": "columns-section",
