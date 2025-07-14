@@ -77,7 +77,22 @@
             }
           }
         },
-          {
+               {
+          "title": "Angel Section",
+          "id": "angel-section",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "model": "section",
+                  "filter": "section"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Tab Sections",
           "id": "tab-section",
           "plugins": {
