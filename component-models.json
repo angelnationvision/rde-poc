@@ -177,28 +177,6 @@
     ]
   },
   {
-    "id": "sectionangel",
-    "fields": [
-      {
-        "component": "text",
-        "name": "name",
-        "label": "Section Name - Angel",
-        "description": "The label shown for this section in the Content Tree"
-      },
-      {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          {
-            "name": "Highlight",
-            "value": "highlight"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "columns-section",
     "fields": [
       {

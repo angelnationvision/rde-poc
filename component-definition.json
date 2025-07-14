@@ -58,13 +58,13 @@
         }
       ]
     },
-        {
+    {
       "title": "Angel Section",
       "id": "sectionangel",
       "components": [
         {
-          "title": "Section - angel",
-          "id": "sectionangel",
+          "title": "Section - Angel",
+          "id": "section",
           "plugins": {
             "xwalk": {
               "page": {
@@ -78,7 +78,7 @@
           }
         },
           {
-          "title": "Tab Sections - angel",
+          "title": "Tab Sections - Angel",
           "id": "tab-section",
           "plugins": {
             "xwalk": {
