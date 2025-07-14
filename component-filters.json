@@ -1,7 +1,7 @@
 [
  {
     "id": "main",
-    "components": ["section", "header-section", "navigation-section", "footer-section", "tab-section"]
+    "components": ["section", "header-section", "navigation-section", "footer-section", "tab-section", "angel-section"]
   },
   {
     "id": "section",
@@ -54,7 +54,7 @@
   },
    {
     "id": "angel-section",
-    "components": ["text"]
+    "components": ["text","button","title"]
   },
   {
     "id": "cards",
