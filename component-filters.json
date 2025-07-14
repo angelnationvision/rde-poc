@@ -1,7 +1,7 @@
 [
  {
     "id": "main",
-    "components": ["section", "header-section", "navigation-section", "footer-section", "tab-section", "angel-section"]
+    "components": ["section", "header-section", "navigation-section", "footer-section", "tab-section"]
   },
   {
     "id": "section",
