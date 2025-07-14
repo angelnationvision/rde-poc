@@ -59,42 +59,6 @@
       ]
     },
     {
-      "title": "Angel Section",
-      "id": "sectionangel",
-      "components": [
-        {
-          "title": "Section - Angel",
-          "id": "angel-section",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
-                "template": {
-                  "model": "angel-section",
-                  "filter": "angel-section"
-                }
-              }
-            }
-          }
-        },
-          {
-          "title": "Tab Sections - Angel",
-          "id": "tab-section",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
-                "template": {
-                  "model": "tab-section",
-                  "filter": "tab-section"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
       "title": "Sections",
       "id": "sections",
       "components": [
