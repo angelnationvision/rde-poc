@@ -60,11 +60,11 @@
     },
         {
       "title": "Angel Section",
-      "id": "angelsectiontest",
+      "id": "angelsection",
       "components": [
         {
           "title": "Section - angel",
-          "id": "section",
+          "id": "sectionangel",
           "plugins": {
             "xwalk": {
               "page": {
@@ -87,21 +87,6 @@
                 "template": {
                   "model": "tab-section",
                   "filter": "tab-section"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Columns Section",
-          "id": "columns-section",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
-                "template": {
-                  "model": "columns-section",
-                  "filter": "account-section"
                 }
               }
             }
