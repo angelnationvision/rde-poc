@@ -64,14 +64,14 @@
       "components": [
         {
           "title": "Section - Angel",
-          "id": "section",
+          "id": "angel-section",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/section/v1/section",
                 "template": {
-                  "model": "section",
-                  "filter": "section"
+                  "model": "angel-section",
+                  "filter": "angel-section"
                 }
               }
             }
