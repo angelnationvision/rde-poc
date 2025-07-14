@@ -3,6 +3,10 @@
     "id": "main",
     "components": ["section", "header-section", "navigation-section", "footer-section", "tab-section"]
   },
+   {
+    "id": "angeljuly",
+    "components": ["section", "header-section", "navigation-section", "footer-section", "tab-section"]
+  },
   {
     "id": "section",
     "components": [

@@ -58,6 +58,57 @@
         }
       ]
     },
+        {
+      "title": "Angel Section",
+      "id": "angeljuly",
+      "components": [
+        {
+          "title": "Section - angel",
+          "id": "section",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "model": "section",
+                  "filter": "section"
+                }
+              }
+            }
+          }
+        },
+          {
+          "title": "Tab Sections - angel",
+          "id": "tab-section",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "model": "tab-section",
+                  "filter": "tab-section"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Columns Section",
+          "id": "columns-section",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "model": "columns-section",
+                  "filter": "account-section"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     {
       "title": "Sections",
       "id": "sections",
