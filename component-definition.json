@@ -742,7 +742,7 @@
           }
         },
         {
-          "title": "Cart",
+          "title": "Cart - Child",
           "id": "commerce-cart",
           "plugins": {
             "xwalk": {
