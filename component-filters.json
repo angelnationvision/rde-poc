@@ -53,7 +53,7 @@
     "components": ["tab"]
   },
    {
-    "id": "angel-section",
+    "id": "angelsection",
     "components": ["text","button","title"]
   },
   {

@@ -77,21 +77,64 @@
             }
           }
         },
-               {
-          "title": "Angel Section",
-          "id": "angel-section",
+         {
+      "title": "Angel Section",
+      "id": "angelsection",
+      "components": [
+        {
+          "title": "Text - Test",
+          "id": "text",
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
+                "resourceType": "core/franklin/components/text/v1/text",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
+          "title": "Title",
+          "id": "title",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/title/v1/title",
                 "template": {
-                  "model": "section",
-                  "filter": "angel-section"
+                  "model": "title"
                 }
               }
             }
           }
         },
+        {
+          "title": "Image",
+          "id": "image",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/image/v1/image",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
+          "title": "Button",
+          "id": "button",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/button/v1/button",
+                "template": {
+                  "model": "button"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
         {
           "title": "Tab Sections",
           "id": "tab-section",
