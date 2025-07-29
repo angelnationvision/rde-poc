@@ -2,7 +2,16 @@
 This project boilerplate is for AEM Authoring with Edge Delivery Services (aka Crosswalk) projects that integrate with Adobe Commerce.
 
 ## Documentation
-https://experienceleague.adobe.com/developer/commerce/storefront/
+
+Before using the boilerplate, we recommend you to go through the documentation on https://experienceleague.adobe.com/developer/commerce/storefront/ and more specifically:
+
+1. [Storefront Developer Tutorial](https://experienceleague.adobe.com/developer/commerce/storefront/get-started/)
+1. [AEM Docs](https://www.aem.live/docs/)
+1. [AEM Developer Tutorial](https://www.aem.live/developer/tutorial)
+1. [The Anatomy of an AEM Project](https://www.aem.live/developer/anatomy-of-a-project)
+1. [Web Performance](https://www.aem.live/developer/keeping-it-100)
+1. [Markup, Sections, Blocks, and Auto Blocking](https://www.aem.live/developer/markup-sections-blocks)
+
 
 ## Environments
 - Preview: https://main--{repo}--{owner}.aem.page/
@@ -67,5 +76,5 @@ See also [Developer Tutorial](https://experienceleague.adobe.com/en/docs/experie
 
 ## Notes
 - some commerce blocks dont show the final output in UE but placeholders, e.g. account related blocks, enrichment. To see them in action you have to preview or publish the page.
-- folder mapping is used on EDS (publish) to map virtual product pages to a an existing page template (/products/default). if you open the the template page in UE, to be able to see the pdp block, one product has been [hardcoded](https://github.com/adobe-rnd/aem-boilerplate-xcom/blob/main/scripts/editor-support.js#L15) for now.
+- folder mapping is used on Edge Delivery to map virtual product pages to a an existing page template (/products/default). if you open the the template page in UE, to be able to see the pdp block, one product has been [hardcoded](https://github.com/adobe-rnd/aem-boilerplate-xcom/blob/main/scripts/editor-support.js#L15) for now.
 - It is [recommended](https://experienceleague.adobe.com/developer/commerce/storefront/seo/metadata/) uploading product metadata into Edge Delivery Services so that it can be rendered server-side on product detail pages, see `/products/default/metadata` spreadheet. There is a tool that can help you create this data, see [here](https://experienceleague.adobe.com/developer/commerce/storefront/seo/metadata/#generate-metadata).

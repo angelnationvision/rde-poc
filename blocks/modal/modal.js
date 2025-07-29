@@ -1,99 +1,73 @@
-import { loadFragment } from '../fragment/fragment.js';
-import { buildBlock, decorateBlock, loadBlock, loadCSS } from '../../scripts/aem.js';
-import { iconList } from '../icon/icon.js';
+import { loadCSS, buildBlock } from '../../scripts/aem.js';
 
-export async function createModal(contentNodes) {
+export default async function createModal(contentNodes) {
   await loadCSS(`${window.hlx.codeBasePath}/blocks/modal/modal.css`);
   const dialog = document.createElement('dialog');
+  dialog.setAttribute('tabindex', 1);
+  dialog.setAttribute('role', 'dialog');
+
   const dialogContent = document.createElement('div');
   dialogContent.classList.add('modal-content');
   dialogContent.append(...contentNodes);
   dialog.append(dialogContent);
 
-  const headline = dialogContent?.querySelector('.default-content-wrapper h2');
-  const subheading = dialogContent?.querySelector('.default-content-wrapper h4');
-
-  if (subheading) {
-    subheading.classList.add('border-subheading');
-  } else {
-    headline.classList.add('border-headline');
-  }
-
   const closeButton = document.createElement('button');
   closeButton.classList.add('close-button');
   closeButton.setAttribute('aria-label', 'Close');
+  closeButton.setAttribute('data-dismiss', 'modal');
   closeButton.type = 'button';
   closeButton.innerHTML = '<span class="icon icon-close"></span>';
   closeButton.addEventListener('click', () => dialog.close());
-  dialog.prepend(closeButton);
+  dialog.append(closeButton);
 
-  const block = buildBlock('modal', '');
-  document.querySelector('main').append(block);
-  decorateBlock(block);
-  await loadBlock(block);
+  // close dialog on clicks outside the dialog. https://stackoverflow.com/a/70593278/79461
+  dialog.addEventListener('click', (event) => {
+    if (event.pointerType !== 'mouse') return;
 
-  // close on click outside the dialog
-  dialog.addEventListener('click', e => {
-    const { left, right, top, bottom } = dialog.getBoundingClientRect();
-    const { clientX, clientY } = e;
-    if (clientX < left || clientX > right || clientY < top || clientY > bottom) {
+    const dialogDimensions = dialog.getBoundingClientRect();
+    if (
+      event.clientX < dialogDimensions.left
+      || event.clientX > dialogDimensions.right
+      || event.clientY < dialogDimensions.top
+      || event.clientY > dialogDimensions.bottom
+    ) {
       dialog.close();
     }
   });
+
+  const block = buildBlock('modal', '');
+  document.querySelector('main').append(block);
 
   dialog.addEventListener('close', () => {
     document.body.classList.remove('modal-open');
     block.remove();
   });
 
-  block.innerHTML = '';
   block.append(dialog);
 
   return {
     block,
+    removeModal: () => dialog.close(),
     showModal: () => {
       dialog.showModal();
-      // reset scroll position
+      // Google Chrome restores the scroll position when the dialog is reopened,
+      // so we need to reset it.
       setTimeout(() => {
         dialogContent.scrollTop = 0;
       }, 0);
+
+      // Focus the first input when content is fully loaded using MutationObserver.
+      const observer = new MutationObserver(() => {
+        const firstInput = dialogContent.querySelector('input');
+        if (firstInput) {
+          firstInput.focus();
+          observer.disconnect();
+        }
+      });
+
+      observer.observe(dialogContent, { childList: true, subtree: true });
+
       document.body.classList.add('modal-open');
     },
   };
-}
-
-export async function openModal(fragmentUrl) {
-  const path = fragmentUrl.startsWith('http')
-    ? new URL(fragmentUrl, window.location).pathname
-    : fragmentUrl;
-
-  const fragment = await loadFragment(path);
-  const { showModal } = await createModal(fragment.childNodes);
-  showModal();
-}
-
-export default function decorate(block) {
-  const [checkboxType, checkboxLabel] = [...block.children].map(row => row.firstElementChild);
-  const checkboxTitle = checkboxLabel?.querySelector('h4')?.textContent?.trim();
-  const helperText = checkboxLabel?.querySelector('p')?.textContent?.trim();
-
-  if (checkboxType?.textContent.trim().toLowerCase() === 'true') {
-    const checkboxContainer = document.createElement('div');
-    checkboxContainer.classList.add('checkbox__container');
-    const iconsURL = iconList.infoMark;
-    const fragment = document.createRange().createContextualFragment(`
-        <div class="checkbox-label">
-        <input type="checkbox" />
-        <h4>${checkboxTitle}</h4>
-        <img src="${iconsURL}" class="info-mark" alt="" loading="lazy" width="22" height="22"/>
-        </div>
-        <p class="helper-text">${helperText}</p>
-    `);
-    checkboxContainer.appendChild(fragment);
-
-    block.textContent = '';
-    block.appendChild(checkboxContainer);
-  } else {
-    block.textContent = '';
-  }
 }

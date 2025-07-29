@@ -1,7 +1,15 @@
 [
- {
+  {
     "id": "main",
-    "components": ["section", "header-section", "navigation-section", "footer-section", "tab-section", "angel-section"]
+    "components": [
+      "section"
+    ]
+  },
+  {
+    "id": "columns-main",
+    "components": [
+      "columns-section"
+    ]
   },
   {
     "id": "section",
@@ -9,124 +17,29 @@
       "text",
       "image",
       "button",
-      "button-nvi",
       "title",
       "hero",
       "cards",
       "columns",
-      "link-list",
-      "icon-link-list",
       "fragment",
-      "teaser",
-      "accordion",
-      "navigation",
-      "header-carousel",
-      "logo",
-      "contact-form",
-      "multi-columns",
-      "breadcrumb",
-      "global-search",
-      "modal"
+      "product-teaser",
+      "product-recommendations"
     ]
   },
   {
-    "id": "header-section",
-    "components": ["section"]
-  },
-  {
-    "id": "navigation-section",
+    "id": "enrichment-section",
     "components": [
-      "section",
-      "navigation",
       "text",
       "image",
-      "fragment",
-      "teaser",
-      "accordion",
-      "logo",
-      "navigation-search",
-      "favorite-icon"
-    ]
-  },
-  {
-    "id": "tab-section",
-    "components": ["tab"]
-  },
-   {
-    "id": "angel-section",
-    "components": ["text","button","title"]
-  },
-  {
-    "id": "cards",
-    "components": ["card"]
-  },
-  {
-    "id": "navigation",
-    "components": [
-      "navigation-image-list",
-      "navigation-link-list",
-      "navigation-card",
-      "button-nvi"
-    ]
-  },
-  {
-    "id": "footer-section",
-    "components": [
+      "button",
       "title",
-      "icon-link-list",
-      "link-list"
+      "hero",
+      "cards",
+      "columns",
+      "fragment",
+      "product-teaser",
+      "product-recommendations"
     ]
-  },
-  {
-    "id": "icon-link-list",
-    "components": ["icon"]
-  },
-  {
-    "id": "link-list",
-    "components": [],
-    "rte": {
-      "format": [],
-      "alignment": [],
-      "indentation": [],
-      "sr_script": [],
-      "list": ["bullist"],
-      "insert": ["link"],
-      "advanced": [],
-      "extensions": [],
-      "editor": []
-    }
-  },
-  {
-    "id": "logo",
-    "components": ["logo"]
-  },
-  {
-    "id": "columns",
-    "components": ["column"]
-  },
-  {
-    "id": "column",
-    "components": ["text", "image", "button", "button-nvi", "cards", "title", "teaser"]
-  },
-  {
-    "id": "accordion",
-    "components": ["accordion-item", "button", "teaser", "title", "text", "cards", "columns", "section"]
-  },
-  {
-    "id": "accordion-item",
-    "components": ["text", "image", "button", "title", "teaser"]
-  },
-  {
-    "id": "multi-columns",
-    "components": ["multi-column"]
-  },
-  {
-    "id": "breadcrumb",
-    "components": ["breadcrumb-item"]
-  },
-  {
-    "id": "tab",
-    "components": ["tab-card-item", "tab-image-item", "image", "title", "text", "button", "teaser"]
   },
   {
     "id": "plp-section",
@@ -208,6 +121,7 @@
       "commerce-shipping-status",
       "commerce-customer-details",
       "commerce-order-cost-summary",
+      "commerce-gift-options",
       "commerce-order-product-list",
       "commerce-order-returns",
       "product-teaser",
@@ -455,6 +369,20 @@
       "columns",
       "fragment",
       "commerce-create-password"
+    ]
+  },
+  {
+    "id": "wishlist-section",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "cards",
+      "columns",
+      "fragment",
+      "commerce-wishlist"
     ]
   },
   {
