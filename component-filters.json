@@ -15,7 +15,6 @@
     "id": "section",
     "components": [
       "text",
-      "search",
       "image",
       "button",
       "title",
