@@ -1,8 +1,0 @@
-mountpoints:
-  /:
-    url: "https://author-p130360-e1272151.adobeaemcloud.com/bin/franklin.delivery/adobe-rnd/aem-boilerplate-xcom/main"
-    type: "markup"
-    suffix: ".html"
-folders:
-  /products/: /products/default
-  
