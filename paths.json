@@ -1,12 +1,12 @@
 {
   "mappings": [
-    "/content/aem-boilerplate-commerce/:/",
-    "/content/aem-boilerplate-commerce/configuration:/.helix/config.json",
-    "/content/aem-boilerplate-commerce/headers:/.helix/headers.json",
-    "/content/aem-boilerplate-commerce/metadata:/metadata.json",
-    "/content/aem-boilerplate-commerce.resource/enrichment/enrichment.json:/enrichment/enrichment.json"
+    "/content/ab-new/:/",
+    "/content/ab-new/configuration:/.helix/config.json",
+    "/content/ab-new/headers:/.helix/headers.json",
+    "/content/ab-new/metadata:/metadata.json",
+    "/content/ab-new.resource/enrichment/enrichment.json:/enrichment/enrichment.json"
   ],
   "includes": [
-    "/content/aem-boilerplate-commerce/"
+    "/content/ab-new/"
   ]
 }
