@@ -55,20 +55,6 @@
               }
             }
           }
-        },
-        {
-          "title": "Search",
-          "id": "search",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/search/v1/search",
-                "template": {
-                  "model": "search"
-                }
-              }
-            }
-          }
         }
       ]
     },
