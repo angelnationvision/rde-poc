@@ -14,7 +14,22 @@ export default async function decorate(block) {
   // decorate footer DOM
   block.textContent = '';
   const footer = document.createElement('div');
-  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
+  while (fragment.firstElementChild) {
+    const a = fragment.querySelector('.default-content-wrapper p');
+    const currYear = new Date().getFullYear().toString();
+    const originalCopyright = a.textContent;
+    if (originalCopyright) {
+      const updatedCopyright = originalCopyright.replace(/(\d{4})[–-]\d{4}/, `$1–${currYear}`);
+      a.textContent = updatedCopyright;
+    }
+    footer.append(fragment.firstElementChild);
+  }
 
   block.append(footer);
+
+  if (window.innerWidth >= 900) {
+    const footerIcons = block.querySelector('footer .icon-link-list-wrapper');
+    const footerTitleContainer = block.querySelector('footer .default-content-wrapper');
+    footerTitleContainer.append(footerIcons);
+  }
 }

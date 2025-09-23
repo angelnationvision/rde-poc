@@ -15,9 +15,9 @@
  * from Adobe.
  *******************************************************************/
 export interface StoreConfigModel {
-    baseMediaUrl: string;
-    minLength: number;
-    requiredCharacterClasses: number;
-    storeCode: string;
+  baseMediaUrl: string;
+  minLength: number;
+  requiredCharacterClasses: number;
+  storeCode: string;
 }
 //# sourceMappingURL=store-config.d.ts.map

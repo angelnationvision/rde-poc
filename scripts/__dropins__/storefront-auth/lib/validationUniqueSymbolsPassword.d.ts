@@ -14,5 +14,8 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const validationUniqueSymbolsPassword: (password: string, uniqueSymbolsCount: number) => boolean;
+export declare const validationUniqueSymbolsPassword: (
+  password: string,
+  uniqueSymbolsCount: number
+) => boolean;
 //# sourceMappingURL=validationUniqueSymbolsPassword.d.ts.map

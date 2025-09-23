@@ -37,7 +37,7 @@ export const paymentServicesCreditCard = {
     cc_number: '4111111111111111',
     cc_exp: '12/2030',
     cc_cid: '123',
-  }
+  },
 };
 
 export const checkMoneyOrder = {
@@ -47,11 +47,11 @@ export const checkMoneyOrder = {
 
 export const products = {
   configurable: {
-    urlPath: "/products/cypress-configurable-product-latest/CYPRESS456",
-    urlPathWithOptions:  Cypress.env('productUrlWithOptions'),
+    urlPath: '/products/cypress-configurable-product-latest/CYPRESS456',
+    urlPathWithOptions: Cypress.env('productUrlWithOptions'),
   },
   virtual: {
-    urlPath: "/products/sample-virtual-product/VIRTUAL123",
+    urlPath: '/products/sample-virtual-product/VIRTUAL123',
     sku: 'VIRTUAL123',
   },
 };

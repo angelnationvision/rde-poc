@@ -1,0 +1,173 @@
+{
+  "definitions": [
+    {
+      "title": "Button NVI",
+      "id": "button-nvi",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/button/v1/button",
+            "template": {
+              "model": "button-nvi"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "button-nvi",
+      "fields": [
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link - Adobe"
+        },
+        {
+          "component": "text",
+          "name": "linkText",
+          "label": "Text - Adobe"
+        },
+        {
+          "component": "text",
+          "name": "linkTitle",
+          "label": "Title - Adobe"
+        },
+        {
+          "component": "text",
+          "name": "buttonId",
+          "value": "",
+          "label": "ID",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "linkTitle",
+          "value": "",
+          "label": "Aria Label",
+          "valueType": "string"
+        },
+        {
+          "component": "select",
+          "name": "buttonClasses",
+          "value": "americas",
+          "label": "Brand Styles",
+          "options": [
+            {
+              "name": "America's Best",
+              "value": "americas"
+            },
+            {
+              "name": "Eyeglass World",
+              "value": "eyeglass"
+            },
+            {
+              "name": "Discount Contacts",
+              "value": "discountcontacts"
+            },
+            {
+              "name": "Vista Optical",
+              "value": "vistaopt"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "value": "primary",
+          "label": "Styles",
+          "options": [
+            {
+              "name": "primary",
+              "value": "primary"
+            },
+            {
+              "name": "input",
+              "value": "primary-variant"
+            },
+            {
+              "name": "secondary",
+              "value": "secondary"
+            },
+            {
+              "name": "input secondary",
+              "value": "secondary-variant"
+            },
+            {
+              "name": "text-btn",
+              "value": "text-btn"
+            },
+            {
+              "name": "link-btn",
+              "value": "link-btn"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "IconPlacement",
+          "value": "",
+          "label": "IconPlacement",
+          "options": [
+            {
+              "name": "trailing",
+              "value": "trailing"
+            },
+            {
+              "name": "leading",
+              "value": "leading"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "sizeClasses",
+          "value": "",
+          "label": "size",
+          "options": [
+            {
+              "name": "large",
+              "value": "large"
+            },
+            {
+              "name": "small",
+              "value": "small"
+            }
+          ]
+        },
+        {
+          "component": "boolean",
+          "name": "inverse",
+          "label": "inverse",
+          "valueType": "boolean",
+          "value": false
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "icon",
+          "description": "icon pickup.",
+          "label": "pick Icon",
+          "multi": false
+        },
+        {
+          "component": "boolean",
+          "name": "openInNewTab",
+          "label": "Opens button in new tab",
+          "valueType": "boolean",
+          "value": false
+        },
+        {
+          "component": "text",
+          "label": "Open in new tab",
+          "name": "openInNewTabType",
+          "valueType": "string",
+          "value": "h2",
+          "hidden": true
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

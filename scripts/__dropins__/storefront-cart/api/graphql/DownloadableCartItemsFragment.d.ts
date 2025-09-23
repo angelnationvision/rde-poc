@@ -14,5 +14,6 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const DOWNLOADABLE_CART_ITEMS_FRAGMENT = "\n  fragment DOWNLOADABLE_CART_ITEMS_FRAGMENT on DownloadableCartItem {\n    links {\n      sort_order\n      title\n    }\n    customizable_options {\n      ...CUSTOMIZABLE_OPTIONS_FRAGMENT\n    }\n  }\n";
+export declare const DOWNLOADABLE_CART_ITEMS_FRAGMENT =
+  '\n  fragment DOWNLOADABLE_CART_ITEMS_FRAGMENT on DownloadableCartItem {\n    links {\n      sort_order\n      title\n    }\n    customizable_options {\n      ...CUSTOMIZABLE_OPTIONS_FRAGMENT\n    }\n  }\n';
 //# sourceMappingURL=DownloadableCartItemsFragment.d.ts.map

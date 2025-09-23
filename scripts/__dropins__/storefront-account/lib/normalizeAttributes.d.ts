@@ -14,5 +14,8 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const normalizeAttributes: (input: Record<string, any>, type?: string) => Record<string, any>;
+export declare const normalizeAttributes: (
+  input: Record<string, any>,
+  type?: string
+) => Record<string, any>;
 //# sourceMappingURL=normalizeAttributes.d.ts.map

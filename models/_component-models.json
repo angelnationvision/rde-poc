@@ -1,15 +1,9 @@
 [
   {
+    "...": "./_page.json#/models"
+  },
+  {
     "...": "./_image.json#/models"
-  },
-  {
-    "...": "./_title.json#/models"
-  },
-  {
-    "...": "./_text.json#/models"
-  },
-  {
-    "...": "./_button.json#/models"
   },
   {
     "...": "./_section.json#/models"
@@ -19,5 +13,8 @@
   },
   {
     "...": "./_templates.json#/models"
+  },
+  {
+    "...": "../models/archive/_button.json#/models"
   }
 ]

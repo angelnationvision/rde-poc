@@ -4,13 +4,9 @@
  * https://www.aem.live/developer/block-collection/fragment
  */
 
-import {
-  decorateMain,
-} from '../../scripts/scripts.js';
-
-import {
-  loadSections,
-} from '../../scripts/aem.js';
+import { getRootPath } from '@dropins/tools/lib/aem/configs.js';
+import { decorateMain } from '../../scripts/scripts.js';
+import { loadSections } from '../../scripts/aem.js';
 
 /**
  * Loads a fragment.
@@ -19,7 +15,10 @@ import {
  */
 export async function loadFragment(path) {
   if (path && path.startsWith('/')) {
-    const resp = await fetch(`${path}.plain.html`);
+    const root = getRootPath().replace(/\/$/, '');
+    // eslint-disable-next-line no-param-reassign
+    path = path.replace(/(\.plain)?\.html/, '');
+    const resp = await fetch(`${root}${path}.plain.html`);
     if (resp.ok) {
       const main = document.createElement('main');
       main.innerHTML = await resp.text();
@@ -48,8 +47,9 @@ export default async function decorate(block) {
   if (fragment) {
     const fragmentSection = fragment.querySelector(':scope .section');
     if (fragmentSection) {
-      block.closest('.section').classList.add(...fragmentSection.classList);
-      block.closest('.fragment').replaceWith(...fragment.childNodes);
+      block.classList.add(...fragmentSection.classList);
+      block.classList.remove('section');
+      block.replaceChildren(...fragmentSection.childNodes);
     }
   }
 }

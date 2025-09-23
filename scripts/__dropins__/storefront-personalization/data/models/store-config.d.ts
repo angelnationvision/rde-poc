@@ -15,9 +15,9 @@
  * from Adobe.
  *******************************************************************/
 export interface StoreConfigModel {
-    shareActiveSegments: boolean;
-    shareCustomerGroup: boolean;
-    shareAppliedCartRule: boolean;
-    customerAccessTokenLifetime: number;
+  shareActiveSegments: boolean;
+  shareCustomerGroup: boolean;
+  shareAppliedCartRule: boolean;
+  customerAccessTokenLifetime: number;
 }
 //# sourceMappingURL=store-config.d.ts.map

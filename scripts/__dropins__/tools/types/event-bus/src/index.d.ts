@@ -14,40 +14,46 @@ export * from './events-catalog';
  * @property {Function} lastPayload - Returns the last payload of the event.
  */
 export declare class events {
-    static _identifier: string;
-    static _logger: BroadcastChannel | null;
-    static _lastEvent: {
-        [key: string]: {
-            payload: any;
-        };
+  static _identifier: string;
+  static _logger: BroadcastChannel | null;
+  static _lastEvent: {
+    [key: string]: {
+      payload: any;
     };
-    /**
-     * Returns the last payload of the event.
-     * @param event – The event to get the last payload from.
-     * @returns – The last payload of the event.
-     */
-    static lastPayload(event: string): any;
-    /**
-     * Subscribes to an event.
-     * @param event - The event to subscribe to.
-     * @param handler - The event handler.
-     * @param options - Optional configuration for the event handler.
-     */
-    static on<K extends keyof Events>(event: K, handler: (payload: Events[K]) => void, options?: {
-        eager?: boolean;
-    }): {
+  };
+  /**
+   * Returns the last payload of the event.
+   * @param event – The event to get the last payload from.
+   * @returns – The last payload of the event.
+   */
+  static lastPayload(event: string): any;
+  /**
+   * Subscribes to an event.
+   * @param event - The event to subscribe to.
+   * @param handler - The event handler.
+   * @param options - Optional configuration for the event handler.
+   */
+  static on<K extends keyof Events>(
+    event: K,
+    handler: (payload: Events[K]) => void,
+    options?: {
+      eager?: boolean;
+    }
+  ):
+    | {
         off(): void;
-    } | undefined;
-    /**
-     * Emits an event.
-     * @param event - The event to emit.
-     * @param payload - The event payload.
-     */
-    static emit<K extends keyof Events>(event: K, payload: Events[K]): void;
-    /**
-     * Enables or disables event logging.
-     * @param enabled - Whether to enable or disable event logging.
-     */
-    static enableLogger(enabled: boolean): void;
+      }
+    | undefined;
+  /**
+   * Emits an event.
+   * @param event - The event to emit.
+   * @param payload - The event payload.
+   */
+  static emit<K extends keyof Events>(event: K, payload: Events[K]): void;
+  /**
+   * Enables or disables event logging.
+   * @param enabled - Whether to enable or disable event logging.
+   */
+  static enableLogger(enabled: boolean): void;
 }
 //# sourceMappingURL=index.d.ts.map

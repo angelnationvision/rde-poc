@@ -1,0 +1,81 @@
+trigger:
+  branches:
+    include:
+      - feature-eslintfix
+      - dev
+
+pool:
+  name: 'IDC-Linux'
+
+variables:
+  QODANA_IMAGE: 'jetbrains/qodana-js:2025.1'
+  # For commercial linters, uncomment and define QODANA_TOKEN as a secret variable
+  QODANA_TOKEN: $(qodanaLicenseToken) # Your Qodana commercial license token
+  #group: 'nvi-aem-commerce'
+
+stages:
+  - stage: BuildTestAndScan
+    displayName: 'Build Test & Qodana Scan'
+    jobs:
+      - job: QodanaCodeScan
+        displayName: 'Code Quality Scan with Qodana'
+        timeoutInMinutes: 60
+
+        steps:
+          - checkout: self # Checkout your source code
+
+          - task: NodeTool@0
+            displayName: 'Install Node.js (e.g., 18.x)'
+            inputs:
+              versionSpec: '22.x'
+
+          - task: CmdLine@2
+            displayName: 'Run AEM Unit test'
+            inputs:
+              script: |
+                # Ensure you are in the root of your repository where qodana.yaml is
+                echo "Installing dependencies"
+                npm ci
+                # npm install --save-dev @vitest/coverage-v8
+                npm i -D @vitest/coverage-v8
+                echo "Installing dependencies completed"
+                echo "Starting NVI AEM Unit Test"
+                npm run test
+                echo "test completed"
+                pwd
+                ls -lrt coverage/
+                mkdir -p "$(Build.SourcesDirectory)/.qodana/code-coverage/lcov-report"
+                mkdir -p "$(Build.SourcesDirectory)/.qodana/results"
+                ls -lrth coverage/
+                cp -rdp "$(Build.SourcesDirectory)/coverage/lcov-report" "$(Build.SourcesDirectory)/.qodana/code-coverage/lcov-report"
+                cp -a "$(Build.SourcesDirectory)/coverage/." "$(Build.SourcesDirectory)/.qodana/code-coverage/"
+                ls -lrth coverage/lcov-report/
+                # mv coverage ./coverage1-info
+          # - task: Cache@2  # Qodana will open projects with cache faster.
+          #   inputs:
+          #     key: '"$(Build.Repository.Name)" | "$(Build.SourceBranchName)" | "$(Build.SourceVersion)"'
+          #     path: '$(Agent.TempDirectory)/qodana/cache'
+          #     restoreKeys: |
+          #       "$(Build.Repository.Name)" | "$(Build.SourceBranchName)"
+          #       "$(Build.Repository.Name)"
+
+          - task: QodanaScan@2025
+            inputs:
+              uploadResult: true
+              args: '-v,  $(System.DefaultWorkingDirectory)/.qodana/:/data/coverage'
+            env:
+              QODANA_TOKEN: $(QODANA_TOKEN)
+
+          - task: PublishPipelineArtifact@1
+            #  displayName: "Publish LCOV Coverage Report"
+            condition: succeededOrFailed() # Publish even if scan failed
+            inputs:
+              targetPath: '$(Build.SourcesDirectory)/coverage/clover.xml' # Path to your lcov.info file
+              artifact: 'FrontendLCOVCoverage' # Name your artifact (e.g., "FrontendLCOVCoverage")
+              publishLocation: 'pipeline' # Store the artifact in Azure Pipelines (default)
+
+          - task: PublishCodeCoverageResults@2
+            displayName: 'Publish Qodana SARIF Results to ADO'
+            condition: succeededOrFailed() # Publish even if scan failed
+            inputs:
+              summaryFileLocation: '$(Build.SourcesDirectory)/coverage/clover.xml'

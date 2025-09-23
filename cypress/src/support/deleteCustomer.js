@@ -1,5 +1,5 @@
 const deleteCustomer = () => {
-  cy.getUserTokenCookie().then((token) => {
+  cy.getUserTokenCookie().then(token => {
     if (token) {
       const queryDeleteCustomer = `mutation {deleteCustomer}`;
       cy.request({
@@ -14,7 +14,7 @@ const deleteCustomer = () => {
         body: {
           query: JSON.parse(JSON.stringify(queryDeleteCustomer)),
         },
-      }).then((response) => {
+      }).then(response => {
         expect(response).property('status').to.equal(200);
       });
     }
@@ -25,7 +25,7 @@ Cypress.Commands.add('deleteCustomer', deleteCustomer);
 
 // Always delete customer after every test.
 afterEach(() => {
-  if (Cypress.env("isAemAssetsSuite")) {
+  if (Cypress.env('isAemAssetsSuite')) {
     return;
   }
 

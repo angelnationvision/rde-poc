@@ -15,7 +15,7 @@
  * from Adobe.
  *******************************************************************/
 export type Price = {
-    value: number;
-    currency: string;
+  value: number;
+  currency: string;
 };
 //# sourceMappingURL=price.d.ts.map

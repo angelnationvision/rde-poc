@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'preact';
 
 interface IntlProviderProps {
-    children?: any;
+  children?: any;
 }
 export declare const Provider: FunctionComponent<IntlProviderProps>;
 export {};

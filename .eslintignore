@@ -3,9 +3,13 @@ scripts/acdl
 tools/picker
 tools/segments
 tools/pdp-metadata
+blocks/a-archive
 scripts/__dropins__
 scripts/commerce-events-collector.js
 scripts/commerce-events-sdk.js
+scheduler-module.js
 plugins/
 cypress/
 dompurify.min.js
+*.min.js
+*.json

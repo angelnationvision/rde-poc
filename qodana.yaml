@@ -1,0 +1,31 @@
+# qodana.yaml
+version: '1.0'
+# Configure which inspections to run
+# profile: "qodana.recommended" # Use recommended profile
+# profile:
+#   name: "Default" # Or define custom inspections below
+# coverage:
+#   report-paths:
+#     - ./coverage/cobertura-coverage.xml
+#     - ./coverage/lcov.info
+
+# include:
+#   - "blocks/**/*.js"
+#   - "blocks/**/*.ts"
+#   - "scripts/**/*.js"
+#   - "scripts/**/**/**/**/**/*.ts"
+#   - "clientlibs/**/*.js"
+#   - "clientlibs/**/*.ts"
+
+# Exclude directories or files from analysis
+exclude:
+  - name: All
+    paths:
+      - blocks/a-archive
+      - cypress
+      - plugins
+      - scripts
+      - vitest.config.ts
+      - postinstall.js
+      - azure-pipelines.yml
+      - blocks/product-list-page-custom/htm.js

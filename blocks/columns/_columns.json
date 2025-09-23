@@ -1,15 +1,28 @@
 {
   "definitions": [
     {
-      "title": "Columns",
+      "title": "Columns - Test",
       "id": "columns",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/columns/v1/columns",
             "template": {
-              "columns": "2",
-              "rows": "1"
+              "columns": "2"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Column - Test",
+      "id": "column",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/columns/v1/columns",
+            "template": {
+              "columns": "2"
             }
           }
         }
@@ -25,14 +38,26 @@
           "valueType": "number",
           "name": "columns",
           "value": "",
-          "label": "Columns"
+          "label": "Columns Count"
         },
         {
           "component": "text",
           "valueType": "number",
-          "name": "rows",
+          "name": "columns",
           "value": "",
-          "label": "Rows"
+          "label": "Second Item"
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
         }
       ]
     }
@@ -40,18 +65,11 @@
   "filters": [
     {
       "id": "columns",
-      "components": [
-        "column"
-      ]
+      "components": ["column", "title-nvi"]
     },
     {
       "id": "column",
-      "components": [
-        "text",
-        "image",
-        "button",
-        "title"
-      ]
+      "components": ["text-nvi", "image", "button-nvi", "title-nvi"]
     }
   ]
 }

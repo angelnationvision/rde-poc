@@ -1,0 +1,52 @@
+# GitHub Sync pipeline
+# Start with a minimal pipeline that can customize to sync code from all ADO branches.
+# Add steps that codecheckout, sync, and more:
+
+trigger:
+  branches:
+    include:
+      - dev # Trigger on merges to the 'dev' branch
+      - qa # Trigger on merges to the 'qa' branch
+      - main # Trigger on merges to the 'main' branch
+      - feature* # Trigger on commit to the any 'feature*' branch
+
+pool:
+  name: 'IDC-Linux'
+
+variables:
+  - group: 'nvi-aem-commerce'
+
+steps:
+  - checkout: self
+
+  - script: |
+      # set -e
+      git config user.email "PSrikanth@nationalvision.com"
+      git config user.name "$(GITHUB_USERNAME)" 
+
+      # Add GitHub as a remote
+      git clone https://$(ADO_USERNAME):$(ADO_PAT)@$(ADO_REPO) ado_repo
+      cd ado_repo
+      pwd
+      ls 
+      # # Get the name of the branch that triggered the pipeline
+      # # This will be 'dev', 'qa', or 'master' in this case
+      TRIGGER_BRANCH=$(Build.SourceBranchName)
+      SYNC_BRANCH=${TRIGGER_BRANCH##refs/heads/}
+
+      git checkout "$SYNC_BRANCH"
+      git pull origin "$SYNC_BRANCH"
+      pwd
+      ls 
+      git remote add github_mirror https://$(GITHUB_USERNAME):$(GITHUB_PAT)@github.com/National-Vision/$(GITHUB_REPO).git 
+      pwd
+      ls -lh
+      git fetch origin --prune
+      # Fetch all branches and tags from the Azure DevOps repository (origin)
+      # git fetch origin --prune --tags
+      git fetch --all
+
+
+      git push github_mirror "$SYNC_BRANCH":"$SYNC_BRANCH" --force
+
+    displayName: 'Push Code to GitHub'

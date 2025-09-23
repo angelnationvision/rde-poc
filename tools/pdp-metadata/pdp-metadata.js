@@ -64,7 +64,7 @@ function createHashFromObject(obj, length = 5) {
 
 function getJsonLd(product, { variants }) {
   const amount = product.priceRange?.minimum?.final?.amount || product.price?.final?.amount;
-  const brand = product.attributes.find((attr) => attr.name === 'brand');
+  const brand = product.attributes.find(attr => attr.name === 'brand');
 
   const schema = {
     '@context': 'http://schema.org',
@@ -82,7 +82,7 @@ function getJsonLd(product, { variants }) {
   if (brand?.value) {
     product.brand = {
       '@type': 'Brand',
-        name: brand?.value,
+      name: brand?.value,
     };
   }
 
@@ -93,22 +93,26 @@ function getJsonLd(product, { variants }) {
         '@type': 'Offer',
         price: amount?.value,
         priceCurrency: amount?.currency,
-        availability: product.inStock ? 'http://schema.org/InStock' : 'http://schema.org/OutOfStock',
+        availability: product.inStock
+          ? 'http://schema.org/InStock'
+          : 'http://schema.org/OutOfStock',
       });
     }
   } else {
     // complex products
-    variants.forEach((variant) => {
+    variants.forEach(variant => {
       schema.offers.push({
         '@type': 'Offer',
         name: variant.product.name,
         image: variant.product.images[0]?.url,
         price: variant.product.price.final.amount.value,
         priceCurrency: variant.product.price.final.amount.currency,
-        availability: variant.product.inStock ? 'http://schema.org/InStock' : 'http://schema.org/OutOfStock',
-        sku: variant.product.sku
+        availability: variant.product.inStock
+          ? 'http://schema.org/InStock'
+          : 'http://schema.org/OutOfStock',
+        sku: variant.product.sku,
       });
-    })
+    });
   }
 
   return JSON.stringify(schema);
@@ -119,59 +123,59 @@ function getJsonLd(product, { variants }) {
  * @param {INT} pageNumber - pass the pagenumber to retrieved paginated results
  */
 const getProducts = async (config, pageNumber) => {
-  const response = await performCatalogServiceQuery(
-    config,
-    productSearchQuery,
-    { currentPage: pageNumber },
-  );
+  const response = await performCatalogServiceQuery(config, productSearchQuery, {
+    currentPage: pageNumber,
+  });
 
   if (response && response.productSearch) {
-    const products = await Promise.all(response.productSearch.items.map(async (item) => {
-      const {
-        urlKey,
-        sku,
-        metaDescription,
-        name,
-        metaKeyword,
-        metaTitle,
-        description,
-        shortDescription,
-        lastModifiedAt,
-      } = item.productView;
-      const { url: imageUrl } = item.productView.images?.[0] ?? { url: '' };
+    const products = await Promise.all(
+      response.productSearch.items.map(async item => {
+        const {
+          urlKey,
+          sku,
+          metaDescription,
+          name,
+          metaKeyword,
+          metaTitle,
+          description,
+          shortDescription,
+          lastModifiedAt,
+        } = item.productView;
+        const { url: imageUrl } = item.productView.images?.[0] ?? { url: '' };
 
-      let baseImageUrl = imageUrl;
-      if (baseImageUrl.startsWith('//')) {
-        baseImageUrl = `https:${baseImageUrl}`;
-      }
+        let baseImageUrl = imageUrl;
+        if (baseImageUrl.startsWith('//')) {
+          baseImageUrl = `https:${baseImageUrl}`;
+        }
 
-      let finalDescription = '';
-      if (metaDescription) {
-        finalDescription = metaDescription;
-      } else if (shortDescription) {
-        finalDescription = shortDescription;
-      } else if (description) {
-        finalDescription = description;
-      }
-      finalDescription = he.decode(finalDescription.replace(/(<([^>]+)>)/ig, '')).trim();
-      if (finalDescription.length > 200) {
-        finalDescription = `${finalDescription.substring(0, 197)}...`;
-      }
+        let finalDescription = '';
+        if (metaDescription) {
+          finalDescription = metaDescription;
+        } else if (shortDescription) {
+          finalDescription = shortDescription;
+        } else if (description) {
+          finalDescription = description;
+        }
+        finalDescription = he.decode(finalDescription.replace(/(<([^>]+)>)/gi, '')).trim();
+        if (finalDescription.length > 200) {
+          finalDescription = `${finalDescription.substring(0, 197)}...`;
+        }
 
-      return {
-        productView: {
-          ...item.productView,
-          image: baseImageUrl,
-          path: `/products/${urlKey}/${sku}`,
-          meta_keyword: (metaKeyword !== null) ? metaKeyword : '',
-          meta_title: he.decode((metaTitle !== '') ? metaTitle : name),
-          meta_description: finalDescription,
-          'og:image': baseImageUrl,
-          'og:image:secure_url': baseImageUrl,
-          'last-modified': lastModifiedAt,
-        },
-      };
-    }));
+        return {
+          productView: {
+            ...item.productView,
+            image: baseImageUrl,
+            path: `/products/${urlKey}/${sku}`,
+            meta_keyword: metaKeyword !== null ? metaKeyword : '',
+            meta_title: he.decode(metaTitle !== '' ? metaTitle : name),
+            meta_description: finalDescription,
+            'og:image': baseImageUrl,
+            'og:image:secure_url': baseImageUrl,
+            'last-modified': lastModifiedAt,
+          },
+        };
+      })
+    );
     const totalPages = response.productSearch.page_info.total_pages;
     const currentPage = response.productSearch.page_info.current_page;
     console.log(`Retrieved page ${currentPage} of ${totalPages} pages`);
@@ -189,13 +193,15 @@ const getProducts = async (config, pageNumber) => {
 async function addVariantsToProducts(products, config) {
   const query = `
   query Q {
-      ${products.map((product, i) => {
-        return `
+      ${products
+        .map((product, i) => {
+          return `
         item_${i}: variants(sku: "${product.productView.sku}") {
           ...ProductVariant
         }
-        `
-      }).join('\n')}
+        `;
+        })
+        .join('\n')}
     }${variantsFragment}`;
 
   const response = await performCatalogServiceQuery(config, query, null);
@@ -211,9 +217,9 @@ async function addVariantsToProducts(products, config) {
 
 (async () => {
   const config = await fetch(configFile)
-    .then((res) => res.json())
-    .then((data) => data.public.default)
-    .catch((err) => {
+    .then(res => res.json())
+    .then(data => data.public.default)
+    .catch(err => {
       console.error(err);
       return {};
     });
@@ -237,22 +243,20 @@ async function addVariantsToProducts(products, config) {
     ],
   ];
   products.forEach(({ productView: metaData, variants }) => {
-    data.push(
-      [
-        metaData.path, // URL
-        metaData.meta_title, // title
-        metaData.meta_description, // description
-        metaData.meta_keyword, // keywords
-        'product', // og:type
-        metaData.meta_title, // og:title
-        metaData.meta_description, // og:description
-        `${basePath}${metaData.path}`, // og:url
-        metaData['og:image'], // og:image
-        metaData['og:image:secure_url'], // og:image:secure_url
-        metaData['last-modified'], // last-modified header
-        getJsonLd(metaData, variants), // json-ld
-      ],
-    );
+    data.push([
+      metaData.path, // URL
+      metaData.meta_title, // title
+      metaData.meta_description, // description
+      metaData.meta_keyword, // keywords
+      'product', // og:type
+      metaData.meta_title, // og:title
+      metaData.meta_description, // og:description
+      `${basePath}${metaData.path}`, // og:url
+      metaData['og:image'], // og:image
+      metaData['og:image:secure_url'], // og:image:secure_url
+      metaData['last-modified'], // last-modified header
+      getJsonLd(metaData, variants), // json-ld
+    ]);
   });
 
   // Write XLSX file

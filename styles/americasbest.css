@@ -1,0 +1,74 @@
+@import url('./styles.css');
+
+/* Brand: America's Best */
+
+.americasbest {
+  /* primary colors */
+
+  --primary-color1: #114388;
+  --primary-color2: #9a1a13;
+  --primary-color3: #0b2572;
+
+  /* secondary colors */
+
+  --secondary-color1: #288cdd;
+  --secondary-color2: #b9e1f4;
+  --secondary-color3: #f33d32;
+  --secondary-color4: #f7f6f3;
+
+  /* interaction colors */
+
+  --link-color: #003ae6;
+  --link-hover-color: #1e4b8f;
+  --primary-cta: #0b2572;
+  --primary-cta-hover: #0b1942;
+  --selected: #1a53ff;
+  --secondary-cta: #0b2572;
+  --secondary-cta-hover: #0b1942;
+  --deativated: #a3afc4;
+  --deactivated-secondary: #c7cdd8;
+  --lightest: #0b25571a;
+
+  /* neutral colors */
+  --color-black: #010207;
+  --color-white: #fff;
+  --color-light-gray: #eaeaea;
+  --color-gray: #aaabac;
+
+  /* warm colors */
+  --warm-lightest: #f7f6f3;
+  --warm-lighter: #efede7;
+  --warm-light: #d7d3c3;
+  --warm-middle: #a19571;
+  --warm-dark: #46402f;
+  --warm-darkest: #17150f;
+
+  /* feedback colors */
+  --color-green: #008d46;
+  --color-green-alt: #036131;
+  --color-red: #ce001f;
+  --color-yellow: #ffca1a;
+  --color-pale-green: #a3d6bd;
+  --color-pale-red: #036131;
+  --color-pale-yellow: #eda3ae;
+  --color-neutral: #c5d4f5;
+
+  /* background colors */
+  --background-color: #fff;
+  --background-lighter: #f7f6f3;
+  --background-light: #efede7;
+  --background-dark: #0b2572;
+
+  /* text colors */
+  --text-white: #fff;
+  --text-lighter: #f7f6f3;
+  --text-light: #efede7;
+  --text-medium: #0b2572;
+  --text-dark: #000;
+
+  /* font-family */
+
+  --body-font-family: 'Outerfit-Reg', arial, helvetica, sans-serif;
+  --medium-font-family: 'Outerfit-Medium', arial, helvetica, sans-serif;
+  --heading-font-family: 'Outerfit-Bold', arial, helvetica, sans-serif;
+}

@@ -86,7 +86,9 @@ async function handleUserOrdersRedirects(
     if (checkIsAuthenticated()) {
       window.location.href = rootLink(CUSTOMER_ORDERS_PATH);
     } else if (isTokenProvided) {
-      window.location.href = orderNumber ? rootLink(`${ORDER_STATUS_PATH}?orderRef=${orderNumber}`) : rootLink(ORDER_STATUS_PATH);
+      window.location.href = orderNumber
+        ? rootLink(`${ORDER_STATUS_PATH}?orderRef=${orderNumber}`)
+        : rootLink(ORDER_STATUS_PATH);
     } else {
       window.location.href = rootLink(`${ORDER_STATUS_PATH}?orderRef=${orderRef}`);
     }
@@ -96,13 +98,9 @@ async function handleUserOrdersRedirects(
     if (!orderRef) {
       targetPath = CUSTOMER_ORDERS_PATH;
     } else if (isAccountPage) {
-      targetPath = isTokenProvided
-        ? `${ORDER_DETAILS_PATH}?orderRef=${orderRef}`
-        : null;
+      targetPath = isTokenProvided ? `${ORDER_DETAILS_PATH}?orderRef=${orderRef}` : null;
     } else {
-      targetPath = isTokenProvided
-        ? null
-        : `${CUSTOMER_ORDER_DETAILS_PATH}?orderRef=${orderRef}`;
+      targetPath = isTokenProvided ? null : `${CUSTOMER_ORDER_DETAILS_PATH}?orderRef=${orderRef}`;
     }
   } else {
     // XWalk: prevent redirect on author if there is no valid order/token

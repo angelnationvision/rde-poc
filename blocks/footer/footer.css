@@ -3,18 +3,517 @@ footer {
   font-size: var(--body-font-size-xs);
 }
 
+footer .footer {
+  padding: 24px 16px;
+}
+
+footer .footer .section:nth-child(2) {
+  padding-top: 0;
+}
+
+footer .footer .section:nth-child(2) .default-content-wrapper {
+  margin-top: 24px;
+  text-align: center;
+}
+
+footer .footer-americas-bg {
+  background-color: #0b1b33;
+}
+
+footer .footer-vistaopt-bg {
+  background-color: #21356e;
+}
+
+footer .footer-eyeglass-bg {
+  background-color: #007cba;
+}
+
+footer .footer .default-content-wrapper h2 {
+  font-family: var(--body-font-family);
+  color: var(--background-color) !important;
+  font-size: 48px;
+  font-weight: 900;
+  font-style: normal;
+  line-height: 58px;
+  letter-spacing: -0.48px;
+  text-align: center;
+  margin: 0 0 16px;
+}
+
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
 }
 
 footer .footer p {
   margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+footer .section:nth-child(2) .default-content-wrapper p {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.6px;
+  color: var(--background-color);
+}
+
+@media (width >=900px) {
+  footer .footer .default-content-wrapper h2 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 58px;
+    letter-spacing: -0.48px;
+    text-align: left;
+    margin: 0;
+  }
+
+  footer .footer {
+    padding: 48px 64px;
+  }
+
+  footer .footer .section:nth-child(2) .default-content-wrapper {
+    text-align: left;
+  }
+
+  footer .section p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.6px;
+    color: var(--background-color);
+  }
+
+  footer .footer .section:first-child .default-content-wrapper {
+    width: auto;
+    display: inline-flex;
+    max-width: 50%;
+    flex-direction: column;
+  }
+}
+
+@media (width >=1280px) {
+  footer .footer .section:first-child .default-content-wrapper {
+    width: 50%;
+  }
+
+  footer .footer .default-content-wrapper h2 {
+    text-align: left;
+  }
+}
+
+@media (width >=1920px) {
+  footer .footer .section {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+/* css for multi branding americasbest , eyeglassworld, militaryoptical, vistaoptical*/
+
+body footer .link-list-wrapper.vertical .link-list-detail ul li {
+  margin-bottom: 1rem;
+}
+
+body footer .link-list-wrapper.vertical {
+  padding-right: 0px;
+}
+
+body footer .link-list-wrapper.horizontal {
+  text-align: center;
+}
+
+@media (width > 900px) {
+  body footer .footer .horizontal .link-list-detail ul li {
+    width: 9.5rem;
+  }
+}
+
+.americasbest footer .footer {
+  background-color: #0b2572;
+  font-family: var(--body-font-family);
+}
+
+.americasbest footer .footer h2 {
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 900;
+  font-family: var(--heading-font-family);
+  letter-spacing: normal;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.americasbest footer .link-list-wrapper.vertical .link-list-title {
+  color: #efede7;
+  font-size: 16px;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  letter-spacing: 0.32px;
+  line-height: normal;
+  word-wrap: break-word;
+}
+
+.americasbest footer .link-list-wrapper.vertical .link-list-detail ul li,
+.americasbest footer .link-list-wrapper.vertical .link-list-detail ul li a,
+.americasbest footer .footer .link-list-wrapper.horizontal .link-list-detail ul li {
+  color: #efede7;
+  font-size: 11px;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  line-height: 15.4px;
+  word-wrap: break-word;
+}
+
+.americasbest footer .link-list-container .link-list-wrapper.horizontal {
+  border-block: 1px solid #efede7;
+}
+
+.americasbest footer .footer .horizontal .link-list-detail ul li,
+.americasbest footer .footer .horizontal .link-list-detail ul li a {
+  color: #efede7;
+  font-size: 11px;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  line-height: 15.4px;
+  word-wrap: break-word;
+}
+
+.americasbest footer .section:nth-child(2) .default-content-wrapper p {
+  color: #efede7;
+  font-size: 14px;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  line-height: 19.6px;
+  word-wrap: break-word;
+}
+
+/* css for eyeglassworld*/
+.eyeglassworld footer .footer {
+  background-color: #007cba;
+  font-family: var(--graphik) !important;
+}
+
+.eyeglassworld footer .footer h2 {
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 700;
+  font-family: var(--graphik) !important;
+  letter-spacing: normal;
+  word-wrap: break-word;
+  text-align: left;
+  color: var(--color-white) !important;
+}
+
+.eyeglassworld footer .link-list-wrapper.vertical .link-list-title {
+  color: var(--color-white);
+  font-size: 22px;
+  font-family: var(--graphik) !important;
+  font-weight: 700;
+  line-height: 22px;
+  word-wrap: break-word;
+}
+
+.eyeglassworld footer .link-list-wrapper.vertical .link-list-detail ul li,
+.eyeglassworld footer .link-list-wrapper.vertical .link-list-detail ul li a,
+.eyeglassworld footer .footer .link-list-wrapper.horizontal .link-list-detail ul li {
+  color: var(--color-white);
+  font-size: 16px;
+  font-family: var(--graphik) !important;
+  font-weight: 600;
+  line-height: 22.4px;
+  word-wrap: break-word;
+}
+
+.eyeglassworld footer .link-list-container .link-list-wrapper.horizontal {
+  border-block: 1px solid var(--color-white);
+}
+
+.eyeglassworld footer .footer .horizontal .link-list-detail ul li,
+.eyeglassworld footer .footer .horizontal .link-list-detail ul li a {
+  color: var(--color-white);
+  font-size: 16px;
+  font-family: var(--graphik) !important;
+  font-weight: 600;
+  line-height: 22.4px;
+  word-wrap: break-word;
+}
+
+.eyeglassworld footer .section:nth-child(2) .default-content-wrapper p {
+  color: var(--color-white);
+  font-size: 14px;
+  font-family: var(--graphik) !important;
+  font-weight: 400;
+  line-height: 19.6px;
+  word-wrap: break-word;
+}
+
+/* css for militaryoptical*/
+.militaryoptical footer .footer {
+  background-color: #f3f2ef;
+  font-family: var(--gilroy) !important;
+}
+
+.militaryoptical footer .footer h2 {
+  color: var(--color-black) !important;
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 900;
+  font-family: var(--gilroy) !important;
+  letter-spacing: normal;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.militaryoptical footer .link-list-wrapper.vertical .link-list-title {
+  color: var(--color-black);
+  font-size: 22px;
+  font-family: var(--gilroy) !important;
+  font-weight: 900;
+  line-height: 22px;
+  word-wrap: break-word;
+}
+
+.militaryoptical footer .link-list-wrapper.vertical .link-list-detail ul li,
+.militaryoptical footer .link-list-wrapper.vertical .link-list-detail ul li a,
+.militaryoptical footer .footer .link-list-wrapper.horizontal .link-list-detail ul li {
+  color: var(--color-black);
+  font-size: 16px;
+  font-family: var(--gilroy) !important;
+  font-weight: 400;
+  line-height: 22.4px;
+  word-wrap: break-word;
+}
+
+.militaryoptical footer .link-list-container .link-list-wrapper.horizontal {
+  border-block: 1px solid var(--color-black);
+}
+
+.militaryoptical footer .footer .horizontal .link-list-detail ul li,
+.militaryoptical footer .footer .horizontal .link-list-detail ul li a {
+  color: var(--color-black);
+  font-size: 16px;
+  font-family: var(--gilroy) !important;
+  font-weight: 400;
+  line-height: 22.4px;
+  word-wrap: break-word;
+}
+
+.militaryoptical footer .section:nth-child(2) .default-content-wrapper p {
+  color: var(--color-black);
+  font-size: 11px;
+  font-family: var(--gilroy) !important;
+  font-weight: 400;
+  line-height: 15.4px;
+  word-wrap: break-word;
+}
+
+/* css for vistaoptical*/
+.vistaoptical footer .footer {
+  background-color: #21356e;
+  font-family: var(--myriad-pro) !important;
+}
+
+.vistaoptical footer .footer h2 {
+  color: var(--color-white) !important;
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 900;
+  font-family: var(--myriad-pro) !important;
+  letter-spacing: normal;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.vistaoptical footer .link-list-wrapper.vertical .link-list-title {
+  color: var(--color-white);
+  font-size: 22px;
+  font-family: var(--myriad-pro) !important;
+  font-weight: 900;
+  line-height: 22px;
+  word-wrap: break-word;
+}
+
+.vistaoptical footer .link-list-wrapper.vertical .link-list-detail ul li,
+.vistaoptical footer .link-list-wrapper.vertical .link-list-detail ul li a,
+.vistaoptical footer .footer .link-list-wrapper.horizontal .link-list-detail ul li {
+  color: var(--color-white);
+  font-size: 16px;
+  font-family: var(--myriad-pro) !important;
+  font-weight: 400;
+  line-height: 22.4px;
+  word-wrap: break-word;
+}
+
+.vistaoptical footer .link-list-container .link-list-wrapper.horizontal {
+  border-block: 1px solid var(--color-white);
+}
+
+.vistaoptical footer .footer .horizontal .link-list-detail ul li,
+.vistaoptical footer .footer .horizontal .link-list-detail ul li a {
+  color: var(--color-white);
+  font-size: 16px;
+  font-family: var(--myriad-pro) !important;
+  font-weight: 400;
+  line-height: 22.4px;
+  word-wrap: break-word;
+}
+
+.vistaoptical footer .section:nth-child(2) .default-content-wrapper p {
+  color: var(--color-white);
+  font-size: 11px;
+  font-family: var(--myriad-pro) !important;
+  font-weight: 400;
+  line-height: 15.4px;
+  word-wrap: break-word;
+}
+
+@media (width < 901px) {
+  body footer .footer .link-list-wrapper.horizontal .link-list-detail ul {
+    gap: 1rem;
+  }
+
+  .americasbest footer .footer h2 {
+    font-size: 36px;
+    line-height: 58px;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .americasbest footer .link-list-wrapper.vertical .link-list-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+  }
+
+  .americasbest footer .footer .horizontal .link-list-detail ul li,
+  .americasbest footer .footer .horizontal .link-list-detail ul li a {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  .americasbest footer .section:nth-child(2) .default-content-wrapper p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+
+  /* css for eyeglassworld*/
+  .eyeglassworld footer .footer h2 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+  }
+
+  .eyeglassworld footer .link-list-wrapper.vertical .link-list-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+  }
+
+  .eyeglassworld footer .link-list-wrapper.vertical .link-list-detail ul li,
+  .eyeglassworld footer .link-list-wrapper.vertical .link-list-detail ul li a,
+  .eyeglassworld footer .footer .link-list-wrapper.horizontal .link-list-detail ul li {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+
+  .eyeglassworld footer .footer .horizontal .link-list-detail ul li,
+  .eyeglassworld footer .footer .horizontal .link-list-detail ul li a {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22.4px;
+  }
+
+  .eyeglassworld footer .section:nth-child(2) .default-content-wrapper p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+
+  .eyeglassworld footer .link-list-wrapper.vertical,
+  .eyeglassworld footer .link-list-wrapper.horizontal {
+    border-block: 1px solid var(--color-white);
+  }
+
+  /* css for militaryoptical*/
+  .militaryoptical footer .footer h2 {
+    font-size: 36px;
+    line-height: 58px;
+    font-weight: 900;
+  }
+
+  .militaryoptical footer .link-list-wrapper.vertical .link-list-title {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 22px;
+  }
+
+  .militaryoptical footer .link-list-wrapper.vertical .link-list-detail ul li,
+  .militaryoptical footer .link-list-wrapper.vertical .link-list-detail ul li a,
+  .militaryoptical footer .footer .link-list-wrapper.horizontal .link-list-detail ul li {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+
+  .militaryoptical footer .footer .horizontal .link-list-detail ul li,
+  .militaryoptical footer .footer .horizontal .link-list-detail ul li a {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+
+  .militaryoptical footer .section:nth-child(2) .default-content-wrapper p {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  .militaryoptical footer .link-list-wrapper.vertical .link-list-title::after {
+    color: var(--color-black);
+  }
+
+  .militaryoptical footer .link-list-wrapper.vertical {
+    border-block: 1px solid var(--color-black);
+  }
+
+  /* css for vistaoptical*/
+  .vistaoptical footer .footer h2 {
+    font-size: 36px;
+    line-height: 58px;
+    font-weight: 900;
+  }
+
+  .vistaoptical footer .link-list-wrapper.vertical .link-list-title {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 22px;
+  }
+
+  .vistaoptical footer .link-list-wrapper.vertical .link-list-detail ul li,
+  .vistaoptical footer .link-list-wrapper.vertical .link-list-detail ul li a,
+  .vistaoptical footer .footer .link-list-wrapper.horizontal .link-list-detail ul li {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+
+  .vistaoptical footer .footer .horizontal .link-list-detail ul li,
+  .vistaoptical footer .footer .horizontal .link-list-detail ul li a {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+
+  .vistaoptical footer .section:nth-child(2) .default-content-wrapper p {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  .vistaoptical footer .link-list-wrapper.vertical,
+  .vistaoptical footer .link-list-wrapper.horizontal {
+    border-block: 1px solid var(--color-white);
   }
 }

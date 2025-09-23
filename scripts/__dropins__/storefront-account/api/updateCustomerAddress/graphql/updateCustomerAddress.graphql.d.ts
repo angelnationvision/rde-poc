@@ -14,5 +14,6 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const UPDATE_CUSTOMER_ADDRESS = "\n  mutation UPDATE_CUSTOMER_ADDRESS($id: Int!, $input: CustomerAddressInput) {\n    updateCustomerAddress(id: $id, input: $input) {\n      firstname\n    }\n  }\n";
+export declare const UPDATE_CUSTOMER_ADDRESS =
+  '\n  mutation UPDATE_CUSTOMER_ADDRESS($id: Int!, $input: CustomerAddressInput) {\n    updateCustomerAddress(id: $id, input: $input) {\n      firstname\n    }\n  }\n';
 //# sourceMappingURL=updateCustomerAddress.graphql.d.ts.map

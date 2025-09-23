@@ -1,0 +1,109 @@
+{
+  "definitions": [
+    {
+      "title": "Visual Links",
+      "id": "visuallinks",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Visual Links",
+              "filter": "visuallinks"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Tabs Item",
+      "id": "tabs-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Tab",
+              "model": "tabs-item",
+              "tabName": "Tab Name",
+              "content": "<p>Lorem Ipsum</p>"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "link-list",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Link List",
+          "name": "linkListTab"
+        },
+        {
+          "component": "select",
+          "name": "linkListSelect",
+          "value": "vertical",
+          "label": "Orientation",
+          "valueType": "string",
+          "required": true,
+          "description": "Describes if the link list will be displayed vertically or horizontally.",
+          "options": [
+            {
+              "name": "Vertical",
+              "value": "vertical"
+            },
+            {
+              "name": "Horizontal",
+              "value": "horizontal"
+            }
+          ]
+        },
+        {
+          "component": "text-input",
+          "valueType": "string",
+          "name": "linkListTitle",
+          "label": "Link List Title",
+          "value": "",
+          "description": "Defines the title of the link list."
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "linkListRichText",
+          "value": "",
+          "required": true,
+          "label": "Link List",
+          "description": "Defines the links to be displayed in the link list beneath the link list title."
+        },
+        {
+          "component": "text",
+          "label": "Link List Classname",
+          "name": "linkListClassname",
+          "value": "link-list",
+          "valueType": "string",
+          "hidden": true
+        },
+        {
+          "component": "tab",
+          "name": "analytics_tab",
+          "label": "Analytics"
+        },
+        {
+          "component": "text-input",
+          "name": "analytics_label",
+          "label": "Analytics Label",
+          "valueType": " "
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "visuallinks",
+      "components": ["link-list"]
+    }
+  ]
+}

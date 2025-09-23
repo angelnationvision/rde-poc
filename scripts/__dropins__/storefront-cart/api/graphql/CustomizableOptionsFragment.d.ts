@@ -14,5 +14,6 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const CUSTOMIZABLE_OPTIONS_FRAGMENT = "\n  fragment CUSTOMIZABLE_OPTIONS_FRAGMENT on SelectedCustomizableOption {\n    type\n    customizable_option_uid\n    label\n    is_required\n    values {\n      label\n      value\n      price {\n        type\n        units\n        value\n      }\n    }\n  }\n";
+export declare const CUSTOMIZABLE_OPTIONS_FRAGMENT =
+  '\n  fragment CUSTOMIZABLE_OPTIONS_FRAGMENT on SelectedCustomizableOption {\n    type\n    customizable_option_uid\n    label\n    is_required\n    values {\n      label\n      value\n      price {\n        type\n        units\n        value\n      }\n    }\n  }\n';
 //# sourceMappingURL=CustomizableOptionsFragment.d.ts.map

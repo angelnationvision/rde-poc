@@ -1,0 +1,36 @@
+footer .icon-link-list-container .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+footer .icon-link-list-wrapper .icon-link-list-container {
+  display: flex;
+  gap: 2rem;
+  padding: 20px 0;
+  justify-content: center;
+}
+
+footer .icon-link-list-container .icon .icon-container {
+  display: inline-flex;
+}
+
+footer .icon-link-list-container .icon .icon-container img {
+  height: 1.5rem;
+  width: auto;
+}
+
+/* tablet */
+@media (width >= 768px) {
+    footer .icon-link-list-wrapper .icon-link-list-container {
+    padding: 0;
+    padding-top: 1rem; 
+    justify-content: unset; 
+}
+}
+
+@media (width >= 1280px) {
+
+  footer .icon-link-list-container {
+    padding: 0;
+  }
+}

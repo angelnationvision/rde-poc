@@ -1,0 +1,23 @@
+@import url('./styles.css');
+.eyeglassworld {
+  --primary-cta: #e12726;
+  --primary-cta-hover: #ad1c22;
+  --selected: #003e5e;
+  --secondary-cta: #007cba;
+  --secondary-cta-hover: #006395;
+  --link-color: #007cba;
+  --link-hover-color: #006395;
+  --deativated: #57c5c5;
+  --deactivated-secondary: #bbdcec;
+  --lightest: #e12726;
+
+  --primary-color1: ##e12726;
+  --primary-color2: #007cba;
+  --primary-color3: #58595b;
+  --secondary-color1: #6ba43a;
+  --secondary-color2: #ff4d00;
+  --secondary-color3: #7b6756;
+  --secondary-color4: #ff9900;
+
+  --font-family: 'Graphik-Regular', roboto, roboto-fallback, sans-serif;
+}

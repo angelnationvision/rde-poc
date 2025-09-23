@@ -1,8 +1,0 @@
-mountpoints:
-  /:
-    url: "https://author-p154460-e1678495.adobeaemcloud.com/bin/franklin.delivery/angelnationvision/rde-poc/main"
-    type: "markup"
-    suffix: ".html"
-folders:
-  /products/: /products/default
-  

@@ -15,46 +15,46 @@
  * from Adobe.
  *******************************************************************/
 export declare const billingAddressFixture: {
-    firstname: string;
-    lastname: string;
-    company: null;
-    street: string[];
-    city: string;
-    postcode: string;
-    vat_id: null;
-    country: {
-        code: string;
-        label: string;
-    };
-    region: {
-        region_id: number;
-        code: string;
-        label: string;
-    };
-    telephone: string;
-    custom_attributes: {}[];
-    prefix: string;
-    suffix: string;
-    middlename: string;
-    fax: string;
+  firstname: string;
+  lastname: string;
+  company: null;
+  street: string[];
+  city: string;
+  postcode: string;
+  vat_id: null;
+  country: {
+    code: string;
+    label: string;
+  };
+  region: {
+    region_id: number;
+    code: string;
+    label: string;
+  };
+  telephone: string;
+  custom_attributes: {}[];
+  prefix: string;
+  suffix: string;
+  middlename: string;
+  fax: string;
 };
 export declare const ukBillingAddressFixture: {
-    firstname: string;
-    lastname: string;
-    company: null;
-    street: string[];
-    city: string;
-    postcode: string;
-    vat_id: null;
-    country: {
-        code: string;
-        label: string;
-    };
-    telephone: string;
-    custom_attributes: {}[];
-    prefix: string;
-    suffix: string;
-    middlename: string;
-    fax: string;
+  firstname: string;
+  lastname: string;
+  company: null;
+  street: string[];
+  city: string;
+  postcode: string;
+  vat_id: null;
+  country: {
+    code: string;
+    label: string;
+  };
+  telephone: string;
+  custom_attributes: {}[];
+  prefix: string;
+  suffix: string;
+  middlename: string;
+  fax: string;
 };
 //# sourceMappingURL=billing-address.d.ts.map

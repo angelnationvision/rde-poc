@@ -1,47 +1,70 @@
-// eslint-disable-next-line import/no-unresolved
 import { toClassName } from '../../scripts/aem.js';
+import { loadFragment } from '../fragment/fragment.js';
 
 export default async function decorate(block) {
-  // build tablist
-  const tablist = document.createElement('div');
-  tablist.className = 'tabs-list';
-  tablist.setAttribute('role', 'tablist');
+  const tabs = [...block.children];
+  console.log(tabs);
 
-  // decorate tabs and tabpanels
-  const tabs = [...block.children].map((child) => child.firstElementChild);
-  tabs.forEach((tab, i) => {
-    const id = toClassName(tab.textContent);
+  for (let index = 0; index < tabs.length; index++) {
+    const tabWrapper = tabs[index];
+    const [titleDiv, linkDiv] = [...tabWrapper.children];
 
-    // decorate tabpanel
-    const tabpanel = block.children[i];
-    tabpanel.className = 'tabs-panel';
-    tabpanel.id = `tabpanel-${id}`;
-    tabpanel.setAttribute('aria-hidden', !!i);
-    tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
-    tabpanel.setAttribute('role', 'tabpanel');
+    if (!titleDiv || !linkDiv) continue;
 
-    // build tab button
+    const id = toClassName(titleDiv.textContent.trim());
+    const linkEl = linkDiv.querySelector('a');
+    const tabUrl = linkEl?.getAttribute('href') || linkEl?.getAttribute('title');
+    linkDiv?.remove();
+
+    tabWrapper.className = 'tabs-panel';
+    tabWrapper.id = `tabpanel-${id}`;
+    tabWrapper.setAttribute('role', 'tabpanel');
+    tabWrapper.setAttribute('aria-hidden', true);
+
+    if (tabUrl) {
+      const contentHtml = await loadFragment(tabUrl);
+      const contentContainer = document.createElement('div');
+      contentContainer.className = 'tab-panel-content';
+      if (contentHtml instanceof HTMLElement) {
+        contentContainer.appendChild(contentHtml);
+      } else if (typeof contentHtml === 'string') {
+        contentContainer.innerHTML = contentHtml;
+      }
+      tabWrapper.appendChild(contentContainer);
+    }
+
     const button = document.createElement('button');
     button.className = 'tabs-tab';
     button.id = `tab-${id}`;
-    button.innerHTML = tab.innerHTML;
+    button.innerHTML = titleDiv.innerHTML;
     button.setAttribute('aria-controls', `tabpanel-${id}`);
-    button.setAttribute('aria-selected', !i);
+    button.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
     button.setAttribute('role', 'tab');
     button.setAttribute('type', 'button');
+    titleDiv.remove();
+
     button.addEventListener('click', () => {
-      block.querySelectorAll('[role=tabpanel]').forEach((panel) => {
-        panel.setAttribute('aria-hidden', true);
-      });
-      tablist.querySelectorAll('button').forEach((btn) => {
-        btn.setAttribute('aria-selected', false);
-      });
-      tabpanel.setAttribute('aria-hidden', false);
+      block.querySelectorAll('[role=tabpanel]').forEach((p) => p.setAttribute('aria-hidden', true));
+      block
+        .querySelectorAll('button[role=tab]')
+        .forEach((b) => b.setAttribute('aria-selected', false));
+      tabWrapper.setAttribute('aria-hidden', false);
       button.setAttribute('aria-selected', true);
     });
-    tablist.append(button);
-    tab.remove();
-  });
 
-  block.prepend(tablist);
+    let tablistWrapper = block.querySelector('.tabs-list');
+    if (!tablistWrapper) {
+      tablistWrapper = document.createElement('div');
+      tablistWrapper.className = 'tabs-list';
+      tablistWrapper.setAttribute('role', 'tablist');
+      block.prepend(tablistWrapper);
+    }
+
+    tablistWrapper.appendChild(button);
+
+    if (index === 0) {
+      button.setAttribute('aria-selected', 'true');
+      tabWrapper.setAttribute('aria-hidden', 'false');
+    }
+  }
 }

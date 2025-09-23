@@ -29,7 +29,8 @@ const e = `
       }
     }
   }
-`, _ = `
+`,
+  _ = `
   fragment CUSTOMIZABLE_OPTIONS_FRAGMENT on SelectedCustomizableOption {
     type
     customizable_option_uid
@@ -45,7 +46,9 @@ const e = `
       }
     }
   }
-`, a = ``, t = `fragment APPLIED_GIFT_CARDS_FRAGMENT on AppliedGiftCard {
+`,
+  a = ``,
+  t = `fragment APPLIED_GIFT_CARDS_FRAGMENT on AppliedGiftCard {
   __typename
   code
   applied_balance {
@@ -57,12 +60,14 @@ const e = `
     currency
   }
   expiration_date
-}`, r = `fragment GIFT_MESSAGE_FRAGMENT on GiftMessage {
+}`,
+  r = `fragment GIFT_MESSAGE_FRAGMENT on GiftMessage {
   __typename
   from
   to
   message
-}`, i = (`fragment GIFT_WRAPPING_FRAGMENT on GiftWrapping {
+}`,
+  i = `fragment GIFT_WRAPPING_FRAGMENT on GiftWrapping {
   __typename
   uid
   design
@@ -73,7 +78,8 @@ const e = `
     value
     currency
   }
-}`), n = `fragment AVAILABLE_GIFT_WRAPPING_FRAGMENT on GiftWrapping {
+}`,
+  n = `fragment AVAILABLE_GIFT_WRAPPING_FRAGMENT on GiftWrapping {
   __typename
   uid
   design
@@ -85,7 +91,8 @@ const e = `
     currency
     value
   }
-}`, l = `fragment CART_ITEM_FRAGMENT on CartItemInterface {
+}`,
+  l = `fragment CART_ITEM_FRAGMENT on CartItemInterface {
   __typename
   uid
   quantity
@@ -258,13 +265,16 @@ const e = `
     }
     is_available
   }
+  right_quantity
+  left_quantity
 }
 ${e}
 ${_}
 ${a}
 ${i}
 ${r}
-${n}`, u = `fragment CART_FRAGMENT on Cart {
+${n}`,
+  u = `fragment CART_FRAGMENT on Cart {
   id
   total_quantity
   is_virtual
@@ -369,11 +379,11 @@ ${n}`, u = `fragment CART_FRAGMENT on Cart {
 ${l}
 ${t}`;
 export {
-t as APPLIED_GIFT_CARDS_FRAGMENT,
-n as AVAILABLE_GIFT_WRAPPING_FRAGMENT,
-u as CART_FRAGMENT,
-l as CART_ITEM_FRAGMENT,
-a as DOWNLOADABLE_CART_ITEMS_FRAGMENT,
-r as GIFT_MESSAGE_FRAGMENT,
-i as GIFT_WRAPPING_FRAGMENT
+  t as APPLIED_GIFT_CARDS_FRAGMENT,
+  n as AVAILABLE_GIFT_WRAPPING_FRAGMENT,
+  u as CART_FRAGMENT,
+  l as CART_ITEM_FRAGMENT,
+  a as DOWNLOADABLE_CART_ITEMS_FRAGMENT,
+  r as GIFT_MESSAGE_FRAGMENT,
+  i as GIFT_WRAPPING_FRAGMENT,
 };

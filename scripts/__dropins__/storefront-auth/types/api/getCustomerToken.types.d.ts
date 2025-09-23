@@ -15,13 +15,13 @@
  * from Adobe.
  *******************************************************************/
 export interface getCustomerTokenResponse {
-    data: {
-        generateCustomerToken: {
-            token: string | null;
-        };
+  data: {
+    generateCustomerToken: {
+      token: string | null;
     };
-    errors?: {
-        message: string;
-    }[];
+  };
+  errors?: {
+    message: string;
+  }[];
 }
 //# sourceMappingURL=getCustomerToken.types.d.ts.map

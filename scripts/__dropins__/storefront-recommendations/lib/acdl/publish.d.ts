@@ -9,12 +9,12 @@ import { RecommendationUnitModel } from '../../data/models/recommendations-model
  * yOffsetBottom: The y offset of the item from the bottom of the page
  */
 export interface PublishParams {
-    recommendationUnit: RecommendationUnitModel;
-    pagePlacement: string;
-    yOffsetTop: number;
-    yOffsetBottom: number;
-    backupProducts?: number;
-    searchTime?: number;
+  recommendationUnit: RecommendationUnitModel;
+  pagePlacement: string;
+  yOffsetTop: number;
+  yOffsetBottom: number;
+  backupProducts?: number;
+  searchTime?: number;
 }
 /**
  * Publish a recs-unit-render event to the Adobe Client Data Layer (ACDL)

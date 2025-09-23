@@ -1,8 +1,8 @@
 import { Item } from '../data/models/wishlist';
 
 interface ProductLike {
-    sku: string;
-    optionUIDs?: string[];
+  sku: string;
+  optionUIDs?: string[];
 }
 /**
  * Helper function to compare wishlist items by their SKU and selected options

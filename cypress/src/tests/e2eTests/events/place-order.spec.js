@@ -3,9 +3,9 @@ import {
   placeOrder,
   setGuestEmail,
   setGuestShippingAddress,
-} from "../../../actions";
-import { expectsEventWithContext } from "../../../assertions";
-import { customerShippingAddress, products } from "../../../fixtures";
+} from '../../../actions';
+import { expectsEventWithContext } from '../../../assertions';
+import { customerShippingAddress, products } from '../../../fixtures';
 
 /**
  * https://github.com/adobe/commerce-events/blob/main/examples/events/place-order.md
@@ -17,33 +17,29 @@ import { customerShippingAddress, products } from "../../../fixtures";
  * - order -> https://github.com/adobe/commerce-events/blob/main/packages/storefront-events-sdk/src/types/schemas/order.ts
  */
 
-it("is sent on place order button click", () => {
+it('is sent on place order button click', () => {
   // add item to cart
   cy.visit(products.configurable.urlPathWithOptions);
   // add to cart
-  cy.get(".product-details__buttons__add-to-cart button")
-    .should("be.visible")
-    .click();
+  cy.get('.product-details__buttons__add-to-cart button').should('be.visible').click();
   // click the minicart toggle
-  cy.get('button[data-count="1"]').should("be.visible").click();
+  cy.get('button[data-count="1"]').should('be.visible').click();
   // click the checkout button
-  cy.get('#nav div.cart-mini-cart a[href="/checkout"]')
-    .should("be.visible")
-    .click();
+  cy.get('#nav div.cart-mini-cart a[href="/checkout"]').should('be.visible').click();
 
   // fill in the login form
-  const apiMethod = "setGuestEmailOnCart";
-  const urlTest = Cypress.env("graphqlEndPoint");
-  cy.intercept("POST", urlTest, (req) => {
+  const apiMethod = 'setGuestEmailOnCart';
+  const urlTest = Cypress.env('graphqlEndPoint');
+  cy.intercept('POST', urlTest, req => {
     let data = req.body.query;
-    if (data && typeof data == "string") {
+    if (data && typeof data == 'string') {
       if (data.includes(apiMethod)) {
-        req.alias = "setEmailOnCart";
+        req.alias = 'setEmailOnCart';
       }
     }
   });
   setGuestEmail(customerShippingAddress.email);
-  cy.wait("@setEmailOnCart");
+  cy.wait('@setEmailOnCart');
   // fill in the shipping address form
   setGuestShippingAddress(customerShippingAddress, true);
   cy.wait(2000);
@@ -54,21 +50,16 @@ it("is sent on place order button click", () => {
   // click the place order button
   placeOrder();
   // wait until the URL includes '/order-details'
-  cy.url().should("include", "/order-details");
+  cy.url().should('include', '/order-details');
 
-  cy.waitForResource("commerce-events-collector.js").then(() => {
+  cy.waitForResource('commerce-events-collector.js').then(() => {
     cy.window()
-      .its("adobeDataLayer")
-      .then((adobeDataLayer) => {
+      .its('adobeDataLayer')
+      .then(adobeDataLayer => {
         expectsEventWithContext(
-          "place-order",
-          [
-            "pageContext",
-            "storefrontInstanceContext",
-            "shoppingCartContext",
-            "orderContext",
-          ],
-          adobeDataLayer,
+          'place-order',
+          ['pageContext', 'storefrontInstanceContext', 'shoppingCartContext', 'orderContext'],
+          adobeDataLayer
         );
       });
   });

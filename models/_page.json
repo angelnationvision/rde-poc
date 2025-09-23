@@ -5,22 +5,23 @@
       "fields": [
         {
           "component": "text",
+          "name": "template",
+          "label": "Template - Root File",
           "valueType": "string",
-          "name": "jcr:title",
-          "label": "Title"
+          "value": ""
         },
         {
-          "component": "text",
+          "component": "select",
+          "name": "brand",
+          "value": "",
+          "label": "Brand",
           "valueType": "string",
-          "name": "jcr:description",
-          "label": "Description"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "keywords",
-          "multi": true,
-          "label": "Keywords"
+          "options": [
+            { "name": "None", "value": "none" },
+            { "name": "Americs Best", "value": "americasbest" },
+            { "name": "Eyeglass World", "value": "eyeglassworld" },
+            { "name": "Military Optical", "value": "militaryoptical" }
+          ]
         }
       ]
     }

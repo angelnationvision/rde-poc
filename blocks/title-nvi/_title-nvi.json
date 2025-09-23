@@ -1,0 +1,96 @@
+{
+  "definitions": [
+    {
+      "title": "Title NVI",
+      "id": "title-nvi",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/title/v1/title",
+            "template": {
+              "model": "title"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "title",
+      "fields": [
+        {
+          "component": "text",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "value": "",
+          "label": "Title Styles",
+          "description": "",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Heading 1",
+              "value": "heading-1"
+            },
+            {
+              "name": "Heading 2",
+              "value": "heading-2"
+            },
+            {
+              "name": "Heading 3",
+              "value": "heading-3"
+            },
+            {
+              "name": "Heading 4",
+              "value": "heading-4"
+            },
+            {
+              "name": "Subheading",
+              "value": "s-medium"
+            },
+            {
+              "name": "Subheading Bold",
+              "value": "s-bold"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "titleType",
+          "label": "Title Type",
+          "options": [
+            {
+              "name": "h1",
+              "value": "h1"
+            },
+            {
+              "name": "h2",
+              "value": "h2"
+            },
+            {
+              "name": "h3",
+              "value": "h3"
+            },
+            {
+              "name": "h4",
+              "value": "h4"
+            },
+            {
+              "name": "h5",
+              "value": "h5"
+            },
+            {
+              "name": "h6",
+              "value": "h6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

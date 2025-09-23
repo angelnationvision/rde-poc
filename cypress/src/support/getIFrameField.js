@@ -2,7 +2,7 @@ const getIFrameField = (iframe, field) => {
   return getIframeBody(iframe).find(field);
 };
 
-const getIframeDocument = (iframe) => {
+const getIframeDocument = iframe => {
   return (
     cy
       .get(iframe)
@@ -17,7 +17,7 @@ const getIframeDocument = (iframe) => {
   );
 };
 
-const getIframeBody = (iframe) => {
+const getIframeBody = iframe => {
   // get the document
   return (
     getIframeDocument(iframe)

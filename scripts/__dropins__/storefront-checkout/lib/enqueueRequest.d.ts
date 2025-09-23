@@ -1,9 +1,9 @@
 import { ReadonlySignal } from '@dropins/tools/types/elsie/src/lib/signals';
 
 export declare enum QueueName {
-    CartUpdate = "cartUpdate",
-    Default = "default",
-    ShippingEstimate = "shippingEstimate"
+  CartUpdate = 'cartUpdate',
+  Default = 'default',
+  ShippingEstimate = 'shippingEstimate',
 }
 type Request<T> = () => Promise<T>;
 export declare function enqueueRequest<T>(requestFn: Request<T>, name?: QueueName): Promise<T>;

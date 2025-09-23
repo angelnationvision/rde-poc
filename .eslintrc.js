@@ -1,10 +1,6 @@
 module.exports = {
   root: true,
-  extends: [
-    'airbnb-base',
-    'plugin:json/recommended',
-    'plugin:xwalk/recommended',
-  ],
+  extends: 'airbnb-base',
   env: {
     browser: true,
   },
@@ -19,7 +15,7 @@ module.exports = {
     'import/prefer-default-export': 'off', // allow named exports for single exports
     'import/no-cycle': 'off', // allow circular dependencies for browser code
     'import/no-relative-packages': 'off', // allow relative imports for browser code
-    'linebreak-style': ['error', 'unix'], // enforce unix linebreaks
+    'linebreak-style': 'off', // rely on .editorconfig for line endings
     'no-param-reassign': [2, { props: false }], // allow modifying properties of param
     'no-use-before-define': [2, { functions: false }],
     'no-console': [
