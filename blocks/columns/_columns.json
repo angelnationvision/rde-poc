@@ -1,7 +1,7 @@
 {
   "definitions": [
     {
-      "title": "Columns - Test 12:30",
+      "title": "Columns - Test 2pm",
       "id": "columns",
       "plugins": {
         "xwalk": {
@@ -25,23 +25,6 @@
           "name": "columns",
           "value": "",
           "label": "Columns Count"
-        },
-         {
-          "component": "select",
-          "valueType": "string",
-          "name": "columns",
-          "value": "",
-          "label": "Columns Count",
-           "options": [
-          {
-            "name": "1",
-            "value": "1"
-          },
-          {
-            "name": "2",
-            "value": "2"
-          }
-        ]
         },
          {
         "component": "select",
@@ -76,41 +59,7 @@
             "value": "s-bold"
           }
         ]
-      },  
-        {
-        "component": "select",
-        "name": "classes",
-        "value": "",
-        "label": "First Column - Mobile",
-        "description": "",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Heading 1",
-            "value": "firstcol-colspan-1"
-          },
-          {
-            "name": "Heading 2",
-            "value": "firstcol-colspan-2"
-          },
-          {
-            "name": "Heading 3",
-            "value": "firstcol-colspan-3"
-          },
-         {
-            "name": "Heading 4",
-            "value": "firstcol-colspan-4"
-          },
-           {
-            "name": "Subheading",
-            "value": "s-medium"
-          },
-          {
-            "name": "Subheading Bold",
-            "value": "s-bold"
-          }
-        ]
-      },  
+      },
       {
         "component": "select",
         "name": "classes",
@@ -185,27 +134,7 @@
             "value": "s-bold"
           }
         ]
-      },                    
-        {
-          "component": "container",
-          "label": "Second Column",
-          "name": "secondcol",
-          "valueType": "string",
-          "condition": { "===": [{ "var": "columns" }, "2"] },
-          "fields": [
-            {
-              "component": "select",
-              "name": "bgcolor",
-              "value": "white",
-              "label": "Column Span - Desktop",
-              "valueType": "string",
-              "options": [
-                { "name": "CS-Desktop", "value": "cs-dekstop" },
-                { "name": "CS-desktop", "value": "cs-desktop" }
-              ]
-            }
-          ]
-        }
+      }
       ]
     },
     {
