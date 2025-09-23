@@ -1,108 +1,109 @@
 /*Basic Grid Sytem*/
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  display: grid; 
+  grid-template-columns: repeat(12, 1fr); 
   margin: 0 auto;
 }
 
+
 @media (width >= 990px) {
   .colspan-default {
-    grid-column: span 1;
+    grid-column: span 1; 
   }
   .colspan-1 {
-    grid-column: span 1;
+    grid-column: span 1; 
   }
   .colspan-2 {
-    grid-column: span 2;
+    grid-column: span 2; 
   }
   .colspan-3 {
-    grid-column: span 3;
+    grid-column: span 3; 
   }
   .colspan-4 {
-    grid-column: span 4;
+    grid-column: span 4; 
   }
   .colspan-5 {
-    grid-column: span 5;
+    grid-column: span 5; 
   }
   .colspan-6 {
-    grid-column: span 6;
+    grid-column: span 6; 
   }
   .colspan-7 {
-    grid-column: span 7;
+    grid-column: span 7; 
   }
   .colspan-8 {
-    grid-column: span 8;
+    grid-column: span 8; 
   }
   .colspan-9 {
-    grid-column: span 9;
+    grid-column: span 9; 
   }
   .colspan-10 {
-    grid-column: span 10;
+    grid-column: span 10; 
   }
   .colspan-11 {
-    grid-column: span 11;
+    grid-column: span 11; 
   }
   .colspan-12 {
-    grid-column: span 12;
+    grid-column: span 12; 
   }
 }
 
 @media (width <= 990px) {
   .colspan-m-default {
-    grid-column: span 12;
+    grid-column: span 12; 
   }
   .colspan-m-1 {
-    grid-column: span 3;
+    grid-column: span 3; 
   }
   .colspan-m-2 {
-    grid-column: span 6;
+    grid-column: span 6; 
   }
   .colspan-m-3 {
-    grid-column: span 9;
+    grid-column: span 9; 
   }
   .colspan-m-4 {
-    grid-column: span 12;
+    grid-column: span 12; 
   }
 }
 /*Spacing*/
 @media (width <= 990px) {
-  .gap-xsmall {
-    gap: 4px;
-  }
-  .gap-small {
-    gap: 8px;
-  }
-  .gap-med {
-    gap: 16px;
-  }
-  .gap-large {
-    gap: 24px;
-  }
-  .gap-xlarge {
-    gap: 32px;
-  }
-  .gap-xxlarge {
-    gap: 48px;
-  }
+.gap-xsmall {
+    gap: 4px; 
+}
+.gap-small {
+    gap: 8px; 
+}
+.gap-med {
+    gap: 16px; 
+}
+.gap-large {
+    gap: 24px; 
+}
+.gap-xlarge {
+    gap: 32px; 
+}
+.gap-xxlarge {
+    gap: 48px; 
+}
 }
 
 @media (width >= 990px) {
-  .gap-xsmall {
-    gap: 8px;
-  }
-  .gap-small {
-    gap: 16px;
-  }
-  .gap-med {
-    gap: 24px;
-  }
-  .gap-large {
-    gap: 32px;
-  }
-  .gap-xlarge {
-    gap: 48px;
-  }
-  .gap-xxlarge {
-    gap: 64px;
-  }
+.gap-xsmall {
+    gap: 8px; 
+}
+.gap-small {
+    gap: 16px; 
+}
+.gap-med {
+    gap: 24px; 
+}
+.gap-large {
+    gap: 32px; 
+}
+.gap-xlarge {
+    gap: 48px; 
+}
+.gap-xxlarge {
+    gap: 64px; 
+}
 }

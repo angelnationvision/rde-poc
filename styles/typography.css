@@ -5,7 +5,7 @@
 /*Global File used for typography*/
 
 :root {
-  /* font weight */
+   /* font weight */
   --font-weight-900: 900;
   --font-weight-800: 800;
   --font-weight-700: 700;
@@ -18,7 +18,7 @@
   --font-size-heading: 2rem;
   --line-height-base: 1.375rem;
 
-  /* letter spacing */
+    /* letter spacing */
   --letter-spacing-s: 0px;
   --letter-spacing-xxs: -0.8px;
   --letter-spacing-m: 0.32px;
@@ -62,148 +62,142 @@
 
 /*Desktop Viewport*/
 .heading-1 {
-  font-size: 80px;
-  font-style: normal;
-  font-weight: var(--font-weight-900);
-  line-height: 92px;
-  letter-spacing: -0.8px;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: var(--font-weight-900);
+    line-height: 92px;
+    letter-spacing: -0.8px;
 }
 .heading-2 {
-  font-size: 48px;
-  font-style: normal;
-  font-weight: var(--font-weight-900);
-  line-height: 58px;
-  letter-spacing: -0.48px;
-}
+    font-size: 48px;
+    font-style: normal;
+    font-weight: var(--font-weight-900);
+    line-height: 58px;
+    letter-spacing: -0.48px;
+  }
 .heading-3 {
-  font-size: 32px;
-  font-style: normal;
-  font-weight: var(--font-weight-900);
-  line-height: 40px;
-  letter-spacing: -0.32px;
-}
+    font-size: 32px;
+    font-style: normal;
+    font-weight: var(--font-weight-900);
+    line-height: 40px;
+    letter-spacing: -0.32px;
+  }
 .heading-4 {
-  font-size: 24px;
-  font-style: normal;
-  font-weight: var(--font-weight-900);
-  line-height: 32px;
-  letter-spacing: -0.24px;
-}
-/* subtitle */
-.s-medium {
-  font-weight: var(--font-weight-500);
-  font-size: 22px;
-  line-height: 24px;
-  font-style: normal;
-}
+    font-size: 24px;
+    font-style: normal;
+    font-weight: var(--font-weight-900);
+    line-height: 32px;
+    letter-spacing: -0.24px;
+  }
+  /* subtitle */
+  .s-medium {
+    font-weight: var(--font-weight-500);
+    font-size: 22px;
+    line-height: 24px;
+    font-style: normal;
+  }
 
-.s-bold {
-  font-weight: var(--font-weight-900);
-  font-size: 22px;
-  line-height: 22px;
-  font-style: normal;
-}
-/* Big body */
-.b-regular {
-  font-weight: var(--font-weight-400);
-  font-size: 20px;
-  line-height: 24px;
-  font-style: normal;
-}
-body,
-p,
-.b1-regular {
-  color: var(--color-black, #000);
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-400);
-  font-size: 16px;
-  line-height: 22px;
-  font-style: normal;
-}
+  .s-bold {
+    font-weight: var(--font-weight-900);
+    font-size: 22px;
+    line-height: 22px;
+    font-style: normal;
+  }
+  /* Big body */
+  .b-regular {
+    font-weight: var(--font-weight-400);
+    font-size: 20px;
+    line-height: 24px;
+    font-style: normal;
+  }
+  body, p, .b1-regular {
+    color: var(--color-black, #000);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-400);
+    font-size: 16px;
+    line-height: 22px;
+    font-style: normal;
+  }
 
-.b1-bold {
-  font-weight: var(--font-weight-900);
-  font-size: 16px;
-  line-height: 22.4px;
-  font-style: normal;
-}
+  .b1-bold {
+    font-weight: var(--font-weight-900);
+    font-size: 16px;
+    line-height: 22.4px;
+    font-style: normal;
+  }
 
-.b2-regular {
-  font-weight: var(--font-weight-400);
-  font-size: 14px;
-  line-height: 19.6px;
-  font-style: normal;
-}
+  .b2-regular {
+    font-weight: var(--font-weight-400);
+    font-size: 14px;
+    line-height: 19.6px;
+    font-style: normal;
+  }
 
-.b2-bold {
-  font-weight: var(--font-weight-900);
-  font-size: 14px;
-  line-height: 19.6px;
-  font-style: normal;
-}
+  .b2-bold {
+    font-weight: var(--font-weight-900);
+    font-size: 14px;
+    line-height: 19.6px;
+    font-style: normal;
+  }
 
-.b3-regular {
-  font-weight: var(--font-weight-400);
-  font-size: 14px;
-  line-height: 19.6px;
-  font-style: normal;
-}
+  .b3-regular {
+    font-weight: var(--font-weight-400);
+    font-size: 14px;
+    line-height: 19.6px;
+    font-style: normal;
+  }
 
-.b3-bold {
-  font-weight: var(--font-weight-900);
-  font-size: 14px;
-  line-height: 19.6px;
-  font-style: normal;
-}
+  .b3-bold {
+    font-weight: var(--font-weight-900);
+    font-size: 14px;
+    line-height: 19.6px;
+    font-style: normal;
+  }
 
-.button-medium {
-  font-size: 14px;
-  font-weight: var(--font-weight-800);
-  line-height: 19.6px;
-  font-style: normal;
-}
-/* footnotes */
-.f-regular {
-  font-weight: var(--font-weight-400);
-  font-size: 11px;
-  line-height: 15.4px;
-  font-style: normal;
-}
-.f-bold {
-  font-weight: var(--font-weight-900);
-  font-size: 11px;
-  line-height: 15.4px;
-  font-style: normal;
-}
-/* Link */
-.link {
-  font-weight: var(--font-weight-800);
-  font-size: 16px;
-  line-height: normal;
-  font-style: normal;
-}
+  .button-medium {
+    font-size: 14px;
+    font-weight: var(--font-weight-800);
+    line-height: 19.6px;
+    font-style: normal;
+  }
+   /* footnotes */
+  .f-regular {
+    font-weight: var(--font-weight-400);
+    font-size: 11px;
+    line-height: 15.4px;
+    font-style: normal;
+  }
+  .f-bold {
+    font-weight: var(--font-weight-900);
+     font-size: 11px;
+    line-height: 15.4px;
+    font-style: normal;
+  }
+  /* Link */
+  .link {
+    font-weight: var(--font-weight-800);
+    font-size: 16px;
+    line-height: normal;
+    font-style: normal;
+  }
 
 /*Mobile viewport*/
-@media (width <= 990px) {
-  h1,
-  .heading-1 {
+ @media (width <= 900px) {
+  h1, .heading-1 {
     font-size: 64px;
     letter-spacing: -0.64px;
   }
 
-  h2,
-  .heading-2 {
+  h2, .heading-2 {
     font-size: 36px;
     letter-spacing: -0.36px;
   }
 
-  h3,
-  .heading-3 {
+  h3, .heading-3 {
     font-size: 28px;
     letter-spacing: -0.28px;
   }
-  h4,
-  .heading-4 {
+  h4, .heading-4 {
     font-size: 22px;
     letter-spacing: -0.22px;
   }
@@ -220,7 +214,7 @@ p,
   /* Big body */
   .b-regular {
     font-size: 18px;
-  }
+}
   .b3-regular {
     font-size: 12px;
     line-height: 16.8px;
@@ -229,7 +223,7 @@ p,
   .b3-bold {
     font-size: 12px;
     line-height: 16.8px;
-  }
+ }
 
   .button-medium {
     font-size: 14px;
@@ -239,13 +233,16 @@ p,
   .f-regular {
     font-size: 10px;
     line-height: 14px;
-  }
+   }
   .f-bold {
-    font-size: 10px;
+     font-size: 10px;
     line-height: 14px;
-  }
+}
   /* Link */
   .link {
     font-size: 14px;
   }
 }
+
+
+

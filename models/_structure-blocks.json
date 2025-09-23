@@ -1,12 +1,14 @@
 [
   "breadcrumb",
-  "fragment",
-  "icon-link-list",
-  "link-list",
-  "icon",
-  "header-carousel",
-  "header-myaccount",
-  "header-search",
-  "header-favorite-icon",
-  "navigation"
+      "fragment",
+      "icon-link-list",
+      "link-list",
+      "icon",
+      "header-carousel",
+      "header-myaccount",
+      "header-search",
+      "header-favorite-icon",
+      "navigation"
 ]
+
+    

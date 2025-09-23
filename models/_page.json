@@ -4,13 +4,13 @@
       "id": "page-metadata",
       "fields": [
         {
-          "component": "text",
-          "name": "template",
-          "label": "Template - Root File",
-          "valueType": "string",
-          "value": ""
-        },
-        {
+        "component": "text",
+        "name": "template",
+        "label": "Template - Root File",
+        "valueType": "string",
+        "value": ""
+      },
+      {
           "component": "select",
           "name": "brand",
           "value": "",

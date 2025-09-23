@@ -15,38 +15,38 @@
   ],
   "models": [
     {
-      "component": "select",
-      "name": "classes",
-      "value": "",
-      "label": "Teaser options",
-      "description": "",
-      "valueType": "string",
-      "options": [
-        {
-          "name": "Heading 1",
-          "value": "heading-1"
-        },
-        {
-          "name": "Heading 2",
-          "value": "heading-2"
-        },
-        {
-          "name": "Heading 3",
-          "value": "heading-3"
-        },
-        {
-          "name": "Heading 4",
-          "value": "heading-4"
-        },
-        {
-          "name": "Subheading",
-          "value": "s-medium"
-        },
-        {
-          "name": "Subheading Bold",
-          "value": "s-bold"
-        }
-      ]
-    }
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Teaser options",
+        "description": "",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Heading 1",
+            "value": "heading-1"
+          },
+          {
+            "name": "Heading 2",
+            "value": "heading-2"
+          },
+          {
+            "name": "Heading 3",
+            "value": "heading-3"
+          },
+         {
+            "name": "Heading 4",
+            "value": "heading-4"
+          },
+           {
+            "name": "Subheading",
+            "value": "s-medium"
+          },
+          {
+            "name": "Subheading Bold",
+            "value": "s-bold"
+          }
+        ]
+      }
   ]
 }

@@ -19,10 +19,10 @@
         {
           "...": "../blocks/columns/_*.json#/definitions"
         },
-        {
+         {
           "...": "../blocks/embed/_*.json#/definitions"
-        },
-        {
+        }, 
+         {
           "...": "../blocks/linksidebar/_*.json#/definitions"
         },
         {
@@ -31,21 +31,21 @@
         {
           "...": "../blocks/relatedarticles/_*.json#/definitions"
         },
-        {
+       {
           "...": "../blocks/table/_*.json#/definitions"
         },
         {
           "...": "../blocks/tabs/_*.json#/definitions"
         },
         {
-          "...": "../blocks/text-nvi/_*.json#/definitions"
+           "...": "../blocks/text-nvi/_*.json#/definitions"
         },
         {
           "...": "../blocks/title-nvi/_*.json#/definitions"
         },
         {
           "...": "../blocks/video/_*.json#/definitions"
-        }
+        }       
       ]
     },
     {
@@ -57,17 +57,17 @@
         }
       ]
     },
-    {
+     {
       "title": "Image",
       "id": "imageblock",
       "components": [
-        {
+         {
           "...": "../blocks/cards/_*.json#/definitions"
         },
-        {
+         {
           "...": "../blocks/hero/_*.json#/definitions"
         },
-        {
+         {
           "...": "./_image.json#/definitions"
         },
         {
@@ -76,7 +76,7 @@
         {
           "...": "../blocks/producttile/_*.json#/definitions"
         },
-        {
+          {
           "...": "../blocks/teaser/_*.json#/definitions"
         },
         {
@@ -94,7 +94,7 @@
         {
           "...": "../blocks/breadcrumb/_*.json#/definitions"
         },
-        {
+         {
           "...": "../blocks/icon-link-list/_*.json#/definitions"
         },
         {
@@ -120,7 +120,7 @@
         }
       ]
     },
-    {
+     {
       "title": "Custom",
       "id": "custom",
       "components": [
@@ -130,11 +130,8 @@
         {
           "...": "../blocks/form/_*.json#/definitions"
         },
-        {
+          {
           "...": "../blocks/sitemap/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/multi-columns/_*.json#/definitions"
         }
       ]
     },
@@ -147,5 +144,6 @@
         }
       ]
     }
+
   ]
 }

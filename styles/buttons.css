@@ -7,8 +7,7 @@
 .button a.button.disabled {
   pointer-events: none;
 }
-a.button:any-link,
-button {
+a.button:any-link, button {
   box-sizing: border-box;
   display: inline-flex;
   max-width: 100%;
@@ -33,81 +32,60 @@ button {
   font-size: 16px;
 }
 
-/* Primary */
-a.button,
-button,
-a.button.primary,
-button.primary {
-  background-color: var(--primary-cta);
-  color: var(--color-white);
-}
-a.button:hover,
-button:hover,
-a.button.primary:hover,
-button.primary:hover {
-  background-color: var(--primary-cta-hover);
-  color: var(--color-white);
-}
-a.button:disabled,
-button:disabled,
-a.button.primary:disabled,
-button.primary:disabled {
-  background-color: var(--link-color);
-  color: var(--color-white);
-  opacity: 0.3;
-}
-a.button:focus,
-button:focus,
-a.button.primary:focus,
-button.primary:focus {
-  background-color: var(--link-color);
-  color: var(--color-white);
-  outline: 2px solid var(--link-color);
-  outline-offset: 4px;
-  border: 2px solid var(--link-color);
-  height: 58px;
-}
-
-@media (width <= 768px) {
-  a.button,
-  button,
-  a.button.primary,
-  button.primary {
-    padding: 0.75em 1.5em;
+ /* Primary */
+  a.button, button, a.button.primary, button.primary {
+    background-color: var(--primary-cta);
+    color: var(--color-white);
   }
-}
+  a.button:hover, button:hover, a.button.primary:hover, button.primary:hover {
+     background-color: var(--primary-cta-hover);
+    color: var(--color-white);
+  }
+  a.button:disabled, button:disabled, a.button.primary:disabled, button.primary:disabled {
+    background-color: var(--link-color);
+    color: var(--color-white);
+    opacity: 0.3;
+  }
+  a.button:focus, button:focus, a.button.primary:focus, button.primary:focus {
+    background-color: var(--link-color);
+    color: var(--color-white);
+    outline: 2px solid var(--link-color);
+    outline-offset: 4px;
+     border: 2px solid var(--link-color);
+    height: 58px;
+  }
 
-/* Secondary Button */
-a.button.secondary,
-button.secondary,
-.secondary .button-container a.button,
-button.secondary {
-  background-color: unset;
-  border: 2px solid var(--link-color);
-  color: var(--link-color);
-  height: 58px;
-}
-a.button.secondary:hover,
-button.secondary:hover {
-  background-color: unset;
-  border: 2px solid var(--link-hover-color);
-  color: var(--link-hover-color);
-}
-a.button.secondary:disabled,
-button.secondary:disabled {
-  background-color: unset;
-  border: 2px solid var(--link-color);
-  color: var(--link-color);
-  opacity: 0.3;
-}
-a.button.secondary:focus,
-button.secondary:focus {
-  background-color: unset;
-  border: 2px solid var(--link-color);
-  color: var(--link-color);
-  outline: 2px solid var(--link-color);
-  outline-offset: 2px;
-}
+  @media (width <= 768px) {
+    a.button, button, a.button.primary, button.primary {
+      padding: 0.75em 1.5em;
+    }
+  }
+
+  /* Secondary Button */
+  a.button.secondary, button.secondary, .secondary .button-container a.button, button.secondary {
+    background-color: unset;
+    border: 2px solid var(--link-color);
+    color: var(--link-color);
+      height: 58px;
+  }
+  a.button.secondary:hover, button.secondary:hover {
+    background-color: unset;
+    border: 2px solid var(--link-hover-color);
+    color: var(--link-hover-color);
+  }
+  a.button.secondary:disabled, button.secondary:disabled {
+    background-color: unset;
+    border: 2px solid var(--link-color);
+    color: var(--link-color);
+    opacity: 0.3;
+  }
+  a.button.secondary:focus, button.secondary:focus {
+    background-color: unset;
+    border: 2px solid var(--link-color);
+    color: var(--link-color);
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+  }
 .secondary .button-container .button:hover,
 button.secondary:hover {
   background-color: unset;
@@ -115,13 +93,12 @@ button.secondary:hover {
   color: var(--link-hover-color);
 }
 
-@media (width <= 768px) {
-  a.button.secondary,
-  button.secondary {
-    padding: 0.75em 1.5em;
+  @media (width <= 768px) {
+    a.button.secondary, button.secondary {
+      padding: 0.75em 1.5em;
+    }
   }
-}
-
+  
 a.button.secondary.disabled,
 button.secondary.disabled {
   background-color: unset;
@@ -137,18 +114,16 @@ button.secondary.disabled {
   }
 }
 
-/* Input Button - primary-variant*/
-.primary-variant .button-container a.button,
-.primary-variant .button-container a.button:active:hover,
-button.primary-variant {
-  background-color: var(--primary-cta);
+  /* Input Button - primary-variant*/
+  .primary-variant .button-container a.button, .primary-variant .button-container a.button:active:hover, button.primary-variant {
+  background-color: var(--primary-cta);;
   color: var(--color-white);
   border-radius: 8px;
   font-size: 16px;
   line-height: 22.4px;
   letter-spacing: 0.32px;
   font-weight: 800;
-  font-family: var(--body-font-family);
+  font-family: var(--avenir-roman);
   display: inline-flex;
   padding: 16px 32px;
   flex-direction: column;
@@ -157,14 +132,13 @@ button.primary-variant {
   height: 54px;
 }
 
-.primary-variant .button-container a.button:focus,
-button.primary-variant:focus {
+.primary-variant .button-container a.button:focus, button.primary-variant:focus {
   outline: 2px solid var(--primary-cta);
   border: 2px;
   outline-offset: 4px;
 }
 /* Primary Variant Button */
-@media (width <= 990px) {
+@media (width <= 900px) {
   .primary-variant .button-container a.button,
   .secondary-variant .button-container a.button,
   button.primary-variant,
@@ -202,10 +176,8 @@ button.primary-variant:focus {
   }
 }
 
-/* Input Secondary Button - secondary-variant*/
-.secondary a.button:focus,
-.secondary-variant a.button:focus,
-button.secondary-variant:focus {
+  /* Input Secondary Button - secondary-variant*/
+.secondary a.button:focus, .secondary-variant a.button:focus, button.secondary-variant:focus {
   background-color: unset;
   border: 2px solid var(--link-color);
   color: var(--link-color);
@@ -213,9 +185,7 @@ button.secondary-variant:focus {
   outline-offset: 4px;
 }
 
-.secondary-variant .button-container a.button,
-.secondary-variant .button-container a.button:active:hover,
-button.secondary-variant {
+.secondary-variant .button-container a.button, .secondary-variant .button-container a.button:active:hover, button.secondary-variant {
   background-color: unset;
   border: 2px solid var(--link-color);
   border-radius: 8px;
@@ -224,39 +194,35 @@ button.secondary-variant {
   height: 54px;
 }
 .secondary-variant .button-container a.button,
-button.secondary-variant {
-  height: 44px;
-}
+  button.secondary-variant {
+    height: 44px;
+  }
+  
+  /* Text Button */
+  a.button.text-btn, button.text-btn {
+    background-color: unset;
+    color: var(--link-color);
+    padding: 0;
+  }
 
-/* Text Button */
-a.button.text-btn,
-button.text-btn {
-  background-color: unset;
-  color: var(--link-color);
-  padding: 0;
-}
+  a.button.text-btn:hover, button.text-btn:hover {
+    background-color: unset;
+    color: var(--link-hover-color);
+    border-bottom: 1px solid var(--link-hover-color);
+  }
 
-a.button.text-btn:hover,
-button.text-btn:hover {
-  background-color: unset;
-  color: var(--link-hover-color);
-  border-bottom: 1px solid var(--link-hover-color);
-}
-
-a.button.text-btn:disabled,
-button.text-btn:disabled {
-  background-color: unset;
-  color: var(--link-color);
-  opacity: 0.3;
-}
-a.button.text-btn:focus,
-button.text-btn:focus {
-  background-color: unset;
-  border-radius: 4px;
-  border: 1px solid var(--link-color);
-  color: var(--link-color);
-}
-
+  a.button.text-btn:disabled, button.text-btn:disabled {
+    background-color: unset;
+    color: var(--link-color);
+    opacity: 0.3;
+  }
+  a.button.text-btn:focus, button.text-btn:focus {
+    background-color: unset;
+    border-radius: 4px;
+    border: 1px solid var(--link-color);
+    color: var(--link-color);
+  }
+  
 .text-btn .button-container a.button {
   background-color: unset;
   font-size: 16px;
@@ -283,15 +249,15 @@ button.text-btn:focus {
 }
 
 .text-btn .button-container a.button:focus {
-  border: 1px solid var(--primary-cta);
+  border: 1px solid var(--primary-cta);;
   border-radius: 4px;
   outline-offset: 0;
   height: 30px;
-  color: var(--primary-cta);
+  color: var(--primary-cta);;
 }
-@media (width <= 990px) {
+@media (width <= 900px) {
   .text-btn .button-container a.button {
-    color: var(--primary-cta);
+    color: var(--primary-cta);;
     font-size: 14px;
     font-style: normal;
     font-weight: 800;
@@ -304,48 +270,44 @@ button.text-btn:focus {
   }
 
   .text-btn .button-container a.button:hover {
-    color: var(--primary-cta-hover);
-    border-bottom: 1px solid var(--primary-cta-hover);
+    color: var(--primary-cta-hover);;
+    border-bottom: 1px solid var(--primary-cta-hover);;
   }
 
   .text-btn .button-container a.button.disabled {
-    color: var(--primary-cta);
+    color: var(--primary-cta);;
     opacity: 0.3;
   }
 
   .text-btn .button-container a.button:focus {
-    color: var(--primary-cta);
+    color: var(--primary-cta);;
     border-radius: 4px;
-    border: 1px solid var(--primary-cta);
+    border: 1px solid var(--primary-cta);;
     height: 30px;
   }
 }
-/* Link Button */
-a.button.link-btn,
-button.link-btn {
-  background-color: unset;
-  color: var(--link-color);
-  padding: 0;
-}
-a.button.link-btn:hover,
-button.link-btn:hover {
-  background-color: unset;
-  color: var(--link-hover-color);
-  border-bottom: 1px solid var(--link-hover-color);
-}
-a.button.link-btn:disabled,
-button.link-btn:disabled {
-  background-color: unset;
-  color: var(--link-color);
-  opacity: 0.3;
-}
-a.button.link-btn:focus,
-button.link-btn:focus {
-  background-color: unset;
-  border-radius: 8px;
-  border: 2px solid var(--link-color);
-  color: var(--link-color);
-}
+  /* Link Button */
+  a.button.link-btn, button.link-btn {
+    background-color: unset;
+    color: var(--link-color);
+    padding: 0;
+  }
+  a.button.link-btn:hover, button.link-btn:hover {
+    background-color: unset;
+    color: var(--link-hover-color);
+    border-bottom: 1px solid var(--link-hover-color);
+  }
+  a.button.link-btn:disabled, button.link-btn:disabled {
+    background-color: unset;
+    color: var(--link-color);
+    opacity: 0.3;
+  }
+  a.button.link-btn:focus, button.link-btn:focus {
+    background-color: unset;
+    border-radius: 8px;
+    border: 2px solid var(--link-color);
+    color: var(--link-color);
+  }
 .link-btn .button-container a.button:focus {
   background-color: unset;
   border-radius: 8px;
@@ -358,6 +320,7 @@ button.link-btn:focus {
   text-decoration: underline;
 }
 
+
 /* america with arrow*/
 .text-btn .button-container a.button::after {
   top: -2px;
@@ -369,12 +332,12 @@ button.link-btn:focus {
   height: 12px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: var(--primary-cta);
+  background-color: var(--primary-cta);;
   mask-image: url('../icons/arrow.svg');
   aspect-ratio: 1/1;
 }
 
-/*MISC -- ASK AMANDA FIRST*/
+  /*MISC -- ASK AMANDA FIRST*/
 .button-nvi.trailing a.button {
   flex-direction: row;
   gap: 8px;
@@ -418,7 +381,7 @@ button.link-btn:focus {
 }
 
 .button-nvi.inverse a.button span {
-  color: var(--primary-cta);
+  color: var(--primary-cta);;
 }
 
 .button-nvi.small a.button {
@@ -428,12 +391,19 @@ button.link-btn:focus {
   line-height: 19.6px;
   letter-spacing: 0.28px;
 }
+:root {
+  --gilroy: 'Gilroy', sans-serif;
+  --avenir: 'Avenir', sans-serif;
+  --myriad-pro: 'Myriad Pro', sans-serif;
+  --graphik: 'Graphik', sans-serif;
+}
 
 .button-nvi a.button.disabled {
   pointer-events: none;
 }
 
 /* Primary and Default Button */
+
 a.button:any-link,
 button {
   box-sizing: border-box;
@@ -444,7 +414,7 @@ button {
   justify-content: center;
   align-items: center;
   padding: 16px 32px;
-  font-family: var(--body-font-family);
+  font-family: var(--avenir-roman);
   font-style: normal;
   font-weight: 800;
   line-height: 22.4px;
@@ -495,7 +465,7 @@ button.primary-variant {
   line-height: 22.4px;
   letter-spacing: 0.32px;
   font-weight: 800;
-  font-family: var(--body-font-family);
+  font-family: var(--avenir-roman);
   display: inline-flex;
   padding: 16px 32px;
   flex-direction: column;
@@ -747,7 +717,7 @@ button.secondary:hover {
 /* 
 .link-btn .button-container a.button {
     background-color: unset;
-    font-family: var(--body-font-family);
+    font-family: var(--avenir);
     font-size: 16px;
     font-style: normal;
     color: #295EDB;
@@ -764,7 +734,7 @@ button.secondary:hover {
 
 /* .link-btn.vistaopt .button-container a.button {
     background-color: unset;
-    font-family: var(--body-font-family);
+    font-family: var(--avenir);
     font-size: 16px;
     font-style: normal;
     line-height: 22.4px;
@@ -799,7 +769,7 @@ button.primary:focus {
   height: 58px;
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .primary.eyeglass .button-container a.button {
     color: #fff;
     text-align: center;
@@ -861,7 +831,7 @@ button.primary:focus {
   border: 2px;
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .primary a.button,
   .secondary a.button {
     display: inline-flex;
@@ -894,7 +864,7 @@ button.primary:focus {
 }
 
 /* Primary Variant Button */
-@media (width <= 990px) {
+@media (width <= 900px) {
   .primary-variant .button-container a.button,
   .secondary-variant .button-container a.button,
   button.primary-variant,
@@ -980,7 +950,7 @@ button.secondary:focus,
 }
 
 /* Text Button */
-@media (width <= 990px) {
+@media (width <= 900px) {
   .text-btn .button-container a.button {
     color: #295edb;
     font-size: 14px;
@@ -1212,7 +1182,7 @@ button.secondary:focus,
 
 .link-btn .button-container a.button {
   background-color: unset;
-  font-family: var(--body-font-family);
+  font-family: var(--avenir-roman);
   font-size: 16px;
   font-style: normal;
   color: #295edb;
@@ -1273,7 +1243,7 @@ button.secondary:focus,
 }
 
 /* vista */
-@media (width <= 990px) {
+@media (width <= 900px) {
   .text-btn.vistaopt .button-container a.button {
     color: #21356e;
     font-family: var(--myriad-pro);
@@ -1307,7 +1277,7 @@ button.secondary:focus,
 
 /* eye */
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .text-btn.eyeglass .button-container a.button {
     color: #007cba;
     font-family: var(--graphik);
@@ -1339,11 +1309,11 @@ button.secondary:focus,
 }
 
 /* link- america */
-@media (width <= 990px) {
+@media (width <= 900px) {
   .link-btn .button-container a.button {
     color: #295edb;
     text-align: center;
-    font-family: var(--body-font-family);
+    font-family: var(--avenir-roman);
     font-size: 14px;
     font-style: normal;
     font-weight: 800;
@@ -1379,7 +1349,7 @@ button.secondary:focus,
 
 /* vista */
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .link-btn.vistaopt .button-container a.button {
     color: #21356e;
     text-align: center;
@@ -1418,7 +1388,7 @@ button.secondary:focus,
 
 /* eye */
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .link-btn.eyeglass .button-container a.button {
     color: #007cba;
     text-align: center;
@@ -1456,7 +1426,7 @@ button.secondary:focus,
   }
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .primary-variant.eyeglass .button-container a.button {
     display: inline-flex;
     padding: 12px 24px;
@@ -1487,7 +1457,7 @@ button.secondary:focus,
   }
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .primary.vistaopt .button-container a.button {
     display: inline-flex;
     flex-direction: column;
@@ -1523,7 +1493,7 @@ button.secondary:focus,
   }
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .primary-variant.vistaopt .button-container a.button {
     display: inline-flex;
     padding: 12px 24px;
@@ -1653,7 +1623,7 @@ button.secondary:focus,
   opacity: 0.3;
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .iblack.primary .button-container a.button {
     background-color: #fff;
     color: #295edb;
@@ -1700,7 +1670,7 @@ button.secondary:focus,
   opacity: 0.3;
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .iblack.secondary .button-container a.button {
     background-color: transparent;
     color: #fff;
@@ -1748,7 +1718,7 @@ button.secondary:focus,
   opacity: 0.3;
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .iblack.primary-variant .button-container a.button {
     background-color: #fff;
     color: #295edb;
@@ -1796,7 +1766,7 @@ button.secondary:focus,
   opacity: 0.3;
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .iblack.secondary-variant .button-container a.button {
     background-color: transparent;
     color: #fff;
@@ -1861,10 +1831,10 @@ button.secondary:focus,
   background-color: #fff;
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .iblack.text-btn .button-container a.button {
     color: #fff;
-    font-family: var(--body-font-family);
+    font-family: var(--avenir);
     font-size: 14px;
     font-style: normal;
     font-weight: 800;
@@ -1922,7 +1892,7 @@ button.secondary:focus,
   border-radius: 0;
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .iblack.link-btn .button-container a.button {
     color: #fff;
   }
@@ -1970,7 +1940,7 @@ button.secondary:focus,
   color: #fff;
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .iblack.primary.vistaopt .button-container a.button {
     background-color: #fff;
     color: #21356e;
@@ -1997,7 +1967,7 @@ button.secondary:focus,
   color: #21356e;
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .iblack.primary-variant.vistaopt .button-container a.button:focus {
     background-color: #fff;
     color: #21356e;
@@ -2005,7 +1975,7 @@ button.secondary:focus,
   }
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .iblack.secondary-variant .button-container a.button:focus {
     background-color: #fff;
     color: #21356e;
@@ -2013,7 +1983,7 @@ button.secondary:focus,
   }
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .iblack.text-btn.vistaopt .button-container a.button {
     color: #fff;
     font-family: var(--myriad-pro);
@@ -2057,7 +2027,7 @@ button.secondary:focus,
   opacity: 0.3;
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .iblack.primary.eyeglass .button-container a.button {
     background-color: #fff;
     color: #e12726;
@@ -2112,7 +2082,7 @@ button.secondary:focus,
   opacity: 0.3;
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .iblack.primary-variant.eyeglass .button-container a.button {
     background-color: #fff;
     color: #e12726;

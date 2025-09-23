@@ -91,11 +91,11 @@
     {
       "id": "section",
       "components": [
-        { "...": "./_content-blocks.json" },
-        { "...": "./_image-blocks.json" },
-        { "...": "./_custom-blocks.json" },
-        { "...": "./_structure-blocks.json" },
-        "commerce-mini-cart"
+        {"...": "./_content-blocks.json"},
+        {"...": "./_image-blocks.json"},
+        {"...": "./_custom-blocks.json"},
+         {"...": "./_structure-blocks.json"},
+         "commerce-mini-cart"
       ]
     },
     {
@@ -106,30 +106,34 @@
         "button-nvi",
         "image",
         "logo",
-        "icon-link-list",
-        "link-list",
-        "icon",
-        "header-carousel",
-        "header-myaccount",
-        "header-search",
-        "header-favorite-icon",
-        "navigation",
-        "commerce-mini-cart",
-        "button"
+      "icon-link-list",
+      "link-list",
+      "icon",
+      "header-carousel",
+      "header-myaccount",
+      "header-search",
+      "header-favorite-icon",
+      "navigation",
+      "commerce-mini-cart",
+      "button"
       ]
     },
-    {
+     {
       "id": "content-section",
       "components": [
-        { "...": "./_content-blocks.json" },
-        { "...": "./_image-blocks.json" },
-        { "...": "./_custom-blocks.json" },
-        { "...": "./_structure-blocks.json" }
+       {"...": "./_content-blocks.json"},
+       {"...": "./_image-blocks.json"},
+       {"...": "./_custom-blocks.json"},
+       {"...": "./_structure-blocks.json"}
       ]
     },
-    {
+     {
       "id": "article-section",
-      "components": [{ "...": "./_content-blocks.json" }, { "...": "./_image-blocks.json" }]
+      "components": [
+        {"...": "./_content-blocks.json"},
+       {"...": "./_image-blocks.json"}
+      ]
     }
+  
   ]
 }

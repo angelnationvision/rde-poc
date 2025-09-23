@@ -2,7 +2,8 @@
   "models": [
     {
       "id": "page-metadata",
-      "fields": [
+      "fields":
+      [
         {
           "component": "text",
           "name": "template",
@@ -17,7 +18,7 @@
           "valueType": "string",
           "value": ""
         },
-        {
+           {
           "component": "text",
           "name": "footer",
           "label": "Footer",
@@ -38,24 +39,24 @@
         }
       ]
     },
-    {
-      "id": "blank-metadata",
-      "fields": [
-        {
+     {
+    "id": "blank-metadata",
+    "fields": [
+      {
           "component": "text",
           "name": "template",
           "label": "Template - Blank",
           "valueType": "string",
           "value": ""
         },
-        {
+         {
           "component": "text",
           "name": "nav",
           "label": "Header",
           "valueType": "string",
           "value": ""
         },
-        {
+           {
           "component": "text",
           "name": "footer",
           "label": "Footer",
@@ -74,39 +75,39 @@
             { "name": "Military Optical", "value": "militaryoptical" }
           ]
         }
-      ]
-    },
-    {
-      "id": "content-metadata",
-      "fields": [
-        {
-          "component": "text",
-          "name": "template",
-          "label": "Template - Content",
-          "valueType": "string",
-          "value": "content",
-          "readOnly": true
-        },
-        {
+    ]
+  },
+   {
+    "id": "content-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template - Content",
+        "valueType": "string",
+        "value": "content",
+        "readOnly": true
+      },
+      {
           "...": "./partials/_page-metadata.json#/options"
-        }
-      ]
-    },
-    {
-      "id": "article-metadata",
-      "fields": [
-        {
-          "component": "text",
-          "name": "template",
-          "label": "Template - Article",
-          "valueType": "string",
-          "value": "article",
-          "readOnly": true
-        },
-        {
-          "...": "./partials/_page-metadata.json#/options"
-        }
-      ]
-    }
+      }
+    ]
+  },
+   {
+    "id": "article-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template - Article",
+        "valueType": "string",
+        "value": "article",
+        "readOnly": true
+      },
+      {
+              "...": "./partials/_page-metadata.json#/options"
+            }
+    ]
+  }
   ]
 }
