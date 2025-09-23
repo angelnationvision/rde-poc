@@ -1,17 +1,24 @@
 export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
   block.classList.add('columns-main');
+  const classString = block.className;
+  const firstcolClass = document.querySelectorAll('[class*="firstcol-"]');
+  console.log("new test");
+  console.log(classString);
+  console.log(firstcolClass);
+  firstcolClass.forEach(element => {
+    console.log("foreach firstcol");
+          console.log(element.classList.value); // Logs the full class list of the element
+        });
+  
+
 
   // setup image columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
-      console.log('Angel Console - within foreach');
-      console.log(col);
-      console.log('Angel Col Parent');
-      console.log(col.parentElement);
-      col.parentElement.classList.add('grid-container');
-      // Replace with authoring field
-      col.classList.add('colspan-default colspan-m-default');
+      col.parentElement.classList.add('grid-container'); 
+      //Replace with authoring field
+      col.classList.add('colspan-default'); 
       const pic = col.querySelector('picture');
       if (pic) {
         const picWrapper = pic.closest('div');
