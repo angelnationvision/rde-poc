@@ -1,6 +1,6 @@
 /*! Copyright 2025 Adobe
 All Rights Reserved. */
-const e = `
+const e=`
 fragment PRODUCT_OPTION_FRAGMENT on ProductViewOption {
     id
     title
@@ -49,8 +49,7 @@ fragment PRODUCT_OPTION_FRAGMENT on ProductViewOption {
       }
     }
   }
-`,
-  t = `
+`,t=`
   fragment PRICE_RANGE_FRAGMENT on ComplexProductView {
     priceRange {
       maximum {
@@ -85,8 +84,7 @@ fragment PRODUCT_OPTION_FRAGMENT on ProductViewOption {
       }
     }
   }
-`,
-  r = `
+`,r=`
 fragment PRODUCT_FRAGMENT on ProductView {
   __typename
   id
@@ -147,6 +145,5 @@ fragment PRODUCT_FRAGMENT on ProductView {
 
 ${e}
 ${t}
-`;
-export { t as PRICE_RANGE_FRAGMENT, r as PRODUCT_FRAGMENT, e as PRODUCT_OPTION_FRAGMENT };
+`;export{t as PRICE_RANGE_FRAGMENT,r as PRODUCT_FRAGMENT,e as PRODUCT_OPTION_FRAGMENT};
 //# sourceMappingURL=fragments.js.map

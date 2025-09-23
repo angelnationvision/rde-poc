@@ -13,10 +13,5 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const requestGuestOrderCancel: (
-  token: string,
-  reason: string,
-  onSuccess: Function,
-  onError: Function
-) => Promise<void>;
+export declare const requestGuestOrderCancel: (token: string, reason: string, onSuccess: Function, onError: Function) => Promise<void>;
 //# sourceMappingURL=requestGuestOrderCancel.d.ts.map

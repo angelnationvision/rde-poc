@@ -1,6 +1,6 @@
 /*! Copyright 2025 Adobe
 All Rights Reserved. */
-const e = `
+const e=`
   fragment PRICE_RANGE_FRAGMENT on PriceRange {
     minimum_price {
       regular_price {
@@ -31,8 +31,7 @@ const e = `
       }
     }
   }
-`,
-  _ = `
+`,_=`
   fragment CUSTOMIZABLE_OPTIONS_FRAGMENT on SelectedCustomizableOption {
     type
     customizable_option_uid
@@ -48,8 +47,7 @@ const e = `
       }
     }
   }
-`,
-  a = `
+`,a=`
   fragment DOWNLOADABLE_CART_ITEMS_FRAGMENT on DownloadableCartItem {
     links {
       sort_order
@@ -59,8 +57,7 @@ const e = `
       ...CUSTOMIZABLE_OPTIONS_FRAGMENT
     }
   }
-`,
-  t = `
+`,t=`
   fragment APPLIED_GIFT_CARDS_FRAGMENT on AppliedGiftCard {
     __typename
     code
@@ -74,16 +71,14 @@ const e = `
     }
     expiration_date
   }
-`,
-  r = `
+`,r=`
   fragment GIFT_MESSAGE_FRAGMENT on GiftMessage {
     __typename
     from
     to
     message
   }
-`,
-  i = `
+`,i=`
   fragment GIFT_WRAPPING_FRAGMENT on GiftWrapping {
     __typename
     uid
@@ -96,8 +91,7 @@ const e = `
       currency
     }
   }
-`,
-  n = `
+`,n=`
   fragment AVAILABLE_GIFT_WRAPPING_FRAGMENT on GiftWrapping {
    __typename
    uid
@@ -111,8 +105,7 @@ const e = `
      value
    }
   }
-`,
-  l = `
+`,l=`
   fragment CART_ITEM_FRAGMENT on CartItemInterface {
     __typename
     uid
@@ -297,8 +290,7 @@ const e = `
   ${i}
   ${r}
   ${n}
-`,
-  u = `
+`,u=`
   fragment CART_FRAGMENT on Cart {
     id
     total_quantity
@@ -408,14 +400,5 @@ const e = `
 
   ${l}
   ${t}
-`;
-export {
-  t as APPLIED_GIFT_CARDS_FRAGMENT,
-  n as AVAILABLE_GIFT_WRAPPING_FRAGMENT,
-  u as CART_FRAGMENT,
-  l as CART_ITEM_FRAGMENT,
-  a as DOWNLOADABLE_CART_ITEMS_FRAGMENT,
-  r as GIFT_MESSAGE_FRAGMENT,
-  i as GIFT_WRAPPING_FRAGMENT,
-};
+`;export{t as APPLIED_GIFT_CARDS_FRAGMENT,n as AVAILABLE_GIFT_WRAPPING_FRAGMENT,u as CART_FRAGMENT,l as CART_ITEM_FRAGMENT,a as DOWNLOADABLE_CART_ITEMS_FRAGMENT,r as GIFT_MESSAGE_FRAGMENT,i as GIFT_WRAPPING_FRAGMENT};
 //# sourceMappingURL=fragments.js.map

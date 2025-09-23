@@ -1,22 +1,28 @@
 {
-  "type": "object",
-  "properties": {
-    "event": {
-      "type": "string",
-      "const": "recs-item-click"
-    },
-    "eventInfo": {
-      "type": "object",
-      "properties": {
-        "unitId": {
-          "type": "string"
+    "type": "object",
+    "properties": {
+        "event": {
+            "type": "string",
+            "const": "recs-item-click"
         },
-        "productId": {
-          "type": "number"
+        "eventInfo": {
+            "type": "object",
+            "properties": {
+                "unitId": {
+                    "type": "string"
+                },
+                "productId": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "unitId",
+                "productId"
+            ]
         }
-      },
-      "required": ["unitId", "productId"]
-    }
-  },
-  "required": ["event", "eventInfo"]
+    },
+    "required": [
+        "event",
+        "eventInfo"
+    ]
 }

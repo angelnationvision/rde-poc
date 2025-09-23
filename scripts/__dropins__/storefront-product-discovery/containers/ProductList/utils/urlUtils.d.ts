@@ -12,12 +12,5 @@ declare const updateUrlSort: (sortOption: string) => void;
 declare const updateUrlSearchPhrase: (searchPhrase: string) => void;
 declare const getFiltersFromUrl: (filterableAttributes: string[]) => any[];
 declare const addUrlFilters: (filters: any[]) => void;
-export {
-  addUrlFilters,
-  getFiltersFromUrl,
-  getValueFromUrl,
-  updateUrlPagination,
-  updateUrlSort,
-  updateUrlSearchPhrase,
-};
+export { addUrlFilters, getFiltersFromUrl, getValueFromUrl, updateUrlPagination, updateUrlSort, updateUrlSearchPhrase };
 //# sourceMappingURL=urlUtils.d.ts.map

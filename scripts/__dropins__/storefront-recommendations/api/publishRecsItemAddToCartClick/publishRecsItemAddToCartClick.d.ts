@@ -23,12 +23,12 @@
  * yOffsetBottom: The y offset of the item from the bottom of the page
  */
 export interface PublishParams {
-  recommendationUnit: any;
-  pagePlacement: string;
-  yOffsetTop: number;
-  yOffsetBottom: number;
-  backupProducts?: number;
-  searchTime?: number;
+    recommendationUnit: any;
+    pagePlacement: string;
+    yOffsetTop: number;
+    yOffsetBottom: number;
+    backupProducts?: number;
+    searchTime?: number;
 }
 /**
  * Publish a recs-item-add-to-cart-click event to the Adobe Client Data Layer (ACDL)

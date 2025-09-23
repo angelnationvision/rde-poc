@@ -13,6 +13,5 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const ADDRESS_FRAGMENT =
-  '\n  fragment ADDRESS_FRAGMENT on OrderAddress {\n    city\n    company\n    country_code\n    fax\n    firstname\n    lastname\n    middlename\n    postcode\n    prefix\n    region\n    region_id\n    street\n    suffix\n    telephone\n    vat_id\n  }\n';
+export declare const ADDRESS_FRAGMENT = "\n  fragment ADDRESS_FRAGMENT on OrderAddress {\n    city\n    company\n    country_code\n    fax\n    firstname\n    lastname\n    middlename\n    postcode\n    prefix\n    region\n    region_id\n    street\n    suffix\n    telephone\n    vat_id\n  }\n";
 //# sourceMappingURL=CustomerAddressFragment.graphql.d.ts.map

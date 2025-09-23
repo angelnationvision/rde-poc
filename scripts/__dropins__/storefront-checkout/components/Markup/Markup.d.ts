@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'preact';
 
 interface MarkupProps {
-  html: string;
+    html: string;
 }
 export declare const Markup: FunctionComponent<MarkupProps>;
 export {};

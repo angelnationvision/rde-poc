@@ -14,29 +14,29 @@
  * from Adobe.
  *******************************************************************/
 export interface UserInputErrorProps {
-  code: string;
-  message: string;
-  path: [string];
+    code: string;
+    message: string;
+    path: [string];
 }
 export interface ReorderItemsResponse {
-  data: {
-    reorderItems: {
-      cart: {
-        itemsV2: {
-          items: {
-            uid: string;
-          }[];
+    data: {
+        reorderItems: {
+            cart: {
+                itemsV2: {
+                    items: {
+                        uid: string;
+                    }[];
+                };
+            };
+            userInputErrors: UserInputErrorProps[];
         };
-      };
-      userInputErrors: UserInputErrorProps[];
     };
-  };
-  errors?: {
-    message: string;
-  }[];
+    errors?: {
+        message: string;
+    }[];
 }
 export interface ReorderItemsProps {
-  success: boolean;
-  userInputErrors: UserInputErrorProps[];
+    success: boolean;
+    userInputErrors: UserInputErrorProps[];
 }
 //# sourceMappingURL=reorderItems.types.d.ts.map

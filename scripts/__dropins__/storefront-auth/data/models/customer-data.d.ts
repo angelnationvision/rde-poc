@@ -15,23 +15,23 @@
  * from Adobe.
  *******************************************************************/
 export interface CustomerModel {
-  firstName: string;
-  lastName: string;
-  email: string;
-  customAttributes?: Record<string, string>[];
-  errors?: {
-    message: string;
-  }[];
+    firstName: string;
+    lastName: string;
+    email: string;
+    customAttributes?: Record<string, string>[];
+    errors?: {
+        message: string;
+    }[];
 }
 export interface AccountModel {
-  firstName?: string;
-  lastName?: string;
-  emailAddress?: string;
-  phoneNumber?: string;
-  countryCode?: string;
-  accountId?: string;
-  accountType?: string;
-  company?: string;
-  customerGroup?: string;
+    firstName?: string;
+    lastName?: string;
+    emailAddress?: string;
+    phoneNumber?: string;
+    countryCode?: string;
+    accountId?: string;
+    accountType?: string;
+    company?: string;
+    customerGroup?: string;
 }
 //# sourceMappingURL=customer-data.d.ts.map

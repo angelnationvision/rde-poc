@@ -1,3 +1,3 @@
-export * from './MergedCartBanner/index';
-import _default from './MergedCartBanner/index';
-export default _default;
+export * from './MergedCartBanner/index'
+import _default from './MergedCartBanner/index'
+export default _default

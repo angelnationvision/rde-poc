@@ -15,15 +15,15 @@
  * from Adobe.
  *******************************************************************/
 export declare enum TaxDisplay {
-  EXCLUDING_TAX = 'EXCLUDING_TAX',
-  INCLUDING_EXCLUDING_TAX = 'INCLUDING_AND_EXCLUDING_TAX',
-  INCLUDING_TAX = 'INCLUDING_TAX',
+    EXCLUDING_TAX = "EXCLUDING_TAX",
+    INCLUDING_EXCLUDING_TAX = "INCLUDING_AND_EXCLUDING_TAX",
+    INCLUDING_TAX = "INCLUDING_TAX"
 }
 export interface StoreConfig {
-  defaultCountry: string;
-  agreementsEnabled: boolean;
-  shoppingCartDisplaySetting: {
-    shipping: TaxDisplay;
-  };
+    defaultCountry: string;
+    agreementsEnabled: boolean;
+    shoppingCartDisplaySetting: {
+        shipping: TaxDisplay;
+    };
 }
 //# sourceMappingURL=store-config.d.ts.map

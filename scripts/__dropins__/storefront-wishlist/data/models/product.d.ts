@@ -15,61 +15,59 @@
  * from Adobe.
  *******************************************************************/
 export interface Product {
-  type: string;
-  name: string;
-  sku: string;
-  topLevelSku?: string;
-  uid: string;
-  image: Image;
-  stockStatus?: string;
-  canonicalUrl?: string;
-  urlKey: string;
-  categories: string[];
-  prices: PriceDetails;
-  productAttributes?: Attribute[];
-  options: Option[];
+    type: string;
+    name: string;
+    sku: string;
+    topLevelSku?: string;
+    uid: string;
+    image: Image;
+    stockStatus?: string;
+    canonicalUrl?: string;
+    urlKey: string;
+    categories: string[];
+    prices: PriceDetails;
+    productAttributes?: Attribute[];
+    options: Option[];
 }
 export interface PriceDetails {
-  regularPrice: MoneyProps;
-  finalPrice: MoneyProps;
-  discount?: {
-    amountOff: number;
-    percentOff: number;
-  };
-  fixedProductTaxes: FixedProductTaxesProps[];
+    regularPrice: MoneyProps;
+    finalPrice: MoneyProps;
+    discount?: {
+        amountOff: number;
+        percentOff: number;
+    };
+    fixedProductTaxes: FixedProductTaxesProps[];
 }
 export interface MoneyProps {
-  value: number;
-  currency: string;
+    value: number;
+    currency: string;
 }
 interface FixedProductTaxesProps {
-  money: MoneyProps;
-  label: string;
+    money: MoneyProps;
+    label: string;
 }
 interface Image {
-  alt: string;
-  src: string;
+    alt: string;
+    src: string;
 }
 interface AttributeOption {
-  value: string;
-  label: string;
+    value: string;
+    label: string;
 }
 interface Attribute {
-  code: string;
-  value?: string;
-  selected_options?: AttributeOption[];
+    code: string;
+    value?: string;
+    selected_options?: AttributeOption[];
 }
 interface Option {
-  uid: string;
-  attributeCode?: string;
-  attributeUid?: string;
-  required: boolean;
-  values: [
-    {
-      uid: string;
-      label: string;
-    },
-  ];
+    uid: string;
+    attributeCode?: string;
+    attributeUid?: string;
+    required: boolean;
+    values: [{
+        uid: string;
+        label: string;
+    }];
 }
 export {};
 //# sourceMappingURL=product.d.ts.map

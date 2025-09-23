@@ -15,20 +15,20 @@
  * from Adobe.
  *******************************************************************/
 export declare enum AgreementMode {
-  MANUAL = 'manual',
-  AUTO = 'auto',
+    MANUAL = "manual",
+    AUTO = "auto"
 }
 type AgreementContent = {
-  value: string;
-  html: boolean;
-  height: string | null;
+    value: string;
+    html: boolean;
+    height: string | null;
 };
 export interface CheckoutAgreement {
-  content: AgreementContent;
-  id: number;
-  mode: AgreementMode;
-  name: string;
-  text: string;
+    content: AgreementContent;
+    id: number;
+    mode: AgreementMode;
+    name: string;
+    text: string;
 }
 export {};
 //# sourceMappingURL=checkout.d.ts.map

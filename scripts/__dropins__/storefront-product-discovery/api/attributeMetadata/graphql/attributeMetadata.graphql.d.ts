@@ -13,6 +13,5 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const ATTRIBUTE_METADATA_QUERY =
-  '\n  query attributeMetadata {\n    attributeMetadata {\n      sortable {\n        label\n        attribute\n        numeric\n      }\n      filterableInSearch {\n        label\n        attribute\n        numeric\n      }\n    }\n  }\n';
+export declare const ATTRIBUTE_METADATA_QUERY = "\n  query attributeMetadata {\n    attributeMetadata {\n      sortable {\n        label\n        attribute\n        numeric\n      }\n      filterableInSearch {\n        label\n        attribute\n        numeric\n      }\n    }\n  }\n";
 //# sourceMappingURL=attributeMetadata.graphql.d.ts.map

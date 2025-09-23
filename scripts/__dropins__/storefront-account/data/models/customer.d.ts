@@ -15,26 +15,26 @@
  * from Adobe.
  *******************************************************************/
 export interface CustomerDataModelShort {
-  firstName: string;
-  lastName: string;
-  middleName: string;
-  dateOfBirth: string;
-  prefix: string;
-  gender: 1 | 2 | string;
-  suffix: string;
-  email: string;
-  createdAt: string;
-  [key: string]: string | boolean | number;
+    firstName: string;
+    lastName: string;
+    middleName: string;
+    dateOfBirth: string;
+    prefix: string;
+    gender: 1 | 2 | string;
+    suffix: string;
+    email: string;
+    createdAt: string;
+    [key: string]: string | boolean | number;
 }
 export interface AccountModel {
-  firstName?: string;
-  lastName?: string;
-  emailAddress?: string;
-  phoneNumber?: string;
-  countryCode?: string;
-  accountId?: string;
-  accountType?: string;
-  company?: string;
-  customerGroup?: string;
+    firstName?: string;
+    lastName?: string;
+    emailAddress?: string;
+    phoneNumber?: string;
+    countryCode?: string;
+    accountId?: string;
+    accountType?: string;
+    company?: string;
+    customerGroup?: string;
 }
 //# sourceMappingURL=customer.d.ts.map

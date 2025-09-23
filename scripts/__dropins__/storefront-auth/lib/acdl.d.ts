@@ -15,9 +15,9 @@
  * from Adobe.
  *******************************************************************/
 declare enum EventsList {
-  CREATE_ACCOUNT_EVENT = 'create-account',
-  SIGN_IN = 'sign-in',
-  SIGN_OUT = 'sign-out',
+    CREATE_ACCOUNT_EVENT = "create-account",
+    SIGN_IN = "sign-in",
+    SIGN_OUT = "sign-out"
 }
 export declare function getAdobeDataLayer(): any;
 /**

@@ -1,9 +1,6 @@
 import { ProductModel } from '../models';
 
-export declare function transformProductData(
-  data: any,
-  options?: {
+export declare function transformProductData(data: any, options?: {
     preselectFirstOption?: boolean;
-  }
-): ProductModel | null;
+}): ProductModel | null;
 //# sourceMappingURL=product-transform.d.ts.map
