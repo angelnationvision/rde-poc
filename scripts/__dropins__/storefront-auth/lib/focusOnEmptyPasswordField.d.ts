@@ -14,9 +14,5 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const focusOnEmptyPasswordField: (
-  event: Event,
-  signUpPasswordValue: string,
-  confirmPassword: string
-) => void;
+export declare const focusOnEmptyPasswordField: (event: Event, signUpPasswordValue: string, confirmPassword: string) => void;
 //# sourceMappingURL=focusOnEmptyPasswordField.d.ts.map

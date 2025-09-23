@@ -5,12 +5,7 @@ overrideGQLOperations([
   {
     npm: '@dropins/storefront-cart',
     skipFragments: ['DOWNLOADABLE_CART_ITEMS_FRAGMENT'],
-    operations: [
-      `fragment CART_ITEM_FRAGMENT on CartItemInterface {
-          right_quantity
-          left_quantity
-      }`,
-    ],
+    operations: [],
   },
   {
     npm: '@dropins/storefront-order',

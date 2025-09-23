@@ -15,134 +15,134 @@
  * from Adobe.
  *******************************************************************/
 declare const mockEstimatedTotalsData: {
-  estimatedAppliedTaxes: {
-    taxes: {
-      amount: {
-        currency: string;
-        value: number;
-      };
-      label: string;
+    estimatedAppliedTaxes: {
+        taxes: {
+            amount: {
+                currency: string;
+                value: number;
+            };
+            label: string;
+        }[];
+    };
+    estimatedGrandTotalPrice: {
+        excludingTax: {
+            amount: number;
+            currency: string;
+        };
+        includingTax: {
+            amount: number;
+            currency: string;
+        };
+    };
+    estimatedItems: {
+        price: {
+            currency: string;
+            value: number;
+        };
+        rowTotal: {
+            currency: string;
+            value: number;
+        };
+        rowTotalIncludingTax: {
+            currency: string;
+            value: number;
+        };
+        taxedPrice: {
+            currency: string;
+            value: number;
+        };
+        uid: string;
     }[];
-  };
-  estimatedGrandTotalPrice: {
-    excludingTax: {
-      amount: number;
-      currency: string;
+    estimatedSubtotal: {
+        excludingTax: {
+            currency: string;
+            value: number;
+        };
+        includingDiscountOnly: {
+            currency: string;
+            value: number;
+        };
+        includingTax: {
+            currency: string;
+            value: number;
+        };
     };
-    includingTax: {
-      amount: number;
-      currency: string;
+    appliedTaxes: {
+        amount: {
+            currency: string;
+            value: number;
+        };
+        label: string;
+    }[];
+    estimatedTaxTotal: {
+        amount: number;
+        currency: string;
     };
-  };
-  estimatedItems: {
-    price: {
-      currency: string;
-      value: number;
-    };
-    rowTotal: {
-      currency: string;
-      value: number;
-    };
-    rowTotalIncludingTax: {
-      currency: string;
-      value: number;
-    };
-    taxedPrice: {
-      currency: string;
-      value: number;
-    };
-    uid: string;
-  }[];
-  estimatedSubtotal: {
-    excludingTax: {
-      currency: string;
-      value: number;
-    };
-    includingDiscountOnly: {
-      currency: string;
-      value: number;
-    };
-    includingTax: {
-      currency: string;
-      value: number;
-    };
-  };
-  appliedTaxes: {
-    amount: {
-      currency: string;
-      value: number;
-    };
-    label: string;
-  }[];
-  estimatedTaxTotal: {
-    amount: number;
-    currency: string;
-  };
 };
 declare const mockEstimatedTotalsDataZeroTotal: {
-  estimatedGrandTotalPrice: {
-    excludingTax: {
-      amount: number;
-      currency: string;
+    estimatedGrandTotalPrice: {
+        excludingTax: {
+            amount: number;
+            currency: string;
+        };
+        includingTax: {
+            amount: number;
+            currency: string;
+        };
     };
-    includingTax: {
-      amount: number;
-      currency: string;
+    estimatedAppliedTaxes: {
+        taxes: {
+            amount: {
+                currency: string;
+                value: number;
+            };
+            label: string;
+        }[];
     };
-  };
-  estimatedAppliedTaxes: {
-    taxes: {
-      amount: {
-        currency: string;
-        value: number;
-      };
-      label: string;
+    estimatedItems: {
+        price: {
+            currency: string;
+            value: number;
+        };
+        rowTotal: {
+            currency: string;
+            value: number;
+        };
+        rowTotalIncludingTax: {
+            currency: string;
+            value: number;
+        };
+        taxedPrice: {
+            currency: string;
+            value: number;
+        };
+        uid: string;
     }[];
-  };
-  estimatedItems: {
-    price: {
-      currency: string;
-      value: number;
+    estimatedSubtotal: {
+        excludingTax: {
+            currency: string;
+            value: number;
+        };
+        includingDiscountOnly: {
+            currency: string;
+            value: number;
+        };
+        includingTax: {
+            currency: string;
+            value: number;
+        };
     };
-    rowTotal: {
-      currency: string;
-      value: number;
+    appliedTaxes: {
+        amount: {
+            currency: string;
+            value: number;
+        };
+        label: string;
+    }[];
+    estimatedTaxTotal: {
+        amount: number;
+        currency: string;
     };
-    rowTotalIncludingTax: {
-      currency: string;
-      value: number;
-    };
-    taxedPrice: {
-      currency: string;
-      value: number;
-    };
-    uid: string;
-  }[];
-  estimatedSubtotal: {
-    excludingTax: {
-      currency: string;
-      value: number;
-    };
-    includingDiscountOnly: {
-      currency: string;
-      value: number;
-    };
-    includingTax: {
-      currency: string;
-      value: number;
-    };
-  };
-  appliedTaxes: {
-    amount: {
-      currency: string;
-      value: number;
-    };
-    label: string;
-  }[];
-  estimatedTaxTotal: {
-    amount: number;
-    currency: string;
-  };
 };
 export { mockEstimatedTotalsData, mockEstimatedTotalsDataZeroTotal };
 //# sourceMappingURL=estimatedTotalsData.d.ts.map

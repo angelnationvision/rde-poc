@@ -14,5 +14,5 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const ResetPasswordSkeleton: () => import('preact').JSX.Element;
+export declare const ResetPasswordSkeleton: () => import("preact").JSX.Element;
 //# sourceMappingURL=ResetPasswordSkeleton.d.ts.map

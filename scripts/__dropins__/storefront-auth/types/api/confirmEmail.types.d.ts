@@ -15,19 +15,19 @@
  * from Adobe.
  *******************************************************************/
 export interface confirmEmailResponse {
-  data: {
-    confirmEmail: {
-      customer: {
-        email: string;
-      };
+    data: {
+        confirmEmail: {
+            customer: {
+                email: string;
+            };
+        };
     };
-  };
-  errors?: {
-    message: string;
-  }[];
+    errors?: {
+        message: string;
+    }[];
 }
 export interface confirmEmailProps {
-  customerEmail: string;
-  customerConfirmationKey: string;
+    customerEmail: string;
+    customerConfirmationKey: string;
 }
 //# sourceMappingURL=confirmEmail.types.d.ts.map

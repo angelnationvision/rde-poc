@@ -1,50 +1,20 @@
 {
   "groups": [
     {
-      "title": "Content",
+      "title": "Default Content",
       "id": "default",
       "components": [
         {
-          "...": "../blocks/accordion/_*.json#/definitions"
+          "...": "./_text.json#/definitions"
         },
         {
-          "...": "../models/archive/_button.json#/definitions"
+          "...": "./_title.json#/definitions"
         },
         {
-          "...": "../blocks/button-nvi/_*.json#/definitions"
+          "...": "./_image.json#/definitions"
         },
         {
-          "...": "../blocks/carousel/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/columns/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/embed/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/linksidebar/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/modal/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/relatedarticles/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/table/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/tabs/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/text-nvi/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/title-nvi/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/video/_*.json#/definitions"
+          "...": "./_button.json#/definitions"
         }
       ]
     },
@@ -58,83 +28,35 @@
       ]
     },
     {
-      "title": "Image",
-      "id": "imageblock",
+      "title": "Blocks",
+      "id": "blocks",
       "components": [
         {
           "...": "../blocks/cards/_*.json#/definitions"
         },
         {
-          "...": "../blocks/hero/_*.json#/definitions"
+          "...": "../blocks/columns/_*.json#/definitions"
         },
-        {
-          "...": "./_image.json#/definitions"
-        },
-        {
-          "...": "../blocks/infoblock/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/producttile/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/teaser/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/visuallinks/_*.json#/definitions"
-        }
-      ]
-    },
-    {
-      "title": "Structure",
-      "id": "structure",
-      "components": [
         {
           "...": "../blocks/fragment/_*.json#/definitions"
         },
         {
-          "...": "../blocks/breadcrumb/_*.json#/definitions"
+          "...": "../blocks/hero/_*.json#/definitions"
         },
         {
-          "...": "../blocks/icon-link-list/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/link-list/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/icon/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/header-carousel/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/header-myaccount/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/header-search/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/header-favorite-icon/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/navigation/_*.json#/definitions"
+          "...": "../blocks/content-fragment/_*.json#/definitions"
         }
       ]
     },
     {
-      "title": "Custom",
-      "id": "custom",
+      "title": "Product",
+      "id": "product",
       "components": [
         {
-          "...": "../blocks/search/_*.json#/definitions"
+          "...": "../blocks/product-*/_*.json#/definitions"
         },
         {
-          "...": "../blocks/form/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/sitemap/_*.json#/definitions"
-        },
-        {
-          "...": "../blocks/multi-columns/_*.json#/definitions"
+          "...": "../blocks/enrichment/_*.json#/definitions"
         }
       ]
     },
@@ -144,6 +66,93 @@
       "components": [
         {
           "...": "../blocks/commerce-mini-cart/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-cart/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-checkout/_*.json#/definitions"
+        }
+      ]
+    },
+    {
+      "title": "Order",
+      "id": "order",
+      "components": [
+        {
+          "...": "../blocks/commerce-order-*/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-shipping-status/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-customer-details/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-search-order/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-gift-options/_*.json#/definitions"
+        }
+      ]
+    },
+    {
+      "title": "Account",
+      "id": "account",
+      "components": [
+        {
+          "...": "../blocks/commerce-login/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-forgot-password/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-create-account/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-account-sidebar/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-account-header/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-orders-list/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-addresses/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-customer-information/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-returns-list/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-create-password/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-confirm-account/_*.json#/definitions"
+        }
+      ]
+    },
+    {
+      "title": "Return",
+      "id": "return",
+      "components": [
+        {
+          "...": "../blocks/commerce-return-header/_*.json#/definitions"
+        },
+        {
+          "...": "../blocks/commerce-create-return/_*.json#/definitions"
+        }
+      ]
+    },
+    {
+      "title": "Wishlist",
+      "id": "wishlist",
+      "components": [
+        {
+          "...": "../blocks/commerce-wishlist/_*.json#/definitions"
         }
       ]
     }

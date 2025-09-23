@@ -14,8 +14,8 @@
  * from Adobe.
  *******************************************************************/
 export interface CustomerDataModelShort {
-  firstname: string;
-  lastname: string;
-  email: string;
+    firstname: string;
+    lastname: string;
+    email: string;
 }
 //# sourceMappingURL=customer.d.ts.map

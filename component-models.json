@@ -1,42 +1,5 @@
 [
   {
-    "id": "page-metadata",
-    "fields": [
-      {
-        "component": "text",
-        "name": "template",
-        "label": "Template - Root File",
-        "valueType": "string",
-        "value": ""
-      },
-      {
-        "component": "select",
-        "name": "brand",
-        "value": "",
-        "label": "Brand",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "None",
-            "value": "none"
-          },
-          {
-            "name": "Americs Best",
-            "value": "americasbest"
-          },
-          {
-            "name": "Eyeglass World",
-            "value": "eyeglassworld"
-          },
-          {
-            "name": "Military Optical",
-            "value": "militaryoptical"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "image",
     "fields": [
       {
@@ -49,6 +12,86 @@
         "component": "text",
         "name": "imageAlt",
         "label": "Alt Text"
+      }
+    ]
+  },
+  {
+    "id": "title",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Title Type",
+        "options": [
+          {
+            "name": "h1",
+            "value": "h1"
+          },
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          },
+          {
+            "name": "h5",
+            "value": "h5"
+          },
+          {
+            "name": "h6",
+            "value": "h6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "button",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "linkText",
+        "label": "Text"
+      },
+      {
+        "component": "text",
+        "name": "linkTitle",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "linkType",
+        "label": "Type",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          }
+        ]
       }
     ]
   },
@@ -107,303 +150,6 @@
     ]
   },
   {
-    "id": "accordion-item",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "summary",
-        "value": "",
-        "label": "Summary"
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "breadcrumb",
-    "fields": [
-      {
-        "component": "select",
-        "name": "classes",
-        "label": "Variation",
-        "description": "Use the drop-down to select the variation that you want to apply to the Block.",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Logo",
-            "value": "logo"
-          },
-          {
-            "name": "others",
-            "value": "others"
-          }
-        ]
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "logo",
-        "description": "Defines the page icon of root page (valid for only page level1). However, author can give text also.",
-        "label": "Root Page Icon",
-        "multi": false,
-        "condition": {
-          "===": [
-            {
-              "var": "classes"
-            },
-            "logo"
-          ]
-        },
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "logoAlt",
-        "label": "Alternative text for accessibility",
-        "description": "Enter Alt text for the authored image.",
-        "condition": {
-          "===": [
-            {
-              "var": "classes"
-            },
-            "logo"
-          ]
-        }
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pagename",
-        "label": "Page Title",
-        "description": "Enter home page title.",
-        "required": true,
-        "condition": {
-          "===": [
-            {
-              "var": "classes"
-            },
-            "others"
-          ]
-        }
-      },
-      {
-        "component": "aem-content",
-        "name": "logoLink",
-        "label": "Root Page Link",
-        "required": true
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "arrow",
-        "label": "Breadcrumb Separator",
-        "description": "To upload image for breadcrumb separator",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "arrowAlt",
-        "label": "Alternative text for accessibility",
-        "description": "Enter Alt text for the authored image."
-      },
-      {
-        "component": "text",
-        "name": "start-level",
-        "label": "Navigation Start Level",
-        "valueType": "string",
-        "description": "Defines the default value for where in the hierarchy the breadcrumb component should start to walk down to the current page."
-      }
-    ]
-  },
-  {
-    "id": "breadcrumb-item",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "value": "",
-        "label": "Page Name",
-        "description": "Defines the page name to be used in breadcrumb.",
-        "valueType": "string",
-        "required": true
-      },
-      {
-        "component": "aem-content",
-        "name": "breadcrumbLink",
-        "label": "Page URL",
-        "description": "To provide URL to particular page for users to navigate",
-        "required": true
-      },
-      {
-        "component": "boolean",
-        "label": "Hide Page",
-        "description": "To hide the page level in breadcrumb",
-        "name": "hide-item",
-        "valueType": "boolean"
-      }
-    ]
-  },
-  {
-    "id": "button-nvi",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link - Adobe"
-      },
-      {
-        "component": "text",
-        "name": "linkText",
-        "label": "Text - Adobe"
-      },
-      {
-        "component": "text",
-        "name": "linkTitle",
-        "label": "Title - Adobe"
-      },
-      {
-        "component": "text",
-        "name": "buttonId",
-        "value": "",
-        "label": "ID",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "linkTitle",
-        "value": "",
-        "label": "Aria Label",
-        "valueType": "string"
-      },
-      {
-        "component": "select",
-        "name": "buttonClasses",
-        "value": "americas",
-        "label": "Brand Styles",
-        "options": [
-          {
-            "name": "America's Best",
-            "value": "americas"
-          },
-          {
-            "name": "Eyeglass World",
-            "value": "eyeglass"
-          },
-          {
-            "name": "Discount Contacts",
-            "value": "discountcontacts"
-          },
-          {
-            "name": "Vista Optical",
-            "value": "vistaopt"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "primary",
-        "label": "Styles",
-        "options": [
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "input",
-            "value": "primary-variant"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "input secondary",
-            "value": "secondary-variant"
-          },
-          {
-            "name": "text-btn",
-            "value": "text-btn"
-          },
-          {
-            "name": "link-btn",
-            "value": "link-btn"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "name": "IconPlacement",
-        "value": "",
-        "label": "IconPlacement",
-        "options": [
-          {
-            "name": "trailing",
-            "value": "trailing"
-          },
-          {
-            "name": "leading",
-            "value": "leading"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "name": "sizeClasses",
-        "value": "",
-        "label": "size",
-        "options": [
-          {
-            "name": "large",
-            "value": "large"
-          },
-          {
-            "name": "small",
-            "value": "small"
-          }
-        ]
-      },
-      {
-        "component": "boolean",
-        "name": "inverse",
-        "label": "inverse",
-        "valueType": "boolean",
-        "value": false
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "icon",
-        "description": "icon pickup.",
-        "label": "pick Icon",
-        "multi": false
-      },
-      {
-        "component": "boolean",
-        "name": "openInNewTab",
-        "label": "Opens button in new tab",
-        "valueType": "boolean",
-        "value": false
-      },
-      {
-        "component": "text",
-        "label": "Open in new tab",
-        "name": "openInNewTabType",
-        "valueType": "string",
-        "value": "h2",
-        "hidden": true
-      }
-    ]
-  },
-  {
     "id": "card",
     "fields": [
       {
@@ -414,220 +160,8 @@
         "multi": false
       },
       {
-        "component": "select",
-        "name": "classes",
-        "label": "Aspect Ratio",
-        "description": "Author should be able to select the aspect ratio according to which cards will be responsive.",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Aspect Ratio 16:9",
-            "value": "aspect-ratio-16-9"
-          },
-          {
-            "name": "Aspect Ratio 4:3",
-            "value": "aspect-ratio-4-3"
-          },
-          {
-            "name": "Aspect Ratio 1:1",
-            "value": "aspect-ratio-1-1"
-          },
-          {
-            "name": "Aspect Ratio 3:4",
-            "value": "aspect-ratio-3-4"
-          },
-          {
-            "name": "Aspect Ratio 9:16",
-            "value": "aspect-ratio-9-16"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alternative text for accessibility",
-        "description": "Enter Alt text for the authored image."
-      },
-      {
-        "component": "boolean",
-        "label": "Inherit alternative text from page",
-        "name": "Inheritalternativetextfrompage",
-        "valueType": "boolean",
-        "description": "Use the alternative description of the linked asset value of the description metadata in DAM."
-      },
-      {
-        "component": "boolean",
-        "label": "Don’t provide an alternative text",
-        "name": "Dontprovideanalternativetext",
-        "valueType": "boolean",
-        "description": "Select this for decorative images."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "eyebrow",
-        "label": "Eyebrow",
-        "description": "Enter the Eyebrow text."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title",
-        "description": "Enter the title text."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "subtitle",
-        "label": "Subtitle",
-        "description": "Enter the Subtitle text."
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description",
-        "description": "Enter the Description."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "id",
-        "label": "ID",
-        "description": "This option allows to control the unique identifier of the component in the HTML and in the Data Layer."
-      },
-      {
-        "component": "aem-content",
-        "name": "ctapath",
-        "label": "CTA Path"
-      },
-      {
-        "component": "text",
-        "name": "ctapathText",
-        "label": "CTA 1"
-      },
-      {
-        "component": "select",
-        "name": "ctavariation",
-        "label": "Type",
-        "options": [
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "Input Primary",
-            "value": "primary-variant"
-          },
-          {
-            "name": "Input Secondary",
-            "value": "secondary-variant"
-          },
-          {
-            "name": "Text",
-            "value": "text-btn"
-          },
-          {
-            "name": "Link",
-            "value": "link-btn"
-          }
-        ]
-      },
-      {
-        "component": "aem-content",
-        "name": "ctapath1",
-        "label": "CTA Path"
-      },
-      {
-        "component": "text",
-        "name": "ctapath1Text",
-        "label": "CTA 2"
-      },
-      {
-        "component": "select",
-        "name": "ctavariation1",
-        "label": "Type",
-        "options": [
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "Input Primary",
-            "value": "primary-variant"
-          },
-          {
-            "name": "Input Secondary",
-            "value": "secondary-variant"
-          },
-          {
-            "name": "Text",
-            "value": "text-btn"
-          },
-          {
-            "name": "Link",
-            "value": "link-btn"
-          }
-        ]
-      },
-      {
-        "component": "boolean",
-        "label": "Open link in new tab",
-        "name": "Openlinkinnewtab",
-        "valueType": "boolean",
-        "description": "If enabled, the link will open in a new browser tab."
-      }
-    ]
-  },
-  {
-    "id": "cards",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
         "component": "richtext",
         "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "carousel-item",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "media_image",
-        "label": "Background Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "media_imageAlt",
-        "value": "",
-        "label": "Bacgkround Alt"
-      },
-      {
-        "component": "richtext",
-        "name": "content_text",
         "value": "",
         "label": "Text",
         "valueType": "string"
@@ -642,26 +176,89 @@
         "valueType": "number",
         "name": "columns",
         "value": "",
-        "label": "Columns Count"
+        "label": "Columns"
       },
       {
         "component": "text",
         "valueType": "number",
-        "name": "columns",
+        "name": "rows",
         "value": "",
-        "label": "Second Item"
+        "label": "Rows"
       }
     ]
   },
   {
-    "id": "column",
+    "id": "commerce-account-header",
     "fields": [
       {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "component": "text",
+        "name": "title",
+        "label": "Account Header",
+        "value": "My Account"
+      }
+    ]
+  },
+  {
+    "id": "commerce-addresses",
+    "fields": [
+      {
+        "component": "boolean",
+        "name": "minified-view",
+        "label": "Minified View",
+        "value": false
+      }
+    ]
+  },
+  {
+    "id": "commerce-cart",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "start-shopping-url",
+        "label": "Start Shopping URL",
+        "description": "Link to the start shopping page"
+      },
+      {
+        "component": "aem-content",
+        "name": "checkout-url",
+        "label": "Checkout URL",
+        "description": "Link to Checkout page"
+      },
+      {
+        "component": "boolean",
+        "name": "hide-heading",
+        "label": "Hide Heading",
+        "description": "Hide the heading of the cart"
+      },
+      {
+        "component": "boolean",
+        "name": "hide-attributes",
+        "label": "Hide Attributes",
+        "description": "Hide the attributes of the cart"
+      },
+      {
+        "component": "boolean",
+        "name": "enable-item-quantity-update",
+        "label": "Enable Item Quantity Update",
+        "description": "Enable the ability to update the quantity of items in the cart"
+      },
+      {
+        "component": "boolean",
+        "name": "enable-item-remove",
+        "label": "Enable Item Remove",
+        "description": "Enable the ability to remove items from the cart"
+      },
+      {
+        "component": "boolean",
+        "name": "enable-estimate-shipping",
+        "label": "Enable Estimate Shipping",
+        "description": "Enable the ability to estimate shipping costs"
+      },
+      {
+        "component": "number",
+        "name": "max-items",
+        "label": "Max Items",
+        "description": "Maximum number of items to display in the cart"
       }
     ]
   },
@@ -695,43 +292,80 @@
     ]
   },
   {
-    "id": "embed",
+    "id": "commerce-orders-list",
     "fields": [
       {
-        "component": "reference",
-        "valueType": "string",
-        "name": "embed_placeholder",
-        "label": "Placeholder Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "embed_placeholderAlt",
-        "value": "",
-        "label": "Placeholder Image Alt Text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "embed_uri",
-        "label": "URI"
+        "component": "boolean",
+        "name": "minified-view",
+        "label": "Minified View",
+        "value": false
       }
     ]
   },
   {
-    "id": "form",
+    "id": "commerce-returns-list",
+    "fields": [
+      {
+        "component": "boolean",
+        "name": "minified-view",
+        "label": "Minified View",
+        "value": false
+      }
+    ]
+  },
+  {
+    "id": "commerce-wishlist",
     "fields": [
       {
         "component": "aem-content",
-        "name": "reference",
-        "label": "Form"
+        "name": "start-shopping-url",
+        "label": "Start Shopping URL",
+        "description": "Start Shopping URL"
+      }
+    ]
+  },
+  {
+    "id": "enrichment",
+    "fields": [
+      {
+        "component": "select",
+        "name": "type",
+        "label": "Type",
+        "description": "What enrichment type to match with",
+        "options": [
+          {
+            "name": "Product",
+            "value": "product"
+          },
+          {
+            "name": "Category",
+            "value": "category"
+          }
+        ]
       },
       {
-        "component": "text",
-        "name": "action",
-        "label": "Action URL",
-        "valueType": "string"
+        "component": "select",
+        "name": "position",
+        "label": "Position",
+        "description": "Position to match with",
+        "options": [
+          {
+            "name": "Below Product",
+            "value": "below-product"
+          },
+          {
+            "name": "Above Product",
+            "value": "above-product"
+          },
+          {
+            "name": "Below Category",
+            "value": "below-category"
+          },
+          {
+            "name": "Above Category",
+            "value": "above-category"
+          }
+        ]
       }
     ]
   },
@@ -746,1107 +380,7 @@
     ]
   },
   {
-    "id": "header-carousel",
-    "fields": [
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "step-description",
-        "label": "Step Description",
-        "description": "Brief Body Text"
-      },
-      {
-        "component": "select",
-        "name": "time-interval",
-        "value": "3",
-        "label": "Set Time Interval",
-        "options": [
-          {
-            "name": "1 sec",
-            "value": "1"
-          },
-          {
-            "name": "2 sec",
-            "value": "2"
-          },
-          {
-            "name": "3 sec",
-            "value": "3"
-          },
-          {
-            "name": "4 sec",
-            "value": "4"
-          },
-          {
-            "name": "5 sec",
-            "value": "5"
-          },
-          {
-            "name": "6 sec",
-            "value": "6"
-          },
-          {
-            "name": "7 sec",
-            "value": "7"
-          },
-          {
-            "name": "8 sec",
-            "value": "8"
-          },
-          {
-            "name": "9 sec",
-            "value": "9"
-          },
-          {
-            "name": "10 sec",
-            "value": "10"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "header-favorite-icon",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "fav-title",
-        "label": "Favorite Icon",
-        "description": "Enter text to display when no items are marked as favorites."
-      },
-      {
-        "component": "aem-content",
-        "name": "signInLink",
-        "label": "SignIn Link",
-        "description": "Enter the URL of the Sign In page for users to log in.",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "signInLinkText",
-        "label": "SignIn Link Text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "signInText",
-        "label": "SignIn Text",
-        "description": "Message to show when the user is not signed in."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "fav-title-items",
-        "label": "Favorite Icon",
-        "description": "Enter text to display when  one or more items are marked as favorites."
-      },
-      {
-        "component": "aem-content",
-        "name": "fav-ctapath",
-        "label": "Favorite CTA Path"
-      },
-      {
-        "component": "text",
-        "name": "fav-ctapathText",
-        "label": "Favorite CTA Text"
-      }
-    ]
-  },
-  {
-    "id": "header-myaccount",
-    "fields": []
-  },
-  {
-    "id": "header-search",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "search-icon",
-        "label": "Search Icon",
-        "description": "Upload Search icons",
-        "multi": false
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "close-icon",
-        "label": "Close Icon",
-        "description": "Upload Close icons",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "input-placeholder",
-        "label": "Input placeholder"
-      },
-      {
-        "component": "aem-content",
-        "name": "ctapath",
-        "label": "CTA1 Path"
-      },
-      {
-        "component": "text",
-        "name": "ctapathText",
-        "label": "CTA 1"
-      },
-      {
-        "component": "select",
-        "name": "ctavariation",
-        "label": "CTA1 Type",
-        "options": [
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "input",
-            "value": "primary-variant"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "input secondary",
-            "value": "secondary-variant"
-          },
-          {
-            "name": "text-btn",
-            "value": "text-btn"
-          },
-          {
-            "name": "link-btn",
-            "value": "link-btn"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "name": "suggestion",
-        "label": "Suggestion Text"
-      },
-      {
-        "component": "text",
-        "name": "result",
-        "label": "Result Text"
-      },
-      {
-        "component": "aem-content",
-        "name": "cta2path",
-        "label": "CTA2 Path"
-      },
-      {
-        "component": "text",
-        "name": "cta2pathText",
-        "label": "CTA 2"
-      },
-      {
-        "component": "select",
-        "name": "cta2variation",
-        "label": "CTA2 Type",
-        "options": [
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "input",
-            "value": "primary-variant"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "input secondary",
-            "value": "secondary-variant"
-          },
-          {
-            "name": "text-btn",
-            "value": "text-btn"
-          },
-          {
-            "name": "link-btn",
-            "value": "link-btn"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "hero",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image desktop",
-        "multi": false
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagemobile",
-        "label": "Image Mobile",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imagemobileAlt",
-        "label": "Alternative text for accessibility",
-        "description": "Enter Alt text for the authored image mobile."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alternative text for accessibility",
-        "description": "Enter Alt text for the authored image."
-      },
-      {
-        "component": "boolean",
-        "label": "Inherit alternative text from page",
-        "name": "Inheritalternativetextfrompage",
-        "valueType": "boolean",
-        "description": "Use the alternative description of the linked asset value of the description metadata in DAM."
-      },
-      {
-        "component": "boolean",
-        "label": "Don’t provide an alternative text",
-        "name": "Dontprovideanalternativetext",
-        "valueType": "boolean",
-        "description": "Select this for decorative images."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "eyebrow",
-        "label": "Eyebrow",
-        "description": "Enter the Eyebrow text."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title",
-        "description": "Enter the title text."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "subtitle",
-        "label": "Subtitle",
-        "description": "Enter the Subtitle text."
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description",
-        "description": "Enter the Description."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "id",
-        "label": "ID",
-        "description": "This option allows to control the unique identifier of the component in the HTML and in the Data Layer."
-      },
-      {
-        "component": "aem-content",
-        "name": "ctapath",
-        "label": "CTA Path"
-      },
-      {
-        "component": "text",
-        "name": "ctapathText",
-        "label": "CTA 1"
-      },
-      {
-        "component": "select",
-        "name": "ctavariation",
-        "label": "Type",
-        "options": [
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "input",
-            "value": "primary-variant"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "input secondary",
-            "value": "secondary-variant"
-          },
-          {
-            "name": "text-btn",
-            "value": "text-btn"
-          },
-          {
-            "name": "link-btn",
-            "value": "link-btn"
-          }
-        ]
-      },
-      {
-        "component": "aem-content",
-        "name": "ctapath1",
-        "label": "CTA Path"
-      },
-      {
-        "component": "text",
-        "name": "ctapath1Text",
-        "label": "CTA 2"
-      },
-      {
-        "component": "select",
-        "name": "ctavariation1",
-        "label": "Type",
-        "options": [
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "input",
-            "value": "primary-variant"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "input secondary",
-            "value": "secondary-variant"
-          },
-          {
-            "name": "text-btn",
-            "value": "text-btn"
-          },
-          {
-            "name": "link-btn",
-            "value": "link-btn"
-          }
-        ]
-      },
-      {
-        "component": "boolean",
-        "label": "Open link in new tab",
-        "name": "Openlinkinnewtab",
-        "valueType": "boolean",
-        "description": "If enabled, the link will open in a new browser tab."
-      },
-      {
-        "component": "select",
-        "name": "classes",
-        "label": "Styles",
-        "description": "Use the drop-down to select the styles that you want to apply to the Block.",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Right Alignment Background Image Full Bleed",
-            "value": "hero-right-bleed"
-          },
-          {
-            "name": "Left Alignment Background Image Full Bleed",
-            "value": "hero-left-bleed"
-          },
-          {
-            "name": "Top Alignment Foreground Image Full Bleed",
-            "value": "hero-top-bleed"
-          },
-          {
-            "name": "Bottom Alignment Foreground Image Full Bleed",
-            "value": "hero-bottom-bleed"
-          },
-          {
-            "name": "Center Alignment Background Image Full Bleed",
-            "value": "hero-center-bleed"
-          },
-          {
-            "name": "Right Alignment Foreground Image Full Bleed",
-            "value": "hero-img-left-bleed"
-          },
-          {
-            "name": "Left Alignment Foreground Image Full Bleed",
-            "value": "hero-img-right-bleed"
-          },
-          {
-            "name": "Right Alignment Foreground Image No Full Bleed",
-            "value": "hero-img-left-nofull-bleed"
-          },
-          {
-            "name": "Left Alignment Foreground Image No Full Bleed",
-            "value": "hero-img-right-nofull-bleed"
-          },
-          {
-            "name": "Top Alignment Foreground Image No Full Bleed",
-            "value": "hero-top-nofull-bleed"
-          },
-          {
-            "name": "Bottom Alignment Foreground Image No Full Bleed",
-            "value": "hero-bottom-nofull-bleed"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "icon-link-list",
-    "fields": []
-  },
-  {
-    "id": "icon",
-    "fields": [
-      {
-        "component": "select",
-        "name": "icon-type",
-        "value": "",
-        "label": "Icon Type",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Facebook",
-            "value": "facebook"
-          },
-          {
-            "name": "Instagram",
-            "value": "instagram"
-          },
-          {
-            "name": "YouTube",
-            "value": "youtube"
-          },
-          {
-            "name": "X (former Twitter)",
-            "value": "twitter"
-          }
-        ]
-      },
-      {
-        "component": "text-input",
-        "valueType": "string",
-        "name": "icon-label",
-        "label": "Icon Label",
-        "required": true,
-        "value": ""
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "icon-link",
-        "required": true,
-        "value": "",
-        "label": "Icon Link"
-      }
-    ]
-  },
-  {
-    "component": "select",
-    "name": "classes",
-    "label": "Styles",
-    "description": "Use the drop-down to select the styles that you want to apply to the Block.",
-    "valueType": "string",
-    "options": [
-      {
-        "name": "Right Alignment Background Image Full Bleed",
-        "value": "hero-right-bleed"
-      },
-      {
-        "name": "Left Alignment Background Image Full Bleed",
-        "value": "hero-left-bleed"
-      },
-      {
-        "name": "Top Alignment Foreground Image Full Bleed",
-        "value": "hero-top-bleed"
-      },
-      {
-        "name": "Bottom Alignment Foreground Image Full Bleed",
-        "value": "hero-bottom-bleed"
-      },
-      {
-        "name": "Center Alignment Background Image Full Bleed",
-        "value": "hero-center-bleed"
-      },
-      {
-        "name": "Right Alignment Foreground Image Full Bleed",
-        "value": "hero-img-left-bleed"
-      },
-      {
-        "name": "Left Alignment Foreground Image Full Bleed",
-        "value": "hero-img-right-bleed"
-      },
-      {
-        "name": "Right Alignment Foreground Image No Full Bleed",
-        "value": "hero-img-left-nofull-bleed"
-      },
-      {
-        "name": "Left Alignment Foreground Image No Full Bleed",
-        "value": "hero-img-right-nofull-bleed"
-      },
-      {
-        "name": "Top Alignment Foreground Image No Full Bleed",
-        "value": "hero-top-nofull-bleed"
-      },
-      {
-        "name": "Bottom Alignment Foreground Image No Full Bleed",
-        "value": "hero-bottom-nofull-bleed"
-      }
-    ]
-  },
-  {
-    "component": "reference",
-    "valueType": "string",
-    "name": "image",
-    "label": "Image",
-    "multi": false
-  },
-  {
-    "component": "text",
-    "valueType": "string",
-    "name": "imageAlt",
-    "label": "Alternative text for accessibility",
-    "description": "Enter Alt text for the authored image."
-  },
-  {
-    "component": "boolean",
-    "label": "Inherit alternative text from page",
-    "name": "Inheritalternativetextfrompage",
-    "valueType": "boolean",
-    "description": "Use the alternative description of the linked asset value of the description metadata in DAM."
-  },
-  {
-    "component": "boolean",
-    "label": "Don’t provide an alternative text",
-    "name": "Dontprovideanalternativetext",
-    "valueType": "boolean",
-    "description": "Select this for decorative images."
-  },
-  {
-    "component": "text",
-    "valueType": "string",
-    "name": "eyebrow",
-    "label": "Eyebrow",
-    "description": "Enter the Eyebrow text."
-  },
-  {
-    "component": "text",
-    "valueType": "string",
-    "name": "title",
-    "label": "Title",
-    "description": "Enter the title text."
-  },
-  {
-    "component": "text",
-    "valueType": "string",
-    "name": "subtitle",
-    "label": "Subtitle",
-    "description": "Enter the Subtitle text."
-  },
-  {
-    "component": "richtext",
-    "valueType": "string",
-    "name": "description",
-    "label": "Description",
-    "description": "Enter the Description."
-  },
-  {
-    "component": "aem-content",
-    "name": "ctapath",
-    "label": "CTA Path"
-  },
-  {
-    "component": "text",
-    "name": "ctapathText",
-    "label": "CTA 1"
-  },
-  {
-    "component": "select",
-    "name": "ctavariation",
-    "label": "Type",
-    "options": [
-      {
-        "name": "Primary",
-        "value": "primary"
-      },
-      {
-        "name": "Secondary",
-        "value": "secondary"
-      },
-      {
-        "name": "Input Primary",
-        "value": "primary-variant"
-      },
-      {
-        "name": "Input Secondary",
-        "value": "secondary-variant"
-      },
-      {
-        "name": "Text",
-        "value": "text-btn"
-      },
-      {
-        "name": "Link",
-        "value": "link-btn"
-      }
-    ]
-  },
-  {
-    "component": "aem-content",
-    "name": "ctapath1",
-    "label": "CTA Path"
-  },
-  {
-    "component": "text",
-    "name": "ctapath1Text",
-    "label": "CTA 2"
-  },
-  {
-    "component": "select",
-    "name": "ctavariation1",
-    "label": "Type",
-    "options": [
-      {
-        "name": "Primary",
-        "value": "primary"
-      },
-      {
-        "name": "Secondary",
-        "value": "secondary"
-      },
-      {
-        "name": "Input Primary",
-        "value": "primary-variant"
-      },
-      {
-        "name": "Input Secondary",
-        "value": "secondary-variant"
-      },
-      {
-        "name": "Text",
-        "value": "text-btn"
-      },
-      {
-        "name": "Link",
-        "value": "link-btn"
-      }
-    ]
-  },
-  {
-    "component": "boolean",
-    "label": "Open link in new tab",
-    "name": "Openlinkinnewtab",
-    "valueType": "boolean",
-    "description": "If enabled, the link will open in a new browser tab."
-  },
-  {
-    "component": "text",
-    "valueType": "string",
-    "name": "id",
-    "label": "ID",
-    "description": "This option allows to control the unique identifier of the component in the HTML and in the Data Layer."
-  },
-  {
-    "id": "link-list",
-    "fields": [
-      {
-        "component": "tab",
-        "label": "Link List",
-        "name": "linkListTab"
-      },
-      {
-        "component": "select",
-        "name": "linkListSelect",
-        "value": "vertical",
-        "label": "Orientation",
-        "valueType": "string",
-        "required": true,
-        "description": "Describes if the link list will be displayed vertically or horizontally.",
-        "options": [
-          {
-            "name": "Vertical",
-            "value": "vertical"
-          },
-          {
-            "name": "Horizontal",
-            "value": "horizontal"
-          }
-        ]
-      },
-      {
-        "component": "text-input",
-        "valueType": "string",
-        "name": "linkListTitle",
-        "label": "Link List Title",
-        "value": "",
-        "description": "Defines the title of the link list."
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "linkListRichText",
-        "value": "",
-        "required": true,
-        "label": "Link List",
-        "description": "Defines the links to be displayed in the link list beneath the link list title."
-      },
-      {
-        "component": "text",
-        "label": "Link List Classname",
-        "name": "linkListClassname",
-        "value": "link-list",
-        "valueType": "string",
-        "hidden": true
-      },
-      {
-        "component": "tab",
-        "name": "analytics_tab",
-        "label": "Analytics"
-      },
-      {
-        "component": "text-input",
-        "name": "analytics_label",
-        "label": "Analytics Label",
-        "valueType": " "
-      }
-    ]
-  },
-  {
-    "id": "linksidebar-item",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "summary",
-        "value": "",
-        "label": "Summary"
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "component": "boolean",
-    "label": "Show Checkbox",
-    "name": "checkboxBool",
-    "valueType": "boolean",
-    "value": false
-  },
-  {
-    "component": "text-input",
-    "label": "Checkbox Label",
-    "name": "checkbox_title",
-    "condition": {
-      "===": [
-        {
-          "var": "checkboxBool"
-        },
-        true
-      ]
-    }
-  },
-  {
-    "component": "text-input",
-    "name": "checkbox_titleType",
-    "valueType": "string",
-    "value": "h4",
-    "hidden": true
-  },
-  {
-    "component": "text-input",
-    "label": "Checkbox helper text",
-    "name": "checkbox_helperText",
-    "condition": {
-      "===": [
-        {
-          "var": "checkboxBool"
-        },
-        true
-      ]
-    }
-  },
-  {
-    "id": "multi-columns",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title",
-        "description": "Main heading"
-      }
-    ]
-  },
-  {
-    "id": "multi-column",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "step-icon",
-        "label": "Step Icon",
-        "description": "Upload Image for icons",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "step-title",
-        "label": "Step Title",
-        "description": "Short Title"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "step-description",
-        "label": "Step Description",
-        "description": "Brief Body Text"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "step-linking-icon",
-        "label": "Step Linking Icon",
-        "description": "Upload Image for Step Linking icon",
-        "multi": false
-      }
-    ]
-  },
-  {
-    "id": "navigation",
-    "fields": [
-      {
-        "component": "text",
-        "name": "navigation-title",
-        "label": "Title",
-        "valueType": "string",
-        "value": ""
-      },
-      {
-        "component": "select",
-        "name": "classes",
-        "label": "Styles",
-        "description": "Use the drop-down to select the menu variations.",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "default",
-            "value": "default"
-          },
-          {
-            "name": "Horizontal View",
-            "value": "horizontal-view"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "navigation-link-list",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "name": "link",
-        "value": "",
-        "label": "link-list",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "navigation-search",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "search-icon",
-        "label": "Search Icon",
-        "description": "Upload Search icons",
-        "multi": false
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "close-icon",
-        "label": "Close Icon",
-        "description": "Upload Close icons",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "input-placeholder",
-        "label": "Input placeholder"
-      },
-      {
-        "component": "aem-content",
-        "name": "ctapath",
-        "label": "CTA Path"
-      },
-      {
-        "component": "text",
-        "name": "ctapathText",
-        "label": "CTA 1"
-      },
-      {
-        "component": "select",
-        "name": "ctavariation",
-        "label": "Type",
-        "options": [
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "input",
-            "value": "primary-variant"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "input secondary",
-            "value": "secondary-variant"
-          },
-          {
-            "name": "text-btn",
-            "value": "text-btn"
-          },
-          {
-            "name": "link-btn",
-            "value": "link-btn"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "navigation-image-list",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "barnd-image-1",
-        "label": "Image1",
-        "multi": false
-      },
-      {
-        "component": "aem-content",
-        "name": "barnd-image-CTA-1",
-        "label": "Link1"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "barnd-image-2",
-        "label": "Image2",
-        "multi": false
-      },
-      {
-        "component": "aem-content",
-        "name": "barnd-image-CTA-2",
-        "label": "Link2"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "barnd-image-3",
-        "label": "Image3",
-        "multi": false
-      },
-      {
-        "component": "aem-content",
-        "name": "barnd-image-CTA-3",
-        "label": "Link3"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "barnd-image-4",
-        "label": "Image4",
-        "multi": false
-      },
-      {
-        "component": "aem-content",
-        "name": "barnd-image-CTA-4",
-        "label": "Link4"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "barnd-image-5",
-        "label": "Image5",
-        "multi": false
-      },
-      {
-        "component": "aem-content",
-        "name": "barnd-image-CTA-5",
-        "label": "Link5"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "barnd-image-6",
-        "label": "Image6",
-        "multi": false
-      },
-      {
-        "component": "aem-content",
-        "name": "barnd-image-CTA-6",
-        "label": "Link6"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "barnd-image-7",
-        "label": "Image7",
-        "multi": false
-      },
-      {
-        "component": "aem-content",
-        "name": "barnd-image-CTA-7",
-        "label": "Link7"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "barnd-image-8",
-        "label": "Image8",
-        "multi": false
-      },
-      {
-        "component": "aem-content",
-        "name": "barnd-image-CTA-8",
-        "label": "Link8"
-      }
-    ]
-  },
-  {
-    "id": "navigation-card",
     "fields": [
       {
         "component": "reference",
@@ -1859,672 +393,49 @@
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Alternative text for accessibility",
-        "description": "Enter Alt text for the authored image."
-      },
-      {
-        "component": "boolean",
-        "label": "Don’t provide an alternative text",
-        "name": "Dontprovideanalternativetext",
-        "valueType": "boolean",
-        "description": "Select this for decorative images."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "Pretitle",
-        "label": "Eyebrow",
-        "description": "Enter the Eyebrow text."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title",
-        "description": "Enter the title text."
-      },
-      {
-        "component": "aem-content",
-        "name": "ctapathCard",
-        "label": "CTA Path"
-      },
-      {
-        "component": "text",
-        "name": "ctapathCardText",
-        "label": "CTA"
-      },
-      {
-        "component": "select",
-        "name": "ctavariation",
-        "label": "Type",
-        "options": [
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "primary Variant",
-            "value": "primary-variant"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "secondary Variant",
-            "value": "secondary-variant"
-          },
-          {
-            "name": "text-btn",
-            "value": "text-btn"
-          },
-          {
-            "name": "link-btn",
-            "value": "link-btn"
-          }
-        ]
-      },
-      {
-        "component": "aem-content",
-        "name": "cta1pathCard",
-        "label": "CTA Path"
-      },
-      {
-        "component": "text",
-        "name": "cta1pathCardText",
-        "label": "CTA"
-      },
-      {
-        "component": "select",
-        "name": "cta1variation",
-        "label": "Type",
-        "options": [
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "primary Variant",
-            "value": "primary-variant"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "secondary Variant",
-            "value": "secondary-variant"
-          },
-          {
-            "name": "text-btn",
-            "value": "text-btn"
-          },
-          {
-            "name": "link-btn",
-            "value": "link-btn"
-          }
-        ]
-      },
-      {
-        "component": "boolean",
-        "label": "Open link in new tab",
-        "name": "Openlinkinnewtab",
-        "valueType": "boolean",
-        "description": "If enabled, the link will open in a new browser tab."
-      }
-    ]
-  },
-  {
-    "id": "producttile",
-    "fields": []
-  },
-  {
-    "id": "table",
-    "fields": []
-  },
-  {
-    "id": "table",
-    "fields": [
-      {
-        "component": "multiselect",
-        "name": "classes",
-        "value": "",
-        "label": "Options",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Border",
-            "children": [
-              {
-                "name": "Striped",
-                "value": "striped"
-              },
-              {
-                "name": "Bordered",
-                "value": "bordered"
-              }
-            ]
-          },
-          {
-            "name": "Header",
-            "children": [
-              {
-                "name": "No Header",
-                "value": "no-header"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "name": "filter",
-        "label": "Columns",
-        "valueType": "string",
-        "value": "table",
-        "options": [
-          {
-            "name": "1 Column",
-            "value": "table"
-          },
-          {
-            "name": "2 Columns",
-            "value": "table-2-columns"
-          },
-          {
-            "name": "3 Columns",
-            "value": "table-3-columns"
-          },
-          {
-            "name": "4 Columns",
-            "value": "table-4-columns"
-          },
-          {
-            "name": "5 Columns",
-            "value": "table-5-columns"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "table-row",
-    "fields": [
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "column1text",
-        "label": "Column1"
-      }
-    ]
-  },
-  {
-    "id": "table-col-2",
-    "fields": [
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "column1text",
-        "label": "Column1"
+        "label": "Alt",
+        "value": ""
       },
       {
         "component": "richtext",
-        "valueType": "string",
-        "name": "column2text",
-        "label": "Column2"
-      }
-    ]
-  },
-  {
-    "id": "table-col-3",
-    "fields": [
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "column1text",
-        "label": "Column1"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "column2text",
-        "label": "Column2"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "column3text",
-        "label": "Column3"
-      }
-    ]
-  },
-  {
-    "id": "table-col-4",
-    "fields": [
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "column1text",
-        "label": "Column1"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "column2text",
-        "label": "Column2"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "column3text",
-        "label": "Column3"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "column4text",
-        "label": "Column4"
-      }
-    ]
-  },
-  {
-    "id": "tabs-item",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "tabName",
-        "value": "",
-        "label": "Tab Name"
-      },
-      {
-        "component": "aem-content",
-        "name": "tabPageUrl",
-        "label": "Page Url",
-        "valueType": "string",
-        "rootPath": "",
-        "description": "Path to linked AEM content"
-      }
-    ]
-  },
-  {
-    "id": "teaser",
-    "fields": [
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "value": "Your text will show here.",
-        "name": "teaserBlurb",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "teaserStyle",
-        "value": "image",
-        "label": "Style",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Video",
-            "value": "video"
-          },
-          {
-            "name": "Image",
-            "value": "image"
-          }
-        ]
-      },
-      {
-        "component": "container",
-        "label": "Video Properties",
-        "name": "videoProperties",
-        "valueType": "string",
-        "condition": {
-          "===": [
-            {
-              "var": "teaserStyle"
-            },
-            "video"
-          ]
-        },
-        "fields": [
-          {
-            "component": "text",
-            "valueType": "string",
-            "name": "videoReference",
-            "label": "Video Reference",
-            "multi": false,
-            "description": "Provide a URL for the video background."
-          },
-          {
-            "component": "select",
-            "name": "videoBehavior",
-            "value": "autoplay",
-            "label": "Video Behavior (on load)",
-            "valueType": "string",
-            "options": [
-              {
-                "name": "Autoplay",
-                "value": "autoplay"
-              },
-              {
-                "name": "Pause",
-                "value": "pause"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "component": "container",
-        "label": "Image Properties",
-        "name": "imageProperties",
-        "valueType": "string",
-        "condition": {
-          "===": [
-            {
-              "var": "teaserStyle"
-            },
-            "image"
-          ]
-        },
-        "fields": [
-          {
-            "component": "reference",
-            "valueType": "string",
-            "name": "imageRef",
-            "label": "Image",
-            "multi": false
-          },
-          {
-            "component": "text",
-            "valueType": "string",
-            "name": "alt",
-            "value": "Default alt",
-            "label": "Alt Text"
-          }
-        ]
-      },
-      {
-        "component": "container",
-        "label": "Button Properties",
-        "name": "buttonProperties",
-        "valueType": "string",
-        "fields": [
-          {
-            "component": "text",
-            "valueType": "string",
-            "name": "btn-text",
-            "value": "Button",
-            "label": "Button Text"
-          },
-          {
-            "component": "aem-content",
-            "name": "btn-link",
-            "label": "Button Link",
-            "valueType": "string",
-            "rootPath": "",
-            "description": "Path to linked AEM content"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "text-nvi",
-    "fields": [
-      {
-        "component": "text",
         "name": "text",
-        "label": "Text NVI"
-      },
-      {
-        "component": "select",
-        "name": "classes",
         "value": "",
-        "label": "Title Styles",
-        "description": "",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Heading 1",
-            "value": "heading-1"
-          },
-          {
-            "name": "Heading 2",
-            "value": "heading-2"
-          },
-          {
-            "name": "Heading 3",
-            "value": "heading-3"
-          },
-          {
-            "name": "Heading 4",
-            "value": "heading-4"
-          },
-          {
-            "name": "Subheading",
-            "value": "s-medium"
-          },
-          {
-            "name": "Subheading Bold",
-            "value": "s-bold"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "name": "titleType",
-        "label": "Title Type",
-        "options": [
-          {
-            "name": "h1",
-            "value": "h1"
-          },
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
-          }
-        ]
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },
   {
-    "id": "title",
+    "id": "product-details",
+    "fields": []
+  },
+  {
+    "id": "product-list-page",
     "fields": [
       {
         "component": "text",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "",
-        "label": "Title Styles",
-        "description": "",
+        "name": "urlPath",
+        "label": "URL Path",
         "valueType": "string",
-        "options": [
-          {
-            "name": "Heading 1",
-            "value": "heading-1"
-          },
-          {
-            "name": "Heading 2",
-            "value": "heading-2"
-          },
-          {
-            "name": "Heading 3",
-            "value": "heading-3"
-          },
-          {
-            "name": "Heading 4",
-            "value": "heading-4"
-          },
-          {
-            "name": "Subheading",
-            "value": "s-medium"
-          },
-          {
-            "name": "Subheading Bold",
-            "value": "s-bold"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "name": "titleType",
-        "label": "Title Type",
-        "options": [
-          {
-            "name": "h1",
-            "value": "h1"
-          },
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
-          }
-        ]
+        "description": "Current Category URL Path"
       }
     ]
   },
   {
-    "id": "video",
+    "id": "product-recommendations",
     "fields": [
       {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "uri",
-        "label": "Video"
-      },
-      {
-        "component": "multiselect",
-        "name": "classes",
-        "value": "",
-        "label": "Options",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Auto Play",
-            "children": [
-              {
-                "name": "AutoPlay",
-                "value": "autoplay"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "placeholder_image",
-        "label": "Placeholder Image",
-        "multi": true
+        "component": "text",
+        "name": "currentsku",
+        "label": "Current SKU",
+        "description": "Current SKU"
       },
       {
         "component": "text",
-        "valueType": "string",
-        "name": "placeholder_imageAlt",
-        "value": "",
-        "label": "Placeholder Image Alt Text"
-      }
-    ]
-  },
-  {
-    "id": "link-list",
-    "fields": [
-      {
-        "component": "tab",
-        "label": "Link List",
-        "name": "linkListTab"
-      },
-      {
-        "component": "select",
-        "name": "linkListSelect",
-        "value": "vertical",
-        "label": "Orientation",
-        "valueType": "string",
-        "required": true,
-        "description": "Describes if the link list will be displayed vertically or horizontally.",
-        "options": [
-          {
-            "name": "Vertical",
-            "value": "vertical"
-          },
-          {
-            "name": "Horizontal",
-            "value": "horizontal"
-          }
-        ]
-      },
-      {
-        "component": "text-input",
-        "valueType": "string",
-        "name": "linkListTitle",
-        "label": "Link List Title",
-        "value": "",
-        "description": "Defines the title of the link list."
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "linkListRichText",
-        "value": "",
-        "required": true,
-        "label": "Link List",
-        "description": "Defines the links to be displayed in the link list beneath the link list title."
-      },
-      {
-        "component": "text",
-        "label": "Link List Classname",
-        "name": "linkListClassname",
-        "value": "link-list",
-        "valueType": "string",
-        "hidden": true
-      },
-      {
-        "component": "tab",
-        "name": "analytics_tab",
-        "label": "Analytics"
-      },
-      {
-        "component": "text-input",
-        "name": "analytics_label",
-        "label": "Analytics Label",
-        "valueType": " "
+        "name": "recid",
+        "label": "Record ID",
+        "description": "Record ID",
+        "required": true
       }
     ]
   },
@@ -2537,203 +448,334 @@
         "label": "Template",
         "valueType": "string",
         "value": ""
-      },
-      {
-        "component": "text",
-        "name": "nav",
-        "label": "Header",
-        "valueType": "string",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "name": "footer",
-        "label": "Footer",
-        "valueType": "string",
-        "value": ""
-      },
-      {
-        "component": "select",
-        "name": "brand",
-        "value": "",
-        "label": "Brand",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Americs Best",
-            "value": "americasbest"
-          },
-          {
-            "name": "Eyeglass World",
-            "value": "eyeglassworld"
-          },
-          {
-            "name": "Military Optical",
-            "value": "militaryoptical"
-          }
-        ]
       }
     ]
   },
   {
-    "id": "blank-metadata",
+    "id": "enrichment-metadata",
     "fields": [
       {
         "component": "text",
         "name": "template",
-        "label": "Template - Blank",
+        "label": "Template",
         "valueType": "string",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "name": "nav",
-        "label": "Header",
-        "valueType": "string",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "name": "footer",
-        "label": "Footer",
-        "valueType": "string",
-        "value": ""
-      },
-      {
-        "component": "select",
-        "name": "brand",
-        "value": "",
-        "label": "Brand",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Americs Best",
-            "value": "americasbest"
-          },
-          {
-            "name": "Eyeglass World",
-            "value": "eyeglassworld"
-          },
-          {
-            "name": "Military Optical",
-            "value": "militaryoptical"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "content-metadata",
-    "fields": [
-      {
-        "component": "text",
-        "name": "template",
-        "label": "Template - Content",
-        "valueType": "string",
-        "value": "content",
+        "value": "enrichment",
         "readOnly": true
       },
       {
         "component": "text",
+        "name": "title",
+        "label": "Title",
         "valueType": "string",
-        "name": "jcr:title",
-        "label": "Title"
+        "value": "",
+        "description": "Title of the enrichment"
       },
       {
         "component": "text",
+        "name": "enrichment-products",
+        "label": "Product SKU's to match with",
         "valueType": "string",
-        "name": "jcr:description",
-        "label": "Description"
+        "multi": true
       },
       {
         "component": "text",
+        "name": "enrichment-categories",
+        "label": "Product Categories to match with",
         "valueType": "string",
-        "name": "keywords",
-        "multi": true,
-        "label": "Keywords"
+        "multi": true
+      },
+      {
+        "component": "text",
+        "name": "enrichment-positions",
+        "label": "Positions to match with",
+        "valueType": "string",
+        "multi": true
       }
     ]
   },
   {
-    "id": "article-metadata",
+    "id": "pdp-metadata",
     "fields": [
       {
         "component": "text",
         "name": "template",
-        "label": "Template - Article",
+        "label": "Template",
         "valueType": "string",
-        "value": "article",
+        "value": "pdp",
         "readOnly": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "jcr:title",
-        "label": "Title"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "jcr:description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "keywords",
-        "multi": true,
-        "label": "Keywords"
       }
     ]
   },
   {
-    "id": "button",
+    "id": "order-details-metadata",
     "fields": [
       {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link"
-      },
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "order-details",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "plp-metadata",
+    "fields": [
       {
         "component": "text",
-        "name": "linkText",
-        "label": "Text"
-      },
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "plp",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "cart-metadata",
+    "fields": [
       {
         "component": "text",
-        "name": "linkTitle",
-        "label": "Title"
-      },
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "cart",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "mini-cart-metadata",
+    "fields": [
       {
-        "component": "select",
-        "name": "linkType",
-        "label": "Type",
-        "options": [
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "Input Primary",
-            "value": "primary-variant"
-          },
-          {
-            "name": "Input Secondary",
-            "value": "secondary-variant"
-          },
-          {
-            "name": "Text",
-            "value": "text-btn"
-          },
-          {
-            "name": "Link",
-            "value": "link-btn"
-          }
-        ]
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "mini-cart",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "checkout-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "checkout",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "search-order-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "search-order",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "search-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "search",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "login-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "login",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "forgot-password-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "forgot-password",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "create-account-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "create-account",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "account-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "account",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "orders-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "orders",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "address-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "address",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "returns-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "returns",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "account-order-details-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "account-order-details",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "order-status-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "order-status",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "return-details-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "return-details",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "create-return-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "create-return",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "confirm-account-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "confirm-account",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "create-password-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "create-password",
+        "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "wishlist-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "wishlist",
+        "readOnly": true
       }
     ]
   }

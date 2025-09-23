@@ -15,16 +15,16 @@
  * from Adobe.
  *******************************************************************/
 export interface SelectedCustomizableOption {
-  customizable_option_uid: string;
-  label: string;
-  type: string;
-  required: boolean;
-  sort_order: number;
-  values: SelectedCustomizableOptionValue[];
+    customizable_option_uid: string;
+    label: string;
+    type: string;
+    required: boolean;
+    sort_order: number;
+    values: SelectedCustomizableOptionValue[];
 }
 export interface SelectedCustomizableOptionValue {
-  customizable_option_value_uid: string;
-  label: string;
-  value: string;
+    customizable_option_value_uid: string;
+    label: string;
+    value: string;
 }
 //# sourceMappingURL=selected-customizable-option.d.ts.map

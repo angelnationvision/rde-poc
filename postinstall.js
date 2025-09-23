@@ -27,22 +27,16 @@ fs.readdirSync('node_modules/@dropins', { withFileTypes: true }).forEach((file) 
   }
   fs.cpSync(path.join('node_modules', '@dropins', file.name), path.join(dropinsDir, file.name), {
     recursive: true,
-    filter: (src) => !src.endsWith('package.json'),
+    filter: (src) => (!src.endsWith('package.json')),
   });
 });
 
 // Other files to copy
 [
-  {
-    from: '@adobe/magento-storefront-event-collector/dist/index.js',
-    to: 'commerce-events-collector.js',
-  },
+  { from: '@adobe/magento-storefront-event-collector/dist/index.js', to: 'commerce-events-collector.js' },
   { from: '@adobe/magento-storefront-events-sdk/dist/index.js', to: 'commerce-events-sdk.js' },
 ].forEach((file) => {
-  fs.copyFileSync(
-    path.resolve(__dirname, 'node_modules', file.from),
-    path.resolve(__dirname, 'scripts', file.to),
-  );
+  fs.copyFileSync(path.resolve(__dirname, 'node_modules', file.from), path.resolve(__dirname, 'scripts', file.to));
 });
 
 function checkPackageLockForArtifactory() {
@@ -58,9 +52,7 @@ function checkPackageLockForArtifactory() {
         Object.keys(packageLock.packages).forEach((packageName) => {
           const packageInfo = packageLock.packages[packageName];
           if (packageInfo.resolved && packageInfo.resolved.includes('artifactory')) {
-            console.warn(
-              `Warning: artifactory found in resolved property for package ${packageName}`,
-            );
+            console.warn(`Warning: artifactory found in resolved property for package ${packageName}`);
             found = true;
           }
         });
@@ -75,9 +67,7 @@ function checkPackageLockForArtifactory() {
 function checkSourceMaps() {
   const hlxIgnorePath = '.hlxignore';
   if (!fs.existsSync(hlxIgnorePath) || !fs.readFileSync(hlxIgnorePath, 'utf-8').includes('*.map')) {
-    console.info(
-      '⚠️ Sourcemaps may be added to the repo. WARNING: Please remove the *.map files or add "*.map" to .hlxignore before going live!\n',
-    );
+    console.info('⚠️ Sourcemaps may be added to the repo. WARNING: Please remove the *.map files or add "*.map" to .hlxignore before going live!\n');
   }
 }
 

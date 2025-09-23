@@ -14,10 +14,7 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const addCheckoutEventListeners: () => (
-  | {
-      off(): void;
-    }
-  | undefined
-)[];
+export declare const addCheckoutEventListeners: () => ({
+    off(): void;
+} | undefined)[];
 //# sourceMappingURL=listeners.d.ts.map

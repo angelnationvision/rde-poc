@@ -14,14 +14,11 @@
  * from Adobe.
  */
 export type Options = {
-  anchors?: string[];
-  optionsUIDs?: string[];
-  preselectFirstOption?: boolean;
-  isBundle?: boolean;
-  skipTransform?: boolean;
+    anchors?: string[];
+    optionsUIDs?: string[];
+    preselectFirstOption?: boolean;
+    isBundle?: boolean;
+    skipTransform?: boolean;
 };
-export declare const fetchProductData: (
-  sku: string,
-  options?: Options
-) => Promise<import('../../data/models/product-model').ProductModel | null>;
+export declare const fetchProductData: (sku: string, options?: Options) => Promise<import('../../data/models/product-model').ProductModel | null>;
 //# sourceMappingURL=fetchProductData.d.ts.map

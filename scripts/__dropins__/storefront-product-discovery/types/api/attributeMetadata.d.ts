@@ -1,12 +1,12 @@
 export type AttributeMetadata = {
-  attribute: string;
-  label: string;
-  numeric: boolean;
+    attribute: string;
+    label: string;
+    numeric: boolean;
 };
 export interface AttributeMetadataResponse {
-  attributeMetadata: {
-    sortable: AttributeMetadata[];
-    filterableInSearch: AttributeMetadata[];
-  };
+    attributeMetadata: {
+        sortable: AttributeMetadata[];
+        filterableInSearch: AttributeMetadata[];
+    };
 }
 //# sourceMappingURL=attributeMetadata.d.ts.map

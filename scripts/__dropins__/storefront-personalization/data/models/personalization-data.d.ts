@@ -15,8 +15,8 @@
  * from Adobe.
  *******************************************************************/
 export interface PersonalizationData {
-  segments: string[];
-  groups: string[];
-  cartRules: string[];
+    segments: string[];
+    groups: string[];
+    cartRules: string[];
 }
 //# sourceMappingURL=personalization-data.d.ts.map

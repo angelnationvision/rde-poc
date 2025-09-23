@@ -14,6 +14,5 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const RESET_PASSWORD =
-  '\n  mutation RESET_PASSWORD(\n    $email: String!\n    $resetPasswordToken: String!\n    $newPassword: String!\n  ) {\n    resetPassword(\n      email: $email\n      resetPasswordToken: $resetPasswordToken\n      newPassword: $newPassword\n    )\n  }\n';
+export declare const RESET_PASSWORD = "\n  mutation RESET_PASSWORD(\n    $email: String!\n    $resetPasswordToken: String!\n    $newPassword: String!\n  ) {\n    resetPassword(\n      email: $email\n      resetPasswordToken: $resetPasswordToken\n      newPassword: $newPassword\n    )\n  }\n";
 //# sourceMappingURL=resetPassword.graphql.d.ts.map

@@ -1,20 +1,24 @@
 {
-  "type": "object",
-  "properties": {
-    "categoryContext": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "urlKey": {
-          "type": "string"
-        },
-        "urlPath": {
-          "type": "string"
+    "type": "object",
+    "properties": {
+        "categoryContext": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "urlKey": {
+                    "type": "string"
+                },
+                "urlPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "urlKey",
+                "urlPath"
+            ]
         }
-      },
-      "required": ["name", "urlKey", "urlPath"]
     }
-  }
 }

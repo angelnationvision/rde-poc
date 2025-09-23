@@ -15,7 +15,7 @@
  * from Adobe.
  *******************************************************************/
 declare enum EventsList {
-  EDIT_ACCOUNT_EVENT = 'edit-account',
+    EDIT_ACCOUNT_EVENT = "edit-account"
 }
 export declare function getAdobeDataLayer(): any;
 /**

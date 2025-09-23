@@ -28,34 +28,10 @@ function updateUEInstrumentation() {
   const main = document.querySelector('main');
   const template = document.querySelector('meta[name="template"]')?.content;
   const sections = main.querySelectorAll('[data-aue-model$="section"]');
-  const templates = [
-    'article',
-    'blank',
-    'content',
-    'order-details',
-    'enrichment',
-    'pdp',
-    'cart',
-    'mini-cart',
-    'plp',
-    'checkout',
-    'search-order',
-    'search',
-    'login',
-    'forgot-password',
-    'create-account',
-    'account',
-    'orders',
-    'address',
-    'returns',
-    'account-order-details',
-    'order-status',
-    'create-return',
-    'return-details',
-    'confirm-account',
-    'create-password',
-    'wishlist',
-  ];
+  const templates = ['order-details', 'enrichment', 'pdp', 'cart', 'mini-cart', 'plp',
+    'checkout', 'search-order', 'search', 'login', 'forgot-password', 'create-account',
+    'account', 'orders', 'address', 'returns', 'account-order-details', 'order-status',
+    'create-return', 'return-details', 'confirm-account', 'create-password', 'wishlist'];
   const columnTemplates = ['account', 'orders', 'address', 'returns', 'account-order-details'];
 
   // updated section filters according to the template
@@ -107,8 +83,7 @@ async function applyChanges(event) {
       return true;
     }
 
-    const block = element.parentElement?.closest('.block[data-aue-resource]')
-      || element?.closest('.block[data-aue-resource]');
+    const block = element.parentElement?.closest('.block[data-aue-resource]') || element?.closest('.block[data-aue-resource]');
     if (block) {
       const blockResource = block.getAttribute('data-aue-resource');
       const newBlock = parsedUpdate.querySelector(`[data-aue-resource="${blockResource}"]`);
@@ -126,9 +101,7 @@ async function applyChanges(event) {
       }
     } else {
       // sections and default content, may be multiple in the case of richtext
-      const newElements = parsedUpdate.querySelectorAll(
-        `[data-aue-resource="${resource}"],[data-richtext-resource="${resource}"]`,
-      );
+      const newElements = parsedUpdate.querySelectorAll(`[data-aue-resource="${resource}"],[data-richtext-resource="${resource}"]`);
       if (newElements.length) {
         const { parentElement } = element;
         if (element.matches('.section')) {

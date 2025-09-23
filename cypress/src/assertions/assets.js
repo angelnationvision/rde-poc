@@ -24,25 +24,19 @@ function formatComponentStatus(match, option, name) {
  * Expect an AEM Asset image format.
  * @type {import('./assets.d.ts').expectAemAssetImage}
  */
-export const expectAemAssetsImage = (
-  src,
-  { protocol, environment, urn, format, alias, ...params }
-) => {
+export const expectAemAssetsImage = (src, { protocol, environment, urn, format, alias, ...params }) => {
   const urnMatch = src.match(/urn:aaid:aem:[^/]+/);
   const formatMatch = src.match(/\.([^.?]+)(?:\?|$)/);
-  const imageNameMatch = formatMatch
-    ? src.match(new RegExp(`/as/([^/]+)\\.${formatMatch[1]}(?:\\?|$)`))
-    : null;
+  const imageNameMatch = formatMatch ? src.match(new RegExp(`/as/([^/]+)\\.${formatMatch[1]}(?:\\?|$)`)) : null;
   const environmentMatch = src.match(/delivery-([^.]+)\.adobeaemcloud\.com/);
   const protocolMatch = src.match(/^(https?:)?\/\//);
 
   // We need these components to either be present in the URL or provided in the options.
-  if (
-    (!urnMatch && !urn) ||
-    (!imageNameMatch && !alias) ||
-    (!environmentMatch && !environment) ||
-    (!formatMatch && !format) ||
-    (!protocolMatch && !protocol)
+  if ((!urnMatch && !urn)
+    || (!imageNameMatch && !alias)
+    || (!environmentMatch && !environment)
+    || (!formatMatch && !format)
+    || (!protocolMatch && !protocol)
   ) {
     throw new Error(
       `Some components of the AEM Asset image URL are missing and could not be inferred:
@@ -73,9 +67,7 @@ export const expectAemAssetsImage = (
 
   // This is the URL we expect.
   const baseUrl = `${resolvedProtocol}delivery-${resolvedEnvironment}.adobeaemcloud.com`;
-  const url = new URL(
-    `${baseUrl}/adobe/assets/${resolvedUrn}/as/${resolvedImageName}.${resolvedFormat}`
-  );
+  const url = new URL(`${baseUrl}/adobe/assets/${resolvedUrn}/as/${resolvedImageName}.${resolvedFormat}`);
   Object.entries(params).forEach(([key, value]) => {
     url.searchParams.set(key, value);
   });
@@ -86,7 +78,7 @@ export const expectAemAssetsImage = (
   url.searchParams.sort();
 
   expect(normalizedGivenSrc.toString()).to.equal(url.toString());
-};
+}
 
 /**
  * Expect a default image format.
@@ -96,16 +88,14 @@ export const expectDefaultImage = (src, { protocol, format, imageName, path, ...
   const protocolMatch = src.match(/^(https?:)?\/\//);
   const pathMatch = src.match(/aemshop\.net\/(.+?)\/[^/]+\.[^/]+(?:\?|$)/);
   const formatMatch = src.match(/\.([^.?]+)(?:\?|$)/);
-  const imageNameMatch = formatMatch
-    ? src.match(new RegExp(`/([^/]+)\\.${formatMatch[1]}(?:\\?|$)`))
-    : null;
-
+  const imageNameMatch = formatMatch ? 
+    src.match(new RegExp(`/([^/]+)\\.${formatMatch[1]}(?:\\?|$)`)) : null;
+    
   // We need these components to either be present in the URL or provided in the options.
-  if (
-    (!formatMatch && !format) ||
-    (!protocolMatch && !protocol) ||
-    (!imageNameMatch && !imageName) ||
-    (!pathMatch && !path)
+  if ((!formatMatch && !format)
+    || (!protocolMatch && !protocol)
+    || (!imageNameMatch && !imageName)
+    || (!pathMatch && !path)
   ) {
     throw new Error(
       `Some components of the default image URL are missing and could not be inferred:
@@ -133,9 +123,7 @@ export const expectDefaultImage = (src, { protocol, format, imageName, path, ...
   }
 
   // This is the URL we expect.
-  const url = new URL(
-    `${resolvedProtocol}www.aemshop.net/${resolvedPath}/${resolvedImageName}.${resolvedFormat}`
-  );
+  const url = new URL(`${resolvedProtocol}www.aemshop.net/${resolvedPath}/${resolvedImageName}.${resolvedFormat}`);
   Object.entries(params).forEach(([key, value]) => {
     url.searchParams.set(key, value);
   });
@@ -146,4 +134,4 @@ export const expectDefaultImage = (src, { protocol, format, imageName, path, ...
   url.searchParams.sort();
 
   expect(normalizedGivenSrc.toString()).to.equal(url.toString());
-};
+}

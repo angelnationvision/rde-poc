@@ -7,5 +7,5 @@ import './waitForImages';
 import './interceptConfig';
 import './waitForWishlistPage';
 
-import registerCypressGrep from '@cypress/grep';
+import registerCypressGrep from '@cypress/grep'
 registerCypressGrep();

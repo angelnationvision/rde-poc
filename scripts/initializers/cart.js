@@ -15,29 +15,5 @@ await initializeDropin(async () => {
     },
   };
 
-  const models = {
-    CartModel: {
-      transformer: (data) => {
-        const rightQuantityItems = data.itemsV2.items.map((item) => ({
-          right_quantity: item.right_quantity,
-          uid: item.uid,
-        }));
-
-        const leftQuantityItems = data.itemsV2.items.map((item) => ({
-          left_quantity: item.left_quantity,
-          uid: item.uid,
-        }));
-
-        return {
-          right_quantity: rightQuantityItems,
-          left_quantity: leftQuantityItems,
-        };
-      },
-    },
-  };
-
-  return initializers.mountImmediately(initialize, {
-    langDefinitions,
-    models,
-  });
+  return initializers.mountImmediately(initialize, { langDefinitions });
 })();

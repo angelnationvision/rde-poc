@@ -14,6 +14,5 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const isEmailAvailableQuery =
-  '\n  query isEmailAvailable($email: String!) {\n    isEmailAvailable(email: $email) {\n      is_email_available\n    }\n  }\n';
+export declare const isEmailAvailableQuery = "\n  query isEmailAvailable($email: String!) {\n    isEmailAvailable(email: $email) {\n      is_email_available\n    }\n  }\n";
 //# sourceMappingURL=isEmailAvailable.graphql.d.ts.map

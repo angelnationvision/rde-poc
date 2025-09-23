@@ -36,9 +36,5 @@ export declare function setContext<T>(name: string, data: T): void;
  * @param contextName - The name of the context to add to the event
  * @param additionalContext - Additional context to add to the event
  */
-export declare function pushEvent(
-  event: string,
-  contextName?: string,
-  additionalContext?: any
-): void;
+export declare function pushEvent(event: string, contextName?: string, additionalContext?: any): void;
 //# sourceMappingURL=utils.d.ts.map

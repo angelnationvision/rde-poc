@@ -2,15 +2,15 @@ import { ButtonProps, PickerProps } from '@dropins/tools/types/elsie/src/src/com
 import { PickerOption } from '@dropins/tools/types/elsie/src/components';
 
 export interface OrderCancelProps {
-  orderRef: string;
+    orderRef: string;
 }
 export interface OrderCancelFormProps {
-  orderRef: string;
-  pickerProps?: PickerProps;
-  submitButtonProps?: ButtonProps;
-  cancelReasons: PickerOption[];
+    orderRef: string;
+    pickerProps?: PickerProps;
+    submitButtonProps?: ButtonProps;
+    cancelReasons: PickerOption[];
 }
 export interface UseOrderActionsProps {
-  enableOrderCancellation: boolean | undefined;
+    enableOrderCancellation: boolean | undefined;
 }
 //# sourceMappingURL=orderCancel.types.d.ts.map

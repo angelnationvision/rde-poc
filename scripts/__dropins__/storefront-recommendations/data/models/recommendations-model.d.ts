@@ -15,56 +15,56 @@
  * from Adobe.
  *******************************************************************/
 export interface RecommendationUnitModel {
-  displayOrder: number;
-  pageType: PageType;
-  title: string;
-  items: Item[];
-  totalProducts: number;
-  typeId: string;
-  unitId: string;
-  unitName: string;
+    displayOrder: number;
+    pageType: PageType;
+    title: string;
+    items: Item[];
+    totalProducts: number;
+    typeId: string;
+    unitId: string;
+    unitName: string;
 }
 export type PageType = 'Product';
 export interface Item {
-  uid: string;
-  sku: string;
-  name: string;
-  urlKey: string;
-  images: ItemImage[];
-  price: FinalPrice;
-  priceRange?: {
-    minimum?: FinalPrice;
-    maximum?: FinalPrice;
-  };
-  visibility: string;
-  queryType: string;
-  itemType: string;
+    uid: string;
+    sku: string;
+    name: string;
+    urlKey: string;
+    images: ItemImage[];
+    price: FinalPrice;
+    priceRange?: {
+        minimum?: FinalPrice;
+        maximum?: FinalPrice;
+    };
+    visibility: string;
+    queryType: string;
+    itemType: string;
 }
 interface ItemImage {
-  label: string;
-  roles: string[];
-  url: string;
+    label: string;
+    roles: string[];
+    url: string;
 }
 export interface Price {
-  value: number | null;
-  currency: string | null;
+    value: number | null;
+    currency: string | null;
 }
 export interface FinalPrice {
-  final?: {
-    amount?: Price;
-  };
+    final?: {
+        amount?: Price;
+    };
 }
 export interface RecommendationsResponse {
-  results: RecommendationUnitModel[];
-  totalResults: number;
+    results: RecommendationUnitModel[];
+    totalResults: number;
 }
 export interface GraphQLResponse {
-  errors?: Array<{
-    message: string;
-  }>;
-  data?: {
-    recommendations: RecommendationsResponse;
-  };
+    errors?: Array<{
+        message: string;
+    }>;
+    data?: {
+        recommendations: RecommendationsResponse;
+    };
 }
 export {};
 //# sourceMappingURL=recommendations-model.d.ts.map

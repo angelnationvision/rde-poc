@@ -14,7 +14,7 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-declare const _default: 'SvgrURL';
+declare const _default: "SvgrURL";
 export default _default;
-export declare const ReactComponent = 'div';
+export declare const ReactComponent = "div";
 //# sourceMappingURL=svg.d.ts.map

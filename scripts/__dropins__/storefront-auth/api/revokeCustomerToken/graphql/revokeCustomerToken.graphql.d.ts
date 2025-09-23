@@ -14,6 +14,5 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const REVOKE_CUSTOMER_TOKEN =
-  '\n  mutation REVOKE_CUSTOMER_TOKEN {\n    revokeCustomerToken {\n      result\n    }\n  }\n';
+export declare const REVOKE_CUSTOMER_TOKEN = "\n  mutation REVOKE_CUSTOMER_TOKEN {\n    revokeCustomerToken {\n      result\n    }\n  }\n";
 //# sourceMappingURL=revokeCustomerToken.graphql.d.ts.map

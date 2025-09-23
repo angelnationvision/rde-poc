@@ -15,30 +15,30 @@
  * from Adobe.
  *******************************************************************/
 type customAttributesProps = {
-  custom_attributes: Record<string, string>[];
+    custom_attributes: Record<string, string>[];
 };
 type errorProps = {
-  message: string;
+    message: string;
 };
 export interface Customer {
-  firstname: string;
-  lastname: string;
-  email: string;
+    firstname: string;
+    lastname: string;
+    email: string;
 }
 interface CreateCustomerResponse {
-  customer: Customer;
+    customer: Customer;
 }
 export interface DataCreateCustomerV2 {
-  data: {
-    createCustomerV2: CreateCustomerResponse & customAttributesProps;
-  };
-  errors?: errorProps[];
+    data: {
+        createCustomerV2: CreateCustomerResponse & customAttributesProps;
+    };
+    errors?: errorProps[];
 }
 export interface DataCreateCustomer {
-  data: {
-    createCustomer: CreateCustomerResponse;
-  };
-  errors?: errorProps[];
+    data: {
+        createCustomer: CreateCustomerResponse;
+    };
+    errors?: errorProps[];
 }
 export {};
 //# sourceMappingURL=createCustomer.types.d.ts.map

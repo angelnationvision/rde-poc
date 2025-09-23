@@ -6,7 +6,9 @@
  * file in accordance with the terms of the Adobe license agreement
  * accompanying it.
  *******************************************************************/
-export declare const convertKeysToCamelCase: (obj: { [key: string]: any }) => {
-  [key: string]: string | number | boolean;
+export declare const convertKeysToCamelCase: (obj: {
+    [key: string]: any;
+}) => {
+    [key: string]: string | number | boolean;
 };
 //# sourceMappingURL=_convertKeysToCamelCase.d.ts.map

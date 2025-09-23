@@ -31,10 +31,7 @@ function preloadPDPAssets() {
   preloadFile('/scripts/__dropins__/storefront-pdp/render.js', 'script');
   preloadFile('/scripts/__dropins__/storefront-pdp/containers/ProductHeader.js', 'script');
   preloadFile('/scripts/__dropins__/storefront-pdp/containers/ProductPrice.js', 'script');
-  preloadFile(
-    '/scripts/__dropins__/storefront-pdp/containers/ProductShortDescription.js',
-    'script',
-  );
+  preloadFile('/scripts/__dropins__/storefront-pdp/containers/ProductShortDescription.js', 'script');
   preloadFile('/scripts/__dropins__/storefront-pdp/containers/ProductOptions.js', 'script');
   preloadFile('/scripts/__dropins__/storefront-pdp/containers/ProductQuantity.js', 'script');
   preloadFile('/scripts/__dropins__/storefront-pdp/containers/ProductDescription.js', 'script');

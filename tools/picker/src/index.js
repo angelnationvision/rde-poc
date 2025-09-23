@@ -11,10 +11,10 @@ import './styles.css';
  * Object containing all configuration files that should be exposed in the picker.
  */
 const configFiles = {
-  prod: 'https://main--aem-boilerplate-commerce--hlxsites.hlx.live/configs.json?sheet=prod',
-  stage: 'https://main--aem-boilerplate-commerce--hlxsites.hlx.live/configs-stage.json',
-  dev: 'https://main--aem-boilerplate-commerce--hlxsites.hlx.live/configs-dev.json',
-};
+    'prod': 'https://main--aem-boilerplate-commerce--hlxsites.hlx.live/configs.json?sheet=prod',
+    'stage': 'https://main--aem-boilerplate-commerce--hlxsites.hlx.live/configs-stage.json',
+    'dev': 'https://main--aem-boilerplate-commerce--hlxsites.hlx.live/configs-dev.json',
+}
 /**
  * Default configuration to be loaded.
  */
@@ -31,17 +31,17 @@ const defaultConfig = 'prod';
  *   type: Define what can be selected: any, item or folder
  */
 const blocks = {
-  identifier: {
-    key: 'identifier',
-    name: 'Identifier only',
-    output: i => (i.isFolder ? i.id : i.sku),
-    selection: 'single',
-    type: 'any',
-  },
-  'product-list-page': {
-    key: 'product-list-page',
-    name: 'Product List Page',
-    output: i => `<table width="100%" style="border: 1px solid black;">
+    'identifier': {
+        'key': 'identifier',
+        'name': 'Identifier only',
+        'output': i => i.isFolder ? i.id : i.sku,
+        'selection': 'single',
+        'type': 'any',
+    },
+    'product-list-page': {
+        'key': 'product-list-page',
+        'name': 'Product List Page',
+        'output': i => `<table width="100%" style="border: 1px solid black;">
             <tr>
                 <th colspan="2" style="border: 1px solid black; background: lightgray;">Product List Page</th>
             </tr>
@@ -50,13 +50,13 @@ const blocks = {
                 <td style="border: 1px solid black">${i.id}</td>
             </tr>
         </table>`,
-    selection: 'single',
-    type: 'folder',
-  },
-  'product-teaser': {
-    key: 'product-teaser',
-    name: 'Product Teaser',
-    output: i => `<table width="100%" style="border: 1px solid black;">
+        'selection': 'single',
+        'type': 'folder',
+    },
+    'product-teaser': {
+        'key': 'product-teaser',
+        'name': 'Product Teaser',
+        'output': i => `<table width="100%" style="border: 1px solid black;">
             <tr>
                 <th colspan="2" style="border: 1px solid black; background: lightgray;">Product Teaser</th>
             </tr>
@@ -73,13 +73,13 @@ const blocks = {
                 <td style="border: 1px solid black">true</td>
             </tr>
         </table>`,
-    selection: 'single',
-    type: 'item',
-  },
-  'product-carousel': {
-    key: 'product-carousel',
-    name: 'Product Carousel',
-    output: items => `<table width="100%" style="border: 1px solid black;">
+        'selection': 'single',
+        'type': 'item',
+    },
+    'product-carousel': {
+        'key': 'product-carousel',
+        'name': 'Product Carousel',
+        'output': items => `<table width="100%" style="border: 1px solid black;">
             <tr>
                 <th style="border: 1px solid black; background: lightgray;">Product Carousel</th>
             </tr>
@@ -91,13 +91,13 @@ const blocks = {
                 </td>
             </tr>
         </table>`,
-    selection: 'multiple',
-    type: 'item',
-  },
-  'category-carousel': {
-    key: 'category-carousel',
-    name: 'Category Carousel',
-    output: items => `<table width="100%" style="border: 1px solid black;">
+        'selection': 'multiple',
+        'type': 'item',
+    },
+    'category-carousel': {
+        'key': 'category-carousel',
+        'name': 'Category Carousel',
+        'output': items => `<table width="100%" style="border: 1px solid black;">
             <tr>
                 <th style="border: 1px solid black; background: lightgray;">Category Carousel</th>
             </tr>
@@ -109,101 +109,90 @@ const blocks = {
                 </td>
             </tr>
         </table>`,
-    selection: 'multiple',
-    type: 'folder',
-  },
+        'selection': 'multiple',
+        'type': 'folder',
+    },
 };
 
 async function performCatalogServiceQuery(query, config, variables) {
-  const headers = {
-    'Content-Type': 'application/json',
-    'x-api-key': config['commerce.headers.cs.x-api-key'],
-    'Magento-Customer-Group': config['commerce.headers.cs.Magento-Customer-Group'],
-    'Magento-Environment-Id': config['commerce.headers.cs.Magento-Environment-Id'],
-    'Magento-Store-Code': config['commerce.headers.cs.Magento-Store-Code'],
-    'Magento-Store-View-Code': config['commerce.headers.cs.Magento-Store-View-Code'],
-    'Magento-Website-Code': config['commerce.headers.cs.Magento-Website-Code'],
-  };
+    const headers = {
+        'Content-Type': 'application/json',
+        'x-api-key': config['commerce.headers.cs.x-api-key'],
+        'Magento-Customer-Group': config['commerce.headers.cs.Magento-Customer-Group'],
+        'Magento-Environment-Id': config['commerce.headers.cs.Magento-Environment-Id'],
+        'Magento-Store-Code': config['commerce.headers.cs.Magento-Store-Code'],
+        'Magento-Store-View-Code': config['commerce.headers.cs.Magento-Store-View-Code'],
+        'Magento-Website-Code': config['commerce.headers.cs.Magento-Website-Code'],
+    };
 
-  const apiCall = new URL(config['commerce-endpoint']);
-  apiCall.searchParams.append(
-    'query',
-    query.replace(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' ').replace(/\s\s+/g, ' ')
-  );
-  apiCall.searchParams.append('variables', variables ? JSON.stringify(variables) : null);
+    const apiCall = new URL(config['commerce-endpoint']);
+    apiCall.searchParams.append('query', query.replace(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' ')
+        .replace(/\s\s+/g, ' '));
+    apiCall.searchParams.append('variables', variables ? JSON.stringify(variables) : null);
 
-  const response = await fetch(apiCall, {
-    method: 'GET',
-    headers,
-  });
+    const response = await fetch(apiCall, {
+        method: 'GET',
+        headers,
+    });
 
-  if (!response.ok) {
-    return null;
-  }
+    if (!response.ok) {
+        return null;
+    }
 
-  const queryResponse = await response.json();
+    const queryResponse = await response.json();
 
-  return queryResponse.data;
+    return queryResponse.data;
 }
 
 const getItems = async (folderKey, page = 1, config) => {
-  let newItems = {};
-  let pageInfo = {};
-  try {
-    const products = await performCatalogServiceQuery(getProductsInCategory, config, {
-      id: folderKey,
-      currentPage: page,
-    });
-    products?.productSearch?.items.forEach(product => {
-      const { productView } = product;
+    let newItems = {};
+    let pageInfo = {};
+    try {
+        const products = await performCatalogServiceQuery(getProductsInCategory, config, { id: folderKey, currentPage: page });
+        products?.productSearch?.items.forEach(product => {
+            const { productView } = product;
 
-      try {
-        productView.images.forEach(image => {
-          const url = new URL(image.url, window.location);
-          url.searchParams.set('width', 40);
-          image.url = url.toString();
+            try {
+                productView.images.forEach(image => {
+                    const url = new URL(image.url, window.location);
+                    url.searchParams.set('width', 40);
+                    image.url = url.toString();
+                });
+            } catch { }
+
+            newItems[productView.sku] = {
+                ...productView
+            };
         });
-      } catch {}
+        pageInfo = products?.productSearch?.page_info;
+    } catch (err) {
+        console.error('Could not retrieve products', err);
+    }
 
-      newItems[productView.sku] = {
-        ...productView,
-      };
-    });
-    pageInfo = products?.productSearch?.page_info;
-  } catch (err) {
-    console.error('Could not retrieve products', err);
-  }
-
-  return [newItems, pageInfo];
+    return [newItems, pageInfo];
 };
 
 const getCategories = async (folderKey, config) => {
-  let categoryObject = {};
+    let categoryObject = {};
 
-  try {
-    const categories = await performCatalogServiceQuery(getCategoriesInCategory, config, {
-      id: folderKey,
-    });
-    categories?.categories.forEach(category => {
-      categoryObject[category.id] = category;
-    });
-  } catch (err) {
-    console.error('Could not retrieve categories', err);
-  }
+    try {
+        const categories = await performCatalogServiceQuery(getCategoriesInCategory, config, { id: folderKey });
+        categories?.categories.forEach(category => {
+            categoryObject[category.id] = category;
+        });
+    } catch (err) {
+        console.error('Could not retrieve categories', err);
+    }
 
-  return categoryObject;
-};
+    return categoryObject;
+}
 
-const app = document.getElementById('app');
+const app = document.getElementById("app");
 if (app) {
-  ReactDOM.render(
-    <Picker
-      blocks={blocks}
-      getCategories={getCategories}
-      getItems={getItems}
-      configFiles={configFiles}
-      defaultConfig={defaultConfig}
-    />,
-    app
-  );
+    ReactDOM.render(<Picker
+        blocks={blocks}
+        getCategories={getCategories}
+        getItems={getItems}
+        configFiles={configFiles}
+        defaultConfig={defaultConfig} />, app);
 }
