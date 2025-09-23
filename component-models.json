@@ -777,45 +777,6 @@
     ]
   },
   {
-    "id": "column",
-    "fields": [
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "",
-        "label": "Column Span",
-        "description": "",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Desktop 2 / Mobile 4",
-            "value": "firstcol-colspan-1"
-          },
-          {
-            "name": "Heading 2",
-            "value": "firstcol-colspan-2"
-          },
-          {
-            "name": "Heading 3",
-            "value": "firstcol-colspan-3"
-          },
-          {
-            "name": "Heading 4",
-            "value": "firstcol-colspan-4"
-          },
-          {
-            "name": "Subheading",
-            "value": "s-medium"
-          },
-          {
-            "name": "Subheading Bold",
-            "value": "s-bold"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "commerce-mini-cart",
     "fields": [
       {
