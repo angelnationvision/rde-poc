@@ -2,13 +2,13 @@ import { Container } from '@dropins/tools/types/elsie/src/lib';
 import { HTMLAttributes } from 'preact/compat';
 
 export type UpdateProductsFromCart = Array<{
-    uid: string;
-    quantity: number;
+  uid: string;
+  quantity: number;
 }>;
 export interface OutOfStockProps extends Omit<HTMLAttributes<HTMLDivElement>, 'icon'> {
-    onCartProductsUpdate?: (items: UpdateProductsFromCart) => void;
-    routeCart?: () => string;
-    active?: boolean;
+  onCartProductsUpdate?: (items: UpdateProductsFromCart) => void;
+  routeCart?: () => string;
+  active?: boolean;
 }
 export declare const OutOfStock: Container<OutOfStockProps>;
 //# sourceMappingURL=OutOfStock.d.ts.map

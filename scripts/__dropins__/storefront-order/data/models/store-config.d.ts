@@ -15,20 +15,20 @@
  *******************************************************************/
 type OrderDisplayPriceProps = 1 | 2 | 3;
 export interface StoreConfigModel {
-    baseMediaUrl: string;
-    orderCancellationEnabled: boolean;
-    orderCancellationReasons: OrderCancellationReason[];
-    shoppingOrderDisplayPrice: OrderDisplayPriceProps;
-    shoppingOrdersDisplayShipping: OrderDisplayPriceProps;
-    shoppingOrdersDisplaySubtotal: OrderDisplayPriceProps;
-    shoppingOrdersDisplayFullSummary: boolean;
-    shoppingOrdersDisplayGrandTotal: boolean;
-    shoppingOrdersDisplayZeroTax: boolean;
-    salesPrintedCard: number;
-    salesGiftWrapping: number;
+  baseMediaUrl: string;
+  orderCancellationEnabled: boolean;
+  orderCancellationReasons: OrderCancellationReason[];
+  shoppingOrderDisplayPrice: OrderDisplayPriceProps;
+  shoppingOrdersDisplayShipping: OrderDisplayPriceProps;
+  shoppingOrdersDisplaySubtotal: OrderDisplayPriceProps;
+  shoppingOrdersDisplayFullSummary: boolean;
+  shoppingOrdersDisplayGrandTotal: boolean;
+  shoppingOrdersDisplayZeroTax: boolean;
+  salesPrintedCard: number;
+  salesGiftWrapping: number;
 }
 export interface OrderCancellationReason {
-    description: string;
+  description: string;
 }
 export {};
 //# sourceMappingURL=store-config.d.ts.map

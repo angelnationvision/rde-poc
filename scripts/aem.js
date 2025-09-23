@@ -346,7 +346,7 @@ function decorateTemplateAndTheme() {
   };
   const template = getMetadata('template');
   if (template) addClasses(document.body, template);
-  const theme = getMetadata('theme');
+  const theme = getMetadata('brand');
   if (theme) addClasses(document.body, theme);
 }
 
@@ -376,9 +376,11 @@ function wrapTextNodes(block) {
     [...el.attributes]
       // move the instrumentation from the cell to the new paragraph, also keep the class
       // in case the content is a buttton and the cell the button-container
-      .filter(({ nodeName }) => nodeName === 'class'
-        || nodeName.startsWith('data-aue')
-        || nodeName.startsWith('data-richtext'))
+      .filter(
+        ({ nodeName }) => nodeName === 'class'
+          || nodeName.startsWith('data-aue')
+          || nodeName.startsWith('data-richtext'),
+      )
       .forEach(({ nodeName, nodeValue }) => {
         wrapper.setAttribute(nodeName, nodeValue);
         el.removeAttribute(nodeName);

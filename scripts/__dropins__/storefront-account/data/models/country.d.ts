@@ -15,12 +15,12 @@
  * from Adobe.
  *******************************************************************/
 export type Country = {
-    value: string;
-    text: string;
-    availableRegions?: {
-        id: number;
-        code: string;
-        name: string;
-    }[];
+  value: string;
+  text: string;
+  availableRegions?: {
+    id: number;
+    code: string;
+    name: string;
+  }[];
 };
 //# sourceMappingURL=country.d.ts.map

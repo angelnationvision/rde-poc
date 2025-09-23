@@ -1,6 +1,15 @@
 /*! Copyright 2025 Adobe
 All Rights Reserved. */
-import{FetchGraphQL as a}from"@dropins/tools/fetch-graphql.js";const{setEndpoint:l,setFetchGraphQlHeader:s,removeFetchGraphQlHeader:p,setFetchGraphQlHeaders:m,fetchGraphQl:n,getConfig:g}=new a().getMethods(),o=`
+import { FetchGraphQL as a } from '@dropins/tools/fetch-graphql.js';
+const {
+    setEndpoint: l,
+    setFetchGraphQlHeader: s,
+    removeFetchGraphQlHeader: p,
+    setFetchGraphQlHeaders: m,
+    fetchGraphQl: n,
+    getConfig: g,
+  } = new a().getMethods(),
+  o = `
   fragment Facet on Aggregation {
     title
     attribute
@@ -26,7 +35,8 @@ import{FetchGraphQL as a}from"@dropins/tools/fetch-graphql.js";const{setEndpoint
       }
     }
   }
-`,c=`
+`,
+  c = `
   fragment ProductView on ProductSearchItem {
     productView {
       __typename
@@ -108,7 +118,8 @@ import{FetchGraphQL as a}from"@dropins/tools/fetch-graphql.js";const{setEndpoint
       matched_words
     }
   }
-`,u=`
+`,
+  u = `
   query productSearch(
     $phrase: String!
     $pageSize: Int
@@ -148,5 +159,11 @@ import{FetchGraphQL as a}from"@dropins/tools/fetch-graphql.js";const{setEndpoint
   }
   ${c}
   ${o}
-`,h=async r=>n(u,{method:"GET",variables:r}).then(({errors:e,data:t})=>{if(e&&!t)throw console.log("error",e),new Error("Error fetching product search");return t});export{s as a,m as b,n as f,g,h as p,p as r,l as s};
+`,
+  h = async r =>
+    n(u, { method: 'GET', variables: r }).then(({ errors: e, data: t }) => {
+      if (e && !t) throw (console.log('error', e), new Error('Error fetching product search'));
+      return t;
+    });
+export { s as a, m as b, n as f, g, h as p, p as r, l as s };
 //# sourceMappingURL=productSearch.js.map

@@ -28,7 +28,7 @@ The Adobe Commerce Drop-in (“Drop-in”) is licensed to you subject to the ter
 
 1. **DEFINITIONS**.
 
-   1.1  “**Adobe**” means collectively, Adobe Inc., a company incorporated in Delaware, U.S.A., having a place of business at 345 Park  Avenue, San Jose, California USA 95110-2704, U.S.A. (“**Adobe US**”) and Adobe Systems Software Ireland, company incorporated in Ireland, having a place of business 4-6 Riverwalk, City West Business Campus, Saggart, Dublin 24, Ireland (“**Adobe Ireland**”).__
+   1.1 “**Adobe**” means collectively, Adobe Inc., a company incorporated in Delaware, U.S.A., having a place of business at 345 Park Avenue, San Jose, California USA 95110-2704, U.S.A. (“**Adobe US**”) and Adobe Systems Software Ireland, company incorporated in Ireland, having a place of business 4-6 Riverwalk, City West Business Campus, Saggart, Dublin 24, Ireland (“**Adobe Ireland**”).\_\_
 
    1.2 “**Adobe Product(s)**” means software applications, programs and other technologies not included in or with the Drop-in which are or may be made available by Adobe for licensing to the general public. This agreement does not govern use of Adobe Products. See the end user license agreement accompanying an Adobe Product for terms governing its use.
 

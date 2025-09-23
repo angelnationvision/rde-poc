@@ -3,18 +3,18 @@
  * Each key corresponds to an error type that maps to the `Auth.FormText` i18n values in `src/i18n/en_US.json`.
  */
 export declare enum ValidationErrorTypes {
-    REQUIRED_FIELD_ERROR = "requiredFieldError",
-    NUMERIC_ERROR = "numericError",
-    ALPHA_NUM_WITH_SPACES_ERROR = "alphaNumWithSpacesError",
-    ALPHA_NUMERIC_ERROR = "alphaNumericError",
-    ALPHA_ERROR = "alphaError",
-    EMAIL_ERROR = "emailError",
-    DATE_ERROR = "dateError",
-    DATE_RANGE_ERROR = "dateRangeError",
-    DATE_MAX_ERROR = "dateMaxError",
-    DATE_MIN_ERROR = "dateMinError",
-    URL_ERROR = "urlError",
-    LENGTH_TEXT_ERROR = "lengthTextError"
+  REQUIRED_FIELD_ERROR = 'requiredFieldError',
+  NUMERIC_ERROR = 'numericError',
+  ALPHA_NUM_WITH_SPACES_ERROR = 'alphaNumWithSpacesError',
+  ALPHA_NUMERIC_ERROR = 'alphaNumericError',
+  ALPHA_ERROR = 'alphaError',
+  EMAIL_ERROR = 'emailError',
+  DATE_ERROR = 'dateError',
+  DATE_RANGE_ERROR = 'dateRangeError',
+  DATE_MAX_ERROR = 'dateMaxError',
+  DATE_MIN_ERROR = 'dateMinError',
+  URL_ERROR = 'urlError',
+  LENGTH_TEXT_ERROR = 'lengthTextError',
 }
 /**
  * `ERROR_CONFIG_SEPARATOR` uses the ASCII 31 (Unit Separator) character,

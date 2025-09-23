@@ -6,5 +6,5 @@
  * file in accordance with the terms of the Adobe license agreement
  * accompanying it.
  *******************************************************************/
-export declare const recaptchaBadgeSelector = ".grecaptcha-badge iframe";
+export declare const recaptchaBadgeSelector = '.grecaptcha-badge iframe';
 //# sourceMappingURL=recaptchaBadgeSelector.config.d.ts.map

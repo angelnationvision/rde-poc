@@ -1,6 +1,6 @@
 /*! Copyright 2025 Adobe
 All Rights Reserved. */
-const e=`
+const e = `
   fragment BASIC_CUSTOMER_INFO_FRAGMENT on Customer {
     date_of_birth
     email
@@ -12,7 +12,8 @@ const e=`
     suffix
     created_at
   }
-`,t=`
+`,
+  t = `
   fragment ADDRESS_FRAGMENT on OrderAddress {
     city
     company
@@ -30,7 +31,8 @@ const e=`
     telephone
     vat_id
   }
-`,a=`
+`,
+  a = `
   fragment ORDER_SUMMARY_FRAGMENT on OrderTotal {
     grand_total {
       value
@@ -72,4 +74,5 @@ const e=`
       label
     }
   }
-`;export{t as ADDRESS_FRAGMENT,e as BASIC_CUSTOMER_INFO_FRAGMENT,a as ORDER_SUMMARY_FRAGMENT};
+`;
+export { t as ADDRESS_FRAGMENT, e as BASIC_CUSTOMER_INFO_FRAGMENT, a as ORDER_SUMMARY_FRAGMENT };

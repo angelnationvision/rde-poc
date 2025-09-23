@@ -1,6 +1,7 @@
 /*! Copyright 2025 Adobe
 All Rights Reserved. */
-import{f as a}from"./productSearch.js";const r=`
+import { f as a } from './productSearch.js';
+const r = `
   query attributeMetadata {
     attributeMetadata {
       sortable {
@@ -15,5 +16,10 @@ import{f as a}from"./productSearch.js";const r=`
       }
     }
   }
-`,n=async()=>a(r,{method:"GET"}).then(({errors:t,data:e})=>t?(console.log("error",t),null):e);export{n as a};
+`,
+  n = async () =>
+    a(r, { method: 'GET' }).then(({ errors: t, data: e }) =>
+      t ? (console.log('error', t), null) : e
+    );
+export { n as a };
 //# sourceMappingURL=attributeMetadata.js.map

@@ -3,10 +3,7 @@ import * as authApi from '@dropins/storefront-auth/api.js';
 import { render as authRenderer } from '@dropins/storefront-auth/render.js';
 import { SignIn } from '@dropins/storefront-auth/containers/SignIn.js';
 import { events } from '@dropins/tools/event-bus.js';
-import {
-  CUSTOMER_FORGOTPASSWORD_PATH,
-  rootLink,
-} from '../../scripts/commerce.js';
+import { CUSTOMER_FORGOTPASSWORD_PATH, rootLink } from '../../scripts/commerce.js';
 
 function checkAndRedirect(redirections) {
   Object.entries(redirections).some(([currentPath, redirectPath]) => {
@@ -42,14 +39,10 @@ export function renderAuthDropdown(navTools) {
   navTools.append(dropdownElement);
 
   const authDropDownPanel = navTools.querySelector('.nav-auth-menu-panel');
-  const authDropDownMenuList = navTools.querySelector(
-    '.authenticated-user-menu',
-  );
+  const authDropDownMenuList = navTools.querySelector('.authenticated-user-menu');
   const authDropinContainer = navTools.querySelector('#auth-dropin-container');
   const loginButton = navTools.querySelector('.nav-dropdown-button');
-  const logoutButtonElement = navTools.querySelector(
-    '.authenticated-user-menu > li > button',
-  );
+  const logoutButtonElement = navTools.querySelector('.authenticated-user-menu > li > button');
 
   authDropDownPanel.addEventListener('click', (e) => e.stopPropagation());
 

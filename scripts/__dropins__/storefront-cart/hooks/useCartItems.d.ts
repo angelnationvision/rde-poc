@@ -16,19 +16,19 @@ import { PriceProps } from '@dropins/tools/types/elsie/src/components/Price';
  * onItemRemove - The function to call when the item is removed
  */
 export interface useCartItemsProps {
-    dictionary: ReturnType<typeof useText>;
-    onQuantityUpdate?: (item: CartModel['items'][number], quantity: number) => void;
-    onItemRemove?: (item: CartModel['items'][number]) => void;
+  dictionary: ReturnType<typeof useText>;
+  onQuantityUpdate?: (item: CartModel['items'][number], quantity: number) => void;
+  onItemRemove?: (item: CartModel['items'][number]) => void;
 }
 /**
  * Params for the getConfiguration function
  */
 interface GetConfigurationParams {
-    item: CartModel['items'][number];
+  item: CartModel['items'][number];
 }
 interface ItemUpdateState {
-    isUpdating: boolean;
-    updatedValue: any;
+  isUpdating: boolean;
+  updatedValue: any;
 }
 /**
  * Type for the API returned by useCartItems
@@ -36,23 +36,23 @@ interface ItemUpdateState {
  * This interface ensures that the returned object from the hook is well-typed and clear for consumers.
  */
 export interface UseCartItemsApi {
-    showIncludedTaxPrice: boolean;
-    showExcludingTaxPrice: boolean;
-    itemsUpdating: Map<string, ItemUpdateState>;
-    itemUpdateErrors: Map<string, string>;
-    getConfiguration: (params: GetConfigurationParams) => object | undefined;
-    getPriceProps: (item: CartModel['items'][number]) => PriceProps;
-    getSubtotalProps: (item: CartModel['items'][number]) => {
-        subtotalProps: PriceProps;
-        subtotalDiscountProps: PriceProps | null;
-    };
-    processQuantityChange: (item: CartModel['items'][number], value: number) => Promise<void>;
-    debouncedQuantityChange: (item: CartModel['items'][number], value: number) => void;
-    setItemsUpdating: (itemsUpdating: Map<string, ItemUpdateState>) => void;
-    getWarningMessage: (item: CartModel['items'][number]) => string | undefined;
-    setItemUpdateError: (uid: string, error: string) => void;
-    handleRemoveItem: (item: CartModel['items'][number]) => Promise<CartModel | null>;
-    setItemUpdating: (uid: string, state: boolean) => void;
+  showIncludedTaxPrice: boolean;
+  showExcludingTaxPrice: boolean;
+  itemsUpdating: Map<string, ItemUpdateState>;
+  itemUpdateErrors: Map<string, string>;
+  getConfiguration: (params: GetConfigurationParams) => object | undefined;
+  getPriceProps: (item: CartModel['items'][number]) => PriceProps;
+  getSubtotalProps: (item: CartModel['items'][number]) => {
+    subtotalProps: PriceProps;
+    subtotalDiscountProps: PriceProps | null;
+  };
+  processQuantityChange: (item: CartModel['items'][number], value: number) => Promise<void>;
+  debouncedQuantityChange: (item: CartModel['items'][number], value: number) => void;
+  setItemsUpdating: (itemsUpdating: Map<string, ItemUpdateState>) => void;
+  getWarningMessage: (item: CartModel['items'][number]) => string | undefined;
+  setItemUpdateError: (uid: string, error: string) => void;
+  handleRemoveItem: (item: CartModel['items'][number]) => Promise<CartModel | null>;
+  setItemUpdating: (uid: string, state: boolean) => void;
 }
 /**
  * useCartItems hook
@@ -80,6 +80,10 @@ export interface UseCartItemsApi {
  *   - handleRemoveItem(item): Promise<CartModel>
  *   - setItemUpdating(uid, state): void
  */
-export declare const useCartItems: ({ dictionary, onQuantityUpdate, onItemRemove }: useCartItemsProps) => UseCartItemsApi;
+export declare const useCartItems: ({
+  dictionary,
+  onQuantityUpdate,
+  onItemRemove,
+}: useCartItemsProps) => UseCartItemsApi;
 export {};
 //# sourceMappingURL=useCartItems.d.ts.map

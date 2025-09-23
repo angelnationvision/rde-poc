@@ -1,7 +1,7 @@
 import { CustomerAddressesModel } from '../../data/models';
 
 type ExtendedAddressFormProps = CustomerAddressesModel & {
-    addressId: number;
+  addressId: number;
 };
 export declare const updateCustomerAddress: (forms: ExtendedAddressFormProps) => Promise<string>;
 export {};

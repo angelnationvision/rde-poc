@@ -15,11 +15,13 @@
  * from Adobe.
  *******************************************************************/
 /** Actions */
-export declare const handleFetchError: (errors: Array<{
+export declare const handleFetchError: (
+  errors: Array<{
     message: string;
     path: Array<string>;
     extensions: {
-        category: string;
+      category: string;
     };
-}>) => null;
+  }>
+) => null;
 //# sourceMappingURL=fetch-error.d.ts.map

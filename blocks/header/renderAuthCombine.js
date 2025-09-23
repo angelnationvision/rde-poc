@@ -209,9 +209,7 @@ const renderAuthCombine = (navSections, toggleMenu) => {
 
   const navListEl = navSections.querySelector('.default-content-wrapper > ul');
 
-  const listItems = navListEl.querySelectorAll(
-    '.default-content-wrapper > ul > li',
-  );
+  const listItems = navListEl.querySelectorAll('.default-content-wrapper > ul > li');
 
   const accountLi = Array.from(listItems).find((li) => li.textContent.includes('Account'));
 
@@ -241,17 +239,15 @@ const renderAuthCombine = (navSections, toggleMenu) => {
       }
 
       events.on('authenticated', (isAuthenticated) => {
-        const authCombineNavElement = document.querySelector(
-          '.authCombineNavElement',
-        );
+        const authCombineNavElement = document.querySelector('.authCombineNavElement');
         if (isAuthenticated) {
           const { headerLoginButton, popupElement, popupMenuContainer } = getPopupElements();
 
           if (
             !authCombineNavElement
-          || !headerLoginButton
-          || !popupElement
-          || !popupMenuContainer
+            || !headerLoginButton
+            || !popupElement
+            || !popupMenuContainer
           ) {
             return;
           }
@@ -261,9 +257,7 @@ const renderAuthCombine = (navSections, toggleMenu) => {
           popupElement.style.minWidth = '250px';
           if (headerLoginButton) {
             const spanElementText = headerLoginButton.querySelector('span');
-            spanElementText.textContent = `Hi, ${getCookie(
-              'auth_dropin_firstname',
-            )}`;
+            spanElementText.textContent = `Hi, ${getCookie('auth_dropin_firstname')}`;
           }
           popupMenuContainer.insertAdjacentHTML(
             'afterend',

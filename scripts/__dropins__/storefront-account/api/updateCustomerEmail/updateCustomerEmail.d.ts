@@ -14,8 +14,11 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-export declare const updateCustomerEmail: ({ email, password, }: {
-    email: string;
-    password: string;
+export declare const updateCustomerEmail: ({
+  email,
+  password,
+}: {
+  email: string;
+  password: string;
 }) => Promise<string>;
 //# sourceMappingURL=updateCustomerEmail.d.ts.map

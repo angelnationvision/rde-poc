@@ -43,6 +43,192 @@
           "multi": false
         },
         {
+          "component": "select",
+          "name": "classes",
+          "label": "Aspect Ratio",
+          "description": "Author should be able to select the aspect ratio according to which cards will be responsive.",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Aspect Ratio 16:9",
+              "value": "aspect-ratio-16-9"
+            },
+            {
+              "name": "Aspect Ratio 4:3",
+              "value": "aspect-ratio-4-3"
+            },
+            {
+              "name": "Aspect Ratio 1:1",
+              "value": "aspect-ratio-1-1"
+            },
+            {
+              "name": "Aspect Ratio 3:4",
+              "value": "aspect-ratio-3-4"
+            },
+            {
+              "name": "Aspect Ratio 9:16",
+              "value": "aspect-ratio-9-16"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Alternative text for accessibility",
+          "description": "Enter Alt text for the authored image."
+        },
+        {
+          "component": "boolean",
+          "label": "Inherit alternative text from page",
+          "name": "Inheritalternativetextfrompage",
+          "valueType": "boolean",
+          "description": "Use the alternative description of the linked asset value of the description metadata in DAM."
+        },
+        {
+          "component": "boolean",
+          "label": "Don’t provide an alternative text",
+          "name": "Dontprovideanalternativetext",
+          "valueType": "boolean",
+          "description": "Select this for decorative images."
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "eyebrow",
+          "label": "Eyebrow",
+          "description": "Enter the Eyebrow text."
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title",
+          "description": "Enter the title text."
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "subtitle",
+          "label": "Subtitle",
+          "description": "Enter the Subtitle text."
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description",
+          "description": "Enter the Description."
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "id",
+          "label": "ID",
+          "description": "This option allows to control the unique identifier of the component in the HTML and in the Data Layer."
+        },
+        {
+          "component": "aem-content",
+          "name": "ctapath",
+          "label": "CTA Path"
+        },
+        {
+          "component": "text",
+          "name": "ctapathText",
+          "label": "CTA 1"
+        },
+        {
+          "component": "select",
+          "name": "ctavariation",
+          "label": "Type",
+          "options": [
+            {
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            },
+            {
+              "name": "Input Primary",
+              "value": "primary-variant"
+            },
+            {
+              "name": "Input Secondary",
+              "value": "secondary-variant"
+            },
+            {
+              "name": "Text",
+              "value": "text-btn"
+            },
+            {
+              "name": "Link",
+              "value": "link-btn"
+            }
+          ]
+        },
+        {
+          "component": "aem-content",
+          "name": "ctapath1",
+          "label": "CTA Path"
+        },
+        {
+          "component": "text",
+          "name": "ctapath1Text",
+          "label": "CTA 2"
+        },
+        {
+          "component": "select",
+          "name": "ctavariation1",
+          "label": "Type",
+          "options": [
+            {
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            },
+            {
+              "name": "Input Primary",
+              "value": "primary-variant"
+            },
+            {
+              "name": "Input Secondary",
+              "value": "secondary-variant"
+            },
+            {
+              "name": "Text",
+              "value": "text-btn"
+            },
+            {
+              "name": "Link",
+              "value": "link-btn"
+            }
+          ]
+        },
+        {
+          "component": "boolean",
+          "label": "Open link in new tab",
+          "name": "Openlinkinnewtab",
+          "valueType": "boolean",
+          "description": "If enabled, the link will open in a new browser tab."
+        }
+      ]
+    },
+    {
+      "id": "cards",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
           "component": "richtext",
           "name": "text",
           "value": "",
@@ -55,9 +241,7 @@
   "filters": [
     {
       "id": "cards",
-      "components": [
-        "card"
-      ]
+      "components": ["card"]
     }
   ]
 }

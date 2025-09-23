@@ -8,5 +8,8 @@ import { RecommendationUnitModel } from '../models';
  * @param additionalData - Additional data that may not be present in the unit data object
  * @returns The transformed recommendation unit
  */
-export declare const transformRecommendationUnit: (unitData: RecommendationUnitModel, additionalData?: any) => RecommendationUnit;
+export declare const transformRecommendationUnit: (
+  unitData: RecommendationUnitModel,
+  additionalData?: any
+) => RecommendationUnit;
 //# sourceMappingURL=acdl-context.d.ts.map

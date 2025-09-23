@@ -20,5 +20,7 @@
  * @param defaultKeys - A mapping of keys to their translation paths.
  * @returns A complete set of translations, including dynamically updated values for null error keys.
  */
-export declare const useCustomTranslations: (defaultKeys: Record<string, string>) => Record<string, string>;
+export declare const useCustomTranslations: (
+  defaultKeys: Record<string, string>
+) => Record<string, string>;
 //# sourceMappingURL=useCustomTranslations.d.ts.map

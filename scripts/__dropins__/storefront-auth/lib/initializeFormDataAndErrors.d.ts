@@ -14,13 +14,15 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe.
  *******************************************************************/
-declare const _default: (fieldsConfig: Array<{
+declare const _default: (
+  fieldsConfig: Array<{
     customUpperCode?: string;
     required?: boolean;
     defaultValue?: unknown;
-}>) => {
-    initialData: Record<string, unknown>;
-    errorList: Record<string, string>;
+  }>
+) => {
+  initialData: Record<string, unknown>;
+  errorList: Record<string, string>;
 };
 export default _default;
 //# sourceMappingURL=initializeFormDataAndErrors.d.ts.map

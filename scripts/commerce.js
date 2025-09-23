@@ -108,11 +108,14 @@ function notifyUI(event) {
 function detectPageType() {
   if (document.body.querySelector('main .product-details')) {
     return 'Product';
-  } if (document.body.querySelector('main .product-list-page')) {
+  }
+  if (document.body.querySelector('main .product-list-page')) {
     return 'Category';
-  } if (document.body.querySelector('main .commerce-cart')) {
+  }
+  if (document.body.querySelector('main .commerce-cart')) {
     return 'Cart';
-  } if (document.body.querySelector('main .commerce-checkout')) {
+  }
+  if (document.body.querySelector('main .commerce-checkout')) {
     return 'Checkout';
   }
   return 'CMS';
@@ -171,7 +174,7 @@ export async function fetchIndex(indexFile, pageSize = 500) {
     const json = await resp.json();
 
     const newIndex = {
-      complete: (json.limit + json.offset) === json.total,
+      complete: json.limit + json.offset === json.total,
       offset: json.offset + pageSize,
       promise: null,
       data: [...window.index[indexFile].data, ...json.data],
@@ -199,7 +202,7 @@ export async function fetchIndex(indexFile, pageSize = 500) {
   }
 
   window.index[indexFile].promise = handleIndex(window.index[indexFile].offset);
-  const newIndex = await (window.index[indexFile].promise);
+  const newIndex = await window.index[indexFile].promise;
   window.index[indexFile] = newIndex;
 
   return newIndex;
@@ -232,10 +235,7 @@ export function decorateLinks(main) {
     try {
       const url = new URL(a.href);
       const {
-        origin,
-        pathname,
-        search,
-        hash,
+        origin, pathname, search, hash,
       } = url;
 
       // Skip localization if #nolocal flag is present
@@ -416,22 +416,27 @@ export async function fetchPlaceholders(path) {
 
       // Create new fetch promise¨
       // XWALK: no sheet parameter
-      const resourceFetchPromise = fetch(`${url}`).then(async (response) => {
-        if (response.ok) {
-          const data = await response.json();
-          // Cache the response
-          window.placeholders[resourceCacheKey] = data;
-          return data;
-        }
-        console.warn(`Failed to fetch placeholders from ${url}: HTTP ${response.status} ${response.statusText}`);
-        return {};
-      }).catch((error) => {
-        console.error(`Error fetching placeholders from ${url}:`, error);
-        return {};
-      }).finally(() => {
-        // Remove from pending
-        delete window.placeholders._pending[resourceCacheKey];
-      });
+      const resourceFetchPromise = fetch(`${url}`)
+        .then(async (response) => {
+          if (response.ok) {
+            const data = await response.json();
+            // Cache the response
+            window.placeholders[resourceCacheKey] = data;
+            return data;
+          }
+          console.warn(
+            `Failed to fetch placeholders from ${url}: HTTP ${response.status} ${response.statusText}`,
+          );
+          return {};
+        })
+        .catch((error) => {
+          console.error(`Error fetching placeholders from ${url}:`, error);
+          return {};
+        })
+        .finally(() => {
+          // Remove from pending
+          delete window.placeholders._pending[resourceCacheKey];
+        });
 
       // Store pending promise
       window.placeholders._pending[resourceCacheKey] = resourceFetchPromise;
@@ -455,7 +460,9 @@ export async function fetchPlaceholders(path) {
         // Early return if no data
         const hasData = jsons.some((json) => json.data?.length > 0);
         if (!hasData) {
-          console.warn(`No placeholder data found for path: ${path}${fallback ? ` and fallback: ${fallback}` : ''}`);
+          console.warn(
+            `No placeholder data found for path: ${path}${fallback ? ` and fallback: ${fallback}` : ''}`,
+          );
           resolve({});
           return;
         }
@@ -476,7 +483,9 @@ export async function fetchPlaceholders(path) {
 
         // Early return if no valid data
         if (Object.keys(data).length === 0) {
-          console.warn(`No valid placeholder data found after processing for path: ${path}${fallback ? ` and fallback: ${fallback}` : ''}`);
+          console.warn(
+            `No valid placeholder data found after processing for path: ${path}${fallback ? ` and fallback: ${fallback}` : ''}`,
+          );
           resolve({});
           return;
         }
@@ -505,7 +514,10 @@ export async function fetchPlaceholders(path) {
         resolve(placeholders);
       })
       .catch((error) => {
-        console.error(`Error loading placeholders for path: ${path}${fallback ? ` and fallback: ${fallback}` : ''}`, error);
+        console.error(
+          `Error loading placeholders for path: ${path}${fallback ? ` and fallback: ${fallback}` : ''}`,
+          error,
+        );
         // error loading placeholders
         resolve({});
       });
@@ -538,10 +550,7 @@ export async function getConfigFromSession() {
     }
 
     const parsedConfig = JSON.parse(configJSON);
-    if (
-      !parsedConfig[':expiry']
-      || parsedConfig[':expiry'] < Math.round(Date.now() / 1000)
-    ) {
+    if (!parsedConfig[':expiry'] || parsedConfig[':expiry'] < Math.round(Date.now() / 1000)) {
       throw new Error('Config expired');
     }
     return parsedConfig;
@@ -624,16 +633,20 @@ function trackHistory() {
   // Store product view history in session storage
   const storeViewCode = getConfigValue('headers.cs.Magento-Store-View-Code');
   window.adobeDataLayer.push((dl) => {
-    dl.addEventListener('adobeDataLayer:change', (event) => {
-      if (!event.productContext) {
-        return;
-      }
-      const key = `${storeViewCode}:productViewHistory`;
-      let viewHistory = JSON.parse(window.localStorage.getItem(key) || '[]');
-      viewHistory = viewHistory.filter((item) => item.sku !== event.productContext.sku);
-      viewHistory.push({ date: new Date().toISOString(), sku: event.productContext.sku });
-      window.localStorage.setItem(key, JSON.stringify(viewHistory.slice(-10)));
-    }, { path: 'productContext' });
+    dl.addEventListener(
+      'adobeDataLayer:change',
+      (event) => {
+        if (!event.productContext) {
+          return;
+        }
+        const key = `${storeViewCode}:productViewHistory`;
+        let viewHistory = JSON.parse(window.localStorage.getItem(key) || '[]');
+        viewHistory = viewHistory.filter((item) => item.sku !== event.productContext.sku);
+        viewHistory.push({ date: new Date().toISOString(), sku: event.productContext.sku });
+        window.localStorage.setItem(key, JSON.stringify(viewHistory.slice(-10)));
+      },
+      { path: 'productContext' },
+    );
     dl.addEventListener('place-order', () => {
       const shoppingCartContext = dl.getState('shoppingCartContext');
       if (!shoppingCartContext) {

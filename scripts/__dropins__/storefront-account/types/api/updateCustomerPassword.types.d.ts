@@ -15,17 +15,17 @@
  * from Adobe.
  *******************************************************************/
 export interface ChangeCustomerPasswordProps {
-    currentPassword: string;
-    newPassword: string;
+  currentPassword: string;
+  newPassword: string;
 }
 export interface ChangeCustomerPasswordResponse {
-    data: {
-        changeCustomerPassword: {
-            email: string;
-        };
+  data: {
+    changeCustomerPassword: {
+      email: string;
     };
-    errors?: {
-        message: string;
-    }[];
+  };
+  errors?: {
+    message: string;
+  }[];
 }
 //# sourceMappingURL=updateCustomerPassword.types.d.ts.map

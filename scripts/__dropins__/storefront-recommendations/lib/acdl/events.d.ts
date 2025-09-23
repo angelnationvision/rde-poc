@@ -20,8 +20,8 @@
  * Relevant docs:
  * See: https://experienceleague.adobe.com/en/docs/commerce/product-recommendations/developer/events#events
  */
-export declare const RECS_UNIT_RENDER = "recs-unit-impression-render";
-export declare const RECS_ITEM_ADD_TO_CART_CLICK = "recs-item-add-to-cart-click";
-export declare const RECS_ITEM_CLICK = "recs-item-click";
-export declare const RECS_UNIT_VIEW = "recs-unit-view";
+export declare const RECS_UNIT_RENDER = 'recs-unit-impression-render';
+export declare const RECS_ITEM_ADD_TO_CART_CLICK = 'recs-item-add-to-cart-click';
+export declare const RECS_ITEM_CLICK = 'recs-item-click';
+export declare const RECS_UNIT_VIEW = 'recs-unit-view';
 //# sourceMappingURL=events.d.ts.map
