@@ -17,52 +17,52 @@
     }
   ],
   "models": [
-    {
+      {
       "id": "icon",
       "fields": [
         {
-          "component": "select",
-          "name": "icon-type",
-          "value": "",
-          "label": "Icon Type",
-          "valueType": "string",
-          "options": [
-            {
-              "name": "Facebook",
-              "value": "facebook"
-            },
-            {
-              "name": "Instagram",
-              "value": "instagram"
-            },
-            {
-              "name": "YouTube",
-              "value": "youtube"
-            },
-            {
-              "name": "X (former Twitter)",
-              "value": "twitter"
-            }
-          ]
-        },
-        {
-          "component": "text-input",
-          "valueType": "string",
-          "name": "icon-label",
-          "label": "Icon Label",
-          "required": true,
-          "value": ""
-        },
-        {
-          "component": "aem-content",
-          "valueType": "string",
-          "name": "icon-link",
-          "required": true,
-          "value": "",
-          "label": "Icon Link"
-        }
-      ]
-    }
+        "component": "select",
+        "name": "icon-type",
+        "value": "",
+        "label": "Icon Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Facebook",
+            "value": "facebook"
+          },
+          {
+            "name": "Instagram",
+            "value": "instagram"
+          },
+          {
+            "name": "YouTube",
+            "value": "youtube"
+          },
+          {
+            "name": "X (former Twitter)",
+            "value": "twitter"
+          }
+        ]
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "icon-label",
+        "label": "Icon Label",
+        "required": true,
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "icon-link",
+        "required": true,
+        "value": "",
+        "label": "Icon Link"
+      }
+    ]
+  }
   ],
   "filters": []
 }

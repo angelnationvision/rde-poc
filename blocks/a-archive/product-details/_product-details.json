@@ -20,7 +20,8 @@
   "models": [
     {
       "id": "product-details",
-      "fields": []
+      "fields": [
+      ]
     }
   ],
   "filters": []

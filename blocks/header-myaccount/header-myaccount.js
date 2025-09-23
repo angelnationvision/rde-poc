@@ -1,20 +1,17 @@
 export default async function decoratemyaccount() {
   const myaccounticon = document.querySelector('.nav-tools .icon-account-icon');
   const myaccounticonActive = document.querySelector('.icon-account-icon-active');
-  const baseUrldomain = window.location.origin;
-  const redirectToLoginPage = `${baseUrldomain}/customer/account/entry/`;
-  const redirectToDashboradboard = `${baseUrldomain}/customer/account`;
   function redirectToAccountPage() {
-    window.open(redirectToLoginPage, '_self');
+    window.open('https://mcstaging2.americasbest.com/customer/account/entry/', '_self');
   }
   function redirectToAccountPageDashborad() {
-    window.open(redirectToDashboradboard, '_self');
+    window.open('https://mcstaging2.americasbest.com/customer/account', '_self');
   }
-  myaccounticonActive.addEventListener('click', (e) => {
+  myaccounticonActive.addEventListener('click', e => {
     e.stopPropagation();
     redirectToAccountPageDashborad();
   });
-  myaccounticon.addEventListener('click', (e) => {
+  myaccounticon.addEventListener('click', e => {
     e.stopPropagation();
     redirectToAccountPage();
   });

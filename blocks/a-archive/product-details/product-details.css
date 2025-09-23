@@ -40,9 +40,11 @@
 }
 
 .product-details__gallery .pdp-overlay__content .pdp-carousel,
-.product-details__gallery .pdp-overlay__content .pdp-carousel--thumbnailsRow {
-  max-height: unset;
+.product-details__gallery .pdp-overlay__content .pdp-carousel--thumbnailsRow
+{
+  max-height: unset;;
 }
+
 
 .product-details__configuration {
   grid-column: 1 / span 4;
@@ -85,7 +87,7 @@
     display: block;
     grid-column: 1 / span 6;
   }
-
+  
   .product-details__right-column {
     grid-column: 7 / span 5;
     padding-top: var(--spacing-medium);

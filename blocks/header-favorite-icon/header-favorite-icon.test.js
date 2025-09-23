@@ -1,6 +1,4 @@
-import {
-  describe, it, expect, beforeEach, beforeAll,
-} from 'vitest';
+import { describe, it, expect, beforeEach, beforeAll } from 'vitest';
 import { JSDOM } from 'jsdom';
 
 // eslint-disable-next-line import/extensions
@@ -15,9 +13,10 @@ beforeAll(() => {
   global.document = dom.window.document;
 
   // ✅ Mock matchMedia to prevent errors
-  window.matchMedia = window.matchMedia
+  window.matchMedia =
+    window.matchMedia ||
     // eslint-disable-next-line func-names
-    || function (query) {
+    function (query) {
       return {
         matches: false,
         media: query,

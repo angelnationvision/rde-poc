@@ -1,6 +1,4 @@
-import {
-  vi, describe, it, expect, beforeAll,
-} from 'vitest';
+import { vi, describe, it, expect, beforeAll } from 'vitest';
 import { JSDOM } from 'jsdom';
 
 import decorate from './cards.js';

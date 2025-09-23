@@ -73,7 +73,7 @@ export default async function decoratefav(favIconContainer, favIconWrapper) {
   }
   // Initial update on page load
   updateIcon();
-  favicon.addEventListener('click', (e) => {
+  favicon.addEventListener('click', e => {
     link.focus();
     e.stopPropagation();
     toggleModal();
@@ -81,21 +81,21 @@ export default async function decoratefav(favIconContainer, favIconWrapper) {
   });
 
   overlay.addEventListener('click', hideModal);
-  document.addEventListener('click', (e) => {
+  document.addEventListener('click', e => {
     if (
-      modal.style.display === 'block'
-      && !modal.contains(e.target)
-      && !favicon.contains(e.target)
+      modal.style.display === 'block' &&
+      !modal.contains(e.target) &&
+      !favicon.contains(e.target)
     ) {
       hideModal();
     }
   });
-  favicon.addEventListener('keydown', (e) => {
+  favicon.addEventListener('keydown', e => {
     if (e.key === 'Enter') {
       showModal();
     }
   });
-  document.addEventListener('keydown', (e) => {
+  document.addEventListener('keydown', e => {
     const isVisible = modal.style.display === 'block';
     if (isVisible) {
       const iconAccount = document.querySelector('.icon-account-icon');
@@ -110,6 +110,6 @@ export default async function decoratefav(favIconContainer, favIconWrapper) {
   hearticon?.addEventListener('click', () => {
     hearticon.classList.toggle('active');
   });
-  const iconcartClick = document.querySelector('.icon-cart-icon');
+   const iconcartClick = document.querySelector('.icon-cart-icon');
   iconcartClick.addEventListener('click', hideModal);
 }

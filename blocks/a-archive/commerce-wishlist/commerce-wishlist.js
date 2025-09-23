@@ -56,7 +56,9 @@ events.on('wishlist/alert', () => {
 });
 
 export default async function decorate(block) {
-  const { 'start-shopping-url': startShoppingURL = '' } = readBlockConfig(block);
+  const {
+    'start-shopping-url': startShoppingURL = '',
+  } = readBlockConfig(block);
 
   await wishlistRenderer.render(Wishlist, {
     routeEmptyWishlistCTA: startShoppingURL ? () => rootLink(startShoppingURL) : undefined,

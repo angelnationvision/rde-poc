@@ -27,14 +27,10 @@ export default async function decorate(block) {
 
   block.appendChild(headerContainer);
 
-  events.on(
-    'order/data',
-    (orderData) => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const returnNumber = urlParams.get('returnRef');
-      const returnData = orderData.returns.find((item) => item.returnNumber === returnNumber);
-      UI.render(Header, { title: `Return ${returnData.returnNumber}` })(headerContainer);
-    },
-    { eager: true },
-  );
+  events.on('order/data', (orderData) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const returnNumber = urlParams.get('returnRef');
+    const returnData = orderData.returns.find((item) => item.returnNumber === returnNumber);
+    UI.render(Header, { title: `Return ${returnData.returnNumber}` })(headerContainer);
+  }, { eager: true });
 }

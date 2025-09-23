@@ -1,6 +1,4 @@
-import {
-  describe, it, expect, beforeEach, beforeAll, afterAll,
-} from 'vitest';
+import { describe, it, expect, beforeEach, beforeAll, afterAll } from 'vitest';
 import { JSDOM } from 'jsdom';
 
 import accordion from './accordion.js';
@@ -90,7 +88,7 @@ describe('accordion decorate()', () => {
     await accordion(block);
 
     const panels = block.querySelectorAll('details');
-    panels.forEach((panel) => {
+    panels.forEach(panel => {
       expect(panel.hasAttribute('open')).toBe(false);
     });
   });
@@ -100,7 +98,7 @@ describe('accordion decorate()', () => {
     await accordion(block);
 
     const panels = block.querySelectorAll('details');
-    panels.forEach((panel) => {
+    panels.forEach(panel => {
       expect(panel.hasAttribute('open')).toBe(true);
     });
   });
@@ -120,7 +118,7 @@ describe('accordion decorate()', () => {
     const clickEvent = new window.MouseEvent('click', { bubbles: true, cancelable: true });
     const clickHandler =
       // eslint-disable-next-line no-underscore-dangle
-      second.__clickHandler__ || [...(second.__handlers || [])].find((h) => h.type === 'click');
+      second.__clickHandler__ || [...(second.__handlers || [])].find(h => h.type === 'click');
 
     if (!clickHandler) {
       // Fallback: manually invoke toggleAccordion if no handler was found

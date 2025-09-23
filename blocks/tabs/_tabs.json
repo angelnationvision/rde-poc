@@ -26,8 +26,7 @@
               "name": "Tab",
               "model": "tabs-item",
               "tabName": "Tab Name",
-              "content": "<p>Lorem Ipsum</p>",
-              "tabPageUrl": ""
+              "content": "<p>Lorem Ipsum</p>"
             }
           }
         }
@@ -46,12 +45,11 @@
           "label": "Tab Name"
         },
         {
-          "component": "aem-content",
-          "name": "tabPageUrl",
-          "label": "Page Url",
-          "valueType": "string",
-          "rootPath": "",
-          "description": "Path to linked AEM content"
+          "component": "richtext",
+          "name": "content",
+          "value": "",
+          "label": "Content",
+          "valueType": "string"
         }
       ]
     }

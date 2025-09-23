@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 function toggleAllNavColumns(columns, expanded = false) {
-  columns.querySelectorAll('.navigation-column').forEach((column) => {
+  columns.querySelectorAll('.navigation-column').forEach(column => {
     if (!column.classList.contains('nav-col-images')) {
       column.setAttribute('aria-expanded', expanded);
       column.querySelector('.navigation-column-child').style.maxHeight = '0';
@@ -38,7 +38,7 @@ export default function decorate(block) {
   const buttonWrapper = document.createElement('div');
   buttonWrapper.classList.add('navigation-button-wrapper'); // Add the class for the wrapper
   // let columnCount = 0;
-  children.slice(1).forEach((div) => {
+  children.slice(1).forEach(div => {
     div.classList.add('navigation-column');
     const ul = div.querySelector('ul');
     if (ul && ul.children.length > 6) {
@@ -98,14 +98,15 @@ export default function decorate(block) {
               subDiv.closest('.navigation-column').setAttribute('aria-expanded', 'false');
             }
           }
-          subDiv.addEventListener('click', (event) => {
+          subDiv.addEventListener('click', event => {
             event.stopPropagation();
             const columnChild = subDiv
               .closest('.navigation-column')
               .querySelector('.navigation-column-child');
             if (!isDesktop.matches) {
               if (!isHorizontalView) {
-                const expanded = subDiv.closest('.navigation-column').getAttribute('aria-expanded') === 'true';
+                const expanded =
+                  subDiv.closest('.navigation-column').getAttribute('aria-expanded') === 'true';
                 toggleAllNavColumns(block);
                 subDiv
                   .closest('.navigation-column')
@@ -134,7 +135,7 @@ export default function decorate(block) {
               .appendChild(subDiv);
           }
           const navList = subDiv.querySelectorAll('li');
-          navList.forEach((list) => {
+          navList.forEach(list => {
             const icon = list.querySelector('.icon') || '';
             const sublist = list.querySelector('ul') || '';
             if (icon) {
@@ -236,7 +237,7 @@ export default function decorate(block) {
           child.remove();
         }
       }
-      subChildren.forEach((child) => {
+      subChildren.forEach(child => {
         if (child.querySelector('.button-container')) {
           child.classList.add('brand-button-wrapper');
         }
@@ -261,7 +262,7 @@ export default function decorate(block) {
   });
 
   // === Remove empty .brand-image divs ===
-  block.querySelectorAll('.brand-image').forEach((div) => {
+  block.querySelectorAll('.brand-image').forEach(div => {
     if (div.innerHTML.trim() === '') {
       div.remove();
     }

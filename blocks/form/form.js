@@ -34,11 +34,7 @@ function generatePayload(form) {
       if (field.type === 'radio') {
         if (field.checked) payload[field.name] = field.value;
       } else if (field.type === 'checkbox') {
-        if (field.checked) {
-          payload[field.name] = payload[field.name]
-            ? `${payload[field.name]},${field.value}`
-            : field.value;
-        }
+        if (field.checked) payload[field.name] = payload[field.name] ? `${payload[field.name]},${field.value}` : field.value;
       } else {
         payload[field.name] = field.value;
       }
@@ -83,9 +79,7 @@ async function handleSubmit(form) {
 
 export default async function decorate(block) {
   const links = [...block.querySelectorAll('a')].map((a) => a.href);
-  const formLink = links.find(
-    (link) => link.startsWith(window.location.origin) && link.endsWith('.json'),
-  );
+  const formLink = links.find((link) => link.startsWith(window.location.origin) && link.endsWith('.json'));
   const submitLink = links.find((link) => link !== formLink);
   if (!formLink || !submitLink) return;
 

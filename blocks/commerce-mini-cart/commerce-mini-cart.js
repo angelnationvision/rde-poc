@@ -77,8 +77,12 @@ export default async function decorate(block) {
     updateMessage.classList.add('commerce-mini-cart__update-message--visible');
     shadowWrapper.classList.add('commerce-mini-cart__message-wrapper--visible');
     setTimeout(() => {
-      updateMessage.classList.remove('commerce-mini-cart__update-message--visible');
-      shadowWrapper.classList.remove('commerce-mini-cart__message-wrapper--visible');
+      updateMessage.classList.remove(
+        'commerce-mini-cart__update-message--visible',
+      );
+      shadowWrapper.classList.remove(
+        'commerce-mini-cart__message-wrapper--visible',
+      );
       window.location.reload();
     }, 3000);
   };
@@ -207,31 +211,25 @@ export default async function decorate(block) {
         img.srcset = '';
       });
 
-      item
-        ?.querySelectorAll('.dropin-cart-item__title.dropin-cart-item__title--edit')
-        .forEach((span) => {
-          const link = span.querySelector('a');
-          if (link) {
-            const text = link.textContent;
-            if (text.length < 15) {
-              span.classList.add('short-title');
-              item
-                .querySelectorAll('.dropin-cart-item__row-total__wrapper')
-                .forEach((rowTotalWrapper) => {
-                  rowTotalWrapper.classList.add('titlenew');
-                });
-            }
+      item?.querySelectorAll('.dropin-cart-item__title.dropin-cart-item__title--edit').forEach((span) => {
+        const link = span.querySelector('a');
+        if (link) {
+          const text = link.textContent;
+          if (text.length < 15) {
+            span.classList.add('short-title');
+            item.querySelectorAll('.dropin-cart-item__row-total__wrapper').forEach((rowTotalWrapper) => {
+              rowTotalWrapper.classList.add('titlenew');
+            });
           }
-        });
+        }
+      });
 
       // Create label for MiniCart.remove
       const removeElem = document.createElement('div');
       removeElem.innerText = labels?.Cart?.MiniCart?.remove;
       removeElem.className = 'remove-text';
 
-      const priceElement = item?.querySelector(
-        '.dropin-price.dropin-price--default.dropin-price--small.dropin-price--bold',
-      );
+      const priceElement = item?.querySelector('.dropin-price.dropin-price--default.dropin-price--small.dropin-price--bold');
 
       const framePrice = document.createElement('span');
       framePrice.innerText = labels?.Cart?.MiniCart?.framePrice;
@@ -266,9 +264,7 @@ export default async function decorate(block) {
       lensops.insertAdjacentElement('afterend', lensselectops);
 
       if (JSON.stringify(product?.categories) === JSON.stringify(['Contact Lenses'])) {
-        const priceElements = item?.querySelector(
-          '.dropin-price.dropin-price--default.dropin-price--small.dropin-price--bold',
-        );
+        const priceElements = item?.querySelector('.dropin-price.dropin-price--default.dropin-price--small.dropin-price--bold');
         const frameval = item?.querySelector('.frame-price');
         const eachval = item?.querySelector('.dropin-cart-item__price');
         const lops = item?.querySelector('.lens-options');
@@ -367,8 +363,7 @@ export default async function decorate(block) {
       removeContainer.addEventListener('click', () => {
         const removeButtonsContainer = removeContainer.nextElementSibling;
         const borderval = removeButtonsContainer;
-        const isOpening = removeButtonsContainer.querySelector('.remove-confirm-text').style.display === 'none'
-          || removeButtonsContainer.querySelector('.remove-confirm-text').style.display === '';
+        const isOpening = removeButtonsContainer.querySelector('.remove-confirm-text').style.display === 'none' || removeButtonsContainer.querySelector('.remove-confirm-text').style.display === '';
 
         if (isOpening) {
           borderval.style.borderTop = '1px solid #B0B0B0';
@@ -376,12 +371,8 @@ export default async function decorate(block) {
           borderval.style.borderTop = '';
         }
 
-        removeButtonsContainer.querySelector('.remove-confirm-text').style.display = isOpening
-          ? 'block'
-          : 'none';
-        removeButtonsContainer.querySelector(
-          '.button.secondary-variant:first-child',
-        ).style.display = isOpening ? 'block' : 'none'; // Yes button
+        removeButtonsContainer.querySelector('.remove-confirm-text').style.display = isOpening ? 'block' : 'none';
+        removeButtonsContainer.querySelector('.button.secondary-variant:first-child').style.display = isOpening ? 'block' : 'none'; // Yes button
         removeButtonsContainer.querySelector('.button.secondary-variant:last-child').style.display = isOpening ? 'block' : 'none'; // No button
       });
 
@@ -391,8 +382,7 @@ export default async function decorate(block) {
           const borderval = removeButtonsContainer;
           const bordervals = removeButtonsContainer.querySelector('.buttons-group');
 
-          const isOpening = removeButtonsContainer.querySelector('.remove-confirm-text').style.display === 'none'
-            || removeButtonsContainer.querySelector('.remove-confirm-text').style.display === '';
+          const isOpening = removeButtonsContainer.querySelector('.remove-confirm-text').style.display === 'none' || removeButtonsContainer.querySelector('.remove-confirm-text').style.display === '';
 
           if (isOpening) {
             borderval.style.borderTop = '1px solid #B0B0B0';
@@ -402,15 +392,9 @@ export default async function decorate(block) {
             bordervals.style.borderBottom = '';
           }
 
-          removeButtonsContainer.querySelector('.remove-confirm-text').style.display = isOpening
-            ? 'block'
-            : 'none';
-          removeButtonsContainer.querySelector(
-            '.button.secondary-variant:first-child',
-          ).style.display = isOpening ? 'block' : 'none'; // Yes button
-          removeButtonsContainer.querySelector(
-            '.button.secondary-variant:last-child',
-          ).style.display = isOpening ? 'block' : 'none'; // No button
+          removeButtonsContainer.querySelector('.remove-confirm-text').style.display = isOpening ? 'block' : 'none';
+          removeButtonsContainer.querySelector('.button.secondary-variant:first-child').style.display = isOpening ? 'block' : 'none'; // Yes button
+          removeButtonsContainer.querySelector('.button.secondary-variant:last-child').style.display = isOpening ? 'block' : 'none'; // No button
         }
       });
 
@@ -421,9 +405,7 @@ export default async function decorate(block) {
         const bordervals = removeButtonsContainer.querySelector('.buttons-group');
 
         removeButtonsContainer.querySelector('.remove-confirm-text').style.display = 'none';
-        removeButtonsContainer.querySelector(
-          '.button.secondary-variant:first-child',
-        ).style.display = 'none';
+        removeButtonsContainer.querySelector('.button.secondary-variant:first-child').style.display = 'none';
         removeButtonsContainer.querySelector('.button.secondary-variant:last-child').style.display = 'none';
         borderval.style.borderTop = '';
         bordervals.style.borderBottom = '';
@@ -499,9 +481,7 @@ export default async function decorate(block) {
               rowTotalWrapper.classList.remove('titlenew');
             } else {
               rowTotalWrapper.classList.remove('opened');
-              const shortTitles = cartItem.querySelectorAll(
-                '.dropin-cart-item__title.dropin-cart-item__title--edit.short-title',
-              );
+              const shortTitles = cartItem.querySelectorAll('.dropin-cart-item__title.dropin-cart-item__title--edit.short-title');
               if (shortTitles.length > 0) {
                 rowTotalWrapper.classList.add('titlenew');
               }
@@ -635,7 +615,7 @@ function appendCartItemCountToIcon() {
     // Create the inner span for the count value
     const countSpan = document.createElement('span');
     countSpan.className = 'count-val';
-    countSpan.textContent = count; // Set the count value here
+    countSpan.textContent = count;// Set the count value here
 
     // Append the count span inside the badge
     badge.appendChild(countSpan);

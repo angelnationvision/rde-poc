@@ -14,7 +14,9 @@ import '../../scripts/initializers/order.js';
 
 export default async function decorate(block) {
   const isAuthenticated = checkIsAuthenticated();
-  const returnDetailsPath = isAuthenticated ? CUSTOMER_RETURN_DETAILS_PATH : RETURN_DETAILS_PATH;
+  const returnDetailsPath = isAuthenticated
+    ? CUSTOMER_RETURN_DETAILS_PATH
+    : RETURN_DETAILS_PATH;
 
   await orderRenderer.render(OrderReturns, {
     slots: {
@@ -46,8 +48,6 @@ export default async function decorate(block) {
 
       return rootLink(`${returnDetailsPath}?orderRef=${encodedOrderRef}&returnRef=${returnNumber}`);
     },
-    routeProductDetails: (productData) => (productData?.product
-      ? rootLink(`/products/${productData.product.urlKey}/${productData.product.sku}`)
-      : rootLink('#')),
+    routeProductDetails: (productData) => (productData?.product ? rootLink(`/products/${productData.product.urlKey}/${productData.product.sku}`) : rootLink('#')),
   })(block);
 }

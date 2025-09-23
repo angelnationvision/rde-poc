@@ -1,6 +1,7 @@
 const basePath = window.location.origin;
 const configFile = `${basePath}/config.json`;
 
+
 export async function commerceEndpointWithQueryParams(config) {
   const urlWithQueryParams = new URL(config['commerce-endpoint']);
   // Set some query parameters for use as a cache-buster. No other purpose.
@@ -51,8 +52,11 @@ async function performCatalogServiceQuery(query, config, variables) {
   return queryResponse.data;
 }
 
+
+
 // search.js
-export const isMobile = () => typeof window !== 'undefined' && window.matchMedia('(max-width: 900px)').matches;
+export const isMobile = () =>
+  typeof window !== 'undefined' && window.matchMedia('(max-width: 900px)').matches;
 
 export const productSearchQuery = (addCategory = false) => `query ProductSearch(
   $currentPage: Int = 1
@@ -102,8 +106,9 @@ export const productSearchQuery = (addCategory = false) => `query ProductSearch(
 }
 `;
 
+
 export const getColorFromAttributes = (attributes) => {
-  const colorAttr = attributes?.find((attr) => attr.name === 'color');
+  const colorAttr = attributes?.find(attr => attr.name === 'color');
   return colorAttr?.value?.trim() || '';
 };
 
@@ -113,21 +118,17 @@ export const createColorSwatch = (colorValue) => {
   // Check if the value is a valid color or URL (optional)
   const colorArray = colorValue.split('/');
   colorArray?.forEach((colorValue, index) => {
-    const styleBox = document.createElement('div');
-    styleBox.className = 'tab-style-box';
+      const styleBox = document.createElement('div');
+      styleBox.className = 'tab-style-box';
     const styleColor = document.createElement('span');
     styleColor.className = 'tab-style-color';
-    if (
-      colorValue
-      && colorValue.toLowerCase() !== 'no color'
-      && CSS.supports('color', colorValue)
-    ) {
-      styleColor.style.backgroundColor = colorValue;
-      styleBox.appendChild(styleColor);
-      styleListDiv.appendChild(styleBox);
-    }
-  });
-  return styleListDiv;
+      if (colorValue && colorValue.toLowerCase() !== 'no color' && CSS.supports('color', colorValue)) {
+        styleColor.style.backgroundColor = colorValue;
+        styleBox.appendChild(styleColor);
+        styleListDiv.appendChild(styleBox);
+      }
+    });
+      return styleListDiv;
 };
 
 function isValidUrl(str) {
@@ -139,9 +140,9 @@ function isValidUrl(str) {
   }
 }
 
-const renderSearchUI = (response, query, searchblock) => {
+const renderSearchUI = (response,query,searchblock) => {
   const imageUrls = {
-    glasses: [
+    'glasses': [
       '/content/dam/nvi-aem-commerce/media_19e8404db03c66a9b1abbcb97e010a07e70add917.svg?width=750&format=svg&optimize=medium',
       '/content/dam/nvi-aem-commerce/media_1cdb10a72ca0da5c18567c927d719018d157fa36e.svg?width=750&format=svg&optimize=medium',
       '/content/dam/nvi-aem-commerce/media_16b87cacdbc5b27d5bdcb0b24ab541ef35aba8f4b.svg?width=750&format=svg&optimize=medium',
@@ -152,17 +153,17 @@ const renderSearchUI = (response, query, searchblock) => {
       '/content/dam/nvi-aem-commerce/media_16592a06d7c9981b1447b11a572bbe56e6b809084.svg?width=750&format=svg&optimize=medium',
       '/content/dam/nvi-aem-commerce/media_1be426445474af29df157a969507e33a3cfc30875.svg?width=750&format=svg&optimize=medium',
       '/content/dam/nvi-aem-commerce/media_1ff1aca79206a366afd60a744913ba75000dd1c6a.svg?width=750&format=svg&optimize=medium',
-    ],
+    ]
   };
   const productDetails = response.productSearch;
   const navContainer = document.querySelector('.navigation-main-container');
   const navSearchWrapper = document.querySelector('.header-search-wrapper');
-  const resultContainer = document?.querySelector('.nav-results-container');
+  const resultContainer = document?.querySelector('.nav-results-container')
   if (productDetails?.total_count > 0 || productDetails?.suggestions?.length > 0) {
-    if (!resultContainer) {
+    if(!resultContainer) {
       const wrapperDiv = document.createElement('div');
       wrapperDiv.className = 'nav-results-container';
-      if (isMobile()) {
+      if(isMobile()) {
         navSearchWrapper.appendChild(wrapperDiv);
       } else {
         navContainer.appendChild(wrapperDiv);
@@ -179,12 +180,13 @@ const renderSearchUI = (response, query, searchblock) => {
       const suggestionText = suggestionWrapper.textContent.trim() || '';
       const suggestionTitle = document.createElement('div');
       suggestionTitle.textContent = suggestionText;
-      suggestionTitle.className = 'suggestion-title';
+      suggestionTitle.className = 'suggestion-title'
       suggestionContainer.appendChild(suggestionTitle);
-      // suggestionWrapper.remove();
+      //suggestionWrapper.remove();
 
       const suggestionListWrapper = document.createElement('div');
       suggestionListWrapper.className = 'suggestion-list-wrapper';
+
 
       suggestions.forEach((item, i) => {
         const text = item?.trim();
@@ -202,17 +204,17 @@ const renderSearchUI = (response, query, searchblock) => {
 
       suggestionContainer.appendChild(suggestionListWrapper);
     }
-    document.querySelector('.nav-results-container')?.appendChild(suggestionContainer);
-
+          document.querySelector('.nav-results-container')?.appendChild(suggestionContainer);
+    
     const products = productDetails?.items;
     document.querySelector('.search-result-container')?.remove();
-    const searchInput = document.getElementById('header-search-input');
-    if (searchInput.value.trim() === '' || searchInput.value.length < 3) {
+     const searchInput = document.getElementById('header-search-input');
+     if (searchInput.value.trim() === "" || searchInput.value.length < 3) {
       document.querySelector('.nav-results-container')?.remove();
       return;
-    }
-    const resultWrapper = document.createElement('div');
-    resultWrapper.className = 'search-result-container';
+     }
+     const resultWrapper = document.createElement('div');
+     resultWrapper.className = 'search-result-container';
     if (products.length > 0) {
       const resultTextWrapper = searchblock.querySelector(':scope > div:nth-child(3)');
       const titleRow = document.createElement('div');
@@ -220,10 +222,10 @@ const renderSearchUI = (response, query, searchblock) => {
       const resultTitle = document.createElement('div');
       resultTitle.className = 'search-title';
       resultTitle.textContent = resultTextWrapper.textContent?.trim() || '';
-
+      
       const ViewAllTextWrapper = searchblock.querySelector(':scope > div:nth-child(4)');
       const ViewAllType = searchblock.querySelector(':scope > div:nth-child(5)');
-      const clonedViewAllTextWrapper = ViewAllTextWrapper.cloneNode(true);
+      const clonedViewAllTextWrapper = ViewAllTextWrapper.cloneNode(true); 
       clonedViewAllTextWrapper.style.display = 'flex';
       const viewBtnType = ViewAllType.textContent.trim() || '';
       clonedViewAllTextWrapper.classList.add(viewBtnType);
@@ -239,7 +241,7 @@ const renderSearchUI = (response, query, searchblock) => {
         const p = product.productView;
         const linkUrl = `/products/${p.urlKey}/${p.sku}`;
         const productName = p.name;
-        const { inStock } = p;
+        const inStock = p.inStock;
         const productDiv = document.createElement('div');
         productDiv.className = 'product-card';
 
@@ -247,12 +249,13 @@ const renderSearchUI = (response, query, searchblock) => {
         anchor.href = linkUrl;
 
         const imgTag = document.createElement('img');
-        if (imageUrls.glasses?.length > 0) {
-          imgTag.src = `https://dev--nvi-aem-commerce--national-vision.aem.live${imageUrls.glasses[index]}`;
+        if (imageUrls['glasses']?.length > 0) {
+          imgTag.src = `https://dev--nvi-aem-commerce--national-vision.aem.live${imageUrls[`glasses`][index]}`
         } else {
           imgTag.src = p.images[0];
         }
         anchor.appendChild(imgTag);
+
 
         const titleP = document.createElement('p');
         titleP.textContent = productName;
@@ -280,17 +283,21 @@ const renderSearchUI = (response, query, searchblock) => {
       });
 
       resultWrapper.appendChild(productListWrapper);
+      
+
     }
     document.querySelector('.nav-results-container')?.appendChild(resultWrapper);
-
+    
     const searchInput1 = document.getElementById('header-search-input');
-    if (searchInput.value.trim() === '') {
+     if (searchInput.value.trim() === "") {
       document.querySelector('.search-result-container')?.remove();
-    }
-  } else {
+      return;
+     }
+
+  }else {
     resultContainer?.remove();
   }
-};
+}
 
 export default async function decoratesearch(searchContainer, hamburger, searchblock) {
   const navTools = document.querySelector('.nav-tools .default-content-wrapper');
@@ -312,7 +319,7 @@ export default async function decoratesearch(searchContainer, hamburger, searchb
   if (window.matchMedia('(max-width: 900px)').matches) {
     searchoverlay.style.top = '103px';
   } else {
-    // searchoverlay.style.top = '173px';
+    //searchoverlay.style.top = '173px';
   }
   document.body.appendChild(searchoverlay);
 
@@ -363,22 +370,22 @@ export default async function decoratesearch(searchContainer, hamburger, searchb
         }
       }
 
-      const suggestWrapper = searchblock.querySelector(':scope > div:nth-child(7)');
+       const suggestWrapper = searchblock.querySelector(':scope > div:nth-child(7)');
       const resultWrapper = searchblock.querySelector(':scope > div:nth-child(8)');
       const viewAllWrapper = searchblock.querySelector(':scope > div:nth-child(9)');
       const viewTypeWrapper = searchblock.querySelector(':scope > div:nth-child(10)');
-      suggestWrapper.style.display = 'none';
-      resultWrapper.style.display = 'none';
-      viewAllWrapper.style.display = 'none';
-      viewTypeWrapper.style.display = 'none';
+       suggestWrapper.style.display = 'none';
+       resultWrapper.style.display = 'none';
+       viewAllWrapper.style.display = 'none';
+       viewTypeWrapper.style.display = 'none';
 
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i <= 2; i++) {
         wrapperDiv.appendChild(directDivs[i]);
       }
 
-      const suggestionDiv = searchblock.querySelector(':scope > div:nth-child(8)');
-
+       const suggestionDiv = searchblock.querySelector(':scope > div:nth-child(8)');
+       
       // Add input field
       const searchInput = document.createElement('input');
       searchInput.type = 'text';
@@ -390,8 +397,8 @@ export default async function decoratesearch(searchContainer, hamburger, searchb
       // Add class to search icon container
       const searchIconContainer = wrapperDiv.children[0];
       searchIconContainer.classList.add('search-icon-inside');
-      searchIconContainer.id = 'header-search_btn-icon';
-      searchIconContainer.setAttribute('tabindex', '0');
+      searchIconContainer.id = "header-search_btn-icon";
+      searchIconContainer.setAttribute("tabindex", "0");
 
       // Add class to close icon container
       const closeIcon = wrapperDiv.children[2];
@@ -423,7 +430,7 @@ export default async function decoratesearch(searchContainer, hamburger, searchb
       }
 
       // Event: Open search UI
-      const openSearchUI = (e) => {
+      const openSearchUI = e => {
         e.stopPropagation();
         if (searchblock.classList.contains('hidden')) {
           navSections.style.display = 'none';
@@ -441,8 +448,8 @@ export default async function decoratesearch(searchContainer, hamburger, searchb
 
         if (!isMobile) {
           if (document.querySelector('.navigation-wrapper.input-opened')) {
-            // document.querySelector('.navigation-wrapper').style.height = '87px';
-            // headerpart.style.position = 'fixed';
+            //document.querySelector('.navigation-wrapper').style.height = '87px';
+           // headerpart.style.position = 'fixed';
           }
         }
         searchblock.classList.remove('hidden');
@@ -452,7 +459,7 @@ export default async function decoratesearch(searchContainer, hamburger, searchb
       };
 
       searchicon.addEventListener('click', openSearchUI);
-      searchicon.addEventListener('keydown', (e) => {
+      searchicon.addEventListener('keydown', e => {
         if (e.key === 'Enter') {
           openSearchUI(e); // Trigger the same action
         }
@@ -469,7 +476,7 @@ export default async function decoratesearch(searchContainer, hamburger, searchb
       });
 
       // Event: Cancel search
-      cancelButtonWrapper.addEventListener('click', (e) => {
+      cancelButtonWrapper.addEventListener('click', e => {
         e.preventDefault(); // Prevent page navigation
         searchblock.classList.add('hidden');
         searchoverlay.classList.add('hidden');
@@ -481,56 +488,57 @@ export default async function decoratesearch(searchContainer, hamburger, searchb
           bookexamehide.style.visibility = 'visible';
           findstorehide.style.visibility = 'visible';
         } else {
-          // document.querySelector('.navigation-wrapper').style.height = '64px';
+         // document.querySelector('.navigation-wrapper').style.height = '64px';
           headerpart.style.position = 'static';
         }
         navpart.classList.remove('input-opened');
         navTools.style.display = '';
-        // searchInput.value = '';
+        //searchInput.value = '';
       });
+      
+      const baseUrldomain = window.location.origin; 
+    const jsonSearchpageUrl = `${baseUrldomain}/searchpages.json`;
 
-      const baseUrldomain = window.location.origin;
-      const jsonSearchpageUrl = `${baseUrldomain}/searchpages.json`;
+async function searchRedirect(inputValue) {
+  try {
+    const response = await fetch(jsonSearchpageUrl);
+    const dataJson = await response.json();
+    const data = dataJson.data;
+    const baseUrl = window.location.origin;
+    let searchText = inputValue.trim().toLowerCase().replace(/[^a-z0-9]/g, "");
+    const matchedPage = data.find(
+      (dp) => dp.p_key.toLowerCase() === searchText
+    );
 
-      async function searchRedirect(inputValue) {
-        try {
-          const response = await fetch(jsonSearchpageUrl);
-          const dataJson = await response.json();
-          const { data } = dataJson;
-          const baseUrl = window.location.origin;
-          const searchText = inputValue
-            .trim()
-            .toLowerCase()
-            .replace(/[^a-z0-9]/g, '');
-          const matchedPage = data.find((dp) => dp.p_key.toLowerCase() === searchText);
+    if (matchedPage) {
+      window.location.href = `${baseUrl}${matchedPage.p_url}`;
+    }
+  } catch (error) {
+    console.error("Error loading JSON:", error);
+  }
+}
 
-          if (matchedPage) {
-            window.location.href = `${baseUrl}${matchedPage.p_url}`;
-          }
-        } catch (error) {
-          console.error('Error loading JSON:', error);
-        }
-      }
 
-      const searchInputHeader = document.getElementById('header-search-input');
-      const searchButton = document.getElementById('header-search_btn-icon');
-      searchInputHeader?.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-          searchRedirect(event.target.value);
-        }
-      });
-      searchButton?.addEventListener('keypress', (event) => {
-        if (event.key === 'Enter') {
+const searchInputHeader = document.getElementById("header-search-input");
+const searchButton = document.getElementById("header-search_btn-icon"); 
+searchInputHeader?.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    searchRedirect(event.target.value);
+  }
+});
+      searchButton?.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
           searchButton.click();
         }
       });
 
-      searchButton?.addEventListener('click', () => {
-        searchRedirect(searchInputHeader.value);
-      });
+searchButton?.addEventListener("click", () => {
+  searchRedirect(searchInputHeader.value);
+});
 
+      
       // Optional: Hide on outside click
-      document.addEventListener('click', (e) => {
+      document.addEventListener('click', e => {
         if (!searchblock.contains(e.target) && e.target !== searchicon) {
           searchblock.classList.add('hidden');
           searchoverlay.classList.add('hidden');
@@ -544,20 +552,20 @@ export default async function decoratesearch(searchContainer, hamburger, searchb
             bookexamehide.style.visibility = 'visible';
             findstorehide.style.visibility = 'visible';
           } else {
-            // document.querySelector('.navigation-wrapper').style.height = '64px';
+           // document.querySelector('.navigation-wrapper').style.height = '64px';
             headerpart.style.position = 'static';
           }
           navTools.style.display = '';
-          // searchInput.value = '';
+          //searchInput.value = '';
         }
       });
     }
   }
 
-  let debounceTimer;
+let debounceTimer;
   function handleInput(event) {
     const query = event.target.value;
-    if (query.length <= 2) {
+    if(query.length <= 2) {
       const el = document.querySelector('.nav-results-container');
       if (el) {
         el.remove();
@@ -572,25 +580,22 @@ export default async function decoratesearch(searchContainer, hamburger, searchb
           currentPage: 1,
           sort: [],
           phrase: query,
-          // filter: [{ attribute: 'categories', in: 'sunglasses' }]
-          filter: [],
+          //filter: [{ attribute: 'categories', in: 'sunglasses' }]
+          filter: []
         };
         try {
-          const config = await fetch(configFile)
-            .then((res) => res.json())
-            .then((data) => data.public.default)
-            .catch((err) => {
-              console.error(err);
-              return {};
-            });
-          const response = await performCatalogServiceQuery(
-            productSearchQuery(true),
-            config,
-            variables,
-          );
-          renderSearchUI(response, query, searchblock);
+          
+  const config = await fetch(configFile)
+    .then((res) => res.json())
+    .then((data) => data.public.default)
+    .catch((err) => {
+      console.error(err);
+      return {};
+    });
+          const response = await performCatalogServiceQuery(productSearchQuery(true), config, variables);
+          renderSearchUI(response,query,searchblock);
         } catch (error) {
-          console.error('Search failed:', error);
+          console.error("Search failed:", error);
         }
       }, 300); // Wait 300ms after the last keystroke before triggering the query
     }

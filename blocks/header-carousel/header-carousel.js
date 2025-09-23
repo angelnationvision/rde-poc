@@ -1,5 +1,5 @@
 export function updateCarousel(index, listItems) {
-  listItems.forEach((item) => item.classList.remove('active'));
+  listItems.forEach(item => item.classList.remove('active'));
   listItems[index].classList.add('active');
 }
 
@@ -16,7 +16,7 @@ export function scrollLeft(currentIndex, listItems) {
 }
 
 export default function decorate(block) {
-  const [props, interval] = [...block.children].map((row) => row.firstElementChild);
+  const [props, interval] = [...block.children].map(row => row.firstElementChild);
   const setTime = interval ? parseInt(interval.textContent, 10) : 3;
   const [listItemsContainer] = props.children;
 
@@ -46,7 +46,7 @@ export default function decorate(block) {
   const nextBtn = document.createElement('button');
   nextBtn.classList.add('next-btn-right');
 
-  carousel.addEventListener('click', (e) => {
+  carousel.addEventListener('click', e => {
     if (e.target.classList.contains('next-btn-right')) {
       currentIndex = scrollRight(currentIndex, listItems);
       resetInterval();

@@ -33,7 +33,7 @@
           "label": "Record ID",
           "description": "Record ID",
           "required": true
-        }
+        }       
       ]
     }
   ],

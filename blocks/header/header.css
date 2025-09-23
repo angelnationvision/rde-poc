@@ -10,9 +10,9 @@ header .nav-wrapper {
 
 header nav {
   box-sizing: border-box;
-  grid-template: 'hamburger brand tools' var(
-      --nav-height
-    ) 'sections sections sections' 1fr / auto 1fr auto;
+  grid-template:
+    'hamburger brand tools' var(--nav-height)
+    'sections sections sections' 1fr / auto 1fr auto;
   align-items: center;
   gap: 0 1.5rem;
   margin: auto;
@@ -27,6 +27,7 @@ header nav[aria-expanded='true'] {
   min-height: 100dvh;
 }
 
+
 .header-container-wrapper .default-content-wrapper p .icon-left-icon,
 .header-container-wrapper .default-content-wrapper p .icon-right-icon,
 .header-container-wrapper .default-content-wrapper p .icon-down-icon,
@@ -36,8 +37,24 @@ header nav[aria-expanded='true'] {
   width: 0.75rem;
   height: 0.76rem;
 }
-
-
+.safari header nav p {
+  font-weight: 500;
+}
+.safari .navigation-columns-wrapper .navigation-column .navigation-column-child ul li a {
+  font-weight: 500;
+}
+.safari a.button:any-link, .safari button{
+  font-weight: 500;
+}
+.safari .safari .navigation .navigation-column-card .text-btn p a{
+  font-weight: 500;
+}
+.safari .navigation .navigation-column-card .navigation-card-title p{
+  font-weight: 500;
+}
+.safari .safari .navigation .navigation-column-card .navigation-card-pretitle p{
+ font-weight: 500;
+}
 
 /* tools */
 header nav .nav-tools .default-content-wrapper {
@@ -104,7 +121,7 @@ header nav p {
     top: 5.375rem;
     box-shadow: 0 0 2rem 0 rgba(27 28 29 / 15%);
     z-index: 8;
-    background: #ffffff;
+    background: #FFFFFF;
   }
 
   header nav .navigation-wrapper .navigation-wrapper {
@@ -141,6 +158,7 @@ header nav p {
     line-height: 140%;
     cursor: pointer;
     min-width: 104%;
+    
   }
 
   .header-container-wrapper .nav-book-exam-button .default-content-wrapper .button-container a {
@@ -196,6 +214,7 @@ header nav .navigation-wrapper .navigation-column {
 
 header nav .navigation-wrapper .navigation-column:last-of-type {
   border-right: none;
+ 
 }
 
 header nav a:any-link {
@@ -299,7 +318,7 @@ header nav .nav-sections ul > li > ul > li {
   right: -18px;
   width: 297px;
   padding: 0 24px 12px;
-  background-color: #0b1b33;
+  background-color: #0B1B33;
   border-radius: 4px;
 }
 
@@ -322,7 +341,7 @@ header nav .nav-sections ul > li > ul > li {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #295edb;
+  color: #295EDB;
   cursor: pointer;
   z-index: 1;
   outline: none;
@@ -333,7 +352,7 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 .search-button:focus {
-  outline: 2px solid #295edb;
+  outline: 2px solid #295EDB;
   outline-offset: 2px;
 }
 
@@ -343,7 +362,7 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 .search-button:focus-visible {
-  outline: 2px solid #295edb;
+  outline: 2px solid #295EDB;
   outline-offset: 2px;
 }
 
@@ -352,7 +371,7 @@ header nav .nav-sections ul > li > ul > li {
   top: 15px;
   right: 12px;
   display: flex;
-  color: #625e59;
+  color: #625E59;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -361,7 +380,7 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 .close-button:focus {
-  outline: 2px solid #295edb;
+  outline: 2px solid #295EDB;
   outline-offset: 2px;
 }
 
@@ -371,7 +390,7 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 .close-button:focus-visible {
-  outline: 2px solid #295edb;
+  outline: 2px solid #295EDB;
   outline-offset: 2px;
 }
 
@@ -380,9 +399,9 @@ header nav .nav-sections ul > li > ul > li {
   height: 48px;
   padding: 12px 32px 12px 38px;
   box-sizing: border-box;
-  border: 1px solid #295edb;
+  border: 1px solid #295EDB;
   border-radius: 4px;
-  font-family: var(--body-font-family);
+  font-family: var(--avenir-roman);
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
@@ -403,7 +422,7 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 .search-input::placeholder {
-  color: #625e59;
+  color: #625E59;
 }
 
 .currentLocationButton.location-button {
@@ -419,7 +438,7 @@ header nav .nav-sections ul > li > ul > li {
   line-height: 22.4px;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-family: var(--body-font-family);
+  font-family: var(--avenir-roman);
   text-align: center;
 }
 
@@ -430,16 +449,16 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 .currentLocationButton.location-button:active {
-  border: none;
+ border: none;
 }
 
 .currentLocationButton.location-button:active:hover {
-  text-decoration: none;
+ text-decoration: none;
 }
 
 .currentLocationButton.location-button:focus,
 .currentLocationButton.location-button:focus-visible,
-.currentLocationButton.location-button:active:focus {
+ .currentLocationButton.location-button:active:focus{
   outline: none;
   border: 1px solid #fff;
   background-color: transparent;
@@ -726,7 +745,7 @@ header nav .nav-sections ul > li > ul > li {
 
 .search-input-wrapper .search-box {
   display: flex;
-  flex: 1 1 100%;
+     flex: 1 1 100%;
   align-items: flex-start;
   border-radius: 0.25rem;
   border: 0.063rem solid #295edb;
@@ -772,8 +791,7 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 .search-input-wrapper .close-icon:hover img {
-  filter: brightness(0) saturate(100%) invert(21%) sepia(63%) saturate(1850%) hue-rotate(201deg)
-    brightness(88%) contrast(96%);
+    filter: brightness(0) saturate(100%) invert(21%) sepia(63%) saturate(1850%) hue-rotate(201deg) brightness(88%) contrast(96%);
 }
 
 .search-input-wrapper .close-icon:focus-visible img {
@@ -782,7 +800,7 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 .search-input-wrapper .close-icon:active img {
-  filter: invert(12%) sepia(23%) saturate(2000%) hue-rotate(192deg) brightness(65%) contrast(120%);
+   filter: invert(12%) sepia(23%) saturate(2000%) hue-rotate(192deg) brightness(65%) contrast(120%);
 }
 
 .search-input-wrapper .close-icon:focus {
@@ -791,7 +809,7 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 .search-input-wrapper .input-label p.b-regular {
-  font-family: var(--body-font-family);
+  font-family: var(--avenir-roman);
   overflow: hidden;
   color: var(--color-black);
   text-overflow: ellipsis;
@@ -821,7 +839,7 @@ header nav .nav-sections ul > li > ul > li {
   text-overflow: ellipsis;
 
   /* Body/B1/Regular */
-  font-family: var(--body-font-family);
+  font-family: var(--avenir-roman);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-base);
   line-height: var(--body-font-size-l);
@@ -837,7 +855,7 @@ header nav .nav-sections ul > li > ul > li {
 }
 
 .search-input-wrapper .link-btn .button-container a.button {
-  font-family: var(--body-font-family);
+  font-family: var(--avenir-roman);
 }
 
 .default-content-wrapper .icon {
@@ -860,8 +878,7 @@ p:has(.icon-favourite-icon-active),
 p:has(.icon-account-icon-active) {
   display: none;
 }
-
-p:has(.icon-account-icon.hide-account_icon) {
+p:has(.icon-account-icon.hide-account_icon){
   display: none;
 }
 
@@ -890,10 +907,10 @@ p:has(.icon-account-icon.hide-account_icon) {
 }
 
 .search-result-container {
-  display: flex;
-  flex-direction: column;
-  gap: 27.44px;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 27.44px;
+    width: 100%;
 }
 
 .search-title-row {
@@ -904,9 +921,8 @@ p:has(.icon-account-icon.hide-account_icon) {
 .result-list-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  /* optional spacing between items */
-  row-gap: 35.44px;
+  gap: 24px; /* optional spacing between items */
+  row-gap: 35.44px
 }
 
 .result-list-wrapper > div {
@@ -923,43 +939,43 @@ p:has(.icon-account-icon.hide-account_icon) {
   width: 100%;
   padding-left: 12px;
   padding-right: 12px;
-  display: inline-flex;
-  flex-direction: column;
-  height: 100%;
-  align-items: center;
+  display: inline-flex
+;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
 }
 
 .result-list-wrapper a img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .result-list-wrapper .tab-style-list {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding-bottom: 16px;
-  margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding-bottom: 16px;
+    margin-top: auto;
 }
 
 .result-list-wrapper .tab-style-box {
-  width: 28px;
-  height: 28px;
-  border-radius: 2px;
-  box-shadow: 0 1px 2px 0 rgba(0 0 0 / 20%);
-  display: inline-flex;
-  padding: 2px;
+    width: 28px;
+    height: 28px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0 0 0 / 20%);
+    display: inline-flex;
+    padding: 2px;
 }
-
 .result-list-wrapper p {
-  margin: 0;
-  padding: 12px 0px 16px;
-  font-size: 14px;
-  font-weight: 900;
-  line-height: 19.6px;
-  color: #1c1818;
-  text-align: center;
-  font-family: var(--heading-font-family);
+    margin: 0;
+    padding: 12px 0px 16px;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 19.6px;
+    color: #1c1818;
+    text-align: center;
+    font-family: var(--avenir-black)
 }
 
 .result-list-wrapper a:hover {
@@ -967,10 +983,10 @@ p:has(.icon-account-icon.hide-account_icon) {
 }
 
 .result-list-wrapper .tab-style-color {
-  width: 24px;
-  height: 24px;
-  display: inline-flex;
-  border-radius: 2px;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    border-radius: 2px;
 }
 
 .result-list-wrapper > div {
@@ -983,27 +999,26 @@ p:has(.icon-account-icon.hide-account_icon) {
   gap: 16px;
 }
 
-body header nav .suggestion-list-wrapper a:any-link {
-  color: #295edb;
-  font-family: var(--body-font-family);
+.suggestion-list-wrapper a:any-link {
+  color: #295EDB;
+  font-family: var(--avenir-roman);
   font-size: 16px;
   font-weight: 800;
-  line-height: 140%;
-  /* 22.4px */
+  line-height: 140%; /* 22.4px */
 }
 
 .suggestion-container .suggestion-title,
 .search-result-container .search-title {
   color: #000000;
-  font-family: var(--body-font-family);
+  font-family: var(--avenir-roman);
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
 }
 
 .search-result-container .view-all-link {
-  color: #295edb;
-  font-family: var(--body-font-family);
+  color: #295EDB;
+  font-family: var(--avenir-roman);
   font-size: 16px;
   font-weight: 800;
   line-height: 22.4px;
@@ -1024,19 +1039,17 @@ body header nav .suggestion-list-wrapper a:any-link {
 .search-result-container .view-all-link:focus,
 .suggestion-list-wrapper .suggestion-link:focus,
 .suggestion-list-wrapper .suggestion-link:focus-visible {
-  text-decoration: underline;
-  border-radius: 8px;
-  border: 2px solid #295edb;
-  color: #295edb;
-  padding: 4px;
-  outline: none;
-  height: auto;
+    text-decoration: underline;
+    border-radius: 8px;
+    border: 2px solid #295EDB;
+    color: #295EDB;
+    padding: 4px;
+    outline: none;
+    height: auto;
 }
-
 .navigation-wrapper.input-opened {
   padding: 1rem 4rem;
 }
-
 .navigation-wrapper.input-opened .section.header-search-container {
   position: static;
   flex: 1 1 100%;
@@ -1046,21 +1059,17 @@ body header nav .suggestion-list-wrapper a:any-link {
   display: none;
 }
 
-.search-input-wrapper .link-btn .button-container a.button {
-  padding: 4px;
-}
-
 .navigation-wrapper.input-opened + .nav-results-container {
   display: flex;
 }
 
 .out-stock-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: -4px;
-  top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -4px;
+    top: 8px;
 }
 
 .out-stock-container img {
@@ -1070,20 +1079,19 @@ body header nav .suggestion-list-wrapper a:any-link {
 }
 
 .out-stock-content {
-  color: #ce001f;
-  font-family: var(--heading-font-family);
+  color: #CE001F;
+  font-family: var(--avenir-black);
   font-size: 14px;
   font-weight: 900;
-  line-height: 140%;
-  /* 19.6px */
+  line-height: 140%; /* 19.6px */
   border-radius: 2px 0 0 2px;
-  border-top: 1px solid var(--Color-Feedback-Red, #ce001f);
-  border-bottom: 1px solid var(--Color-Feedback-Red, #ce001f);
-  border-left: 1px solid var(--Color-Feedback-Red, #ce001f);
-  display: flex;
-  padding-left: 8px;
-  align-items: center;
-  align-self: stretch;
+border-top: 1px solid var(--Color-Feedback-Red, #CE001F);
+border-bottom: 1px solid var(--Color-Feedback-Red, #CE001F);
+border-left: 1px solid var(--Color-Feedback-Red, #CE001F);
+    display: flex;
+    padding-left: 8px;
+    align-items: center;
+    align-self: stretch;
 }
 
 @media (width < 900px) {
@@ -1168,7 +1176,7 @@ body header nav .suggestion-list-wrapper a:any-link {
   }
 }
 
-@media (width=900px) {
+@media (width = 900px) {
   .search-overlay {
     top: 10.625rem !important;
   }
@@ -1179,12 +1187,13 @@ body header nav .suggestion-list-wrapper a:any-link {
   }
 }
 
+
 .search-input-wrapper .placeholder,
 .search-input-wrapper .cancel-txt {
   display: none;
 }
 
-@media (width >=1440px) {
+@media (width >= 1440px) {
   .navigation-wrapper.input-opened .nav-brand {
     left: unset;
   }
@@ -1235,7 +1244,6 @@ body header nav .suggestion-list-wrapper a:any-link {
     font-size: 16px;
     line-height: 22px;
   }
-
   .nav-results-container {
     left: 0;
     position: absolute;
@@ -1245,226 +1253,187 @@ body header nav .suggestion-list-wrapper a:any-link {
     padding: 0px;
     width: 100%;
   }
-
   .result-list-wrapper {
     flex-wrap: nowrap;
     padding: 0px 16px 24px;
     overflow: auto;
   }
-
   .suggestion-container {
     max-width: 100%;
     padding: 0px 16px;
   }
-
   .search-result-container {
     gap: 16px;
   }
-
   .search-title-row {
     padding: 0px 16px;
   }
-
   .result-list-wrapper > div {
     min-width: 253px;
   }
-
   .result-list-wrapper p {
     padding: 12px 0px 12px;
   }
-
   .result-list-wrapper .tab-style-list {
     padding-bottom: 12px;
   }
-
   .result-list-wrapper a {
     padding-top: 0px;
   }
-
   .suggestion-list-wrapper a:any-link {
     font-size: 14px;
     font-weight: 800;
     line-height: normal;
     letter-spacing: 0.28px;
   }
-
   .navigation-wrapper .nav-results-container {
     display: none;
   }
-
   .navigation-wrapper.input-opened .nav-results-container {
     display: flex;
   }
-
   .suggestion-list-wrapper a:any-link:last-child {
     padding-bottom: 9px;
   }
 }
-
-#header-search_btn-icon {
+#header-search_btn-icon{
   cursor: pointer;
 }
-
-#header-search_btn-icon > div {
-  width: 16px;
-  height: 16px;
+#header-search_btn-icon > div{
+ width: 16px;
+height: 16px;
 }
-
 .favorite-icon-container p:has(.active) {
-  display: none;
+    display: none;
 }
-
-.text-btn .button-container a.button:hover {
+.text-btn .button-container a.button:hover{
   background-color: transparent;
 }
-
-header .dropin-card__content .signin-link:hover {
+header .dropin-card__content .signin-link:hover{
   text-decoration: underline;
+
 }
+
 
 /* Commerce americasbest World code start here */
-.americasbest .search-input-wrapper .link-btn .button-container a.button:hover {
+.americasbest .search-input-wrapper .link-btn .button-container a.button:hover{
   background-color: transparent;
-  font-family: var(--body-font-family);
+  font-family: var(--outerfit-reg);
 }
-
 .americasbest a,
 .americasbest div,
 .americasbest p,
 .americasbest button,
 .americasbest h2,
-.americasbest li {
-  font-family: var(--body-font-family);
+.americasbest li{
+  font-family: var(--outerfit-reg) !important;
+}
+.americasbest .popover{
+ background-color: #0B2572;
+   font-family: var(--outerfit-reg);
 }
 
-.americasbest .popover {
-  background-color: #0b2572;
-  font-family: var(--body-font-family);
+.americasbest .search-input-wrapper .link-btn .button-container a.button{
+  font-family: var(--outerfit-reg);
 }
 
-.americasbest .search-input-wrapper .link-btn .button-container a.button {
-  font-family: var(--body-font-family);
-}
-
-.americasbest header .dropin-card__content .signin-link:hover {
-  text-decoration: underline !important;
+ .americasbest header .dropin-card__content .signin-link:hover{
+text-decoration: underline !important;
 }
 
 .americasbest .link-btn .button-container a.button {
-  background-color: unset;
-  font-family: var(--body-font-family);
+    background-color: unset;
+    font-family: var(--outerfit-reg);
 }
-
 .americasbest .link-btn .button-container a.button:hover {
-  background-color: unset;
-  font-family: var(--body-font-family);
+    background-color: unset;
+    font-family: var(--outerfit-reg);
 }
 
 @media (width >=900px) {
   .americasbest header nav .header-main-container {
-    background-color: #0b2572;
-    font-family: var(--body-font-family);
+    background-color: #0B2572;
+    font-family: var(--outerfit-reg);
   }
+  .americasbest header .dropin-card__content .signin-link{
+ color: #003AE6;
+}
 
-  .americasbest header .dropin-card__content .signin-link {
-    color: #003ae6;
-  }
-
-  .americasbest
-    .header-container-wrapper
-    .nav-book-exam-button
-    .default-content-wrapper
-    .button-container
-    a {
-    background-color: var(--color-white);
-    color: #0b2572;
-    font-family: var(--body-font-family);
+  .americasbest .header-container-wrapper .nav-book-exam-button .default-content-wrapper .button-container a {
+    background-color:var(--color-white);
+    color: #0B2572;
+    font-family: var(--outerfit-reg);
   }
 
   .americasbest header nav a:any-link {
-    color: var(--color-white);
-    font-family: var(--body-font-family);
+     color:var(--color-white);
+     font-family: var(--outerfit-reg);
   }
 
   .americasbest .header-container-wrapper .nav-find-store .default-content-wrapper p {
     color: var(--color-white);
-    font-family: var(--body-font-family);
+    font-family: var(--outerfit-reg);
   }
 
-  .americasbest header nav .navigation-wrapper .navigation .navigation-title p {
-    color: #003ae6;
-    font-family: var(--body-font-family);
+  .americasbest header nav .navigation-wrapper .navigation .navigation-title p{ 
+    color: #003AE6;
+    font-family: var(--outerfit-reg);
   }
 }
 
-@media (width <=900px) {
+@media (width <= 900px) {
   .americasbest .header-container-wrapper .nav-find-store .default-content-wrapper p {
-    color: #0b2572;
+    color: #0B2572;
   }
 
-  .americasbest
-    .header-container-wrapper
-    .nav-book-exam-button
-    .default-content-wrapper
-    .button-container
-    a {
+  .americasbest .header-container-wrapper .nav-book-exam-button .default-content-wrapper .button-container a {
     background-color: var(--color-white);
-    color: #0b2572;
+    color:#0B2572;
   }
 
   .americasbest header nav a:any-link {
-    color: var(--color-black);
+    color:var(--color-black);
   }
 }
-
 .americasbest .navigation-columns-wrapper .navigation-column .navigation-column-child ul li a {
-  color: #003ae6;
+color: #003AE6;
 }
 
 /* Commerce americasbest World code end here */
+
 
 /* Commerce Eyeglass World code start here */
 
 @media (width >=900px) {
   .eyeglassworld header nav .header-main-container {
-    background-color: #58595b;
+    background-color: #58595B;
   }
 
-  .eyeglassworld
-    .header-container-wrapper
-    .nav-book-exam-button
-    .default-content-wrapper
-    .button-container
-    a {
+  .eyeglassworld .header-container-wrapper .nav-book-exam-button .default-content-wrapper .button-container a {
     background-color: #fff;
-    color: #e12726;
+    color: #E12726;
   }
 
   .eyeglassworld header nav a:any-link {
-    color: #fff;
+     color: #fff;
   }
 
   .eyeglassworld .header-container-wrapper .nav-find-store .default-content-wrapper p {
     color: #fff;
   }
 
-  .eyeglassworld header nav .navigation-wrapper .navigation .navigation-title p {
-    color: #007cba;
+  .eyeglassworld header nav .navigation-wrapper .navigation .navigation-title p{ 
+    color: #007CBA;
   }
 }
 
-@media (width <=900px) {
+@media (width <= 900px) {
   .eyeglassworld .header-container-wrapper .nav-find-store .default-content-wrapper p {
-    color: #007cba;
+    color: #007CBA;
   }
 
-  .eyeglassworld
-    .header-container-wrapper
-    .nav-book-exam-button
-    .default-content-wrapper
-    .button-container
-    a {
-    background-color: #e12726;
+  .eyeglassworld .header-container-wrapper .nav-book-exam-button .default-content-wrapper .button-container a {
+    background-color: #E12726;
     color: #fff;
   }
 
@@ -1472,59 +1441,48 @@ header .dropin-card__content .signin-link:hover {
     color: #000;
   }
 }
-
 .eyeglassworld .navigation-columns-wrapper .navigation-column .navigation-column-child ul li a {
-  color: #007cba;
+  color: #007CBA;
 }
 
 /* Commerce Eyeglass World code end here */
 
 /* Commerce Milatoryopticals code start here */
 
+
 @media (width >=900px) {
   .milatoryopticals header nav .header-main-container {
-    background: #efefef;
+    background: #EFEFEF;
   }
 
-  .milatoryopticals
-    .header-container-wrapper
-    .nav-book-exam-button
-    .default-content-wrapper
-    .button-container
-    a {
-    background-color: #21356e;
-    color: #ffffff;
+  .milatoryopticals .header-container-wrapper .nav-book-exam-button .default-content-wrapper .button-container a {
+    background-color: #21356E;
+    color: #FFFFFF;
   }
 
   .milatoryopticals header nav a:any-link {
-    color: #000000;
+     color: #000000;
   }
 
   .milatoryopticals .header-container-wrapper .nav-find-store .default-content-wrapper p {
     color: #000000;
   }
 
-  .milatoryopticals header nav .navigation-wrapper .navigation .navigation-title p {
-    color: #21356e;
+  .milatoryopticals header nav .navigation-wrapper .navigation .navigation-title p{ 
+    color: #21356E;
   }
 }
 
-@media (width <=900px) {
+@media (width <= 900px) {
   .milatoryopticals .header-container-wrapper .nav-find-store .default-content-wrapper p {
-    color: #21356e;
+    color: #21356E;
+  }
+    .milatoryopticals header nav .navigation-wrapper .navigation .navigation-title p{ 
+    color: #21356E;
   }
 
-  .milatoryopticals header nav .navigation-wrapper .navigation .navigation-title p {
-    color: #21356e;
-  }
-
-  .milatoryopticals
-    .header-container-wrapper
-    .nav-book-exam-button
-    .default-content-wrapper
-    .button-container
-    a {
-    background-color: #21356e;
+  .milatoryopticals .header-container-wrapper .nav-book-exam-button .default-content-wrapper .button-container a {
+    background-color: #21356E;
     color: #fff;
   }
 
@@ -1532,17 +1490,14 @@ header .dropin-card__content .signin-link:hover {
     color: #000;
   }
 }
-
 .milatoryopticals .navigation-columns-wrapper .navigation-column .navigation-column-child ul li a {
-  color: #21356e;
+  color: #21356E;
 }
-
 .milatoryopticals .header-carousel .prev-btn-left::before {
-  content: url('../../icons/left-arrow-mo.svg');
-}
+    content: url('../../icons/left-arrow-mo.svg');
+  }
 
 .milatoryopticals .header-carousel .next-btn-right::before {
-  content: url('../../icons/right-arrow-mo.svg');
+    content: url('../../icons/right-arrow-mo.svg');
 }
-
 /* Commerce Milatoryopticals code ends here */

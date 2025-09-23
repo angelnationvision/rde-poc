@@ -1,440 +1,440 @@
-.commerce-mini-cart__message-wrapper + div {
-  margin-top: 86px !important;
-}
-.map-container-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
 
+ 
+.map-container-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+ 
 .map-container .date-type-container,
 .map-container .location-details {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
-
-.map-container .date-type-container {
-  border-bottom: 3px solid var(--gray-bg);
-  padding-bottom: 0.75rem;
+ 
+.map-container .date-type-container{
+    border-bottom: 3px solid var(--gray-bg);
+    padding-bottom: 0.75rem;
 }
-
-.map-container .center-details-container-wrapper {
-  padding: 1.5rem 0;
+ 
+.map-container .center-details-container-wrapper{
+    padding: 1.5rem 0;
 }
-
-.map-container .center-details-container-wrapper .center-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+ 
+.map-container .center-details-container-wrapper .center-details{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
-
-.center-details-container-wrapper .center-details .address {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0.25rem;
-  color: var(--color-dark-warm);
-  font-family: var(--body-font-family);
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.375rem;
+ 
+.center-details-container-wrapper .center-details .address{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.25rem;
+    color: var(--color-dark-warm);
+    font-family: var(--avenir-roman);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.375rem;
 }
-
-.map-container-wrapper .map-details-container {
-  border-top: 3px solid var(--gray-bg);
+ 
+.map-container-wrapper .map-details-container{
+    border-top: 3px solid var(--gray-bg);
 }
-
+ 
 .date-type-container .time-container p:first-child,
 .date-type-container .exam-type-container p:first-child {
-  color: var(--color-black);
-  font-family: var(--body-font-family);
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
+    color: var(--color-black);
+    font-family: var(--avenir-roman);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+ 
 }
-
-.date-type-container .time-container p:last-child {
-  color: var(--color-black);
-  font-family: var(--body-font-family);
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
+ 
+.date-type-container .time-container p:last-child{
+     color: var(--color-black);
+    font-family:var(--avenir-roman);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
 }
-
-.date-type-container .exam-type-container p:last-child {
-  color: var(--color-black);
-  font-family: var(--body-font-family);
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 1.375rem; /* 122.222% */
+ 
+.date-type-container .exam-type-container p:last-child{
+     color: var(--color-black);
+    font-family:var(--avenir-roman);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1.375rem; /* 122.222% */
 }
 .map-container .location-details {
-  padding-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
 }
-
-.center-details-container-wrapper .location-details img {
-  width: 1.5rem;
-  height: 1.5rem;
+ 
+.center-details-container-wrapper .location-details img{
+    width: 1.5rem;
+    height: 1.5rem;
 }
-
-.center-details-container-wrapper .location-details p {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--color-black);
-  font-family: var(--body-font-family);
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 140%;
+ 
+.center-details-container-wrapper .location-details p{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-black);
+    font-family:var(--avenir-roman);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 140%;
 }
-
-.center-details-container-wrapper .location-details p:last-child {
-  color: var(--color-dark-warm);
+ 
+.center-details-container-wrapper .location-details p:last-child{
+    color: var(--color-dark-warm);
 }
-
-.center-details .get-directions {
-  color: var(--link-color);
-  font-family: var(--body-font-family);
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0.32px;
+ 
+.center-details .get-directions{
+    color: var(--link-color);
+    font-family:var(--avenir-roman);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.32px;
 }
-
-.center-details .center-info span {
-  color: var(--color-black);
-  font-family: var(--body-font-family);
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
+ 
+.center-details .center-info span{
+    color: var(--color-black);
+    font-family:var(--avenir-roman);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
 }
-
-.center-details .center-info span:last-child {
-  font-weight: 700;
-  color: var(--green-color-text);
+ 
+.center-details .center-info span:last-child{
+    font-weight: 700;
+    color: var(--green-color-text);
 }
-
-.center-details .contact-details {
-  color: var(--color-dark-warm);
-  font-family: var(--body-font-family);
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%; /* 22.0.25rem */
+ 
+.center-details .contact-details{
+    color: var(--color-dark-warm);
+    font-family:var(--avenir-roman);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 22.0.25rem */
 }
-
-.center-details .center-message {
-  color: var(--color-dark-warm);
-  font-family: var(--body-font-family);
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%; /* 19.6px */
+ 
+.center-details .center-message{
+    color: var(--color-dark-warm);
+    font-family:var(--avenir-roman);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 19.6px */
 }
-
+ 
 .map-container-wrapper .map-details-container img {
-  width: 100%;
-  height: 100%;
-  padding-top: 0.75rem;
-  aspect-ratio: 4/3;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    padding-top: 0.75rem;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+ 
+.section.confirmationpage-container{
+ font-family: var(--body-font-family);
+        max-width: 1440px;
+        margin: 0 auto;
+}
+.confirmationpage-container a.button:any-link{
+    padding: 16px 24px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 700;
+}
+.cancelAppointmentButton a.button:any-link, .addToCalendarButton a.button:any-link, .bookAnotherExamButton a.button:any-link{
+    background-color: #FFF;
+    border: 2px solid #295EDB;
+    color: #295EDB;
+}
+.section.confirmationpage-container .left-button-container .icon{
+    width: 33px;
+    height: 32px;
+}
+.examConfirmationMessage h3, .saveTimeReminder h3{
+color: #000000;
+ font-size: 20px;
+ font-family: var(--body-font-family);
+ font-weight: 550;
+ line-height: 24px;
+ word-wrap: break-word;
+ display: flex;
+ align-items: center;
+ gap:10px;
+ border-bottom: 3px solid #e4e4e4;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+.left-button-container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+   
+}
+.leftContainer-1, .leftContainer-2{
+ padding: 24px;
+     box-shadow: 0 0 15px 0 rgba(27, 28, 29, 0.14);
+     display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 4px;
+}
+.right-text-container{
+box-shadow: 0 0 15px 0 rgba(27, 28, 29, 0.14);
+padding: 24px;
+ border-radius: 4px;
 }
 
-.section.confirmationpage-container {
-  font-family: var(--body-font-family);
-  max-width: 1440px;
-  margin: 0 auto;
+.appointmentPreparationInfo ul{
+    margin-left: 1.5rem;
 }
-.confirmationpage-container a.button:any-link {
-  padding: 16px 24px;
-  width: 100%;
-  border-radius: 8px;
-  font-weight: 700;
+.section.confirmationpage-container{
+    margin: 0 auto;
+    padding: 4rem;
+    padding-top: 3rem;
 }
-.cancelAppointmentButton a.button:any-link,
-.addToCalendarButton a.button:any-link,
-.bookAnotherExamButton a.button:any-link {
-  background-color: #fff;
-  border: 2px solid #295edb;
-  color: #295edb;
+.map-container{
+    display: flex;
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+    border-radius: 0.25rem;
+    background: var(--color-white);
+    box-shadow: 0 0 15px 0 rgba(27, 28, 29, 0.14);
 }
-.section.confirmationpage-container .left-button-container .icon {
-  width: 33px;
-  height: 32px;
+ 
+.changeAppointmentButton{
+    margin-bottom: 12px;
 }
-.examConfirmationMessage h3,
-.saveTimeReminder h3 {
-  color: #000000;
-  font-size: 20px;
-  font-family: var(--body-font-family);
-  font-weight: 550;
-  line-height: 24px;
-  word-wrap: break-word;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-bottom: 3px solid #e4e4e4;
-  padding-bottom: 12px;
-  margin-bottom: 12px;
+.completePaperworkButton{
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
-.left-button-container {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.addToCalendarButton a.button:after{
+    content: " ";
+    background-image: url("../../icons/calendar.svg");
+    width: 17px;
+    height: 17px;
+    background-repeat: no-repeat;
+    margin-left: 8px;
 }
-.leftContainer-1,
-.leftContainer-2 {
-  padding: 24px;
-  box-shadow: 0 0 15px 0 rgba(27, 28, 29, 0.14);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  border-radius: 4px;
+.confirmation-user-left{
+    display: flex;
+    width: 50%;
+    max-width: 50%;
 }
-.right-text-container {
-  box-shadow: 0 0 15px 0 rgba(27, 28, 29, 0.14);
-  padding: 24px;
-  border-radius: 4px;
+.confirmation-user-icon{
+    width: 44px;
+    
 }
-
-.appointmentPreparationInfo ul {
-  margin-left: 1.5rem;
+.confirmation-user-info{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
-.section.confirmationpage-container {
-  margin: 0 auto;
-  padding: 4rem;
-  padding-top: 3rem;
-}
-.map-container {
-  display: flex;
-  padding: 1.5rem;
-  flex-direction: column;
-  align-items: flex-start;
-  flex: 1 0 0;
-  border-radius: 0.25rem;
-  background: var(--color-white);
-  box-shadow: 0 0 15px 0 rgba(27, 28, 29, 0.14);
+.confirmation-user-right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.changeAppointmentButton {
-  margin-bottom: 12px;
-}
-.completePaperworkButton {
-  margin-top: 12px;
-  margin-bottom: 12px;
-}
-.addToCalendarButton a.button:after {
-  content: ' ';
-  background-image: url('../../icons/calendar.svg');
-  width: 17px;
-  height: 17px;
-  background-repeat: no-repeat;
-  margin-left: 8px;
-}
-.confirmation-user-left {
-  display: flex;
-  width: 50%;
-  max-width: 50%;
-}
-.confirmation-user-icon {
-  width: 44px;
-}
-.confirmation-user-info {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.confirmation-user-right {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+.locationandmap p{
+    display: none;
 
-.locationandmap p {
-  display: none;
 }
-.cp_emailid {
-  font-weight: 700;
+.cp_emailid{
+    font-weight: 700;
 }
 .confirmation-header {
-  display: flex;
-  gap: 10px;
-  border-bottom: 3px solid #e4e4e4;
-  padding-bottom: 12px;
-  margin-bottom: 36px;
-  justify-content: flex-start;
+    display: flex;
+    gap: 10px;
+    border-bottom: 3px solid #e4e4e4;
+    padding-bottom: 12px;
+    margin-bottom: 36px;
+    justify-content:flex-start;
 }
 .notificationDisclaimer p {
-  font-size: 11px;
-  line-height: 15px;
-  color: #000;
-  margin-top: 24px;
+    font-size: 11px;
+    line-height: 15px;
+    color: #000;
+    margin-top: 24px;
 }
-.leftContainer-2 {
-  position: relative;
+.leftContainer-2{
+    position: relative;
 }
-.calendar_dropdown {
-  display: none;
+.calendar_dropdown{
+    display: none;
 }
-.active-calendar .calendar_dropdown {
-  display: block;
-  position: relative;
-  margin-top: -12px;
+.active-calendar .calendar_dropdown{
+    display: block;
+        position: relative;
+        margin-top: -12px;
 }
-.dropdown-menu-right.show {
-  display: flex;
-  flex-direction: column;
-  min-width: 160px;
-  position: absolute;
-  background: #fff;
-  right: 0;
-  padding: 14px 0;
-  border: 1px #aaa solid;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
-  text-decoration: none;
-  font-size: 14px;
+.dropdown-menu-right.show{
+    display: flex;
+    flex-direction: column;
+      min-width: 160px;
+    position: absolute;
+    background: #fff;
+    right: 0;
+      padding: 14px 0;
+    border: 1px #aaa solid;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .15);
+    text-decoration: none;
+    font-size: 14px;
+    
+    
 }
-.dropdown-menu-right .dropdown-item {
-  font-size: 0.875rem;
-  line-height: 25px;
-  line-height: 1.5625rem;
-  color: #333;
-  padding: 0 19px;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  flex-wrap: nowrap;
+.dropdown-menu-right .dropdown-item{
+font-size: 0.875rem;
+    line-height: 25px;
+    line-height: 1.5625rem;
+    color: #333;
+     padding: 0 19px;
+     display: flex;
+     gap:8px;
+    align-items: center;
+    flex-wrap: nowrap;
+     
 }
-.dropdown-menu-right .dropdown-item:hover {
-  background-color: #f3f2ef;
-}
-.js_apple_email_download::before {
-  background-image: url('../../icons/appleicon.svg');
-  width: 13px;
-  height: 13px;
-  background-repeat: no-repeat;
-
-  content: '';
-}
+.dropdown-menu-right .dropdown-item:hover{
+background-color: #f3f2ef;
+}  
+.js_apple_email_download::before{
+    background-image: url("../../icons/appleicon.svg");
+      width: 13px;
+    height: 13px;
+    background-repeat: no-repeat;
+  
+    content: "";
+     
+}  
 
 .js_outlook_download::before {
-  background-image: url('../../icons/windows.svg');
-  width: 13px;
-  height: 13px;
-  background-repeat: no-repeat;
+    background-image: url("../../icons/windows.svg");
+      width: 13px;
+    height: 13px;
+    background-repeat: no-repeat;
+  
+    content: "";
+        background-size: 13px;
+}  
 
-  content: '';
-  background-size: 13px;
+.js_google_download::before{
+    background-image: url("../../icons/google.svg");
+      width: 13px;
+    height: 13px;
+    background-repeat: no-repeat;
+ 
+    content: "";
+        background-size: 13px;
+}  
+
+
+@media (width <=900px) {
+    .section.confirmationpage-container{
+        padding: 0px;
+    }
+.leftContainer-1, .leftContainer-2{
+margin: 1rem;
+    }
+.right-text-container{
+margin: 1rem;
+padding: 1rem;
 }
-
-.js_google_download::before {
-  background-image: url('../../icons/google.svg');
-  width: 13px;
-  height: 13px;
-  background-repeat: no-repeat;
-
-  content: '';
-  background-size: 13px;
-}
-
-@media (width <=991px) {
-  .commerce-mini-cart__message-wrapper + div {
-    margin-top: 10rem !important;
-  }
-  .section.confirmationpage-container {
-    padding: 0px;
-  }
-  .leftContainer-1,
-  .leftContainer-2 {
-    margin: 1rem;
-  }
-  .right-text-container {
-    margin: 1rem;
-    padding: 1rem;
-  }
-  .appointmentPreparationInfo {
+.appointmentPreparationInfo{
     padding: 0;
-  }
-  .map-container {
+}
+.map-container{
     margin: 0 1rem;
-  }
-  .confirmation-header {
-    flex-direction: column;
+}
+.confirmation-header{
+    flex-direction:column;
     margin-bottom: 12px;
     font-size: 20px;
     line-height: 24px;
-  }
-  .confirmation-user-left {
-    flex-direction: column;
-  }
-  .notificationDisclaimer p {
+}
+.confirmation-user-left{
+    flex-direction:column;
+}
+.notificationDisclaimer p {
     font-size: 12px;
     line-height: 16px;
-  }
-  .appointmentPreparationInfo strong {
+}
+.appointmentPreparationInfo strong{
     font-weight: 400;
-  }
-  .confirmation-user-info,
-  .confirmation-user-left,
-  .confirmation-user-right {
+}
+.confirmation-user-info,.confirmation-user-left, .confirmation-user-right{
     width: 100%;
-  }
+}
 }
 @media (width >=900px) {
-  .date-type-container .time-container p:first-child {
-    font-size: var(--Body-B2, 0.875rem);
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
-  }
-
-  .date-type-container .time-container p:last-child {
-    font-size: var(--Body-B1, 1rem);
-    font-style: normal;
-    font-weight: 900;
-    line-height: 140%;
-  }
-
-  .date-type-container .exam-type-container p:last-child {
-    font-size: 1.375rem;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 1.375rem;
-  }
-
-  .center-details-container-wrapper .location-details p {
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 140%;
-  }
-
-  .center-details .get-directions {
-    font-weight: 800;
-    line-height: 140%;
-  }
-
-  .center-details .center-info span {
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.375rem;
-  }
-
-  .center-details .center-info span:last-child {
-    font-weight: 900;
-    line-height: 140%;
-  }
-
-  .center-details .contact-details {
-    font-weight: 900;
-    color: var(--link-color);
-  }
+ 
+    .date-type-container .time-container p:first-child {
+        font-size: var(--Body-B2, 0.875rem);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+    }
+ 
+    .date-type-container .time-container p:last-child{
+        font-size: var(--Body-B1, 1rem);
+        font-style: normal;
+        font-weight: 900;
+        line-height: 140%;
+    }
+ 
+    .date-type-container .exam-type-container p:last-child{
+        font-size: 1.375rem;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 1.375rem;
+    }
+ 
+    .center-details-container-wrapper .location-details p{
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 140%;
+    }
+ 
+    .center-details .get-directions{
+        font-weight: 800;
+        line-height: 140%;
+    }
+ 
+    .center-details .center-info span{
+        font-size:  1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.375rem;
+    }
+ 
+    .center-details .center-info span:last-child{
+        font-weight: 900;
+        line-height: 140%;
+    }
+ 
+    .center-details .contact-details{
+        font-weight: 900;
+        color: var(--link-color);
+    }
 }

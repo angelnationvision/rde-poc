@@ -23,7 +23,7 @@ footer .link-list-wrapper.horizontal .link-list-title {
 }
 
 footer .link-list-wrapper.vertical .link-list-title {
-  font-family: var(--body-font-family);
+  font-family: var(--avenir);
   display: block;
   position: relative;
   margin: 16px 0;
@@ -112,10 +112,9 @@ footer .footer .link-list-wrapper.horizontal .link-list-detail ul {
     display: inline-flex;
     flex-direction: row;
     vertical-align: top;
-    padding: 0  24px 16px;
+    padding: 0 24px;
     width: 33.3%;
     border: unset;
-    max-width: 16%;
   }
 
   footer .link-list-wrapper.horizontal {
@@ -169,6 +168,7 @@ footer .footer .link-list-wrapper.horizontal .link-list-detail ul {
     display: inline-flex;
     flex-direction: row;
     vertical-align: top;
+    padding: 0 24px;
     width: 16%;
   }
 }

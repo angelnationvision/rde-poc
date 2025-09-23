@@ -91,7 +91,7 @@ export default function decorate(block) {
 
   // Add target="_blank" to all hero-cta links if hero-btn-target is "true"
   if (btnTargetValue) {
-    block.querySelectorAll('.hero-cta a').forEach((a) => {
+    block.querySelectorAll('.hero-cta a').forEach(a => {
       a.setAttribute('target', '_blank');
     });
   }

@@ -16,7 +16,7 @@
   }
 }
 
-@media (width >= 991px) {
+@media (width >= 900px) {
   .table.block table {
     font-size: var(--body-font-size-m);
   }

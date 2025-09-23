@@ -17,46 +17,46 @@
     }
   ],
   "models": [
-    {
-      "component": "boolean",
-      "label": "Show Checkbox",
-      "name": "checkboxBool",
-      "valueType": "boolean",
-      "value": false
-    },
-    {
-      "component": "text-input",
-      "label": "Checkbox Label",
-      "name": "checkbox_title",
-      "condition": {
-        "===": [
-          {
-            "var": "checkboxBool"
-          },
-          true
-        ]
+      {
+        "component": "boolean",
+        "label": "Show Checkbox",
+        "name": "checkboxBool",
+        "valueType": "boolean",
+        "value": false
+      },
+      {
+        "component": "text-input",
+        "label": "Checkbox Label",
+        "name": "checkbox_title",
+        "condition": {
+          "===": [
+            {
+              "var": "checkboxBool"
+            },
+            true
+          ]
+        }
+      },
+      {
+        "component": "text-input",
+        "name": "checkbox_titleType",
+        "valueType": "string",
+        "value": "h4",
+        "hidden": true
+      },
+      {
+        "component": "text-input",
+        "label": "Checkbox helper text",
+        "name": "checkbox_helperText",
+        "condition": {
+          "===": [
+            {
+              "var": "checkboxBool"
+            },
+            true
+          ]
+        }
       }
-    },
-    {
-      "component": "text-input",
-      "name": "checkbox_titleType",
-      "valueType": "string",
-      "value": "h4",
-      "hidden": true
-    },
-    {
-      "component": "text-input",
-      "label": "Checkbox helper text",
-      "name": "checkbox_helperText",
-      "condition": {
-        "===": [
-          {
-            "var": "checkboxBool"
-          },
-          true
-        ]
-      }
-    }
   ],
   "filters": []
 }

@@ -1,6 +1,4 @@
-import {
-  describe, it, expect, beforeEach, beforeAll,
-} from 'vitest';
+import { describe, it, expect, beforeEach, beforeAll } from 'vitest';
 import { JSDOM } from 'jsdom';
 
 import hero from './hero.js';
@@ -59,7 +57,7 @@ describe('hero', () => {
     expect(ctaContainer.children[1].classList.contains('second-class')).toBe(true);
 
     // Check if target="_blank" is added when hero-btn-target is true
-    ctaContainer.querySelectorAll('a').forEach((a) => {
+    ctaContainer.querySelectorAll('a').forEach(a => {
       if (a.getAttribute('target') === '_blank') {
         expect(a.getAttribute('target')).toBe('_blank');
       } else {

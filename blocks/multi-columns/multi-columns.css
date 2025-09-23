@@ -3,12 +3,12 @@
 }
 
 .multi-columns-wrapper .multi-column-title p {
-  color: var(--color-black); 
+  color: var(--color-black);
   text-align: center;
-  font-family: var(--heading-font-family);
+  font-family: var(--avenir-black);
   font-size: var(--body-font-size-xxl);
   font-style: normal;
-  font-weight: var(--font-weight-900);
+  font-weight: var(--font-weight-xtra-bold);
   line-height: 40px;
   letter-spacing: -0.32px;
   margin-top: 0;
@@ -44,28 +44,28 @@
   flex-direction: column;
   align-items: center;
   border-radius: 100px;
-  background: var(--color-light-gray);
+  background: var(--gray-bg);
 }
 
 .multi-columns-wrapper .multi-column-content .content-title p {
-  color: var(--warm-darkest);
+  color: var(--color-darkest-warm);
   text-align: center;
-  font-family: var(--heading-font-family);
-  font-size: var(--body-font-size-l);
+  font-family: var(--avenir-black);
+  font-size: var(--body-font-size-xl);
   font-style: normal;
-  font-weight: var(--font-weight-700);
+  font-weight: var(--font-weight-xtra-bold);
   line-height: 22px;
   margin-top: 0;
   margin-bottom: 8px;
 }
 
 .multi-columns-wrapper .multi-column-content .content-description p {
-  color: var(--warm-dark);
+  color: var(--color-dark-warm);
   text-align: center;
-  font-family: var(--body-font-family);
+  font-family: var(--avenir-roman);
   font-size: var(--body-font-size-xxs);
   font-style: normal;
-  font-weight: var(--font-weight-400);
+  font-weight: var(--font-weight-regular);
   line-height: 140%;
   margin: 20px 0;
 }
@@ -86,7 +86,7 @@
 
 /* Mobile Layout */
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .multi-columns-wrapper {
     padding: 32px 16px !important;
     text-align: center;
@@ -94,7 +94,8 @@
   }
 
   .multi-columns-wrapper .multi-column-title p {
-    font-size: var(--body-font-size-xxl);
+    font-size: var(--body-font-size-xl-1);
+    letter-spacing: -0.28px;
     margin-bottom: 16px;
   }
 
@@ -108,7 +109,7 @@
   }
 
   .multi-columns-wrapper .multi-column-content .content-title p {
-    font-size: var(--body-font-size-l);
+    font-size: var(--body-font-size-m-1);
     margin-bottom: 8px;
   }
 

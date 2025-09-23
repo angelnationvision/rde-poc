@@ -18,7 +18,7 @@ export default async function decorate(block) {
     'cart-rules': rules,
   } = blockConfig;
 
-  const content = blockConfig.fragment !== undefined
+  const content = (blockConfig.fragment !== undefined)
     ? await loadFragment(fragment)
     : block.children[block.children.length - 1];
 

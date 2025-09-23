@@ -18,7 +18,9 @@ export default async function decorate(block) {
     return;
   }
 
-  const { 'minified-view': minifiedViewConfig = 'false' } = readBlockConfig(block);
+  const {
+    'minified-view': minifiedViewConfig = 'false',
+  } = readBlockConfig(block);
 
   if (!checkIsAuthenticated()) {
     window.location.href = rootLink(CUSTOMER_LOGIN_PATH);

@@ -6,7 +6,7 @@ export default function decorate(block) {
   let card = 0;
   const ul = document.createElement('ul');
 
-  [...block.children].forEach((row) => {
+  [...block.children].forEach(row => {
     const li = document.createElement('li');
     card += 1;
     li.classList.add(`cards-card-${card}`);
@@ -68,9 +68,9 @@ export default function decorate(block) {
     newButtonContainer.classList.add('cards-card-buttoncontainer');
 
     let ctaIndex = 0;
-    [...li.children].forEach((div) => {
+    [...li.children].forEach(div => {
       const buttons = div.querySelectorAll('.button-container');
-      buttons.forEach((btnContainer) => {
+      buttons.forEach(btnContainer => {
         const wrapper = document.createElement('div');
         wrapper.className = 'cards-cta';
 
@@ -91,7 +91,7 @@ export default function decorate(block) {
 
     // If btnTargetValue is true, add target="_blank" to links
     if (btnTargetValue) {
-      newButtonContainer.querySelectorAll('a').forEach((a) => {
+      newButtonContainer.querySelectorAll('a').forEach(a => {
         a.setAttribute('target', '_blank');
       });
     }
@@ -99,7 +99,7 @@ export default function decorate(block) {
     ul.appendChild(li);
   });
 
-  ul.querySelectorAll('picture > img').forEach((img) => {
+  ul.querySelectorAll('picture > img').forEach(img => {
     const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
     moveInstrumentation(img, optimizedPic.querySelector('img'));
     img.closest('picture').replaceWith(optimizedPic);

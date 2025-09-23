@@ -39,7 +39,19 @@ function closeOnFocusLost(e) {
     }
   }
 }
+function isSafariBrowser() {
+  const ua = navigator.userAgent.toLowerCase();
+  return ua.includes('safari') && !ua.includes('chrome') && !ua.includes('android');
+}
 
+// Usage
+if (isSafariBrowser()) {
+  console.log('Safari browser detected');
+  // Apply Safari-specific CSS or logic here
+  document.documentElement.classList.add('safari');
+} else {
+  document.documentElement.classList.add('chrome');
+}
 
 function openOnKeydown(e) {
   const focused = document.activeElement;

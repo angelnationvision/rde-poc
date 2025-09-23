@@ -38,7 +38,7 @@ img {
 }
 
 .hero-wrapper .hero-pretitle {
-  font-family: var(--heading-font-family);
+  font-family: var(--avenir-black);
   font-weight: var(--font-weight-xtra-bold);
   font-size: var(--body-font-size-xxs);
   font-style: normal;
@@ -50,7 +50,7 @@ img {
 }
 
 .hero-wrapper .hero-title {
-  font-family: var(--heading-font-family);
+  font-family: var(--avenir-black);
   font-weight: var(--font-weight-xtra-bold);
   font-size: var(--body-font-size-xxxl);
   font-style: normal;
@@ -62,7 +62,7 @@ img {
 }
 
 .hero-wrapper .hero-subtitle {
-  font-family: var(--heading-font-family);
+  font-family: var(--avenir-black);
   font-weight: var(--font-weight-xtra-bold);
   font-size: var(--body-font-size-xl);
   font-style: normal;
@@ -73,7 +73,7 @@ img {
 }
 
 .hero-wrapper .hero-body-text {
-  font-family: var(--body-font-family);
+  font-family: var(--avenir-roman);
   font-weight: var(--font-weight-regular);
   font-size: var(--body-font-size-s);
   font-style: normal;
@@ -418,7 +418,7 @@ img {
   }
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .hero.block img {
     aspect-ratio: 1 / 1;
     object-fit: cover;

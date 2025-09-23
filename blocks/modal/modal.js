@@ -1,7 +1,5 @@
 import { loadFragment } from '../fragment/fragment.js';
-import {
-  buildBlock, decorateBlock, loadBlock, loadCSS,
-} from '../../scripts/aem.js';
+import { buildBlock, decorateBlock, loadBlock, loadCSS } from '../../scripts/aem.js';
 import { iconList } from '../icon/icon.js';
 
 export async function createModal(contentNodes) {
@@ -17,7 +15,7 @@ export async function createModal(contentNodes) {
   const ctaBtn = dialogContent?.querySelector('.button-nvi-container');
 
   if (ctaBtn) {
-    ctaBtn.addEventListener('click', (e) => {
+    ctaBtn.addEventListener('click', e => {
       const targetHref = e.target.getAttribute?.('href');
       const parentHref = e.target.parentElement?.getAttribute?.('href');
 
@@ -49,10 +47,8 @@ export async function createModal(contentNodes) {
   await loadBlock(block);
 
   // close on click outside the dialog
-  dialog.addEventListener('click', (e) => {
-    const {
-      left, right, top, bottom,
-    } = dialog.getBoundingClientRect();
+  dialog.addEventListener('click', e => {
+    const { left, right, top, bottom } = dialog.getBoundingClientRect();
     const { clientX, clientY } = e;
     if (clientX < left || clientX > right || clientY < top || clientY > bottom) {
       dialog.close();
@@ -97,7 +93,7 @@ export async function openModal(fragmentUrl) {
 }
 
 export default function decorate(block) {
-  const [checkboxType, checkboxLabel] = [...block.children].map((row) => row.firstElementChild);
+  const [checkboxType, checkboxLabel] = [...block.children].map(row => row.firstElementChild);
   const checkboxTitle = checkboxLabel?.querySelector('h4')?.textContent?.trim();
   const helperText = checkboxLabel?.querySelector('p')?.textContent?.trim();
 
@@ -123,7 +119,7 @@ export default function decorate(block) {
     const checkboxLabelEl = checkboxContainer.querySelector('.checkbox-label');
     const input = checkboxContainer.querySelector('input[type="checkbox"]');
 
-    checkboxLabelEl.addEventListener('keydown', (e) => {
+    checkboxLabelEl.addEventListener('keydown', e => {
       if (e.key === ' ' || e.key === 'Enter') {
         e.preventDefault();
 
@@ -132,6 +128,8 @@ export default function decorate(block) {
         checkboxLabelEl.setAttribute('aria-checked', input.checked.toString());
       }
     });
+ 
+
 
     // Sync aria-checked on native click/interaction
     input.addEventListener('change', () => {

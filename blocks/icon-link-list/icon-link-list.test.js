@@ -1,7 +1,5 @@
 // blocks/icon-link-list/icon-link-list.test.js
-import {
-  describe, it, expect, beforeEach, vi, beforeAll,
-} from 'vitest';
+import { describe, it, expect, beforeEach, vi, beforeAll } from 'vitest';
 import { JSDOM } from 'jsdom';
 
 import iconLinkList from './icon-link-list.js'; // Adjust to actual path

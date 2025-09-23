@@ -1,6 +1,4 @@
-import {
-  describe, it, expect, beforeEach, vi, beforeAll,
-} from 'vitest';
+import { describe, it, expect, beforeEach, vi, beforeAll } from 'vitest';
 import { JSDOM } from 'jsdom';
 
 import footer from './footer.js';

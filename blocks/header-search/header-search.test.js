@@ -1,6 +1,4 @@
-import {
-  describe, it, expect, beforeEach, beforeAll, vi,
-} from 'vitest';
+import { describe, it, expect, beforeEach, beforeAll, vi } from 'vitest';
 import { JSDOM } from 'jsdom';
 
 import decoratesearch from './search.js';
@@ -10,7 +8,7 @@ beforeAll(() => {
   global.document = dom.window.document;
   global.window = dom.window;
 
-  global.window.matchMedia = vi.fn().mockImplementation((query) => ({
+  global.window.matchMedia = vi.fn().mockImplementation(query => ({
     matches: query === '(max-width: 900px)',
     media: query,
     addListener: vi.fn(),

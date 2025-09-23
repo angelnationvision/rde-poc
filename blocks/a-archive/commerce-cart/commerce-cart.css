@@ -22,7 +22,7 @@
   display: none;
 }
 
-.cart__gift-options {
+.cart__gift-options{
   margin-top: var(--spacing-medium);
 }
 
@@ -59,7 +59,7 @@
 }
 
 .dropin-cart-item__quantity {
-  width: fit-content;
+    width: fit-content;
 }
 
 @media (min-width: 768px) {
@@ -79,3 +79,4 @@
     flex-basis: auto;
   }
 }
+

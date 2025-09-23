@@ -1,6 +1,4 @@
-import {
-  describe, it, expect, vi, beforeEach, beforeAll,
-} from 'vitest';
+import { describe, it, expect, vi, beforeEach, beforeAll } from 'vitest';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { JSDOM } from 'jsdom';
 
@@ -15,7 +13,7 @@ beforeAll(() => {
   global.window = dom.window;
 
   // Mock window.matchMedia after global.window is set up
-  global.window.matchMedia = vi.fn().mockImplementation((query) => ({
+  global.window.matchMedia = vi.fn().mockImplementation(query => ({
     matches: query === '(max-width: 900px)',
     media: query,
     addListener: vi.fn(),
@@ -70,7 +68,7 @@ describe('decorate function', () => {
     decorate(block);
 
     const columns = block.querySelectorAll('.navigation-column');
-    columns.forEach((column) => {
+    columns.forEach(column => {
       expect(column.getAttribute('aria-expanded')).toBe('false');
     });
   });

@@ -27,11 +27,7 @@ export default async function decorate(block) {
 
   block.appendChild(headerContainer);
 
-  events.on(
-    'order/data',
-    (orderData) => {
-      UI.render(Header, { title: `Order ${orderData.number}` })(headerContainer);
-    },
-    { eager: true },
-  );
+  events.on('order/data', (orderData) => {
+    UI.render(Header, { title: `Order ${orderData.number}` })(headerContainer);
+  }, { eager: true });
 }

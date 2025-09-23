@@ -3,7 +3,10 @@ import { render as provider } from '@dropins/storefront-cart/render.js';
 import * as Cart from '@dropins/storefront-cart/api.js';
 import { h } from '@dropins/tools/preact.js';
 import {
-  InLineAlert, Icon, Button, provider as UI,
+  InLineAlert,
+  Icon,
+  Button,
+  provider as UI,
 } from '@dropins/tools/components.js';
 
 // Dropin Containers
@@ -100,7 +103,9 @@ export default async function decorate(block) {
       routeProduct: getProductLink,
       routeEmptyCartCTA: startShoppingURL ? () => rootLink(startShoppingURL) : undefined,
       maxItems: parseInt(maxItems, 10) || undefined,
-      attributesToHide: hideAttributes.split(',').map((attr) => attr.trim().toLowerCase()),
+      attributesToHide: hideAttributes
+        .split(',')
+        .map((attr) => attr.trim().toLowerCase()),
       enableUpdateItemQuantity: enableUpdateItemQuantity === 'true',
       enableRemoveItem: enableRemoveItem === 'true',
       slots: {
@@ -245,10 +250,7 @@ export default async function decorate(block) {
           const productName = updatedItem.name
             || updatedItem.product?.name
             || placeholders?.Global?.CartUpdatedProductName;
-          const message = placeholders?.Global?.CartUpdatedProductMessage?.replace(
-            '{product}',
-            productName,
-          );
+          const message = placeholders?.Global?.CartUpdatedProductMessage?.replace('{product}', productName);
 
           UI.render(InLineAlert, {
             heading: message,

@@ -16,7 +16,9 @@ export function isCheckoutEmpty(data) {
 export function getCartAddress(checkoutData, type) {
   if (!checkoutData) return null;
 
-  const address = type === 'shipping' ? checkoutData.shippingAddresses?.[0] : checkoutData.billingAddress;
+  const address = type === 'shipping'
+    ? checkoutData.shippingAddresses?.[0]
+    : checkoutData.billingAddress;
 
   if (!address) return null;
 

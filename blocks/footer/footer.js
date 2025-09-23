@@ -22,14 +22,19 @@ export default async function decorate(block) {
       const updatedCopyright = originalCopyright.replace(/(\d{4})[–-]\d{4}/, `$1–${currYear}`);
       a.textContent = updatedCopyright;
     }
+
+    // checking if the div has radio button
+    if (fragment.firstElementChild.hasAttribute('data-radio')) {
+      if (fragment.firstElementChild.getAttribute('data-radio') === 'americas best') {
+        block.classList.add('footer-americas-bg');
+      } else if (fragment.firstElementChild.getAttribute('data-radio') === 'vistaOpt') {
+        block.classList.add('footer-vistaopt-bg');
+      } else if (fragment.firstElementChild.getAttribute('data-radio') === 'eyeglass') {
+        block.classList.add('footer-eyeglass-bg');
+      }
+    }
     footer.append(fragment.firstElementChild);
   }
 
   block.append(footer);
-
-  if (window.innerWidth >= 900) {
-    const footerIcons = block.querySelector('footer .icon-link-list-wrapper');
-    const footerTitleContainer = block.querySelector('footer .default-content-wrapper');
-    footerTitleContainer.append(footerIcons);
-  }
 }

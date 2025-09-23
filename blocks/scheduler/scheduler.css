@@ -1,3381 +1,3065 @@
-html,
-body {
-  overflow-y: auto;
+html, body {
+    overflow-y: auto;
 }
 
-.scheduler-app__swiper-next::after,
-.scheduler-app__swiper-prev::after,
-.scheduler-app__appointment-remote-care-disclaimer::before {
-  font-family: 'nvicons' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-:root {
-  --color-primary: #2459a9;
-  --color-primary-accent: #fff;
-  --color-secondary: #295edb;
-  --color-secondary-accent: #2459a9;
-  --color-tertiary: #1a8dcd;
-  --color-tertiary-accent: #fff;
-  --color-blue-medium: #1a8dcd;
-  --color-blue-cream: #f5f8fa;
-  --color-red-light: #ce8483;
-  --color-red-dark: #a00e1d;
-  --color-orange-light: #ffd090;
-  --color-blue-dark: #024b86;
-  --color-blue-strong: #0b1b33;
-  --color-blue-bright: #4ea2f4;
-  --color-blue-desaturated: #8d866d;
-  --color-blue-smoke: #d2ebff;
-  --color-blue-light: #d2ebff;
-  --color-blue-lighter: #d2ebff;
-  --color-red-light: #ce8483;
-  --color-orange-light: #ffd090;
-  --color-white: #fff;
-  --color-offwhite: #f3f3f3;
-  --color-alabaster: #e3e3e3;
-  --color-gray: #ccc;
-  --color-gray-dark: #909090;
-  --color-charcoal: #444;
-  --color-black: #000;
-  --color-success: #2459a9;
-  --color-success-light: #deedf6;
-  --color-error: #cc0000;
-  --color-error-light: #f1dfdf;
-  --color-error-dark: #a00e1d;
-  --color-weak: #906d0f;
-  --color-weak-light: #fcf3da;
-  --color-body-background: #f3f2f0;
-  --color-button-disabled: #d5c6c6;
-  --color-button-text-disabled: #fff;
-  --color-border-blue: #295edb;
-  --color-heading-blue: #024b86;
-  --color-button-bg: #2459a9;
-  --color-create-button: #295edb;
-}
-.v-banner {
-  align-items: center;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 3px;
-  box-shadow: 0 6px 6px -2px rgba(0, 0, 0, 0.15);
-  color: #212121;
-  display: flex;
-  font-weight: bold;
-  height: auto;
-  justify-content: center;
-  margin: 0.5rem 0;
-  min-width: 300px;
-  padding: 22px 40px;
-  user-select: none;
-  text-align: center;
-}
-.v-banner::before {
-  margin-top: 3px;
-  margin-right: 0.5rem;
-}
-.v-banner__icon {
-  font-size: 1.5rem;
-  margin: auto 1rem auto auto;
-}
-.v-banner__graphic {
-  display: flex;
-}
-.v-banner__message {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  margin: 0;
-}
-.v-banner--inline {
-  box-shadow: none;
-}
-.v-banner--primary {
-  background-color: #b8dcff;
-  border-color: rgb(82, 169.7183098592, 255);
-}
-.v-banner--secondary {
-  background-color: #feeed5;
-  border-color: #fdcb81;
-}
-.v-banner--success {
-  border-color: #9fd7ab;
-  background-color: #c3e6cb;
-}
-.v-banner--success::before {
-  content: '';
-  font-family: 'nvicons';
-  font-size: 19px;
-}
-.v-banner--danger {
-  border-color: #eb8f98;
-  background: #fae3e5;
-}
-.v-banner--danger::before {
-  content: '';
-  font-family: 'nvicons';
-  font-size: 19px;
-}
-.v-banner--danger.v-banner--inverted {
-  background: rgba(0, 0, 0, 0);
-  border-style: dashed;
-  color: #000;
-}
-.v-toaster {
-  position: fixed;
-  visibility: hidden;
-  width: calc(100vw - 6rem);
-  z-index: 9999;
-}
-.v-toaster--bottom,
-.v-toaster--top {
-  left: 50%;
-  transform: translate(-50%, 0%);
-}
-.v-toaster--bottom {
-  bottom: 1rem;
-}
-.v-toaster--top {
-  top: 1rem;
-}
-.v-toaster.v-toast {
-  visibility: visible;
-}
-.v-toaster--bottom.v-toast--2s {
-  animation:
-    fadein-bottom 0.5s,
-    fadeout-bottom 0.5s 1.5s;
-}
-.v-toaster--top.v-toast--2s {
-  animation:
-    fadein-top 0.5s,
-    fadeout-top 0.5s 1.5s;
-}
-.v-toaster--bottom.v-toast--3s {
-  animation:
-    fadein-bottom 0.5s,
-    fadeout-bottom 0.5s 2.5s;
-}
-.v-toaster--top.v-toast--3s {
-  animation:
-    fadein-top 0.5s,
-    fadeout-top 0.5s 2.5s;
-}
-.v-toaster--bottom.v-toast--4s {
-  animation:
-    fadein-bottom 0.5s,
-    fadeout-bottom 0.5s 3.5s;
-}
-.v-toaster--top.v-toast--4s {
-  animation:
-    fadein-top 0.5s,
-    fadeout-top 0.5s 3.5s;
-}
-.v-toaster--bottom.v-toast--5s {
-  animation:
-    fadein-bottom 0.5s,
-    fadeout-bottom 0.5s 4.5s;
-}
-.v-toaster--top.v-toast--5s {
-  animation:
-    fadein-top 0.5s,
-    fadeout-top 0.5s 4.5s;
-}
-.v-toaster--bottom.v-toast--6s {
-  animation:
-    fadein-bottom 0.5s,
-    fadeout-bottom 0.5s 5.5s;
-}
-.v-toaster--top.v-toast--6s {
-  animation:
-    fadein-top 0.5s,
-    fadeout-top 0.5s 5.5s;
-}
-.v-toaster--bottom.v-toast--7s {
-  animation:
-    fadein-bottom 0.5s,
-    fadeout-bottom 0.5s 6.5s;
-}
-.v-toaster--top.v-toast--7s {
-  animation:
-    fadein-top 0.5s,
-    fadeout-top 0.5s 6.5s;
-}
-@keyframes fadein-bottom {
-  from {
-    bottom: 0;
-    opacity: 0;
-  }
-  to {
-    bottom: 1rem;
-    opacity: 1;
-  }
-}
-@keyframes fadeout-bottom {
-  from {
-    bottom: 1rem;
-    opacity: 1;
-  }
-  to {
-    bottom: 0;
-    opacity: 0;
-  }
-}
-@keyframes fadein-top {
-  from {
-    top: 0;
-    opacity: 0;
-  }
-  to {
-    top: 1rem;
-    opacity: 1;
-  }
-}
-@keyframes fadeout-top {
-  from {
-    top: 1rem;
-    opacity: 1;
-  }
-  to {
-    top: 0;
-    opacity: 0;
-  }
-}
-.scheduler-app__modal-content {
-  position: relative;
-  padding: 0 50px 20px;
-}
-.scheduler-app__modal-header {
-  padding: 15px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.scheduler-app__modal-title {
-  margin: 0;
-  font-size: 22px;
-  letter-spacing: normal;
-  font-weight: bold;
-}
-.scheduler-app__btn-modal-close {
-  padding-top: 20px;
-}
-.scheduler-app__btn-modal-close span {
-  pointer-events: none;
-}
-.scheduler-app__exit-modal-button {
-  margin-top: 30px;
-  border: none;
-}
-.scheduler-app__modal-dialog .modal-header .close {
-  color: #024b86;
-  opacity: 1;
-}
-.scheduler-app__modal-sigout-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-.scheduler-app__modal-sigout-buttons .cancel {
-  background: hsla(0, 0%, 100%, 0.75);
-  border: 1px solid #2459a9;
-  border-radius: 2px;
-  font-size: 1rem;
-  line-height: 19px;
-  color: #2459a9;
-  font-weight: 700;
-  text-transform: uppercase;
-  width: 142px;
-  height: 44px;
-}
-.scheduler-app__modal-sigout-buttons .signout {
-  background: #c00;
-  border: 1px #c00 solid;
-  border-radius: 2px;
-  font-size: 1rem;
-  text-transform: uppercase;
-  line-height: 19px;
-  color: #fff;
-  font-weight: 700;
-  width: 142px;
-  height: 44px;
-  text-align: center;
-  line-height: 44px;
-  text-decoration: none;
-}
-.scheduler-app__modal-sigout-buttons .signout .a-icon {
-  padding-right: 0;
-  margin-right: 5px;
-  width: auto;
-}
-.scheduler-app .modal-footer {
-  border-top: 1px #dedacd solid;
-  padding: 21px;
-}
-.datepicker-modal {
-  width: 100vw;
-}
-.datepicker-modal .modal-body {
-  padding: 0;
-}
-.scheduler-app-appointment-container {
-  background-color: #f3f2ef;
-}
-.scheduler-app-appointment-container .modal-header {
-  border-bottom: 0;
-  padding-top: 51px;
-  padding-left: 19px;
-  padding-right: 85px;
-}
-.scheduler-app-appointment-container .modal-header h2 {
-  font-size: 20px;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 0;
-  line-height: 1.25rem;
-}
-.scheduler-app-appointment-container .modal-header h2 .flag-icon {
-  margin-right: 11px;
-}
-.scheduler-app-appointment-container .modal-header h4 {
-  font-size: 1rem;
-  line-height: 19.2px;
-  line-height: 1.2rem;
-  font-weight: 400;
-  color: #000;
-  margin-bottom: 6px;
-}
-.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock {
-  width: 100%;
-  height: auto;
-  min-height: 100px;
-  background-color: #fff;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-  margin-bottom: 22px;
-  padding: 18px 22px 22px 23px;
-  position: relative;
-}
-.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock h3 {
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 22px;
-  color: #024b86;
-}
-.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock h3 a {
-  text-decoration: none;
-}
-.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock h3 a .flag-icon {
-  margin-right: 11px;
-}
-.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock .btn-examTimes {
-  width: 100%;
-  border: 2px #a6182e solid;
-  height: 38px;
-  text-decoration: none;
-  padding: 8px 0;
-  position: static;
-  margin-top: 20px;
-  font-family: Open Sans;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #a6182e;
-  border-radius: 2px;
-}
-.scheduler-app-appointment-container
-  .scheduler-app_find-appointment-nearBYblock
-  .btn-examTimes
-  .icon-calendar {
-  margin-right: 8px;
-  position: relative;
-  top: 1px;
-}
-.scheduler-app-appointment-container
-  .scheduler-app_find-appointment-nearBYblock
-  .find-nearBy-location-block {
-  display: flex;
-  justify-content: space-between;
-}
-.scheduler-app-appointment-container
-  .scheduler-app_find-appointment-nearBYblock
-  .find-nearBy-location-block
-  .find-nearBy-location-title
-  h3 {
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 22px;
-  color: #024b86;
-}
-.scheduler-app-appointment-container
-  .scheduler-app_find-appointment-nearBYblock
-  .find-nearBy-location-block
-  .find-nearBy-location-title
-  h3
-  a {
-  text-decoration: none;
-  color: #024b86;
-}
-.scheduler-app-appointment-container
-  .scheduler-app_find-appointment-nearBYblock
-  .find-nearBy-location-block
-  .find-nearBy-location-title
-  h3
-  a
-  .flag-icon {
-  margin-right: 11px;
-  margin-left: -5px;
-}
-.scheduler-app-appointment-container
-  .scheduler-app_find-appointment-nearBYblock
-  .find-nearBy-location-block
-  .find-nearBy-location-title
-  p {
-  font-size: 0.875rem;
-  color: #000;
-  line-height: 150%;
-  width: 160px;
-}
-.scheduler-app-appointment-container
-  .scheduler-app_find-appointment-nearBYblock
-  .find-nearBy-location-block
-  .find-nearBy-location-title
-  p
-  a {
-  text-decoration: none;
-  font-size: 0.875rem;
-  color: #000;
-  line-height: 150%;
-}
-.scheduler-app-appointment-container
-  .scheduler-app_find-appointment-nearBYblock
-  .find-nearBy-location-block
-  .find-nearBy-location-title
-  .find-nearBY-phone {
-  font-size: 0.875rem;
-  color: #2459a9;
-  font-weight: 400;
-}
-.scheduler-app-appointment-container
-  .scheduler-app_find-appointment-nearBYblock
-  .find-nearBy-location-block
-  .find-nearBy-location-title
-  .find-nearBY-phone
-  .icon-phone {
-  width: 12px;
-  height: 12px;
-  margin-right: 10.62px;
-  position: relative;
-  top: 2px;
-  color: #8d866d;
-  font-size: 12.74px;
-  font-size: 0.79625rem;
-}
-.scheduler-app-appointment-container
-  .scheduler-app_find-appointment-nearBYblock
-  .find-nearBy-location-block
-  .find-nearBy-location-title
-  .find-nearBY-phone
-  a {
-  font-size: 0.875rem;
-  line-height: 21px;
-  line-height: 1.3125rem;
-  color: #2459a9;
-  font-weight: 400;
-  text-decoration: none;
-}
-.scheduler-app-appointment-container
-  .scheduler-app_find-appointment-nearBYblock
-  .find-nearBy-location-block
-  .find-nearBy-location-distance
-  p {
-  font-size: 0.875rem;
-  color: #2459a9;
-  font-weight: 400;
-  margin-bottom: 0;
-  text-align: right;
-}
-.scheduler-app-confirmation {
-  background: #efefef;
-  padding-top: 47px;
-}
-.scheduler-app-confirmation .scheduler-confirmation-firstCol {
-  flex: 0 0 25%;
-  max-width: 25%;
-  padding: 0 15px;
-}
-.scheduler-app-confirmation .scheduler-confirmation-firstCol .scheduler-confirmation-saveTime {
-  margin-top: 43px;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-firstCol
-  .scheduler-confirmation-saveTime
-  .scheduler-confirmation-buttonsBlock
-  .dropdown-menu {
-  padding: 14px 0;
-  border: 1px #aaa solid;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-firstCol
-  .scheduler-confirmation-saveTime
-  .scheduler-confirmation-buttonsBlock
-  .dropdown-menu
-  a.dropdown-item {
-  padding: 0 19px;
-  text-decoration: none;
-  font-size: 0.875rem;
-  line-height: 25px;
-  line-height: 1.5625rem;
-  color: #333;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-firstCol
-  .scheduler-confirmation-saveTime
-  .scheduler-confirmation-buttonsBlock
-  .dropdown-menu
-  a.dropdown-item
-  .icon {
-  font-size: 13px;
-  font-size: 0.8125rem;
-  margin-right: 12px;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-firstCol
-  .scheduler-confirmation-saveTime
-  .scheduler-confirmation-buttonsBlock
-  .dropdown-menu
-  a.dropdown-item:hover {
-  background-color: #f3f2ef;
-}
-.scheduler-app-confirmation .scheduler-confirmation-firstCol .scheduler-confirmation-saveTime h3 {
-  margin-bottom: 14px;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-firstCol
-  .scheduler-confirmation-saveTime
-  .icon-clock {
-  font-size: 27px;
-  position: relative;
-  top: 4px;
-  margin-right: 12px;
-  color: #0057b8;
-}
-.scheduler-app-confirmation .scheduler-confirmation-firstCol .icon-delete {
-  font-size: 26.75px;
-  font-size: 1.671875rem;
-  margin-right: 12px;
-  position: relative;
-  top: 4px;
-}
-.scheduler-app-confirmation .scheduler-confirmation-firstCol h3 {
-  display: flex;
-}
-.scheduler-app-confirmation .scheduler-confirmation-secondCol {
-  flex: 0 0 30%;
-  max-width: 30%;
-  padding: 0 15px;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-secondCol
-  .scheduler-confirmation__store-details
-  .scheduler-confirmation-storeDetails {
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  padding: 25px 16px;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-secondCol
-  .scheduler-confirmation__store-details
-  .scheduler-confirmation-storeDetails
-  p {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: #000;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-secondCol
-  .scheduler-confirmation__store-details
-  .scheduler-confirmation-storeDetails
-  .scheduler-confirmation-locationIcon {
-  text-align: right;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-secondCol
-  .scheduler-confirmation__store-details
-  .scheduler-confirmation-storeDetails
-  .scheduler-confirmation-locationIcon
-  p {
-  font-size: 0.875rem;
-  line-height: 16px;
-  line-height: 1rem;
-  color: #114a85;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-secondCol
-  .scheduler-confirmation__store-details
-  .scheduler-confirmation-storeDetails
-  .scheduler-confirmation-locationIcon
-  .direction-icon {
-  width: 22px;
-  height: 22px;
-  margin-top: 13px;
-  display: inline-block;
-  text-align: right;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-secondCol
-  .scheduler-confirmation__store-details
-  .scheduler-confirmation-storeDetails
-  .scheduler-confirmation-locationIcon
-  .direction-icon
-  img {
-  height: 22px;
-  width: 22px;
-}
-.scheduler-app-confirmation .scheduler-confirmation-thirdCol {
-  flex: 0 0 45%;
-  max-width: 45%;
-  padding: 0 15px;
-}
-.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-userFaq {
-  padding: 23px 16px 17px 16px;
-}
-.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-userFaq h4 {
-  font-size: 1rem;
-  line-height: 1.125rem;
-  color: #333;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-userFaq ul li {
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  color: #333;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-thirdCol
-  .scheduler-confirmation-userFaq
-  .scheduler-confirmation-note {
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1.125rem;
-  color: #333;
-  font-weight: 400;
-  width: 86%;
-  margin-top: 30px;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-thirdCol
-  .scheduler-confirmation-userFaq
-  .scheduler-confirmation-TitleAppointment {
-  margin-top: 33px;
-}
-.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-bottomNote {
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1.125rem;
-  color: #000;
-  margin-top: 19px;
-  padding-left: 16px;
-  padding-right: 30px;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-thirdCol
-  .scheduler-confirmation-bottomNote
-  .asterisk {
-  padding-right: 3px;
-  position: relative;
-  top: 6px;
-  font-size: 1rem;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-thirdCol
-  .scheduler-confirmation-userDetails
-  .scheduler-confirmation-topHeader {
-  justify-content: start;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-thirdCol
-  .scheduler-confirmation-userDetails
-  .scheduler-confirmation-topHeader
-  .scheduler-confirmation-userLeftInfo {
-  max-width: 50%;
-  width: 50%;
-  display: flex;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-thirdCol
-  .scheduler-confirmation-userDetails
-  .scheduler-confirmation-topHeader
-  .scheduler-confirmation-userLeftInfo
-  .scheduler-confirmation-userIcon {
-  margin-right: 12px;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-thirdCol
-  .scheduler-confirmation-userDetails
-  .scheduler-confirmation-topHeader
-  .scheduler-confirmation-userLeftInfo
-  .scheduler-confirmation-userIcon
-  .icon-user {
-  opacity: 25%;
-  margin-right: 5px;
-  color: #114a85;
-}
-.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .btn-change {
-  width: 100%;
-  border-radius: 2px;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  line-height: normal;
-  line-height: normal/16pxrem;
-  font-weight: 700;
-  height: 42px;
-  text-align: center;
-}
-.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .btn-cancel {
-  width: 100%;
-  background-color: #444;
-  border: 2px #444 solid;
-  font-size: 0.875rem;
-  color: #fff;
-  height: 42px;
-  text-align: center;
-  line-height: normal;
-  line-height: normal/16pxrem;
-}
-.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .btn-cancel:hover {
-  background-color: #fff;
-  border: 2px #444 solid;
-  color: #444;
-}
-.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .btn-cancel:focus {
-  background-color: #fff;
-  border: 2px #444 solid;
-  color: #444;
-}
-.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .icon {
-  font-size: 11px;
-  font-size: 0.6875rem;
-}
-.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .icon-calendar {
-  font-size: 0.875rem;
-}
-.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .btn-mb-3 {
-  margin-bottom: 16px;
-}
-.scheduler-app-confirmation .scheduler-confirmation-topHeader {
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  padding: 23px 16px;
-  border-bottom: 1px solid #dedacd;
-}
-.scheduler-app-confirmation .scheduler-confirmation-topHeader .scheduler-confirmation-scheduled {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: #114a85;
-  text-align: left;
-}
-.scheduler-app-confirmation .scheduler-confirmation-topHeader .scheduler-confirmation-time-booked {
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: bold;
-  color: #114a85;
-  text-align: left;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-topHeader
-  .scheduler-confirmation-rightexamInfo {
-  width: 40%;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-topHeader
-  .scheduler-confirmation-rightexamInfo
-  .scheduler-confirmation-examType {
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1.125rem;
-  color: #000;
-  text-align: right;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-topHeader
-  .scheduler-confirmation-rightexamInfo
-  .scheduler-confirmation-examType-name {
-  font-size: 1rem;
-  line-height: 1.125rem;
-  color: #000;
-  text-align: right;
-  font-weight: 700;
-}
-.scheduler-app-confirmation .scheduler-confirmation-userDetails {
-  background-color: #fff;
-  margin: 0;
-  border: 1px solid #dedacd;
-}
-.scheduler-app-confirmation .scheduler-confirmation-userDetails .scheduler-confirmation-userName {
-  font-size: 1rem;
-  line-height: 16px;
-  line-height: 1rem;
-  font-weight: bold;
-  color: #114a85;
-  margin-bottom: 10px;
-}
-.scheduler-app-confirmation .scheduler-confirmation-userDetails .scheduler-confirmation-userDOB {
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-  color: #000;
-}
-.scheduler-app-confirmation .scheduler-confirmation-userDetails .scheduler-confirmation-userEmail,
-.scheduler-app-confirmation .scheduler-confirmation-userDetails .scheduler-confirmation-userPhone {
-  font-size: 0.875rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  font-weight: 400;
-  color: #000;
-}
-.scheduler-app-confirmation
-  .scheduler-confirmation-userDetails
-  .scheduler-confirmation-userEmail
-  .patient-phone,
-.scheduler-app-confirmation
-  .scheduler-confirmation-userDetails
-  .scheduler-confirmation-userPhone
-  .patient-phone {
-  margin: 0px;
-}
-.scheduler-app-confirmation .btn-add {
-  background-color: rgba(0, 0, 0, 0);
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
-  transition: color 0.2s ease-in-out;
-  margin-top: 19px;
-  width: 100%;
-  height: 42px;
-  line-height: 38px;
-  line-height: 2.375rem;
-  text-align: center;
-  padding: 0;
-}
-.scheduler-app-confirmation .btn-add:hover {
-  background-color: rgba(0, 0, 0, 0);
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
-}
-.scheduler-app-confirmation .btn-add:focus {
-  background-color: rgba(0, 0, 0, 0);
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
-}
-@media (max-width: 1199.98px) {
-  .scheduler-app-confirmation .scheduler-confirmation-firstCol {
-    flex: 0 0 27%;
-    max-width: 27%;
-  }
-  .scheduler-app-confirmation .scheduler-confirmation-secondCol {
-    flex: 0 0 38%;
-    max-width: 38%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .scheduler-app-confirmation .scheduler-confirmation-thirdCol {
-    flex: 0 0 35%;
-    max-width: 35%;
-  }
-}
-@media (max-width: 991.98px) {
-  .scheduler-app-confirmation .scheduler-confirmation__container {
-    margin-left: -20px;
-    margin-right: -20px;
-    width: auto;
-  }
-  .scheduler-app-confirmation .scheduler-confirmation__row-inner {
-    display: block;
-    padding: 0;
-  }
-  .scheduler-app-confirmation .scheduler-confirmation__store-details {
-    padding: 0px;
-  }
-  .scheduler-app-confirmation
-    .scheduler-confirmation__store-details
-    .scheduler-confirmation-topHeader {
-    padding: 25px 19px 19px;
-  }
-  .scheduler-app-confirmation
-    .scheduler-confirmation__store-details
-    .scheduler-confirmation-storePhone {
-    padding: 0px 21px 28px 19px;
-  }
-  .scheduler-app-confirmation
-    .scheduler-confirmation__store-details
-    .scheduler-confirmation-promote {
-    padding: 0px 21px 26px 19px;
-  }
-  .scheduler-app-confirmation
-    .scheduler-confirmation-userDetails
-    .scheduler-confirmation-topHeader {
-    display: block;
-  }
-  .scheduler-app-confirmation
-    .scheduler-confirmation-userDetails
-    .scheduler-confirmation-topHeader
-    .scheduler-confirmation-userrightInfo {
-    margin-top: 20px;
-    padding-left: 30px;
-  }
-  .scheduler-app-confirmation .scheduler-confirmation-firstCol,
-  .scheduler-app-confirmation .scheduler-confirmation-secondCol,
-  .scheduler-app-confirmation .scheduler-confirmation-thirdCol {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .scheduler-app-confirmation .scheduler-confirmation-firstCol,
-  .scheduler-app-confirmation .scheduler-confirmation-thirdCol {
-    margin-bottom: 16px;
-  }
-  .scheduler-app-confirmation
-    .scheduler-confirmation-secondCol
-    .scheduler-confirmation__store-details
-    .scheduler-confirmation-storeDetails {
-    padding: 23px 21px 26px 19px;
-  }
-  .scheduler-app-confirmation
-    .scheduler-confirmation-secondCol
-    .scheduler-confirmation__store-details
-    .scheduler-confirmation-storeDetails
-    .scheduler-confirmation-locationIcon {
-    text-align: right;
-  }
-  .scheduler-app-confirmation
-    .scheduler-confirmation-secondCol
-    .scheduler-confirmation__store-details
-    .scheduler-confirmation-storeDetails
-    .scheduler-confirmation-locationIcon
-    p {
-    font-size: 12px;
-    font-size: 0.75rem;
-    line-height: 16px;
-    line-height: 1rem;
-    color: #114a85;
-  }
-  .scheduler-app-confirmation
-    .scheduler-confirmation-secondCol
-    .scheduler-confirmation__store-details
-    .scheduler-confirmation-storeDetails
-    .scheduler-confirmation-locationIcon
-    .direction-icon {
-    width: 22px;
-    height: 22px;
-    margin-top: 13px;
-    display: inline-block;
-    text-align: right;
-  }
-  .scheduler-app-confirmation
-    .scheduler-confirmation-secondCol
-    .scheduler-confirmation__store-details
-    .scheduler-confirmation-storeDetails
-    .scheduler-confirmation-locationIcon
-    .direction-icon
-    img {
-    height: 22px;
-    width: 22px;
-  }
-  .scheduler-app-confirmation .scheduler-confirmation-firstCol {
-    padding-left: 22px;
-    padding-right: 22px;
-  }
-  .scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-bottomNote {
-    padding-left: 22px;
-    padding-right: 22px;
-    width: 100%;
-  }
-  .scheduler-app-confirmation .scheduler-confirmation-saveTime {
-    margin-bottom: 30px;
-    padding-left: 22px;
-    padding-right: 22px;
-    margin-top: 33px;
-  }
-  .scheduler-app-confirmation .scheduler-confirmation-saveTime .icon-clock {
-    font-size: 26.8px;
-    position: relative;
-    top: 10px;
-    margin-right: 12px;
-    color: #0057b8;
-  }
-}
-#gmap_canvas {
-  height: 100%;
-  width: 100%;
-  border: 0;
-  overflow-y: hidden;
-  margin: 0;
-}
-.scheduler-confirmation__icon-error {
-  color: #dc3545;
-}
-.scheduler-confirmation__header {
-  font-size: 1rem;
-  line-height: 1.25rem;
-  color: #333;
-  line-height: 20px;
-  margin: 0 auto 25px;
-  margin-bottom: 12px;
-  text-align: left;
-}
-.scheduler-confirmation__row-inner {
-  display: flex;
-  margin: 0px;
-  text-align: left;
-}
-.scheduler-confirmation__appointment-details-image {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-}
-.scheduler-confirmation__image-wrapper {
-  padding: 10px 15px 10px 0;
-}
-.scheduler-confirmation__map {
-  background-color: #fff;
-  margin: 0;
-  border: 1px solid #dedacd;
-}
-.scheduler-confirmation__map-inner {
-  border-left: 1px solid #dedacd;
-  border-right: 1px solid #dedacd;
-  border-bottom: 1px solid #dedacd;
-}
-.scheduler-confirmation__container {
-  padding: 0 20px;
-  margin-bottom: 49px;
-}
-.scheduler-confirmation__container h3 {
-  font-size: 20px;
-  color: #000;
-  line-height: 26px;
-}
-.scheduler-confirmation__container h3 .icon-verified {
-  color: #00c42e;
-  font-size: 26.8px;
-  margin-right: 12px;
-  position: relative;
-  top: 4px;
-}
-.scheduler-confirmation__store-name {
-  color: #024b86;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  margin: 0;
-  margin-bottom: 15px;
-}
-.scheduler-confirmation__store-name .scheduler-storeName {
-  color: #114a85;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.25rem;
-}
-.scheduler-confirmation__store-name .a-icon {
-  font-size: 24px;
-  left: -20px;
-  position: absolute;
-  top: -2px;
-}
-.scheduler-confirmation__store-details .store-openings {
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-}
-.scheduler-confirmation__store-details .store-openings .scheduler-confirmation-closed {
-  color: #dc3545;
-}
-.scheduler-confirmation__store-details p {
-  margin-bottom: 0;
-}
-.scheduler-confirmation__store-details a {
-  color: #024b86;
-  text-decoration: none;
-}
-.scheduler-confirmation__store-details .scheduler-confirmation-storePhone {
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 16px 25px;
-}
-.scheduler-confirmation__store-details
-  .scheduler-confirmation-storePhone
-  .scheduler-confirmation-openingHours {
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  color: #000;
-}
-.scheduler-confirmation__store-details
-  .scheduler-confirmation-storePhone
-  .scheduler-confirmation-posPhone {
-  text-align: right;
-  display: flex;
-}
-.scheduler-confirmation__store-details
-  .scheduler-confirmation-storePhone
-  .scheduler-confirmation-posPhone
-  p
-  a {
-  border-bottom: 1px #114a85 solid;
-  color: #114a85;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-}
-.scheduler-confirmation__store-details
-  .scheduler-confirmation-storePhone
-  .scheduler-confirmation-posPhone
-  .icon-phone {
-  position: relative;
-  top: 8px;
-  margin-right: 12px;
-  color: #8caabb;
-}
-.scheduler-confirmation__store-details .scheduler-confirmation-promote {
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 16px;
-  line-height: 1rem;
-  color: #666;
-  padding: 0px 16px 32px 16px;
-  width: 90%;
-}
-.page-examConfirmationPageV2 .t-home {
-  background-color: #efefef;
-}
-.page-examConfirmationPageV2 .scheduler-app__footer-note {
-  display: none;
-}
-.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered {
-  max-width: 746px;
-}
-.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-title {
-  font-size: 24px;
-  font-family: 'Lato';
-}
-.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-body {
-  padding: 1rem 1rem 0 1rem;
-}
-.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-body p {
-  font-size: 1rem;
-  line-height: 22.4px;
-  font-family: Lato;
-  margin: 0;
-  color: #1c1818;
-}
-.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-body p a {
-  color: #2459a9;
-}
-.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-body p:nth-child(2) {
-  padding-top: 10px;
-}
-.page-examConfirmationPageV2
-  .cancel-exam-modal
-  .cancel-exam-centered
-  .modal-body
-  p
-  .text-variant-bold {
-  font-weight: 700;
-}
-.page-examConfirmationPageV2
-  .cancel-exam-modal
-  .cancel-exam-centered
-  .modal-body
-  .cancel-exam-list-item
-  ul {
-  list-style: none;
-  padding: 10px 0 0 0;
-}
-.page-examConfirmationPageV2
-  .cancel-exam-modal
-  .cancel-exam-centered
-  .modal-body
-  .cancel-exam-list-item
-  ul
-  li {
-  display: inline-block;
-  padding: 0 50px 0 0;
-}
-.page-examConfirmationPageV2
-  .cancel-exam-modal
-  .cancel-exam-centered
-  .modal-body
-  .cancel-exam-list-item
-  ul
-  li
-  label
-  span {
-  padding-left: 5px;
-}
-.page-examConfirmationPageV2
-  .cancel-exam-modal
-  .cancel-exam-centered
-  .modal-body
-  .cancel-exam-list-item
-  ul
-  li
-  .a-radio-button__label {
-  font-size: 1rem;
-  color: #1c1818;
-  font-family: 'Lato';
-}
-.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer {
-  display: flex;
-  justify-content: space-between;
-  column-gap: 0;
-  border-top: 0;
-}
-.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer button {
-  flex: 0 1 32%;
-  font-size: 1rem;
-  height: 44px;
-  line-height: 1;
-  font-family: Lato;
-}
-.page-examConfirmationPageV2
-  .cancel-exam-modal
-  .cancel-exam-centered
-  .modal-footer
-  button.a-btn--primary {
-  background: color-mix(in srgb, #024b86 50%, #888888);
-  border: 2px solid color-mix(in srgb, #024b86 50%, #888888);
-}
-.page-examConfirmationPageV2
-  .cancel-exam-modal
-  .cancel-exam-centered
-  .modal-footer
-  button.a-btn--primary:hover {
-  background: #fff;
-  border: 2px solid color-mix(in srgb, #024b86 50%, #888888);
-  color: color-mix(in srgb, #024b86 50%, #888888);
-}
-.page-examConfirmationPageV2
-  .cancel-exam-modal
-  .cancel-exam-centered
-  .modal-footer
-  button.a-btn--secondary {
-  border: 1px solid #2459a9;
-  background: #fff;
-  color: #2459a9;
-}
-.page-examConfirmationPageV2
-  .cancel-exam-modal
-  .cancel-exam-centered
-  .modal-footer
-  button.a-btn--secondary:hover {
-  background: #fff;
-  border: 1px solid #2459a9;
-  color: #2459a9;
-}
-.page-examConfirmationPageV2
-  .cancel-exam-modal
-  .cancel-exam-centered
-  .modal-footer
-  button.a-btn--secondary.hovered
-  img.icon-menu-image {
-  fill: #c00;
-}
-.page-examConfirmationPageV2
-  .cancel-exam-modal
-  .cancel-exam-centered
-  .modal-footer
-  button.a-btn--accent {
-  background: #c00;
-  border: 2px solid #c00;
-  color: #fff;
-}
-.page-examConfirmationPageV2
-  .cancel-exam-modal
-  .cancel-exam-centered
-  .modal-footer
-  button.a-btn--accent:hover {
-  background: #fff;
-  color: #c00;
-}
-.page-examConfirmationPageV2
-  .cancel-exam-modal
-  .cancel-exam-centered
-  .modal-footer
-  button
-  img.icon-menu-image {
-  width: 14px;
-  height: 14px;
-  fill: #fff;
-  transition: fill 0.3s ease;
-}
-@media (max-width: 991.98px) {
-  .page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer {
-    width: 100%;
-    display: block;
-  }
-  .page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-}
-.scheduler-app__rebook-patient-block {
-  background: hsla(0, 0%, 100%, 0.5);
-  border-radius: 4px;
-  border: 1px rgba(2, 75, 134, 0.5) solid;
-  height: auto;
-  margin-bottom: 22px;
-  padding: 0;
-  max-width: 383px;
-}
-.scheduler-app__rebook-titleblock {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 7px;
-  padding: 19px 21px;
-}
-.scheduler-app__rebook-titleblock .icon-user {
-  font-size: 1rem;
-  color: #2459a9;
-  font-weight: bold;
-  margin-right: 11px;
-}
-.scheduler-app__rebook-titleblock .scheduler-patient-name {
-  font-weight: 700;
-  font-size: 1rem;
-  color: #024b86;
-}
-.scheduler-app__rebook-examDetails {
-  background: #feeed5;
-  padding: 20px 20px 18px;
-  border-top: 2px #fdcb81 solid;
-  border-bottom: 2px #fdcb81 solid;
-}
-.scheduler-app__rebook-original-exam {
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: #000;
-}
-.scheduler-app__rebook-original-exam strong {
-  font-weight: 700;
-  line-height: 25px;
-}
-.scheduler-app__rebook-original-exam span {
-  line-height: 25px;
-}
-.scheduler-app__rebook-type-exam {
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: #000;
-}
-.scheduler-app__rebook-type-exam strong {
-  font-weight: 700;
-  line-height: 25px;
-}
-.scheduler-app__rebook-type-exam span {
-  line-height: 25px;
-}
-.scheduler-app__cancel-exam-link {
-  height: 57px;
-  padding: 0 0 0 23px;
-  line-height: 57px;
-  display: flex;
-  align-items: center;
-}
-.scheduler-app__cancel-exam-link a {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 14px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  text-transform: uppercase;
-  color: #666;
-  text-decoration: none;
-  margin-left: 0;
-  padding-left: 15px;
-}
-.scheduler-app__cancel-exam-link a .icon-close {
-  align-items: center;
-  display: flex;
-  height: 10.5px;
-  margin-right: 0.5rem;
-  width: 10.5px;
-}
-.scheduler-app__patient-social-block {
-  margin: 0.5rem 0 1.5rem;
-}
-.scheduler-app__patient-social-block .scheduler-patient-DOB,
-.scheduler-app__patient-social-block .scheduler-patient-email,
-.scheduler-app__patient-social-block .scheduler-patient-phone {
-  font-size: 0.875rem;
-  color: #000;
-  line-height: 21px;
-  font-weight: 400;
-}
-.scheduler-app__card--exam {
-  position: relative;
-  padding: 18px 22px;
-}
-.scheduler-app__card-header--exam {
-  right: 0;
-}
-.scheduler-app__card-title {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0;
-  width: 100%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  height: 30px;
-}
-.scheduler-app__card-title::before {
-  display: inline-block;
-  position: absolute;
-  left: -40px;
-  top: 5px;
-}
-.scheduler-app__card-title img {
-  position: relative;
-  right: 10px;
-  padding-right: 3px;
-}
-.scheduler-app__card-title .a-icon {
-  font-size: 30px;
-  display: block;
-  line-height: 1;
-  padding: 0 11px 0 20px;
-  width: auto;
-}
-.scheduler-app__card-link--exam {
-  padding-right: 5px;
-}
-.scheduler-app__card-content-additional hr {
-  border-top: 1px solid #eee;
-}
-.scheduler-app__location-step-one {
-  margin-top: 15px;
-  border-radius: 4px;
-}
-@media (min-width: 768px) {
-  .scheduler-app__location-step-one {
-    margin-top: 0;
-  }
-}
-.scheduler-app__card--location {
-  padding: 0px;
-}
-.scheduler-app__card--location p {
-  margin-left: 0;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #024b86;
-}
-.scheduler-app__card--location .scheduler-app__card-header {
-  padding: 11.5px 22px;
-}
-.scheduler-app__card-body {
-  padding: 19px 22px;
-  position: relative;
-}
-.scheduler-app__flag-icon {
-  margin-right: 0.5rem;
-}
-.scheduler-app__scheduler-location-edit {
-  position: absolute;
-  top: 12px;
-  right: 19px;
-}
-.scheduler-app__store-location-body {
-  padding: 0 22px 0 22px;
-  border-top: 1px solid rgba(2, 75, 134, 0.5);
-  max-height: 0;
-  overflow: hidden;
-  transition:
-    max-height 0.5s,
-    padding-top 0.5s,
-    padding-bottom 0.5s;
-}
-.scheduler-app__store-location-body p.scheduler-app__card-line {
-  color: #024b86;
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 21px;
-}
-.scheduler-app__store-location-body.showBody {
-  max-height: 500px;
-  padding-top: 12px;
-  padding-bottom: 22px;
-}
-.scheduler-app__appointment-providedby {
-  font-size: 12px;
-  color: #666;
-  margin-top: 10px;
-  line-height: normal;
-  font-weight: normal;
-  text-align: left;
-}
-.scheduler-app__card-column {
-  padding-top: 1.5rem;
-}
-.first-step.logged-in .scheduler-app__card-column {
-  padding-top: 0;
-}
-@media (min-width: 768px) {
-  .scheduler-app__card-column {
-    padding-top: 0;
-  }
-}
-.scheduler-app__card-container {
-  padding: 0 1.5rem;
-}
-@media (min-width: 768px) {
-  .scheduler-app__card-container {
-    padding: 0;
-  }
-}
-.scheduler-app__card-container--patient-select {
-  background-color: #fff;
-  margin-bottom: 2rem;
-  padding-bottom: 1px;
-  padding-top: 1rem;
-}
-@media (min-width: 768px) {
-  .scheduler-app__card-container--patient-select {
-    background-color: rgba(0, 0, 0, 0);
-    margin-bottom: 0;
-    padding-top: 0;
-  }
-}
-.scheduler-app__card {
-  background-color: hsla(0, 0%, 100%, 0.5);
-  width: 100%;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  border: 1px rgba(2, 75, 134, 0.5) solid;
-  border-bottom: 4px rgba(2, 75, 134, 0.5) solid;
-}
-@media (min-width: 768px) {
-  .scheduler-app__card {
-    width: 335px;
-  }
-}
-.scheduler-app__card--contact {
-  padding: 20px;
-}
-.scheduler-app__card--contact a {
-  text-decoration: underline;
-}
-.scheduler-app__card--contact .buttons {
-  padding-top: 20px;
-}
-.scheduler-app__card-header {
-  align-items: center;
-  border: 0;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  width: 100%;
-}
-.scheduler-app__card-header:focus,
-.scheduler-app__card-header:active {
-  outline: 0 !important;
-  border: 0;
-}
-.scheduler-app__card-header .arrow {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin-left: 8px;
-  margin-top: 0px;
-  border: 0;
-  padding: 0;
-  position: relative;
-}
-.scheduler-app__card-header .arrow::before {
-  position: relative;
-  content: '';
-  display: block;
-  width: 10px;
-  height: 2px;
-  background: #024b86;
-  transition: 0.3s ease-in-out;
-  transform: rotate(45deg);
-}
-.scheduler-app__card-header .arrow::after {
-  position: relative;
-  content: '';
-  display: block;
-  width: 10px;
-  height: 2px;
-  background: #024b86;
-  transition: 0.3s ease-in-out;
-  left: -3px;
-  top: 0;
-  transform: rotate(-45deg);
-}
-.scheduler-app__card-header .arrow.active::before {
-  transform: rotate(-45deg);
-}
-.scheduler-app__card-header .arrow.active::after {
-  transform: rotate(45deg);
-}
-.scheduler-app__card-header__flag-container {
-  align-items: center;
-  color: #024b86;
-  display: flex;
-  text-decoration: none;
-}
-.scheduler-app__card-header__flag-container .icon-ambest-flag {
-  top: -5px;
-  width: 18px;
-}
-.scheduler-app__card-header__flag-container .icon-ambest-flag::before {
-  font-size: 11px;
-}
-.scheduler-app__card-header__flag-container img {
-  margin-right: 5px;
-}
-.theme-mo .scheduler-app__card-header__flag-container img,
-.theme-walmart .scheduler-app__card-header__flag-container img {
-  height: 24px;
-  width: 24px;
-}
-.scheduler-app__card-line {
-  color: #000;
-  margin-bottom: 0;
-  margin-right: auto;
-  line-height: 25px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  font-size: 0.875rem;
-}
-.scheduler-app__card-line strong {
-  margin-right: 0.5rem;
-}
-.scheduler-app__card-link {
-  color: #2459a9;
-  display: flex;
-  font-size: 1rem;
-  height: 20px;
-  margin-left: auto;
-  text-decoration: none;
-  text-transform: initial;
-  width: 20px;
-}
-.scheduler-app__form-control,
-.scheduler-app__form-group {
-  height: 50px;
-  margin-top: 0;
-}
-.scheduler-app__form-group {
-  margin-bottom: 1.5rem;
-}
-.scheduler-app__form-control {
-  background-clip: padding-box;
-  background-color: #fff;
-  border: 1px solid #8b8b8b;
-  border-radius: 0;
-  color: #2e2e2e;
-  display: block;
-  font-size: 1rem;
-  font-weight: 400;
-  height: 50px;
-  line-height: 1.15;
-  margin-top: 0;
-  padding: 10px 15px;
-  transition:
-    border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
-  width: 100%;
-}
-.scheduler-app__form-control--error {
-  background: #fde5f9;
-  border-color: #dc3545;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-}
-.scheduler-app .a-text-input {
-  font-size: 1rem;
-}
-.scheduler-app .a-text-input__float-label-container--active .scheduler-app__form-control {
-  border: 1px #024b86 solid;
-}
-.scheduler-app .a-text-input__float-label-container--active .a-text-input__float-label {
-  top: -10px;
-  left: 12px;
-  color: #2459a9;
-  font-weight: 400;
-  background: #fff;
-  width: auto;
-  padding: 0 5px;
-  font-size: 0.875rem;
-  font-size: 0.875rem;
-}
-.scheduler-app .a-text-input__float-label {
-  top: 12px;
-  font-size: 1rem;
-  color: #949494;
-  line-height: 24.8px;
-  position: absolute;
-}
-.scheduler-app .a-text-input__hide-show-password {
-  border: 0;
-  color: #666;
-  height: 48px;
-  padding-right: 0.75rem;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.scheduler-app .a-text-input__hide-show-password::before {
-  font-size: 24px;
-}
-.scheduler-app__form-dob .scheduler-app__form-group {
-  margin-bottom: 0;
-  max-height: 48px;
-}
-.scheduler-app__form-dob .a-text-input {
-  border: 1px #999 solid;
-  display: block;
-  height: 48px;
-  padding: 0 19px;
-  line-height: 48px;
-  width: 157px;
-}
-.scheduler-app__form-dob .a-text-input__float-label {
-  color: #949494;
-  font-size: 1rem;
-  line-height: 24.8px;
-}
-.scheduler-app__form-dob .a-text-input__float-label-container--active .a-text-input__float-label {
-  background: #fff;
-  color: #2459a9;
-  font-size: 0.875rem;
-  font-weight: 400;
-  left: 12px;
-  padding: 0 5px;
-  width: auto;
-}
-.scheduler-app__dob-legend {
-  display: block;
-  width: auto;
-  height: auto;
-  clip: unset;
-  margin: 0;
-  position: static;
-}
-.scheduler-app__input-group--dob {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-.scheduler-app__input-group--dob:last-child::before {
-  content: '';
-}
-.scheduler-app__input-group--dob::before {
-  content: '/';
-  position: absolute;
-  top: 14px;
-  left: 48px;
-  height: 40px;
-  font-size: 18px;
-}
-.scheduler-app__input-group--dob:not(:last-child) {
-  margin-right: 0px;
-}
-.scheduler-app__label-dob {
-  display: none;
-  font-size: 11px;
-  margin-bottom: 5px;
-}
-.scheduler-app__label-dob .scheduler-app__form-error {
-  display: none;
-}
-.scheduler-app__input-dob {
-  display: inline-block;
-  height: 48px;
-  max-width: 62px;
-  padding: 6px 10px;
-  text-align: center;
-  font-size: 1rem;
-  color: #747474;
-  text-transform: uppercase;
-  border: 0;
-}
-.scheduler-app__input-dob::placeholder {
-  color: #747474;
-}
-.scheduler-app__input-dob:placeholder-shown {
-  text-align: left;
-}
-.scheduler-app__input-dob:focus-visible {
-  border: 0;
-  outline: 0;
-}
-.scheduler-app__input-dob--month,
-.scheduler-app__input-dob--day {
-  max-width: 55px;
-  padding-left: 0;
-}
-.scheduler-app__input-dob--month:placeholder-shown {
-  padding: 6px 12px;
-}
-.scheduler-app__input-dob--day:placeholder-shown {
-  padding: 6px 15px;
-}
-.scheduler-app__input-dob--year:placeholder-shown {
-  padding: 6px 10px;
-}
-.scheduler-app__fieldset {
-  margin-bottom: 14px;
-}
-.scheduler-app__assistance-list {
-  margin-left: 20px;
-  margin-top: 10px;
-}
-.scheduler-app__assistance-list li {
-  color: #000;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.375rem;
-}
-.scheduler-app__logged-in-patient-select {
-  margin-bottom: 2rem;
-}
-.scheduler-app__patient-details-section {
-  border: 1px rgba(2, 75, 134, 0.5) solid;
-  width: 333px;
-  padding: 20px 21px;
-  background: hsla(0, 0%, 100%, 0.5);
-  border-radius: 4px;
-  border-bottom: 4px rgba(2, 75, 134, 0.5) solid;
-  margin-bottom: 27px;
-}
-.scheduler-app__patient-details-section .scheduler-app__patient-section-title {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 7px;
-}
-.scheduler-app__patient-details-section .scheduler-app__patient-section-title .icon-user {
-  font-size: 1rem;
-  color: #2459a9;
-  font-weight: bold;
-  margin-right: 11px;
-}
-.scheduler-app__patient-details-section
-  .scheduler-app__patient-section-title
-  .scheduler-patient-name {
-  font-weight: 700;
-  font-size: 1rem;
-  color: #024b86;
-}
-.scheduler-app__radio-options {
-  align-items: stretch;
-  display: flex;
-  gap: 0 1rem;
-  margin-bottom: 0.25rem;
-  padding: 0;
-}
-@media (min-width: 768px) {
-  .scheduler-app__radio-options {
-    width: 330px;
-  }
-}
-.scheduler-app__radio-options--wrap {
-  flex-wrap: wrap;
-}
-.scheduler-app__radio {
-  line-height: 24.75px;
-  line-height: 1.546875rem;
-  font-size: 18px;
-  font-size: 1.125rem;
-  align-items: center;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-  border: 0px;
-  border-radius: 2px;
-  color: #0077b4;
-  cursor: pointer;
-  display: flex;
-  flex: 1 1 100%;
-  flex-wrap: nowrap;
-  font-weight: bold;
-  height: 100%;
-  justify-content: center;
-  margin-bottom: 1rem;
-  max-height: 71px;
-  padding: 9.64px;
-  text-align: center;
-  position: relative;
-}
-.scheduler-app__radio.checked {
-  border: 1px solid #024b86;
-  box-shadow: none;
-  color: #024b86;
-}
-.scheduler-app__radio.checked::after {
-  content: '';
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  bottom: 0;
-  height: 3px;
-  background-color: #024b86;
-}
-.scheduler-app__radio.checked span::before {
-  border-color: #fff;
-  background-color: #fff;
-}
-.scheduler-app__radio .subtext {
-  font-weight: normal;
-}
-.scheduler-app__radio--block {
-  display: block;
-  padding: 15px 30px;
-}
-.scheduler-app__radio-inner-label {
-  position: relative;
-  bottom: 3px;
-}
-.scheduler-app__btn-group .a-btn--primary,
-.scheduler-app__btn-group .a-btn--accent {
-  width: 100%;
-  height: 44px;
-  line-height: 44px;
-  font-size: 1rem;
-  color: #fff;
-  font-weight: 700;
-  padding: 0;
-}
-.scheduler-app__btn-group .a-btn--primary:hover,
-.scheduler-app__btn-group .a-btn--accent:hover {
-  color: #024b86;
-}
-.scheduler-app__btn-group .a-btn--accent:hover,
-.scheduler-app__btn-group .a-btn--accent:focus {
-  background: #295edb;
-  border-color: #295edb;
-  color: #fff;
-}
-.scheduler-app__btn-group .a-btn--accent:focus {
-  outline: auto;
-}
-.scheduler-app__form-group-wrapper {
-  margin: 0 auto 1.5rem;
-}
-.scheduler-app label.has-error {
-  position: absolute;
-  bottom: -5px;
-}
-.scheduler-app .m-select-box .sr-only {
-  position: absolute;
-}
-.scheduler-app .checkbox label::before {
-  border: 2px solid #949494;
-  min-height: 22px;
-  min-width: 22px;
-}
-.scheduler-app label {
-  position: relative;
-}
-.scheduler-app label input[type='radio'] {
-  appearance: none;
-  background-color: rgba(0, 0, 0, 0);
-  border: 0;
-  border-radius: 0;
-  height: 100%;
-  left: 0;
-  outline: none;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-.scheduler-app label input[type='radio']:focus {
-  outline: auto;
-}
-@media (min-width: 768px) {
-  .scheduler-app__form {
-    max-width: 333px;
-  }
-}
-.scheduler-app__form legend {
-  all: initial;
-  font-family: Lato, Verdana, sans-serif;
-  font-size: 0.875rem;
-  margin-bottom: 20px;
-}
-.scheduler-app__form h5 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  margin-bottom: 0;
-}
-.scheduler-app__form.disabled {
-  opacity: 0.5;
-}
-.scheduler-app__form.disabled:after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  cursor: not-allowed;
-}
-.scheduler-app__form fieldset {
-  border: none;
-  padding: 0;
-}
-.scheduler-app .m-select-box {
-  position: relative;
-  height: 48px;
-  margin-bottom: 1.5rem;
-  max-width: none;
-  width: auto;
-}
-.scheduler-app .m-select-box .scheduler-app__select-legend {
-  color: #024b86;
-  font-weight: 400;
-  background: #fff;
-  width: auto;
-  padding: 0 5px;
-  font-size: 13px;
-  display: inline;
-  position: absolute;
-  top: -8px;
-  z-index: 99;
-  left: 12px;
-}
-.scheduler-app .m-select-box:after {
-  color: #024b86;
-  font-size: 0.875rem;
-  right: 12px;
-}
-.scheduler-app .a-select-menu {
-  font-weight: normal;
-  height: 50px;
-  padding: 0 3rem 0 1rem;
-}
-.scheduler-app__checkbox {
-  margin-bottom: 1.5rem;
-}
-.scheduler-app__checkbox sup {
-  font-size: 55%;
-  top: -0.7em;
-}
-.scheduler-app__checkbox .a-checkbox__input:checked + .a-checkbox__label::after {
-  color: #fff;
-}
-.scheduler-app__checkbox .a-checkbox__input:disabled + .a-checkbox__label {
-  cursor: not-allowed;
-  opacity: 1;
-}
-.scheduler-app__checkbox .a-checkbox__input:disabled + .a-checkbox__label::before {
-  background: #f3f2ef;
-  border: 1px solid #dedacd;
-}
-.scheduler-app__checkbox .a-checkbox__label {
-  display: flex;
-  align-items: center;
-}
-.scheduler-app__checkbox .a-checkbox__label span {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #333;
-  line-height: 1.25rem;
-  position: relative;
-  padding-left: 40px;
-  white-space: normal;
-  width: 90%;
-}
-.scheduler-app__checkbox .a-checkbox__label::before,
-.scheduler-app__checkbox .a-checkbox__label::after {
-  min-height: 24px;
-  min-width: 24px;
-  left: auto;
-  position: absolute;
-  top: auto;
-}
-.scheduler-app__checkbox .a-checkbox__label::before {
-  border: 1px #2459a9 solid;
-  border-radius: 2px;
-  box-shadow: 0 0 0 1px #2459a9;
-}
-.scheduler-app__checkbox .a-checkbox__label::after {
-  background: #024b86;
-  min-width: 26px;
-  min-height: 26px;
-  text-align: center;
-  line-height: 26px;
-  font-size: 0.875rem;
-}
-.scheduler-app__select {
-  font-size: 15px;
-}
-.scheduler-app__input-group {
-  display: inline-block;
-}
-.scheduler-app__input-group:not(:last-child) {
-  margin-right: 18px;
-}
-.scheduler-app__form-error {
-  align-items: center;
-  color: #dc3545;
-  display: flex;
-}
-.scheduler-app__form-error span {
-  margin-right: 0.25rem;
-}
-.scheduler-app__form--login #loginForm {
-  padding-right: 0;
-  padding-left: 0;
-}
-.scheduler-app__form--login #loginForm .page-login__btn-block {
-  text-align: center;
-}
-.scheduler-app__form--login #loginForm .page-login__btn-block .login-page__or {
-  display: none;
-}
-.scheduler-app__form--login .page-login__headline {
-  margin-left: 0;
-  margin-bottom: 30px;
-  font-weight: 700;
-  font-size: 18px;
-}
-.scheduler-app__form--login .page-login__headline .icon-user {
-  padding-left: 10px;
-  color: rgba(17, 74, 133, 0.25);
-  font-size: 0.875rem;
-}
-.scheduler-app__form--login .page-login__signin-onetime-link-btn {
-  display: none;
-}
-.scheduler-app__form--login .page-login__form .form-group {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-}
-.scheduler-app__btn-group {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 30px;
-}
-.scheduler-app__login-modal {
-  display: block;
-}
-.scheduler-app__login-modal .modal-dialog {
-  max-width: 345px;
-  margin: auto;
-}
-.scheduler-app__navigation-wrapper {
-  align-items: center;
-  display: flex;
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-}
-@media (min-width: 768px) {
-  .scheduler-app__navigation-wrapper {
-    margin-bottom: 0;
-    padding-left: 0;
-  }
-}
-.scheduler-app__navigation {
-  align-items: center;
-  display: flex;
-  margin-left: 12px;
-  padding: 0;
-  width: 94px;
-}
-@media (min-width: 480px) {
-  .scheduler-app__navigation {
-    width: 79px;
-  }
-}
-.first-step .scheduler-app__navigation {
-  width: 155px;
-}
-@media (min-width: 480px) {
-  .first-step .scheduler-app__navigation {
-    width: 132px;
-  }
-}
-.scheduler-app__navigation-title {
-  font-size: 1rem;
-  margin-bottom: 0;
-  white-space: nowrap;
-}
-.scheduler-app__footer-actions {
-  padding: 0;
-  background-color: #fff;
-  bottom: -122px;
-  border-top: 1px solid #dedacd;
-  padding: 12px 20px;
-  backface-visibility: hidden;
-  z-index: 1000;
-  width: 100%;
-  transition: bottom 0.25s;
-}
-.modal-open .scheduler-app__footer-actions {
-  z-index: 100;
-}
-.scheduler-app__footer-actions.sticky {
-  position: sticky;
-  bottom: 0;
-}
-.scheduler-app__footer-actions.sticky.is-pinned {
-  box-shadow: 3px 0px 8px rgba(0, 0, 0, 0.25);
-}
-@media (min-width: 768px) {
-  .scheduler-app__footer-actions {
-    border-top: 1px #888 solid;
-  }
-  .scheduler-app__footer-actions.sticky {
-    border-top: none;
-  }
-}
-.scheduler-app__remoteCare {
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .scheduler-app__remoteCare {
-    margin-left: auto;
-    width: auto;
-  }
-}
-.scheduler-app__cta-btns {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto 0.5rem;
-  padding: 0 1rem;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .scheduler-app__cta-btns.remote-disclaimer-visible {
-    margin-left: 2rem;
-    width: auto;
-  }
-}
-.scheduler-app__text {
-  margin-bottom: 0.5rem;
-}
-.scheduler-app__btn-action {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 768px) {
-  .scheduler-app__btn-action {
-    flex-direction: row;
-  }
-}
-.scheduler-app__btn-action .scheduler-app__btn + .scheduler-app__btn {
-  margin-top: 16px;
-}
-.scheduler-app__btn {
-  font-size: 1rem;
-  height: 48px;
-  line-height: 0;
-  padding: 15px 12px;
-  width: 100%;
-}
-@media (min-width: 376px) {
-  .scheduler-app__btn {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 772px) and (min-width: 698px) {
-  .scheduler-app__btn {
-    font-size: 13px;
-  }
-}
-@media (min-width: 768px) {
-  .scheduler-app__btn {
-    width: 324px;
-  }
-}
-@media (min-width: 376px) {
-  .scheduler-app__btn--outline {
-    font-size: 1rem;
-  }
-}
-.scheduler-app__appointment-remote-care-disclaimer {
-  margin-bottom: 1rem;
-  margin-left: 0;
-  padding: 1rem;
-  width: 100%;
-  margin-bottom: 0;
-}
-.scheduler-app__footer-actions .scheduler-app__appointment-remote-care-disclaimer {
-  background: #fff;
-  border-bottom: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-  padding: 0 0 1rem;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .scheduler-app__appointment-remote-care-disclaimer {
-    box-shadow: none;
-    padding-right: 0;
-    position: relative;
-  }
-  .scheduler-app__footer-actions .scheduler-app__appointment-remote-care-disclaimer {
-    background: rgba(0, 0, 0, 0);
-    border-bottom: 0;
-    box-shadow: none;
-    justify-content: flex-start;
-    position: relative;
-    padding-bottom: 0;
-  }
-  .scheduler-app__footer-actions .scheduler-app__appointment-remote-care-disclaimer::after {
-    display: none;
-  }
-}
-.scheduler-app__appointment-remote-care-disclaimer .btn-link {
-  color: #0077b4;
-  font-size: 14px;
-  line-height: 19.25px;
-}
-.scheduler-app__appointment-remote-care-disclaimer .btn-link:hover {
-  color: #0077b4;
-}
-.scheduler-app__appointment-remote-care-disclaimer::before {
-  align-items: center;
-  background-color: #2459a9;
-  border: 1px solid #2459a9;
-  border-radius: 100%;
-  background-size: 75%;
-  content: '';
-  color: #fff;
-  display: flex;
-  font-size: 24px;
-  height: 28px;
-  justify-content: center;
-  padding: 2px 0 0 2px;
-  margin-right: 1rem;
-  margin-top: 5px;
-  min-width: 30px;
-  width: 28px;
-}
-.scheduler-app__appointment-remote-care-disclaimer > p {
-  font-size: 0.875rem;
-  margin: 0;
-  line-height: 1.5rem;
-}
-.scheduler-app__appointment-remote-care-disclaimer > p button {
-  color: #0077b4;
-  font-family: Lato, Verdana, sans-serif;
-  font-size: 1rem;
-  letter-spacing: normal;
-  vertical-align: baseline;
-  text-decoration: underline;
-}
-.scheduler-app__appointment-remote-care-disclaimer > p button:hover {
-  color: #0077b4;
-}
-.scheduler-app__appointment-blocks .scheduler-app__appointment-remote-care-disclaimer > p button {
-  font-size: 0.875rem;
-  color: #0077b4;
-}
-.scheduler-app__appointment-blocks
-  .scheduler-app__appointment-remote-care-disclaimer
-  > p
-  button:hover {
-  color: #0077b4;
-}
-@media (min-width: 768px) {
-  .scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer {
-    margin-bottom: 0;
-  }
-}
-.scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer::before {
-  height: 32px;
-  width: 33.95px;
-  min-width: 33.95px;
-  font-size: 24px;
-  padding-left: 0;
-}
-.scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer p {
-  font-size: 0.875rem;
-  line-height: 19.25px;
-  max-width: 220.05px;
-}
-@media (min-width: 768px) {
-  .scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer p {
-    font-size: 0.875rem;
-    line-height: 19.25px;
-  }
-}
-.scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer p strong span {
-  font-size: 0.875rem;
-}
-@media (min-width: 768px) {
-  .scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer p strong span {
-    font-size: 1rem;
-  }
-}
-.scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer p a {
-  font-size: 0.875rem;
-}
-@media (min-width: 768px) {
-  .scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer p a {
-    font-size: 1rem;
-  }
-}
-.scheduler-app .animation {
-  animation-duration: 0.2s;
-  animation-fill-mode: both;
-}
-.scheduler-app .leFadeInLeft {
-  animation-name: leFadeInLeft;
-}
-@keyframes leFadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  to {
-    opacity: 1;
-  }
-}
-.scheduler-app .leFadeOutLeft {
-  animation-name: leFadeOutLeft;
-}
-@keyframes leFadeOutLeft {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-}
-.scheduler-app__navigation-step {
-  background-color: rgba(2, 75, 134, 0.2);
-  border-radius: 5px;
-  display: inline-flex;
-  height: 3px;
-  list-style-type: none;
-  position: relative;
-  width: 50%;
-  z-index: 1;
-}
-.scheduler-app__navigation-step:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  margin-left: -4px;
-}
-.scheduler-app__navigation-step.active,
-.scheduler-app__navigation-step.complete {
-  background-color: #024b86;
-}
-.scheduler-app__navigation-step.active {
-  z-index: 2;
-}
-.scheduler-app__text {
-  font-size: 1rem;
-}
-.scheduler-datepicker__modal-trigger {
-  align-items: center;
-  background: none;
-  border: none;
-  color: #2459a9;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: 700;
-  padding: 0;
-  text-decoration: none;
-  text-transform: capitalize;
-  transition: none;
-}
-.scheduler-datepicker__modal-trigger.active,
-.scheduler-datepicker__modal-trigger:hover,
-.scheduler-datepicker__modal-trigger:focus {
-  color: #024b86;
-}
-.dp__theme_light {
-  --dp-background-color: transparent;
-  --dp-menu-border-color: transparent;
-  --dp-primary-color: #2459a9;
-  --dp-cell-border-radius: 0;
-}
-.dp--header-wrap {
-  background-color: var(--dp-primary-color);
-}
-.dp--arrow-btn-nav {
-  padding-left: 0;
-  padding-right: 0;
-}
-.dp--arrow-btn-nav .dp__inner_nav {
-  color: #fff;
-}
-.dp--arrow-btn-nav .dp__inner_nav:hover {
-  background: rgba(0, 0, 0, 0);
-}
-.dp__month_year_wrap {
-  align-items: center;
-}
-.dp__month_year_select {
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-}
-.dp__menu_inner {
-  padding: 0;
-}
-.dp__overlay {
-  background: #fff;
-}
-.dp__overlay_container {
-  padding: 5px;
-}
-.dp__calendar_item {
-  padding: 5px;
-}
-.dp__cell_inner {
-  background: #fff;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-  height: 32px;
-  width: 32px;
-}
-.dp__cell_disabled {
-  background: rgba(0, 0, 0, 0);
-  box-shadow: none;
-  color: #aaa;
-}
-.dp__active_date {
-  background: var(--dp-primary-color);
-}
-.scheduler-app__footer-note {
-  display: flex;
-  background: #feeed5;
-  border: 3px #fdcb81 solid;
-  padding: 14px 20px 14px 20px;
-  border-radius: 5px;
-  font-size: 1rem;
-  color: #1c1818;
-  line-height: 22.4px;
-  line-height: 1.4rem;
-  width: auto;
-  max-height: 275px;
-  max-width: 424px;
-  margin: 1rem auto 2rem;
-}
-.scheduler-app__footer-note a {
-  color: #024b86;
-  text-decoration: none;
-}
-.scheduler-app__footer-note p {
-  color: #737373;
-  font-size: 13px;
-  margin-bottom: 0;
-}
-.scheduler-app__footer-note .container {
-  text-align: center;
-  max-width: 827px;
-  margin: auto;
-}
-.scheduler-app__footer-note .icon-info-circle {
-  font-size: 22px;
-  font-size: 1.375rem;
-  position: relative;
-  top: 3px;
-  margin-right: 12px;
-}
-.scheduler-app__location-name {
-  font-weight: 700;
-  margin-right: 7px;
-  text-decoration: none;
-  color: #1c1818;
-}
-.scheduler-app .scheduler-notice {
-  padding: 0 1rem;
-}
-.scheduler-app__appointment-wrapper .scheduler-app__digital-eyeexam-block {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 16px;
-}
-@media (min-width: 768px) {
-  .scheduler-app__appointment-wrapper .scheduler-app__digital-eyeexam-block {
-    width: 22vw;
-  }
-}
-.scheduler-app__appointment-wrapper .scheduler-app__digital-eyeexam-block .icon-remote-exam {
-  align-items: center;
-  background: #2459a9;
-  border-radius: 50%;
-  color: #fff;
-  display: flex;
-  font-size: 20px;
-  height: 28px;
-  justify-content: center;
-  margin-right: 20px;
-  min-width: 28px;
-  padding: 4px;
-  text-align: center;
-  width: 28px;
-}
-.scheduler-app__appointment-wrapper .scheduler-app__digital-eyeexam-block p {
-  color: #000;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 19.25px;
-  margin-bottom: 0;
-}
-.scheduler-app__appointment-wrapper .scheduler-app__digital-eyeexam-block p a {
-  color: #2459a9;
-  text-decoration: underline;
-}
-.scheduler-app__appointment-time-slots {
-  padding: 0px;
-  position: relative;
-  width: 389px;
-}
-.scheduler-app__appointment-time-slots .scheduler-app__slots-header,
-.scheduler-app__appointment-time-slots .scheduler-app__slots-container {
-  align-items: start;
-  display: flex;
-  gap: 0 1.5rem;
-  justify-content: center;
-}
-.scheduler-app__appointment-time-slots .scheduler-app__slots-header {
-  position: sticky;
-  top: 155px;
-  z-index: 101;
-}
-.modal-open .scheduler-app__appointment-time-slots .scheduler-app__slots-header {
-  z-index: 99;
-}
-.scheduler-app__appointment-time-slots .scheduler-app__slots-container {
-  position: relative;
-  z-index: 99;
-}
-.scheduler-app__appointment-time-slots::after {
-  border-left: 1px solid #dedacd;
-  border-right: 1px solid #dedacd;
-  content: '';
-  height: calc(100% - 45px);
-  top: 38px;
-  left: 40px;
-  width: 220px;
-  position: absolute;
-  z-index: 0;
-}
-@media (min-width: 768px) {
-  .scheduler-app__appointment-time-slots::after {
-    left: 45px;
-    width: 300px;
-  }
-}
-.scheduler-app__appointment-time-slots::before {
-  content: '';
-  position: absolute;
-  top: 38px;
-  left: 155px;
-  width: 1px;
-  height: calc(100% - 45px);
-  border-left: 1px solid #dedacd;
-}
-@media (min-width: 768px) {
-  .scheduler-app__appointment-time-slots::before {
-    left: 195px;
-  }
-}
-.scheduler-app__slot-column {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin: 0;
-  min-width: 85px;
-  width: 85px;
-}
-@media (min-width: 768px) {
-  .scheduler-app__slot-column {
-    min-width: 128px;
-    width: 128px;
-  }
-}
-.scheduler-app__slot-column .scheduler-app__timeslot-title {
-  text-align: center;
-  width: 85px;
-}
-@media (min-width: 768px) {
-  .scheduler-app__slot-column .scheduler-app__timeslot-title {
-    width: 128px;
-  }
-}
-.scheduler-app__slot-column .scheduler-app__timeslot-title span {
-  display: block;
-  height: 5px;
-  border-top: 1px #024b86 solid;
-  border-left: 1px #024b86 solid;
-  border-right: 1px #024b86 solid;
-}
-.scheduler-app__slot-column .scheduler-app__timeslot-title h4 {
-  font-size: 0.875rem;
-  line-height: 19.25px;
-  color: #024b86;
-  font-weight: 400;
-  padding-top: 0;
-}
-.scheduler-app__appointment-timeslot {
-  padding: 0 4rem 1rem 4rem;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .scheduler-app__appointment-timeslot {
-    padding: 0 7rem 1rem 7rem;
-  }
-}
-.scheduler-app__appointment-blocks {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 1.25rem 0;
-  position: relative;
-}
-.scheduler-app__appointment-block {
-  flex-basis: 30%;
-  flex-grow: 0;
-  border-top: 1px solid #024b86;
-  border-bottom: 1px solid #024b86;
-  border-right: 1px solid #024b86;
-  color: #444;
-  cursor: pointer;
-  position: relative;
-  padding: 10px 0;
-}
-.scheduler-app__appointment-block.active-block {
-  background: #024b86;
-  color: #fff;
-}
-.scheduler-app__appointment-block.disabled {
-  background: #efefef;
-  border-color: #8b8b8b;
-  color: #8b8b8b;
-}
-.scheduler-app__appointment-block.first {
-  border-left: 1px solid #024b86;
-}
-.scheduler-app__banner-message {
-  display: flex;
-  flex-wrap: wrap;
-}
-.scheduler-app__banner-message .v-banner {
-  max-width: 800px;
-  margin: auto;
-}
-.scheduler-app__appointment-time-slot {
-  font-size: 1rem;
-  background: #2459a9;
-  border: 2px solid #2459a9;
-  border-radius: 2px;
-  color: #fff;
-  cursor: pointer;
-  display: block;
-  font-weight: 700;
-  height: 42px;
-  line-height: 38px;
-  padding: 0;
-  position: relative;
-  text-align: center;
-  white-space: nowrap;
-  width: 85px;
-}
-@media (min-width: 768px) {
-  .scheduler-app__appointment-time-slot {
-    width: 128px;
-  }
-}
-.scheduler-app__appointment-time-slot:hover {
-  background-color: #024b86;
-  border-color: #024b86;
-}
-.scheduler-app__appointment-time-slot.selected {
-  background: #fff;
-  border-color: #024b86;
-  color: #024b86;
-}
-.scheduler-app__appointment-time-slot.selected .icon-remote-exam {
-  color: #fff;
-}
-.scheduler-app__appointment-time-slot.remote.selected::before {
-  color: #014b86;
-}
-.scheduler-app__appointment-time-slot input {
-  position: absolute;
-}
-.scheduler-app__appointment-time-slot span {
-  font-size: 1rem;
-  pointer-events: none;
-}
-.scheduler-app__appointment-time-slot .icon-remote-exam {
-  position: absolute;
-  top: -3px;
-  right: -13px;
-  width: 28px;
-  height: 28px;
-  background-color: #2459a9;
-  border-radius: 50%;
-  text-align: center;
-  padding: 4px;
-  font-size: 20px;
-  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.15));
-}
-.scheduler-app__weekpicker-item {
-  border-radius: 4px;
-  border: 0;
-  cursor: pointer;
-  list-style-type: none;
-  max-height: 168px;
-  min-height: 84px;
-  text-align: center;
-  position: relative;
-  margin-left: 0;
-  background-color: #fff;
-  padding: 7px;
-  margin: 0px 0 15px;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-  outline: 0;
-  -webkit-appearance: none;
-  letter-spacing: normal;
-}
-.scheduler-app__weekpicker-item:focus {
-  outline: auto;
-}
-.scheduler-app__weekpicker-item.selected {
-  background-color: #fff;
-  border: 2px #024b86 solid;
-  border-bottom: 4px #024b86 solid;
-  color: #fff;
-  box-shadow: none;
-}
-.scheduler-app__weekpicker-item.disabled {
-  background-color: rgba(141, 134, 109, 0.15);
-  border-top: none;
-  color: #000;
-  pointer-events: none;
-  border: 0;
-  box-shadow: 0 0 0;
-}
-.scheduler-app__weekpicker-item:last-child .scheduler-app__weekpicker-date {
-  border-right: none;
-}
-.scheduler-app__weekpicker-day {
-  align-items: center;
-  background: #fff;
-  color: #666;
-  display: flex;
-  font-size: 0.875rem;
-  font-weight: 400;
-  height: auto;
-  justify-content: center;
-}
-.scheduler-app__weekpicker-day.selected {
-  background: #fff;
-  border-top-color: rgba(0, 0, 0, 0);
-  border-radius: 2px 2px 0 0;
-  color: #666;
-  font-weight: 400;
-}
-.scheduler-app__weekpicker-day.disabled {
-  pointer-events: none;
-  background-color: rgba(0, 0, 0, 0);
-  border-bottom-color: #fff;
-  color: #666;
-  margin-left: -2px;
-}
-.scheduler-app__weekpicker-date {
-  align-items: center;
-  border-radius: 2px 2px 0 0;
-  color: #2459a9;
-  display: flex;
-  font-size: 1rem;
-  font-weight: 700;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 5px;
-  max-height: 27px;
-  min-height: 27px;
-  position: relative;
-}
-@media (min-width: 768px) {
-  .scheduler-app__weekpicker-date {
-    min-height: 24px;
-    max-height: 24px;
-  }
-}
-.scheduler-app__weekpicker-date.selected {
-  background-color: #fff;
-  border: 0;
-  border-radius: 4px;
-  color: #024b86;
-}
-.scheduler-app__weekpicker-date.selected .scheduler-app__weekpicker-today {
-  color: #024b86;
-}
-.scheduler-app__weekpicker-date.disabled {
-  color: #666;
-  pointer-events: none;
-  font-size: 12px;
-  font-weight: 400;
-  margin-left: -1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.scheduler-app__weekpicker-date.disabled.selected {
-  background: rgba(0, 0, 0, 0);
-}
-.scheduler-app__weekpicker-date.disabled .scheduler-app__weekpicker-today {
-  color: #6c6c6c;
-}
-.scheduler-app__weekpicker-year {
-  color: #aaa;
-  position: absolute;
-  top: 0.25rem;
-  right: 0.25rem;
-}
-.scheduler-app__weekpicker-today {
-  color: #024b86;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #2459a9;
-  margin: 0 auto;
-  position: static;
-}
-.scheduler-app__weekpicker-container {
-  width: 100%;
-  background-color: #fff;
-  border-top: 1px #dedacd solid;
-  border-bottom: 1px #dedacd solid;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 11px 25px 0px;
-  position: sticky;
-  top: 0;
-  z-index: 101;
-}
-.scheduler-app__weekpicker-container.stuck-weekpicker {
-  padding-bottom: 2rem;
-}
-@media (min-width: 768px) {
-  .scheduler-app__weekpicker-container {
-    padding: 11px 115px 0px 115px;
-  }
-}
-.scheduler-app__weekpicker-outer {
-  position: relative;
-  margin: auto;
-}
-.scheduler-app__appointment-header {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto 21px;
-  max-width: 800px;
-}
-.scheduler-app__appointment-title {
-  margin-top: 0px;
-  font-size: 1rem;
-  color: #000;
-  line-height: 24px;
-  margin-bottom: 0;
-}
-.scheduler-app__swiper-container {
-  position: unset;
-  margin-bottom: 0;
-  padding: 0 8px;
-}
-.scheduler-app__swiper-container .swiper-button-disabled {
-  background: rgba(0, 0, 0, 0);
-  box-shadow: none;
-  opacity: 30%;
-}
-.scheduler-app__swiper-container .swiper-button-disabled:after {
-  pointer-events: none;
-  color: #8b8b8b;
-}
-.scheduler-app__swiper-slider {
-  position: relative;
-  max-width: 980px;
-  width: 75vw;
-  margin-left: auto;
-  margin-right: auto;
-}
-.scheduler-app__swiper-prev,
-.scheduler-app__swiper-next {
-  align-items: center;
-  background: #fff;
-  border: none;
-  border-radius: 100px;
-  color: #024b86;
-  display: flex;
-  height: 41px;
-  justify-content: center;
-  opacity: 1;
-  position: absolute;
-  top: calc(50% - 25px);
-  width: 41px;
-  z-index: 1000;
-}
-.scheduler-app__swiper-prev:after,
-.scheduler-app__swiper-next:after {
-  color: #024b86;
-  font-family: 'nvicons' !important;
-  font-weight: normal;
-  font-size: 1.5rem;
-}
-.scheduler-app__swiper-prev:hover,
-.scheduler-app__swiper-prev:focus,
-.scheduler-app__swiper-next:hover,
-.scheduler-app__swiper-next:focus {
-  color: #024b86;
-  opacity: 1;
-}
-.scheduler-app__swiper-prev {
-  left: -36px;
-}
-.scheduler-app__swiper-prev::after {
-  font-size: 20px;
-  content: '';
-  text-indent: 2px;
-}
-.scheduler-app__swiper-next {
-  right: -40px;
-}
-.scheduler-app__swiper-next::after {
-  font-size: 20px;
-  content: '';
-  text-indent: 2px;
-}
-.scheduler-app__appointments {
-  position: relative;
-}
-.scheduler-app__appointments .overlay {
-  display: block;
-  height: 110%;
-  left: -25px;
-  pointer-events: none;
-  top: -20px;
-  width: 100vw;
-}
-@media (min-width: 768px) {
-  .scheduler-app__appointments .overlay {
-    left: -40px;
-    width: 110%;
-  }
-}
-.scheduler-app__appointments.disabled {
-  opacity: 0.5;
-}
-.scheduler-app__appointments.disabled:after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  cursor: not-allowed;
-}
-.scheduler-app__date-view-option {
-  align-items: center;
-  display: flex;
-  font-size: 12px;
-  list-style-type: none;
-  justify-content: center;
-  margin: 0;
-  padding-inline-start: 0;
-  position: relative;
-  width: 100%;
-  text-align: center;
-}
-@media (min-width: 768px) {
-  .scheduler-app__date-view-option {
-    justify-content: flex-end;
-    text-align: right;
-  }
-}
-.v-toaster {
-  max-width: 800px;
-}
-.desktop {
-  display: none;
-}
-@media (min-width: 768px) {
-  .desktop {
-    display: flex;
-  }
-}
-.mobile {
-  display: block;
-}
-@media (min-width: 768px) {
-  .mobile {
-    display: none;
-  }
-}
-#overlay {
-  align-items: center;
-  background: #fff;
-  color: #666;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  position: fixed;
-  height: 100%;
-  justify-content: center;
-  width: 100%;
-  z-index: 5000;
-  top: 0;
-  left: 0;
-  text-align: center;
-  opacity: 0.8;
-}
-.rebook #overlay {
-  min-height: 250px;
-}
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.spinner {
-  margin: 0 auto;
-  height: 64px;
-  width: 64px;
-  animation: rotate 0.8s infinite linear;
-  border: 5px solid #024b86;
-  border-right-color: rgba(0, 0, 0, 0);
-  border-radius: 50%;
-}
-.page-examSchedulingPageV2 .t-home,
-.page-examSchedulerRebookV2 .t-home {
-  overflow: initial !important;
-}
-.page-examSchedulingPageV2 .header-container,
-.page-examSchedulerRebookV2 .header-container {
-  display: none;
-  visibility: hidden;
-}
-.page-examSchedulingPageV2 .header-container .js-site-logo,
-.page-examSchedulerRebookV2 .header-container .js-site-logo {
-  width: 0;
-  height: 0;
-}
-.scheduler-app {
-  background-color: #f3f2f0;
-}
-.theme-egw .scheduler-app,
-.theme-walmart .scheduler-app,
-.theme-mo .scheduler-app {
-  background-color: #f3f3f3;
-}
-.scheduler-app hr {
-  margin-top: 0;
-}
-.scheduler-app button:focus {
-  outline: auto;
-}
-.scheduler-app .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-.scheduler-app #cboxOverlay {
-  background: hsla(0, 0%, 100%, 0.8);
-}
-.scheduler-app__header-logo-section {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.page-examSchedulerRebookV2 .scheduler-app__header-logo-section {
-  justify-content: start;
-}
-.scheduler-app__logo-section {
-  margin-right: 2rem;
-}
-.scheduler-app__step-section {
-  align-items: flex-start;
-  flex-direction: column;
-}
-.page-examSchedulerRebookV2 .scheduler-app__step-section {
-  margin-left: 38px;
-}
-.scheduler-app__signIn-section {
-  margin-left: auto;
-}
-.scheduler-app__divider {
-  border: none;
-  border-top: 1px solid #efefef;
-}
-.scheduler-app__content-wrapper {
-  margin: 0 auto;
-}
-.scheduler-app__content-wrapper--white-bg {
-  background-color: #fff;
-}
-.scheduler-app__content-wrapper .c-header__logo img {
-  margin-left: 0;
-}
-.scheduler-app__sub-header {
-  margin: auto;
-  padding: 1rem 1.5rem;
-}
-@media (min-width: 768px) {
-  .scheduler-app__sub-header {
-    align-items: center;
-    display: flex;
-    height: 86px;
-    justify-content: space-between;
-    max-width: 800px;
-    padding: 0px;
-  }
-}
-.scheduler-app__sub-header--confirmation {
-  border-top: 1px solid #efefef;
-  border-bottom: 1px solid #efefef;
-  padding: 20px;
-}
-.scheduler-app__sub-header .c-cms-hero-block__headline {
-  margin-bottom: 0;
-  top: 0;
-}
-.scheduler-app__ede {
-  display: flex;
-  justify-content: space-around;
-  padding: 1rem 0;
-}
-.scheduler-app__ede a,
-.scheduler-app__ede h6 {
-  margin: 0;
-}
-.scheduler-app__ede-exit-link {
-  margin-bottom: 15px;
-  text-transform: none;
-}
-.scheduler-app__ede-sub-header {
-  text-transform: none;
-}
-.scheduler-app__sub-title {
-  color: #000;
-  font-size: 20px;
-  letter-spacing: normal;
-  line-height: 24px;
-  margin-bottom: 0;
-  padding-left: 1.5rem;
-}
-@media (min-width: 768px) {
-  .scheduler-app__sub-title {
-    padding-left: 0;
-  }
-}
-.scheduler-app__sub-title .icon-eye-exam {
-  color: rgba(17, 74, 133, 0.3);
-  position: relative;
-  top: 3px;
-  left: 5px;
-}
-.scheduler-app__body {
-  max-width: 800px;
-  margin: auto;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .scheduler-app__body {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    padding: 1.5rem 0;
-  }
-}
-.scheduler-app__main-column {
-  padding: 0 1.5rem 1.5rem;
-}
-@media (min-width: 768px) {
-  .scheduler-app__main-column {
-    margin-right: 2rem;
-    padding: 0;
-  }
-}
-.scheduler-app__footer-legal {
-  max-width: 800px;
-  margin: auto;
-  padding-top: 0;
-}
-.scheduler-app__footer-legal p {
-  font-size: 12px;
-  margin: 0;
-  line-height: 19px;
-}
-.scheduler-app__button-login {
-  align-items: center;
-  color: #2459a9;
-  display: flex;
-  font-weight: 400;
-  font-size: 12px;
-  text-transform: initial;
-}
-.scheduler-app__button-login .a-icon_icon {
-  margin-right: 0.25rem;
-}
-.scheduler-app__signIn-section a {
-  font-size: 12px;
-  text-decoration: none;
-  font-family: 'Lato';
-  color: #2459a9;
-}
-.scheduler-app__signIn-section a .icon-user {
-  margin-right: 5px;
-}
-.scheduler-app__rebook-notification {
-  max-width: 800px;
-  margin: 56px auto 22px;
-  padding: 0 24px;
-}
-.scheduler-app__rebook-notification p {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 19px;
-  color: #333;
-  margin-bottom: 0;
-}
-.scheduler-app__footer-disclaimer-note {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
-  padding: 37px 27px;
-}
-.scheduler-app__footer-disclaimer-note p {
-  color: #666;
-  font-size: 12px;
-  line-height: 14px;
-  text-align: left;
-  margin-bottom: 20px;
+.scheduler-app__swiper-next::after,.scheduler-app__swiper-prev::after,.scheduler-app__appointment-remote-care-disclaimer::before{
+    font-family:"nvicons" !important;
+    speak:none;
+    font-style:normal;
+    font-weight:normal;
+    font-variant:normal;
+    text-transform:none;
+    line-height:1;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale
+}
+:root{
+    --color-primary: #2459A9;
+    --color-primary-accent: #fff;
+    --color-secondary: #295EDB;
+    --color-secondary-accent: #2459A9;
+    --color-tertiary: #1A8DCD;
+    --color-tertiary-accent: #fff;
+    --color-blue-medium: #1A8DCD;
+    --color-blue-cream: #f5f8fa;
+    --color-red-light: #ce8483;
+    --color-red-dark: #a00e1d;
+    --color-orange-light: #ffd090;
+    --color-blue-dark: #024b86;
+    --color-blue-strong: #0B1B33;
+    --color-blue-bright: #4EA2F4;
+    --color-blue-desaturated: #8D866D;
+    --color-blue-smoke: #D2EBFF;
+    --color-blue-light: #D2EBFF;
+    --color-blue-lighter: #D2EBFF;
+    --color-red-light: #ce8483;
+    --color-orange-light: #ffd090;
+    --color-white: #fff;
+    --color-offwhite: #f3f3f3;
+    --color-alabaster: #e3e3e3;
+    --color-gray: #ccc;
+    --color-gray-dark: #909090;
+    --color-charcoal: #444;
+    --color-black: #000;
+    --color-success: #2459A9;
+    --color-success-light: #deedf6;
+    --color-error: #CC0000;
+    --color-error-light: #f1dfdf;
+    --color-error-dark: #a00e1d;
+    --color-weak: #906d0f;
+    --color-weak-light: #fcf3da;
+    --color-body-background: #f3f2f0;
+    --color-button-disabled: #d5c6c6;
+    --color-button-text-disabled: #fff;
+    --color-border-blue: #295EDB;
+    --color-heading-blue: #024b86;
+    --color-button-bg: #2459A9;
+    --color-create-button: #295EDB
+}
+.v-banner{
+    align-items:center;
+    border-radius:5px;
+    border-style:solid;
+    border-width:3px;
+    box-shadow:0 6px 6px -2px rgba(0,0,0,.15);
+    color:#212121;
+    display:flex;
+    font-weight:bold;
+    height:auto;
+    justify-content:center;
+    margin:.5rem 0;
+    min-width:300px;
+    padding:22px 40px;
+    user-select:none;
+    text-align:center
+}
+.v-banner::before{
+    margin-top:3px;
+    margin-right:.5rem
+}
+.v-banner__icon{
+    font-size:1.5rem;
+    margin:auto 1rem auto auto
+}
+.v-banner__graphic{
+    display:flex
+}
+.v-banner__message{
+    font-size:1rem;
+    line-height:1.5rem;
+    margin:0
+}
+.v-banner--inline{
+    box-shadow:none
+}
+.v-banner--primary{
+    background-color:#b8dcff;
+    border-color:rgb(82,169.7183098592,255)
+}
+.v-banner--secondary{
+    background-color:#feeed5;
+    border-color:#fdcb81
+}
+.v-banner--success{
+    border-color:#9fd7ab;
+    background-color:#c3e6cb
+}
+.v-banner--success::before{
+    content:"";
+    font-family:"nvicons";
+    font-size:19px
+}
+.v-banner--danger{
+    border-color:#eb8f98;
+    background:#fae3e5
+}
+.v-banner--danger::before{
+    content:"";
+    font-family:"nvicons";
+    font-size:19px
+}
+.v-banner--danger.v-banner--inverted{
+    background:rgba(0,0,0,0);
+    border-style:dashed;
+    color:#000
+}
+.v-toaster{
+    position:fixed;
+    visibility:hidden;
+    width:calc(100vw - 6rem);
+    z-index:9999
+}
+.v-toaster--bottom,.v-toaster--top{
+    left:50%;
+    transform:translate(-50%, 0%)
+}
+.v-toaster--bottom{
+    bottom:1rem
+}
+.v-toaster--top{
+    top:1rem
+}
+.v-toaster.v-toast{
+    visibility:visible
+}
+.v-toaster--bottom.v-toast--2s{
+    animation:fadein-bottom .5s,fadeout-bottom .5s 1.5s
+}
+.v-toaster--top.v-toast--2s{
+    animation:fadein-top .5s,fadeout-top .5s 1.5s
+}
+.v-toaster--bottom.v-toast--3s{
+    animation:fadein-bottom .5s,fadeout-bottom .5s 2.5s
+}
+.v-toaster--top.v-toast--3s{
+    animation:fadein-top .5s,fadeout-top .5s 2.5s
+}
+.v-toaster--bottom.v-toast--4s{
+    animation:fadein-bottom .5s,fadeout-bottom .5s 3.5s
+}
+.v-toaster--top.v-toast--4s{
+    animation:fadein-top .5s,fadeout-top .5s 3.5s
+}
+.v-toaster--bottom.v-toast--5s{
+    animation:fadein-bottom .5s,fadeout-bottom .5s 4.5s
+}
+.v-toaster--top.v-toast--5s{
+    animation:fadein-top .5s,fadeout-top .5s 4.5s
+}
+.v-toaster--bottom.v-toast--6s{
+    animation:fadein-bottom .5s,fadeout-bottom .5s 5.5s
+}
+.v-toaster--top.v-toast--6s{
+    animation:fadein-top .5s,fadeout-top .5s 5.5s
+}
+.v-toaster--bottom.v-toast--7s{
+    animation:fadein-bottom .5s,fadeout-bottom .5s 6.5s
+}
+.v-toaster--top.v-toast--7s{
+    animation:fadein-top .5s,fadeout-top .5s 6.5s
+}
+@keyframes fadein-bottom{
+    from{
+        bottom:0;
+        opacity:0
+    }
+    to{
+        bottom:1rem;
+        opacity:1
+    }
+}
+@keyframes fadeout-bottom{
+    from{
+        bottom:1rem;
+        opacity:1
+    }
+    to{
+        bottom:0;
+        opacity:0
+    }
+}
+@keyframes fadein-top{
+    from{
+        top:0;
+        opacity:0
+    }
+    to{
+        top:1rem;
+        opacity:1
+    }
+}
+@keyframes fadeout-top{
+    from{
+        top:1rem;
+        opacity:1
+    }
+    to{
+        top:0;
+        opacity:0
+    }
+}
+.scheduler-app__modal-content{
+    position:relative;
+    padding:0 50px 20px
+}
+.scheduler-app__modal-header{
+    padding:15px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center
+}
+.scheduler-app__modal-title{
+    margin:0;
+    font-size:22px;
+    letter-spacing:normal;
+    font-weight:bold
+}
+.scheduler-app__btn-modal-close{
+    padding-top:20px
+}
+.scheduler-app__btn-modal-close span{
+    pointer-events:none
+}
+.scheduler-app__exit-modal-button{
+    margin-top:30px;
+    border:none
+}
+.scheduler-app__modal-dialog .modal-header .close{
+    color:#024b86;
+    opacity:1
+}
+.scheduler-app__modal-sigout-buttons{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:100%
+}
+.scheduler-app__modal-sigout-buttons .cancel{
+    background:hsla(0,0%,100%,.75);
+    border:1px solid #2459a9;
+    border-radius:2px;
+    font-size:1rem;
+    line-height:19px;
+    color:#2459a9;
+    font-weight:700;
+    text-transform:uppercase;
+    width:142px;
+    height:44px
+}
+.scheduler-app__modal-sigout-buttons .signout{
+    background:#c00;
+    border:1px #c00 solid;
+    border-radius:2px;
+    font-size:1rem;
+    text-transform:uppercase;
+    line-height:19px;
+    color:#fff;
+    font-weight:700;
+    width:142px;
+    height:44px;
+    text-align:center;
+    line-height:44px;
+    text-decoration:none
+}
+.scheduler-app__modal-sigout-buttons .signout .a-icon{
+    padding-right:0;
+    margin-right:5px;
+    width:auto
+}
+.scheduler-app .modal-footer{
+    border-top:1px #dedacd solid;
+    padding:21px
+}
+.datepicker-modal{
+    width:100vw
+}
+.datepicker-modal .modal-body{
+    padding:0
+}
+.scheduler-app-appointment-container{
+    background-color:#f3f2ef
+}
+.scheduler-app-appointment-container .modal-header{
+    border-bottom:0;
+    padding-top:51px;
+    padding-left:19px;
+    padding-right:85px
+}
+.scheduler-app-appointment-container .modal-header h2{
+    font-size:20px;
+    font-size:1.25rem;
+    font-weight:700;
+    color:#000;
+    margin-bottom:0;
+    line-height:1.25rem
+}
+.scheduler-app-appointment-container .modal-header h2 .flag-icon{
+    margin-right:11px
+}
+.scheduler-app-appointment-container .modal-header h4{
+    font-size:1rem;
+    line-height:19.2px;
+    line-height:1.2rem;
+    font-weight:400;
+    color:#000;
+    margin-bottom:6px
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock{
+    width:100%;
+    height:auto;
+    min-height:100px;
+    background-color:#fff;
+    box-shadow:0px 3px 5px rgba(0,0,0,.1);
+    border-radius:2px;
+    margin-bottom:22px;
+    padding:18px 22px 22px 23px;
+    position:relative
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock h3{
+    font-size:1rem;
+    font-weight:bold;
+    line-height:22px;
+    color:#024b86
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock h3 a{
+    text-decoration:none
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock h3 a .flag-icon{
+    margin-right:11px
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock .btn-examTimes{
+    width:100%;
+    border:2px #a6182e solid;
+    height:38px;
+    text-decoration:none;
+    padding:8px 0;
+    position:static;
+    margin-top:20px;
+    font-family:Open Sans;
+    font-size:.875rem;
+    font-weight:700;
+    color:#a6182e;
+    border-radius:2px
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock .btn-examTimes .icon-calendar{
+    margin-right:8px;
+    position:relative;
+    top:1px
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock .find-nearBy-location-block{
+    display:flex;
+    justify-content:space-between
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock .find-nearBy-location-block .find-nearBy-location-title h3{
+    font-size:1rem;
+    font-weight:bold;
+    line-height:22px;
+    color:#024b86
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock .find-nearBy-location-block .find-nearBy-location-title h3 a{
+    text-decoration:none;
+    color:#024b86
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock .find-nearBy-location-block .find-nearBy-location-title h3 a .flag-icon{
+    margin-right:11px;
+    margin-left:-5px
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock .find-nearBy-location-block .find-nearBy-location-title p{
+    font-size:.875rem;
+    color:#000;
+    line-height:150%;
+    width:160px
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock .find-nearBy-location-block .find-nearBy-location-title p a{
+    text-decoration:none;
+    font-size:.875rem;
+    color:#000;
+    line-height:150%
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock .find-nearBy-location-block .find-nearBy-location-title .find-nearBY-phone{
+    font-size:.875rem;
+    color:#2459a9;
+    font-weight:400
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock .find-nearBy-location-block .find-nearBy-location-title .find-nearBY-phone .icon-phone{
+    width:12px;
+    height:12px;
+    margin-right:10.62px;
+    position:relative;
+    top:2px;
+    color:#8d866d;
+    font-size:12.74px;
+    font-size:0.79625rem
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock .find-nearBy-location-block .find-nearBy-location-title .find-nearBY-phone a{
+    font-size:.875rem;
+    line-height:21px;
+    line-height:1.3125rem;
+    color:#2459a9;
+    font-weight:400;
+    text-decoration:none
+}
+.scheduler-app-appointment-container .scheduler-app_find-appointment-nearBYblock .find-nearBy-location-block .find-nearBy-location-distance p{
+    font-size:.875rem;
+    color:#2459a9;
+    font-weight:400;
+    margin-bottom:0;
+    text-align:right
+}
+.scheduler-app-confirmation{
+    background:#efefef;
+    padding-top:47px
+}
+.scheduler-app-confirmation .scheduler-confirmation-firstCol{
+    flex:0 0 25%;
+    max-width:25%;
+    padding:0 15px
+}
+.scheduler-app-confirmation .scheduler-confirmation-firstCol .scheduler-confirmation-saveTime{
+    margin-top:43px
+}
+.scheduler-app-confirmation .scheduler-confirmation-firstCol .scheduler-confirmation-saveTime .scheduler-confirmation-buttonsBlock .dropdown-menu{
+    padding:14px 0;
+    border:1px #aaa solid;
+    box-shadow:0 5px 5px rgba(0,0,0,.15)
+}
+.scheduler-app-confirmation .scheduler-confirmation-firstCol .scheduler-confirmation-saveTime .scheduler-confirmation-buttonsBlock .dropdown-menu a.dropdown-item{
+    padding:0 19px;
+    text-decoration:none;
+    font-size:.875rem;
+    line-height:25px;
+    line-height:1.5625rem;
+    color:#333
+}
+.scheduler-app-confirmation .scheduler-confirmation-firstCol .scheduler-confirmation-saveTime .scheduler-confirmation-buttonsBlock .dropdown-menu a.dropdown-item .icon{
+    font-size:13px;
+    font-size:0.8125rem;
+    margin-right:12px
+}
+.scheduler-app-confirmation .scheduler-confirmation-firstCol .scheduler-confirmation-saveTime .scheduler-confirmation-buttonsBlock .dropdown-menu a.dropdown-item:hover{
+    background-color:#f3f2ef
+}
+.scheduler-app-confirmation .scheduler-confirmation-firstCol .scheduler-confirmation-saveTime h3{
+    margin-bottom:14px
+}
+.scheduler-app-confirmation .scheduler-confirmation-firstCol .scheduler-confirmation-saveTime .icon-clock{
+    font-size:27px;
+    position:relative;
+    top:4px;
+    margin-right:12px;
+    color:#0057b8
+}
+.scheduler-app-confirmation .scheduler-confirmation-firstCol .icon-delete{
+    font-size:26.75px;
+    font-size:1.671875rem;
+    margin-right:12px;
+    position:relative;
+    top:4px
+}
+.scheduler-app-confirmation .scheduler-confirmation-firstCol h3{
+    display:flex
+}
+.scheduler-app-confirmation .scheduler-confirmation-secondCol{
+    flex:0 0 30%;
+    max-width:30%;
+    padding:0 15px
+}
+.scheduler-app-confirmation .scheduler-confirmation-secondCol .scheduler-confirmation__store-details .scheduler-confirmation-storeDetails{
+    background-color:#fff;
+    display:flex;
+    justify-content:space-between;
+    padding:25px 16px
+}
+.scheduler-app-confirmation .scheduler-confirmation-secondCol .scheduler-confirmation__store-details .scheduler-confirmation-storeDetails p{
+    font-size:.875rem;
+    line-height:1.25rem;
+    color:#000
+}
+.scheduler-app-confirmation .scheduler-confirmation-secondCol .scheduler-confirmation__store-details .scheduler-confirmation-storeDetails .scheduler-confirmation-locationIcon{
+    text-align:right
+}
+.scheduler-app-confirmation .scheduler-confirmation-secondCol .scheduler-confirmation__store-details .scheduler-confirmation-storeDetails .scheduler-confirmation-locationIcon p{
+    font-size:.875rem;
+    line-height:16px;
+    line-height:1rem;
+    color:#114a85
+}
+.scheduler-app-confirmation .scheduler-confirmation-secondCol .scheduler-confirmation__store-details .scheduler-confirmation-storeDetails .scheduler-confirmation-locationIcon .direction-icon{
+    width:22px;
+    height:22px;
+    margin-top:13px;
+    display:inline-block;
+    text-align:right
+}
+.scheduler-app-confirmation .scheduler-confirmation-secondCol .scheduler-confirmation__store-details .scheduler-confirmation-storeDetails .scheduler-confirmation-locationIcon .direction-icon img{
+    height:22px;
+    width:22px
+}
+.scheduler-app-confirmation .scheduler-confirmation-thirdCol{
+    flex:0 0 45%;
+    max-width:45%;
+    padding:0 15px
+}
+.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-userFaq{
+    padding:23px 16px 17px 16px
+}
+.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-userFaq h4{
+    font-size:1rem;
+    line-height:1.125rem;
+    color:#333;
+    font-weight:700;
+    margin-bottom:15px
+}
+.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-userFaq ul li{
+    font-size:.875rem;
+    line-height:1.125rem;
+    color:#333;
+    font-weight:400;
+    margin-bottom:10px
+}
+.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-userFaq .scheduler-confirmation-note{
+    font-size:12px;
+    font-size:0.75rem;
+    line-height:1.125rem;
+    color:#333;
+    font-weight:400;
+    width:86%;
+    margin-top:30px
+}
+.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-userFaq .scheduler-confirmation-TitleAppointment{
+    margin-top:33px
+}
+.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-bottomNote{
+    font-size:12px;
+    font-size:0.75rem;
+    line-height:1.125rem;
+    color:#000;
+    margin-top:19px;
+    padding-left:16px;
+    padding-right:30px
+}
+.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-bottomNote .asterisk{
+    padding-right:3px;
+    position:relative;
+    top:6px;
+    font-size:1rem
+}
+.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-userDetails .scheduler-confirmation-topHeader{
+    justify-content:start
+}
+.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-userDetails .scheduler-confirmation-topHeader .scheduler-confirmation-userLeftInfo{
+    max-width:50%;
+    width:50%;
+    display:flex
+}
+.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-userDetails .scheduler-confirmation-topHeader .scheduler-confirmation-userLeftInfo .scheduler-confirmation-userIcon{
+    margin-right:12px
+}
+.scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-userDetails .scheduler-confirmation-topHeader .scheduler-confirmation-userLeftInfo .scheduler-confirmation-userIcon .icon-user{
+    opacity:25%;
+    margin-right:5px;
+    color:#114a85
+}
+.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .btn-change{
+    width:100%;
+    border-radius:2px;
+    text-transform:uppercase;
+    font-size:.875rem;
+    line-height:normal;
+    line-height:normal/16pxrem;
+    font-weight:700;
+    height:42px;
+    text-align:center
+}
+.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .btn-cancel{
+    width:100%;
+    background-color:#444;
+    border:2px #444 solid;
+    font-size:.875rem;
+    color:#fff;
+    height:42px;
+    text-align:center;
+    line-height:normal;
+    line-height:normal/16pxrem
+}
+.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .btn-cancel:hover{
+    background-color:#fff;
+    border:2px #444 solid;
+    color:#444
+}
+.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .btn-cancel:focus{
+    background-color:#fff;
+    border:2px #444 solid;
+    color:#444
+}
+.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .icon{
+    font-size:11px;
+    font-size:0.6875rem
+}
+.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .icon-calendar{
+    font-size:.875rem
+}
+.scheduler-app-confirmation .scheduler-confirmation-buttonsBlock .btn-mb-3{
+    margin-bottom:16px
+}
+.scheduler-app-confirmation .scheduler-confirmation-topHeader{
+    background-color:#fff;
+    display:flex;
+    justify-content:space-between;
+    padding:23px 16px;
+    border-bottom:1px solid #dedacd
+}
+.scheduler-app-confirmation .scheduler-confirmation-topHeader .scheduler-confirmation-scheduled{
+    font-size:.875rem;
+    line-height:1.25rem;
+    color:#114a85;
+    text-align:left
+}
+.scheduler-app-confirmation .scheduler-confirmation-topHeader .scheduler-confirmation-time-booked{
+    font-size:.875rem;
+    line-height:1.125rem;
+    font-weight:bold;
+    color:#114a85;
+    text-align:left
+}
+.scheduler-app-confirmation .scheduler-confirmation-topHeader .scheduler-confirmation-rightexamInfo{
+    width:40%
+}
+.scheduler-app-confirmation .scheduler-confirmation-topHeader .scheduler-confirmation-rightexamInfo .scheduler-confirmation-examType{
+    font-size:12px;
+    font-size:0.75rem;
+    line-height:1.125rem;
+    color:#000;
+    text-align:right
+}
+.scheduler-app-confirmation .scheduler-confirmation-topHeader .scheduler-confirmation-rightexamInfo .scheduler-confirmation-examType-name{
+    font-size:1rem;
+    line-height:1.125rem;
+    color:#000;
+    text-align:right;
+    font-weight:700
+}
+.scheduler-app-confirmation .scheduler-confirmation-userDetails{
+    background-color:#fff;
+    margin:0;
+    border:1px solid #dedacd
+}
+.scheduler-app-confirmation .scheduler-confirmation-userDetails .scheduler-confirmation-userName{
+    font-size:1rem;
+    line-height:16px;
+    line-height:1rem;
+    font-weight:bold;
+    color:#114a85;
+    margin-bottom:10px
+}
+.scheduler-app-confirmation .scheduler-confirmation-userDetails .scheduler-confirmation-userDOB{
+    font-size:.875rem;
+    line-height:1.125rem;
+    font-weight:400;
+    color:#000
+}
+.scheduler-app-confirmation .scheduler-confirmation-userDetails .scheduler-confirmation-userEmail,.scheduler-app-confirmation .scheduler-confirmation-userDetails .scheduler-confirmation-userPhone{
+    font-size:.875rem;
+    line-height:24px;
+    line-height:1.5rem;
+    font-weight:400;
+    color:#000
+}
+.scheduler-app-confirmation .scheduler-confirmation-userDetails .scheduler-confirmation-userEmail .patient-phone,.scheduler-app-confirmation .scheduler-confirmation-userDetails .scheduler-confirmation-userPhone .patient-phone{
+    margin:0px
+}
+.scheduler-app-confirmation .btn-add{
+    background-color:rgba(0,0,0,0);
+    border:2px solid var(--color-primary);
+    color:var(--color-primary);
+    transition:color .2s ease-in-out;
+    margin-top:19px;
+    width:100%;
+    height:42px;
+    line-height:38px;
+    line-height:2.375rem;
+    text-align:center;
+    padding:0
+}
+.scheduler-app-confirmation .btn-add:hover{
+    background-color:rgba(0,0,0,0);
+    border:2px solid var(--color-primary);
+    color:var(--color-primary)
+}
+.scheduler-app-confirmation .btn-add:focus{
+    background-color:rgba(0,0,0,0);
+    border:2px solid var(--color-primary);
+    color:var(--color-primary)
+}
+@media(max-width: 1199.98px){
+    .scheduler-app-confirmation .scheduler-confirmation-firstCol{
+        flex:0 0 27%;
+        max-width:27%
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-secondCol{
+        flex:0 0 38%;
+        max-width:38%;
+        padding-left:0;
+        padding-right:0
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-thirdCol{
+        flex:0 0 35%;
+        max-width:35%
+    }
+}
+@media(max-width: 991.98px){
+    .scheduler-app-confirmation .scheduler-confirmation__container{
+        margin-left:-20px;
+        margin-right:-20px;
+        width:auto
+    }
+    .scheduler-app-confirmation .scheduler-confirmation__row-inner{
+        display:block;
+        padding:0
+    }
+    .scheduler-app-confirmation .scheduler-confirmation__store-details{
+        padding:0px
+    }
+    .scheduler-app-confirmation .scheduler-confirmation__store-details .scheduler-confirmation-topHeader{
+        padding:25px 19px 19px
+    }
+    .scheduler-app-confirmation .scheduler-confirmation__store-details .scheduler-confirmation-storePhone{
+        padding:0px 21px 28px 19px
+    }
+    .scheduler-app-confirmation .scheduler-confirmation__store-details .scheduler-confirmation-promote{
+        padding:0px 21px 26px 19px
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-userDetails .scheduler-confirmation-topHeader{
+        display:block
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-userDetails .scheduler-confirmation-topHeader .scheduler-confirmation-userrightInfo{
+        margin-top:20px;
+        padding-left:30px
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-firstCol,.scheduler-app-confirmation .scheduler-confirmation-secondCol,.scheduler-app-confirmation .scheduler-confirmation-thirdCol{
+        flex:0 0 100%;
+        max-width:100%;
+        padding-left:0;
+        padding-right:0
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-firstCol,.scheduler-app-confirmation .scheduler-confirmation-thirdCol{
+        margin-bottom:16px
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-secondCol .scheduler-confirmation__store-details .scheduler-confirmation-storeDetails{
+        padding:23px 21px 26px 19px
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-secondCol .scheduler-confirmation__store-details .scheduler-confirmation-storeDetails .scheduler-confirmation-locationIcon{
+        text-align:right
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-secondCol .scheduler-confirmation__store-details .scheduler-confirmation-storeDetails .scheduler-confirmation-locationIcon p{
+        font-size:12px;
+        font-size:0.75rem;
+        line-height:16px;
+        line-height:1rem;
+        color:#114a85
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-secondCol .scheduler-confirmation__store-details .scheduler-confirmation-storeDetails .scheduler-confirmation-locationIcon .direction-icon{
+        width:22px;
+        height:22px;
+        margin-top:13px;
+        display:inline-block;
+        text-align:right
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-secondCol .scheduler-confirmation__store-details .scheduler-confirmation-storeDetails .scheduler-confirmation-locationIcon .direction-icon img{
+        height:22px;
+        width:22px
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-firstCol{
+        padding-left:22px;
+        padding-right:22px
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-thirdCol .scheduler-confirmation-bottomNote{
+        padding-left:22px;
+        padding-right:22px;
+        width:100%
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-saveTime{
+        margin-bottom:30px;
+        padding-left:22px;
+        padding-right:22px;
+        margin-top:33px
+    }
+    .scheduler-app-confirmation .scheduler-confirmation-saveTime .icon-clock{
+        font-size:26.8px;
+        position:relative;
+        top:10px;
+        margin-right:12px;
+        color:#0057b8
+    }
+}
+#gmap_canvas{
+    height:100%;
+    width:100%;
+    border:0;
+    overflow-y:hidden;
+    margin:0
+}
+.scheduler-confirmation__icon-error{
+    color:#dc3545
+}
+.scheduler-confirmation__header{
+    font-size:1rem;
+    line-height:1.25rem;
+    color:#333;
+    line-height:20px;
+    margin:0 auto 25px;
+    margin-bottom:12px;
+    text-align:left
+}
+.scheduler-confirmation__row-inner{
+    display:flex;
+    margin:0px;
+    text-align:left
+}
+.scheduler-confirmation__appointment-details-image{
+    width:100%;
+    height:auto;
+    cursor:pointer
+}
+.scheduler-confirmation__image-wrapper{
+    padding:10px 15px 10px 0
+}
+.scheduler-confirmation__map{
+    background-color:#fff;
+    margin:0;
+    border:1px solid #dedacd
+}
+.scheduler-confirmation__map-inner{
+    border-left:1px solid #dedacd;
+    border-right:1px solid #dedacd;
+    border-bottom:1px solid #dedacd
+}
+.scheduler-confirmation__container{
+    padding:0 20px;
+    margin-bottom:49px
+}
+.scheduler-confirmation__container h3{
+    font-size:20px;
+    color:#000;
+    line-height:26px
+}
+.scheduler-confirmation__container h3 .icon-verified{
+    color:#00c42e;
+    font-size:26.8px;
+    margin-right:12px;
+    position:relative;
+    top:4px
+}
+.scheduler-confirmation__store-name{
+    color:#024b86;
+    font-size:1rem;
+    line-height:1.25rem;
+    margin:0;
+    margin-bottom:15px
+}
+.scheduler-confirmation__store-name .scheduler-storeName{
+    color:#114a85;
+    font-size:1rem;
+    font-weight:700;
+    line-height:1.25rem
+}
+.scheduler-confirmation__store-name .a-icon{
+    font-size:24px;
+    left:-20px;
+    position:absolute;
+    top:-2px
+}
+.scheduler-confirmation__store-details .store-openings{
+    font-size:.875rem;
+    line-height:1.125rem
+}
+.scheduler-confirmation__store-details .store-openings .scheduler-confirmation-closed{
+    color:#dc3545
+}
+.scheduler-confirmation__store-details p{
+    margin-bottom:0
+}
+.scheduler-confirmation__store-details a{
+    color:#024b86;
+    text-decoration:none
+}
+.scheduler-confirmation__store-details .scheduler-confirmation-storePhone{
+    background-color:#fff;
+    display:flex;
+    justify-content:space-between;
+    padding:0px 16px 25px
+}
+.scheduler-confirmation__store-details .scheduler-confirmation-storePhone .scheduler-confirmation-openingHours{
+    font-size:.875rem;
+    line-height:1.125rem;
+    color:#000
+}
+.scheduler-confirmation__store-details .scheduler-confirmation-storePhone .scheduler-confirmation-posPhone{
+    text-align:right;
+    display:flex
+}
+.scheduler-confirmation__store-details .scheduler-confirmation-storePhone .scheduler-confirmation-posPhone p a{
+    border-bottom:1px #114a85 solid;
+    color:#114a85;
+    font-size:.875rem;
+    line-height:1.125rem
+}
+.scheduler-confirmation__store-details .scheduler-confirmation-storePhone .scheduler-confirmation-posPhone .icon-phone{
+    position:relative;
+    top:8px;
+    margin-right:12px;
+    color:#8caabb
+}
+.scheduler-confirmation__store-details .scheduler-confirmation-promote{
+    font-size:12px;
+    font-size:0.75rem;
+    line-height:16px;
+    line-height:1rem;
+    color:#666;
+    padding:0px 16px 32px 16px;
+    width:90%
+}
+.page-examConfirmationPageV2 .t-home{
+    background-color:#efefef
+}
+.page-examConfirmationPageV2 .scheduler-app__footer-note{
+    display:none
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered{
+    max-width:746px
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-title{
+    font-size:24px;
+    font-family:"Lato"
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-body{
+    padding:1rem 1rem 0 1rem
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-body p{
+    font-size:1rem;
+    line-height:22.4px;
+    font-family:Lato;
+    margin:0;
+    color:#1c1818
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-body p a{
+    color:#2459a9
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-body p:nth-child(2){
+    padding-top:10px
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-body p .text-variant-bold{
+    font-weight:700
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-body .cancel-exam-list-item ul{
+    list-style:none;
+    padding:10px 0 0 0
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-body .cancel-exam-list-item ul li{
+    display:inline-block;
+    padding:0 50px 0 0
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-body .cancel-exam-list-item ul li label span{
+    padding-left:5px
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-body .cancel-exam-list-item ul li .a-radio-button__label{
+    font-size:1rem;
+    color:#1c1818;
+    font-family:"Lato"
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer{
+    display:flex;
+    justify-content:space-between;
+    column-gap:0;
+    border-top:0
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer button{
+    flex:0 1 32%;
+    font-size:1rem;
+    height:44px;
+    line-height:1;
+    font-family:Lato
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer button.a-btn--primary{
+    background:color-mix(in srgb, #024b86 50%, #888888);
+    border:2px solid color-mix(in srgb, #024b86 50%, #888888)
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer button.a-btn--primary:hover{
+    background:#fff;
+    border:2px solid color-mix(in srgb, #024b86 50%, #888888);
+    color:color-mix(in srgb, #024b86 50%, #888888)
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer button.a-btn--secondary{
+    border:1px solid #2459a9;
+    background:#fff;
+    color:#2459a9
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer button.a-btn--secondary:hover{
+    background:#fff;
+    border:1px solid #2459a9;
+    color:#2459a9
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer button.a-btn--secondary.hovered img.icon-menu-image{
+    fill:#c00
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer button.a-btn--accent{
+    background:#c00;
+    border:2px solid #c00;
+    color:#fff
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer button.a-btn--accent:hover{
+    background:#fff;
+    color:#c00
+}
+.page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer button img.icon-menu-image{
+    width:14px;
+    height:14px;
+    fill:#fff;
+    transition:fill .3s ease
+}
+@media(max-width: 991.98px){
+    .page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer{
+        width:100%;
+        display:block
+    }
+    .page-examConfirmationPageV2 .cancel-exam-modal .cancel-exam-centered .modal-footer button{
+        width:100%;
+        margin-bottom:10px
+    }
+}
+.scheduler-app__rebook-patient-block{
+    background:hsla(0,0%,100%,.5);
+    border-radius:4px;
+    border:1px rgba(2,75,134,.5) solid;
+    height:auto;
+    margin-bottom:22px;
+    padding:0;
+    max-width:383px
+}
+.scheduler-app__rebook-titleblock{
+    display:flex;
+    align-items:flex-start;
+    margin-bottom:7px;
+    padding:19px 21px
+}
+.scheduler-app__rebook-titleblock .icon-user{
+    font-size:1rem;
+    color:#2459a9;
+    font-weight:bold;
+    margin-right:11px
+}
+.scheduler-app__rebook-titleblock .scheduler-patient-name{
+    font-weight:700;
+    font-size:1rem;
+    color:#024b86
+}
+.scheduler-app__rebook-examDetails{
+    background:#feeed5;
+    padding:20px 20px 18px;
+    border-top:2px #fdcb81 solid;
+    border-bottom:2px #fdcb81 solid
+}
+.scheduler-app__rebook-original-exam{
+    font-size:.875rem;
+    font-weight:400;
+    color:#000
+}
+.scheduler-app__rebook-original-exam strong{
+    font-weight:700;
+    line-height:25px
+}
+.scheduler-app__rebook-original-exam span{
+    line-height:25px
+}
+.scheduler-app__rebook-type-exam{
+    font-size:.875rem;
+    font-weight:400;
+    color:#000
+}
+.scheduler-app__rebook-type-exam strong{
+    font-weight:700;
+    line-height:25px
+}
+.scheduler-app__rebook-type-exam span{
+    line-height:25px
+}
+.scheduler-app__cancel-exam-link{
+    height:57px;
+    padding:0 0 0 23px;
+    line-height:57px;
+    display:flex;
+    align-items:center
+}
+.scheduler-app__cancel-exam-link a{
+    font-weight:700;
+    font-size:12px;
+    line-height:14px;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    text-transform:uppercase;
+    color:#666;
+    text-decoration:none;
+    margin-left:0;
+    padding-left:15px
+}
+.scheduler-app__cancel-exam-link a .icon-close{
+    align-items:center;
+    display:flex;
+    height:10.5px;
+    margin-right:.5rem;
+    width:10.5px
+}
+.scheduler-app__patient-social-block{
+    margin:.5rem 0 1.5rem
+}
+.scheduler-app__patient-social-block .scheduler-patient-DOB,.scheduler-app__patient-social-block .scheduler-patient-email,.scheduler-app__patient-social-block .scheduler-patient-phone{
+    font-size:.875rem;
+    color:#000;
+    line-height:21px;
+    font-weight:400
+}
+.scheduler-app__card--exam{
+    position:relative;
+    padding:18px 22px
+}
+.scheduler-app__card-header--exam{
+    right:0
+}
+.scheduler-app__card-title{
+    display:flex;
+    align-items:center;
+    margin-bottom:0;
+    width:100%;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    height:30px
+}
+.scheduler-app__card-title::before{
+    display:inline-block;
+    position:absolute;
+    left:-40px;
+    top:5px
+}
+.scheduler-app__card-title img{
+    position:relative;
+    right:10px;
+    padding-right:3px
+}
+.scheduler-app__card-title .a-icon{
+    font-size:30px;
+    display:block;
+    line-height:1;
+    padding:0 11px 0 20px;
+    width:auto
+}
+.scheduler-app__card-link--exam{
+    padding-right:5px
+}
+.scheduler-app__card-content-additional hr{
+    border-top:1px solid #eee
+}
+.scheduler-app__location-step-one{
+    margin-top:15px;
+    border-radius:4px
+}
+@media(min-width: 768px){
+    .scheduler-app__location-step-one{
+        margin-top:0
+    }
+}
+.scheduler-app__card--location{
+    padding:0px
+}
+.scheduler-app__card--location p{
+    margin-left:0;
+    font-size:1rem;
+    font-weight:700;
+    color:#024b86
+}
+.scheduler-app__card--location .scheduler-app__card-header{
+    padding:11.5px 22px
+}
+.scheduler-app__card-body{
+    padding:19px 22px;
+    position:relative
+}
+.scheduler-app__flag-icon{
+    margin-right:.5rem
+}
+.scheduler-app__scheduler-location-edit{
+    position:absolute;
+    top:12px;
+    right:19px
+}
+.scheduler-app__store-location-body{
+    padding:0 22px 0 22px;
+    border-top:1px solid rgba(2,75,134,.5);
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .5s,padding-top .5s,padding-bottom .5s
+}
+.scheduler-app__store-location-body p.scheduler-app__card-line{
+    color:#024b86;
+    font-weight:400;
+    font-size:.875rem;
+    line-height:21px
+}
+.scheduler-app__store-location-body.showBody{
+    max-height:500px;
+    padding-top:12px;
+    padding-bottom:22px
+}
+.scheduler-app__appointment-providedby{
+    font-size:12px;
+    color:#666;
+    margin-top:10px;
+    line-height:normal;
+    font-weight:normal;
+    text-align:left
+}
+.scheduler-app__card-column{
+    padding-top:1.5rem
+}
+.first-step.logged-in .scheduler-app__card-column{
+    padding-top:0
+}
+@media(min-width: 768px){
+    .scheduler-app__card-column{
+        padding-top:0
+    }
+}
+.scheduler-app__card-container{
+    padding:0 1.5rem
+}
+@media(min-width: 768px){
+    .scheduler-app__card-container{
+        padding:0
+    }
+}
+.scheduler-app__card-container--patient-select{
+    background-color:#fff;
+    margin-bottom:2rem;
+    padding-bottom:1px;
+    padding-top:1rem
+}
+@media(min-width: 768px){
+    .scheduler-app__card-container--patient-select{
+        background-color:rgba(0,0,0,0);
+        margin-bottom:0;
+        padding-top:0
+    }
+}
+.scheduler-app__card{
+    background-color:hsla(0,0%,100%,.5);
+    width:100%;
+    margin-bottom:20px;
+    border-radius:4px;
+    border:1px rgba(2,75,134,.5) solid;
+    border-bottom:4px rgba(2,75,134,.5) solid
+}
+@media(min-width: 768px){
+    .scheduler-app__card{
+        width:335px
+    }
+}
+.scheduler-app__card--contact{
+    padding:20px
+}
+.scheduler-app__card--contact a{
+    text-decoration:underline
+}
+.scheduler-app__card--contact .buttons{
+    padding-top:20px
+}
+.scheduler-app__card-header{
+    align-items:center;
+    border:0;
+    display:flex;
+    justify-content:space-between;
+    position:relative;
+    width:100%
+}
+.scheduler-app__card-header:focus,.scheduler-app__card-header:active{
+    outline:0 !important;
+    border:0
+}
+.scheduler-app__card-header .arrow{
+    align-items:center;
+    display:flex;
+    justify-content:center;
+    margin-left:8px;
+    margin-top:0px;
+    border:0;
+    padding:0;
+    position:relative
+}
+.scheduler-app__card-header .arrow::before{
+    position:relative;
+    content:"";
+    display:block;
+    width:10px;
+    height:2px;
+    background:#024b86;
+    transition:.3s ease-in-out;
+    transform:rotate(45deg)
+}
+.scheduler-app__card-header .arrow::after{
+    position:relative;
+    content:"";
+    display:block;
+    width:10px;
+    height:2px;
+    background:#024b86;
+    transition:.3s ease-in-out;
+    left:-3px;
+    top:0;
+    transform:rotate(-45deg)
+}
+.scheduler-app__card-header .arrow.active::before{
+    transform:rotate(-45deg)
+}
+.scheduler-app__card-header .arrow.active::after{
+    transform:rotate(45deg)
+}
+.scheduler-app__card-header__flag-container{
+    align-items:center;
+    color:#024b86;
+    display:flex;
+    text-decoration:none
+}
+.scheduler-app__card-header__flag-container .icon-ambest-flag{
+    top:-5px;
+    width:18px
+}
+.scheduler-app__card-header__flag-container .icon-ambest-flag::before{
+    font-size:11px
+}
+.scheduler-app__card-header__flag-container img{
+    margin-right:5px
+}
+.theme-mo .scheduler-app__card-header__flag-container img,.theme-walmart .scheduler-app__card-header__flag-container img{
+    height:24px;
+    width:24px
+}
+.scheduler-app__card-line{
+    color:#000;
+    margin-bottom:0;
+    margin-right:auto;
+    line-height:25px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    font-size:.875rem
+}
+.scheduler-app__card-line strong{
+    margin-right:.5rem
+}
+.scheduler-app__card-link{
+    color:#2459a9;
+    display:flex;
+    font-size:1rem;
+    height:20px;
+    margin-left:auto;
+    text-decoration:none;
+    text-transform:initial;
+    width:20px
+}
+.scheduler-app__form-control,.scheduler-app__form-group{
+    height:50px;
+    margin-top:0
+}
+.scheduler-app__form-group{
+    margin-bottom:1.5rem
+}
+.scheduler-app__form-control{
+    background-clip:padding-box;
+    background-color:#fff;
+    border:1px solid #8b8b8b;
+    border-radius:0;
+    color:#2e2e2e;
+    display:block;
+    font-size:1rem;
+    font-weight:400;
+    height:50px;
+    line-height:1.15;
+    margin-top:0;
+    padding:10px 15px;
+    transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    width:100%
+}
+.scheduler-app__form-control--error{
+    background:#fde5f9;
+    border-color:#dc3545;
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.075)
+}
+.scheduler-app .a-text-input{
+    font-size:1rem
+}
+.scheduler-app .a-text-input__float-label-container--active .scheduler-app__form-control{
+    border:1px #024b86 solid
+}
+.scheduler-app .a-text-input__float-label-container--active .a-text-input__float-label{
+    top:-10px;
+    left:12px;
+    color:#2459a9;
+    font-weight:400;
+    background:#fff;
+    width:auto;
+    padding:0 5px;
+    font-size:.875rem;
+    font-size:.875rem
+}
+.scheduler-app .a-text-input__float-label{
+    top:12px;
+    font-size:1rem;
+    color:#949494;
+    line-height:24.8px;
+    position:absolute
+}
+.scheduler-app .a-text-input__hide-show-password{
+    border:0;
+    color:#666;
+    height:48px;
+    padding-right:.75rem;
+    position:absolute;
+    right:0;
+    top:0
+}
+.scheduler-app .a-text-input__hide-show-password::before{
+    font-size:24px
+}
+.scheduler-app__form-dob .scheduler-app__form-group{
+    margin-bottom:0;
+    max-height:48px
+}
+.scheduler-app__form-dob .a-text-input{
+    border:1px #999 solid;
+    display:block;
+    height:48px;
+    padding:0 19px;
+    line-height:48px;
+    width:157px
+}
+.scheduler-app__form-dob .a-text-input__float-label{
+    color:#949494;
+    font-size:1rem;
+    line-height:24.8px
+}
+.scheduler-app__form-dob .a-text-input__float-label-container--active .a-text-input__float-label{
+    background:#fff;
+    color:#2459a9;
+    font-size:.875rem;
+    font-weight:400;
+    left:12px;
+    padding:0 5px;
+    width:auto
+}
+.scheduler-app__dob-legend{
+    display:block;
+    width:auto;
+    height:auto;
+    clip:unset;
+    margin:0;
+    position:static
+}
+.scheduler-app__input-group--dob{
+    display:flex;
+    flex-direction:column;
+    position:relative
+}
+.scheduler-app__input-group--dob:last-child::before{
+    content:""
+}
+.scheduler-app__input-group--dob::before{
+    content:"/";
+    position:absolute;
+    top:14px;
+    left:48px;
+    height:40px;
+    font-size:18px
+}
+.scheduler-app__input-group--dob:not(:last-child){
+    margin-right:0px
+}
+.scheduler-app__label-dob{
+    display:none;
+    font-size:11px;
+    margin-bottom:5px
+}
+.scheduler-app__label-dob .scheduler-app__form-error{
+    display:none
+}
+.scheduler-app__input-dob{
+    display:inline-block;
+    height:48px;
+    max-width:62px;
+    padding:6px 10px;
+    text-align:center;
+    font-size:1rem;
+    color:#747474;
+    text-transform:uppercase;
+    border:0
+}
+.scheduler-app__input-dob::placeholder{
+    color:#747474
+}
+.scheduler-app__input-dob:placeholder-shown{
+    text-align:left
+}
+.scheduler-app__input-dob:focus-visible{
+    border:0;
+    outline:0
+}
+.scheduler-app__input-dob--month,.scheduler-app__input-dob--day{
+    max-width:55px;
+    padding-left:0
+}
+.scheduler-app__input-dob--month:placeholder-shown{
+    padding:6px 12px
+}
+.scheduler-app__input-dob--day:placeholder-shown{
+    padding:6px 15px
+}
+.scheduler-app__input-dob--year:placeholder-shown{
+    padding:6px 10px
+}
+.scheduler-app__fieldset{
+    margin-bottom:14px
+}
+.scheduler-app__assistance-list{
+    margin-left:20px;
+    margin-top:10px
+}
+.scheduler-app__assistance-list li{
+    color:#000;
+    font-size:1rem;
+    font-weight:400;
+    line-height:1.375rem
+}
+.scheduler-app__logged-in-patient-select{
+    margin-bottom:2rem
+}
+.scheduler-app__patient-details-section{
+    border:1px rgba(2,75,134,.5) solid;
+    width:333px;
+    padding:20px 21px;
+    background:hsla(0,0%,100%,.5);
+    border-radius:4px;
+    border-bottom:4px rgba(2,75,134,.5) solid;
+    margin-bottom:27px
+}
+.scheduler-app__patient-details-section .scheduler-app__patient-section-title{
+    display:flex;
+    align-items:flex-start;
+    margin-bottom:7px
+}
+.scheduler-app__patient-details-section .scheduler-app__patient-section-title .icon-user{
+    font-size:1rem;
+    color:#2459a9;
+    font-weight:bold;
+    margin-right:11px
+}
+.scheduler-app__patient-details-section .scheduler-app__patient-section-title .scheduler-patient-name{
+    font-weight:700;
+    font-size:1rem;
+    color:#024b86
+}
+.scheduler-app__radio-options{
+    align-items:stretch;
+    display:flex;
+    gap:0 1rem;
+    margin-bottom:.25rem;
+    padding:0
+}
+@media(min-width: 768px){
+    .scheduler-app__radio-options{
+        width:330px
+    }
+}
+.scheduler-app__radio-options--wrap{
+    flex-wrap:wrap
+}
+.scheduler-app__radio{
+    line-height:24.75px;
+    line-height:1.546875rem;
+    font-size:18px;
+    font-size:1.125rem;
+    align-items:center;
+    box-shadow:0px 3px 5px rgba(0,0,0,.1);
+    border:0px;
+    border-radius:2px;
+    color:#0077b4;
+    cursor:pointer;
+    display:flex;
+    flex:1 1 100%;
+    flex-wrap:nowrap;
+    font-weight:bold;
+    height:100%;
+    justify-content:center;
+    margin-bottom:1rem;
+    max-height:71px;
+    padding:9.64px;
+    text-align:center;
+    position:relative
+}
+.scheduler-app__radio.checked{
+    border:1px solid #024b86;
+    box-shadow:none;
+    color:#024b86
+}
+.scheduler-app__radio.checked::after{
+    content:"";
+    position:absolute;
+    left:0px;
+    right:0px;
+    bottom:0;
+    height:3px;
+    background-color:#024b86
+}
+.scheduler-app__radio.checked span::before{
+    border-color:#fff;
+    background-color:#fff
+}
+.scheduler-app__radio .subtext{
+    font-weight:normal
+}
+.scheduler-app__radio--block{
+    display:block;
+    padding:15px 30px
+}
+.scheduler-app__radio-inner-label{
+    position:relative;
+    bottom:3px
+}
+.scheduler-app__btn-group .a-btn--primary,.scheduler-app__btn-group .a-btn--accent{
+    width:100%;
+    height:44px;
+    line-height:44px;
+    font-size:1rem;
+    color:#fff;
+    font-weight:700;
+    padding:0
+}
+.scheduler-app__btn-group .a-btn--primary:hover,.scheduler-app__btn-group .a-btn--accent:hover{
+    color:#024b86
+}
+.scheduler-app__btn-group .a-btn--accent:hover,.scheduler-app__btn-group .a-btn--accent:focus{
+    background:#295edb;
+    border-color:#295edb;
+    color:#fff
+}
+.scheduler-app__btn-group .a-btn--accent:focus{
+    outline:auto
+}
+.scheduler-app__form-group-wrapper{
+    margin:0 auto 1.5rem
+}
+.scheduler-app label.has-error{
+    position:absolute;
+    bottom:-5px
+}
+.scheduler-app .m-select-box .sr-only{
+    position:absolute
+}
+.scheduler-app .checkbox label::before{
+    border:2px solid #949494;
+    min-height:22px;
+    min-width:22px
+}
+.scheduler-app label{
+    position:relative
+}
+.scheduler-app label input[type=radio]{
+    appearance:none;
+    background-color:rgba(0,0,0,0);
+    border:0;
+    border-radius:0;
+    height:100%;
+    left:0;
+    outline:none;
+    width:100%;
+    position:absolute;
+    top:0;
+    z-index:1
+}
+.scheduler-app label input[type=radio]:focus{
+    outline:auto
+}
+@media(min-width: 768px){
+    .scheduler-app__form{
+        max-width:333px
+    }
+}
+.scheduler-app__form legend{
+    all:initial;
+    font-family:Lato,Verdana,sans-serif;
+    font-size:.875rem;
+    margin-bottom:20px
+}
+.scheduler-app__form h5{
+    font-size:1rem;
+    line-height:1.5rem;
+    margin-bottom:0
+}
+.scheduler-app__form.disabled{
+    opacity:.5
+}
+.scheduler-app__form.disabled:after{
+    content:"";
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    cursor:not-allowed
+}
+.scheduler-app__form fieldset{
+    border:none;
+    padding:0
+}
+.scheduler-app .m-select-box{
+    position:relative;
+    height:48px;
+    margin-bottom:1.5rem;
+    max-width:none;
+    width:auto
+}
+.scheduler-app .m-select-box .scheduler-app__select-legend{
+    color:#024b86;
+    font-weight:400;
+    background:#fff;
+    width:auto;
+    padding:0 5px;
+    font-size:13px;
+    display:inline;
+    position:absolute;
+    top:-8px;
+    z-index:99;
+    left:12px
+}
+.scheduler-app .m-select-box:after{
+    color:#024b86;
+    font-size:.875rem;
+    right:12px
+}
+.scheduler-app .a-select-menu{
+    font-weight:normal;
+    height:50px;
+    padding:0 3rem 0 1rem
+}
+.scheduler-app__checkbox{
+    margin-bottom:1.5rem
+}
+.scheduler-app__checkbox sup{
+    font-size:55%;
+    top:-0.7em
+}
+.scheduler-app__checkbox .a-checkbox__input:checked+.a-checkbox__label::after{
+    color:#fff
+}
+.scheduler-app__checkbox .a-checkbox__input:disabled+.a-checkbox__label{
+    cursor:not-allowed;
+    opacity:1
+}
+.scheduler-app__checkbox .a-checkbox__input:disabled+.a-checkbox__label::before{
+    background:#f3f2ef;
+    border:1px solid #dedacd
+}
+.scheduler-app__checkbox .a-checkbox__label{
+    display:flex;
+    align-items:center
+}
+.scheduler-app__checkbox .a-checkbox__label span{
+    font-size:1rem;
+    font-weight:400;
+    color:#333;
+    line-height:1.25rem;
+    position:relative;
+    padding-left:40px;
+    white-space:normal;
+    width:90%
+}
+.scheduler-app__checkbox .a-checkbox__label::before,.scheduler-app__checkbox .a-checkbox__label::after{
+    min-height:24px;
+    min-width:24px;
+    left:auto;
+    position:absolute;
+    top:auto
+}
+.scheduler-app__checkbox .a-checkbox__label::before{
+    border:1px #2459a9 solid;
+    border-radius:2px;
+    box-shadow:0 0 0 1px #2459a9
+}
+.scheduler-app__checkbox .a-checkbox__label::after{
+    background:#024b86;
+    min-width:26px;
+    min-height:26px;
+    text-align:center;
+    line-height:26px;
+    font-size:.875rem
+}
+.scheduler-app__select{
+    font-size:15px
+}
+.scheduler-app__input-group{
+    display:inline-block
+}
+.scheduler-app__input-group:not(:last-child){
+    margin-right:18px
+}
+.scheduler-app__form-error{
+    align-items:center;
+    color:#dc3545;
+    display:flex
+}
+.scheduler-app__form-error span{
+    margin-right:.25rem
+}
+.scheduler-app__form--login #loginForm{
+    padding-right:0;
+    padding-left:0
+}
+.scheduler-app__form--login #loginForm .page-login__btn-block{
+    text-align:center
+}
+.scheduler-app__form--login #loginForm .page-login__btn-block .login-page__or{
+    display:none
+}
+.scheduler-app__form--login .page-login__headline{
+    margin-left:0;
+    margin-bottom:30px;
+    font-weight:700;
+    font-size:18px
+}
+.scheduler-app__form--login .page-login__headline .icon-user{
+    padding-left:10px;
+    color:rgba(17,74,133,.25);
+    font-size:.875rem
+}
+.scheduler-app__form--login .page-login__signin-onetime-link-btn{
+    display:none
+}
+.scheduler-app__form--login .page-login__form .form-group{
+    margin-top:0;
+    margin-bottom:1.5rem
+}
+.scheduler-app__btn-group{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:30px
+}
+.scheduler-app__login-modal{
+    display:block
+}
+.scheduler-app__login-modal .modal-dialog{
+    max-width:345px;
+    margin:auto
+}
+.scheduler-app__navigation-wrapper{
+    align-items:center;
+    display:flex;
+    margin-bottom:1rem;
+    padding-left:1.5rem
+}
+@media(min-width: 768px){
+    .scheduler-app__navigation-wrapper{
+        margin-bottom:0;
+        padding-left:0
+    }
+}
+.scheduler-app__navigation{
+    align-items:center;
+    display:flex;
+    margin-left:12px;
+    padding:0;
+    width:94px
+}
+@media(min-width: 480px){
+    .scheduler-app__navigation{
+        width:79px
+    }
+}
+.first-step .scheduler-app__navigation{
+    width:155px
+}
+@media(min-width: 480px){
+    .first-step .scheduler-app__navigation{
+        width:132px
+    }
+}
+.scheduler-app__navigation-title{
+    font-size:1rem;
+    margin-bottom:0;
+    white-space:nowrap
+}
+.scheduler-app__footer-actions{
+    padding:0;
+    background-color:#fff;
+    bottom:-122px;
+    border-top:1px solid #dedacd;
+    padding:12px 20px;
+    backface-visibility:hidden;
+    z-index:1000;
+    width:100%;
+    transition:bottom .25s
+}
+.modal-open .scheduler-app__footer-actions{
+    z-index:100
+}
+.scheduler-app__footer-actions.sticky{
+    position:sticky;
+    bottom:0
+}
+.scheduler-app__footer-actions.sticky.is-pinned{
+    box-shadow:3px 0px 8px rgba(0,0,0,.25)
+}
+@media(min-width: 768px){
+    .scheduler-app__footer-actions{
+        border-top:1px #888 solid
+    }
+    .scheduler-app__footer-actions.sticky{
+        border-top:none
+    }
+}
+.scheduler-app__remoteCare{
+    width:100%
+}
+@media(min-width: 768px){
+    .scheduler-app__remoteCare{
+        margin-left:auto;
+        width:auto
+    }
+}
+.scheduler-app__cta-btns{
+    align-items:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    margin:0 auto .5rem;
+    padding:0 1rem;
+    width:100%
+}
+@media(min-width: 768px){
+    .scheduler-app__cta-btns.remote-disclaimer-visible{
+        margin-left:2rem;
+        width:auto
+    }
+}
+.scheduler-app__text{
+    margin-bottom:.5rem
+}
+.scheduler-app__btn-action{
+    align-items:center;
+    display:flex;
+    flex-direction:column
+}
+@media(min-width: 768px){
+    .scheduler-app__btn-action{
+        flex-direction:row
+    }
+}
+.scheduler-app__btn-action .scheduler-app__btn+.scheduler-app__btn{
+    margin-top:16px
+}
+.scheduler-app__btn{
+    font-size:1rem;
+    height:48px;
+    line-height:0;
+    padding:15px 12px;
+    width:100%
+}
+@media(min-width: 376px){
+    .scheduler-app__btn{
+        font-size:1rem
+    }
+}
+@media(max-width: 772px)and (min-width: 698px){
+    .scheduler-app__btn{
+        font-size:13px
+    }
+}
+@media(min-width: 768px){
+    .scheduler-app__btn{
+        width:324px
+    }
+}
+@media(min-width: 376px){
+    .scheduler-app__btn--outline{
+        font-size:1rem
+    }
+}
+.scheduler-app__appointment-remote-care-disclaimer{
+    margin-bottom:1rem;
+    margin-left:0;
+    padding:1rem;
+    width:100%;
+    margin-bottom:0
+}
+.scheduler-app__footer-actions .scheduler-app__appointment-remote-care-disclaimer{
+    background:#fff;
+    border-bottom:1px solid #ccc;
+    display:flex;
+    justify-content:center;
+    margin-bottom:1rem;
+    padding:0 0 1rem;
+    width:100%
+}
+@media(min-width: 768px){
+    .scheduler-app__appointment-remote-care-disclaimer{
+        box-shadow:none;
+        padding-right:0;
+        position:relative
+    }
+    .scheduler-app__footer-actions .scheduler-app__appointment-remote-care-disclaimer{
+        background:rgba(0,0,0,0);
+        border-bottom:0;
+        box-shadow:none;
+        justify-content:flex-start;
+        position:relative;
+        padding-bottom:0
+    }
+    .scheduler-app__footer-actions .scheduler-app__appointment-remote-care-disclaimer::after{
+        display:none
+    }
+}
+.scheduler-app__appointment-remote-care-disclaimer .btn-link{
+    color:#0077b4;
+    font-size:14px;
+    line-height:19.25px
+}
+.scheduler-app__appointment-remote-care-disclaimer .btn-link:hover{
+    color:#0077b4
+}
+.scheduler-app__appointment-remote-care-disclaimer::before{
+    align-items:center;
+    background-color:#2459a9;
+    border:1px solid #2459a9;
+    border-radius:100%;
+    background-size:75%;
+    content:"";
+    color:#fff;
+    display:flex;
+    font-size:24px;
+    height:28px;
+    justify-content:center;
+    padding:2px 0 0 2px;
+    margin-right:1rem;
+    margin-top:5px;
+    min-width:30px;
+    width:28px
+}
+.scheduler-app__appointment-remote-care-disclaimer>p{
+    font-size:.875rem;
+    margin:0;
+    line-height:1.5rem
+}
+.scheduler-app__appointment-remote-care-disclaimer>p button{
+    color:#0077b4;
+    font-family:Lato,Verdana,sans-serif;
+    font-size:1rem;
+    letter-spacing:normal;
+    vertical-align:baseline;
+    text-decoration:underline
+}
+.scheduler-app__appointment-remote-care-disclaimer>p button:hover{
+    color:#0077b4
+}
+.scheduler-app__appointment-blocks .scheduler-app__appointment-remote-care-disclaimer>p button{
+    font-size:.875rem;
+    color:#0077b4
+}
+.scheduler-app__appointment-blocks .scheduler-app__appointment-remote-care-disclaimer>p button:hover{
+    color:#0077b4
+}
+@media(min-width: 768px){
+    .scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer{
+        margin-bottom:0
+    }
+}
+.scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer::before{
+    height:32px;
+    width:33.95px;
+    min-width:33.95px;
+    font-size:24px;
+    padding-left:0
+}
+.scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer p{
+    font-size:.875rem;
+    line-height:19.25px;
+    max-width:220.05px
+}
+@media(min-width: 768px){
+    .scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer p{
+        font-size:.875rem;
+        line-height:19.25px
+    }
+}
+.scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer p strong span{
+    font-size:.875rem
+}
+@media(min-width: 768px){
+    .scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer p strong span{
+        font-size:1rem
+    }
+}
+.scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer p a{
+    font-size:.875rem
+}
+@media(min-width: 768px){
+    .scheduler-app__btn-action .scheduler-app__appointment-remote-care-disclaimer p a{
+        font-size:1rem
+    }
+}
+.scheduler-app .animation{
+    animation-duration:.2s;
+    animation-fill-mode:both
+}
+.scheduler-app .leFadeInLeft{
+    animation-name:leFadeInLeft
+}
+@keyframes leFadeInLeft{
+    from{
+        opacity:0;
+        transform:translateX(-60px)
+    }
+    to{
+        opacity:1
+    }
+}
+.scheduler-app .leFadeOutLeft{
+    animation-name:leFadeOutLeft
+}
+@keyframes leFadeOutLeft{
+    from{
+        opacity:1
+    }
+    to{
+        opacity:0;
+        transform:translateX(-60px)
+    }
+}
+.scheduler-app__navigation-step{
+    background-color:rgba(2,75,134,.2);
+    border-radius:5px;
+    display:inline-flex;
+    height:3px;
+    list-style-type:none;
+    position:relative;
+    width:50%;
+    z-index:1
+}
+.scheduler-app__navigation-step:last-child{
+    border-top-left-radius:0;
+    border-bottom-left-radius:0;
+    margin-left:-4px
+}
+.scheduler-app__navigation-step.active,.scheduler-app__navigation-step.complete{
+    background-color:#024b86
+}
+.scheduler-app__navigation-step.active{
+    z-index:2
+}
+.scheduler-app__text{
+    font-size:1rem
+}
+.scheduler-datepicker__modal-trigger{
+    align-items:center;
+    background:none;
+    border:none;
+    color:#2459a9;
+    display:flex;
+    font-size:.875rem;
+    font-weight:700;
+    padding:0;
+    text-decoration:none;
+    text-transform:capitalize;
+    transition:none
+}
+.scheduler-datepicker__modal-trigger.active,.scheduler-datepicker__modal-trigger:hover,.scheduler-datepicker__modal-trigger:focus{
+    color:#024b86
+}
+.dp__theme_light{
+    --dp-background-color: transparent;
+    --dp-menu-border-color: transparent;
+    --dp-primary-color: #2459A9;
+    --dp-cell-border-radius: 0
+}
+.dp--header-wrap{
+    background-color:var(--dp-primary-color)
+}
+.dp--arrow-btn-nav{
+    padding-left:0;
+    padding-right:0
+}
+.dp--arrow-btn-nav .dp__inner_nav{
+    color:#fff
+}
+.dp--arrow-btn-nav .dp__inner_nav:hover{
+    background:rgba(0,0,0,0)
+}
+.dp__month_year_wrap{
+    align-items:center
+}
+.dp__month_year_select{
+    font-size:20px;
+    font-weight:700;
+    color:#fff
+}
+.dp__menu_inner{
+    padding:0
+}
+.dp__overlay{
+    background:#fff
+}
+.dp__overlay_container{
+    padding:5px
+}
+.dp__calendar_item{
+    padding:5px
+}
+.dp__cell_inner{
+    background:#fff;
+    box-shadow:0px 3px 5px rgba(0,0,0,.1);
+    height:32px;
+    width:32px
+}
+.dp__cell_disabled{
+    background:rgba(0,0,0,0);
+    box-shadow:none;
+    color:#aaa
+}
+.dp__active_date{
+    background:var(--dp-primary-color)
+}
+.scheduler-app__footer-note{
+    display:flex;
+    background:#feeed5;
+    border:3px #fdcb81 solid;
+    padding:14px 20px 14px 20px;
+    border-radius:5px;
+    font-size:1rem;
+    color:#1c1818;
+    line-height:22.4px;
+    line-height:1.4rem;
+    width:auto;
+    max-height:275px;
+    max-width:424px;
+    margin:1rem auto 2rem
+}
+.scheduler-app__footer-note a{
+    color:#024b86;
+    text-decoration:none
+}
+.scheduler-app__footer-note p{
+    color:#737373;
+    font-size:13px;
+    margin-bottom:0
+}
+.scheduler-app__footer-note .container{
+    text-align:center;
+    max-width:827px;
+    margin:auto
+}
+.scheduler-app__footer-note .icon-info-circle{
+    font-size:22px;
+    font-size:1.375rem;
+    position:relative;
+    top:3px;
+    margin-right:12px
+}
+.scheduler-app__location-name{
+    font-weight:700;
+    margin-right:7px;
+    text-decoration:none;
+    color:#1c1818
+}
+.scheduler-app .scheduler-notice{
+    padding:0 1rem
+}
+.scheduler-app__appointment-wrapper .scheduler-app__digital-eyeexam-block{
+    align-items:center;
+    display:flex;
+    justify-content:center;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:16px
+}
+@media(min-width: 768px){
+    .scheduler-app__appointment-wrapper .scheduler-app__digital-eyeexam-block{
+        width:22vw
+    }
+}
+.scheduler-app__appointment-wrapper .scheduler-app__digital-eyeexam-block .icon-remote-exam{
+    align-items:center;
+    background:#2459a9;
+    border-radius:50%;
+    color:#fff;
+    display:flex;
+    font-size:20px;
+    height:28px;
+    justify-content:center;
+    margin-right:20px;
+    min-width:28px;
+    padding:4px;
+    text-align:center;
+    width:28px
+}
+.scheduler-app__appointment-wrapper .scheduler-app__digital-eyeexam-block p{
+    color:#000;
+    font-size:.875rem;
+    font-weight:400;
+    line-height:19.25px;
+    margin-bottom:0
+}
+.scheduler-app__appointment-wrapper .scheduler-app__digital-eyeexam-block p a{
+    color:#2459a9;
+    text-decoration:underline
+}
+.scheduler-app__appointment-time-slots{
+    padding:0px;
+    position:relative;
+    width:389px
+}
+.scheduler-app__appointment-time-slots .scheduler-app__slots-header,.scheduler-app__appointment-time-slots .scheduler-app__slots-container{
+    align-items:start;
+    display:flex;
+    gap:0 1.5rem;
+    justify-content:center
+}
+.scheduler-app__appointment-time-slots .scheduler-app__slots-header{
+    position:sticky;
+    top:155px;
+    z-index:101
+}
+.modal-open .scheduler-app__appointment-time-slots .scheduler-app__slots-header{
+    z-index:99
+}
+.scheduler-app__appointment-time-slots .scheduler-app__slots-container{
+    position:relative;
+    z-index:99
+}
+.scheduler-app__appointment-time-slots::after{
+    border-left:1px solid #dedacd;
+    border-right:1px solid #dedacd;
+    content:"";
+    height:calc(100% - 45px);
+    top:38px;
+    left:40px;
+    width:220px;
+    position:absolute;
+    z-index:0
+}
+@media(min-width: 768px){
+    .scheduler-app__appointment-time-slots::after{
+        left:45px;
+        width:300px
+    }
+}
+.scheduler-app__appointment-time-slots::before{
+    content:"";
+    position:absolute;
+    top:38px;
+    left:155px;
+    width:1px;
+    height:calc(100% - 45px);
+    border-left:1px solid #dedacd
+}
+@media(min-width: 768px){
+    .scheduler-app__appointment-time-slots::before{
+        left:195px
+    }
+}
+.scheduler-app__slot-column{
+    align-items:center;
+    display:flex;
+    flex-direction:column;
+    gap:.75rem;
+    margin:0;
+    min-width:85px;
+    width:85px
+}
+@media(min-width: 768px){
+    .scheduler-app__slot-column{
+        min-width:128px;
+        width:128px
+    }
+}
+.scheduler-app__slot-column .scheduler-app__timeslot-title{
+    text-align:center;
+    width:85px
+}
+@media(min-width: 768px){
+    .scheduler-app__slot-column .scheduler-app__timeslot-title{
+        width:128px
+    }
+}
+.scheduler-app__slot-column .scheduler-app__timeslot-title span{
+    display:block;
+    height:5px;
+    border-top:1px #024b86 solid;
+    border-left:1px #024b86 solid;
+    border-right:1px #024b86 solid
+}
+.scheduler-app__slot-column .scheduler-app__timeslot-title h4{
+    font-size:.875rem;
+    line-height:19.25px;
+    color:#024b86;
+    font-weight:400;
+    padding-top:0
+}
+.scheduler-app__appointment-timeslot{
+    padding:0 4rem 1rem 4rem;
+    width:100%
+}
+@media(min-width: 768px){
+    .scheduler-app__appointment-timeslot{
+        padding:0 7rem 1rem 7rem
+    }
+}
+.scheduler-app__appointment-blocks{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    margin:1.25rem 0;
+    position:relative
+}
+.scheduler-app__appointment-block{
+    flex-basis:30%;
+    flex-grow:0;
+    border-top:1px solid #024b86;
+    border-bottom:1px solid #024b86;
+    border-right:1px solid #024b86;
+    color:#444;
+    cursor:pointer;
+    position:relative;
+    padding:10px 0
+}
+.scheduler-app__appointment-block.active-block{
+    background:#024b86;
+    color:#fff
+}
+.scheduler-app__appointment-block.disabled{
+    background:#efefef;
+    border-color:#8b8b8b;
+    color:#8b8b8b
+}
+.scheduler-app__appointment-block.first{
+    border-left:1px solid #024b86
+}
+.scheduler-app__banner-message{
+    display:flex;
+    flex-wrap:wrap
+}
+.scheduler-app__banner-message .v-banner{
+    max-width:800px;
+    margin:auto
+}
+.scheduler-app__appointment-time-slot{
+    font-size:1rem;
+    background:#2459a9;
+    border:2px solid #2459a9;
+    border-radius:2px;
+    color:#fff;
+    cursor:pointer;
+    display:block;
+    font-weight:700;
+    height:42px;
+    line-height:38px;
+    padding:0;
+    position:relative;
+    text-align:center;
+    white-space:nowrap;
+    width:85px
+}
+@media(min-width: 768px){
+    .scheduler-app__appointment-time-slot{
+        width:128px
+    }
+}
+.scheduler-app__appointment-time-slot:hover{
+    background-color:#024b86;
+    border-color:#024b86
+}
+.scheduler-app__appointment-time-slot.selected{
+    background:#fff;
+    border-color:#024b86;
+    color:#024b86
+}
+.scheduler-app__appointment-time-slot.selected .icon-remote-exam{
+    color:#fff
+}
+.scheduler-app__appointment-time-slot.remote.selected::before{
+    color:#014b86
+}
+.scheduler-app__appointment-time-slot input{
+    position:absolute
+}
+.scheduler-app__appointment-time-slot span{
+    font-size:1rem;
+    pointer-events:none
+}
+.scheduler-app__appointment-time-slot .icon-remote-exam{
+    position:absolute;
+    top:-3px;
+    right:-13px;
+    width:28px;
+    height:28px;
+    background-color:#2459a9;
+    border-radius:50%;
+    text-align:center;
+    padding:4px;
+    font-size:20px;
+    filter:drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.15))
+}
+.scheduler-app__weekpicker-item{
+    border-radius:4px;
+    border:0;
+    cursor:pointer;
+    list-style-type:none;
+    max-height:168px;
+    min-height:84px;
+    text-align:center;
+    position:relative;
+    margin-left:0;
+    background-color:#fff;
+    padding:7px;
+    margin:0px 0 15px;
+    box-shadow:0px 3px 5px rgba(0,0,0,.1);
+    outline:0;
+    -webkit-appearance:none;
+    letter-spacing:normal
+}
+.scheduler-app__weekpicker-item:focus{
+    outline:auto
+}
+.scheduler-app__weekpicker-item.selected{
+    background-color:#fff;
+    border:2px #024b86 solid;
+    border-bottom:4px #024b86 solid;
+    color:#fff;
+    box-shadow:none
+}
+.scheduler-app__weekpicker-item.disabled{
+    background-color:rgba(141,134,109,.15);
+    border-top:none;
+    color:#000;
+    pointer-events:none;
+    border:0;
+    box-shadow:0 0 0
+}
+.scheduler-app__weekpicker-item:last-child .scheduler-app__weekpicker-date{
+    border-right:none
+}
+.scheduler-app__weekpicker-day{
+    align-items:center;
+    background:#fff;
+    color:#666;
+    display:flex;
+    font-size:.875rem;
+    font-weight:400;
+    height:auto;
+    justify-content:center
+}
+.scheduler-app__weekpicker-day.selected{
+    background:#fff;
+    border-top-color:rgba(0,0,0,0);
+    border-radius:2px 2px 0 0;
+    color:#666;
+    font-weight:400
+}
+.scheduler-app__weekpicker-day.disabled{
+    pointer-events:none;
+    background-color:rgba(0,0,0,0);
+    border-bottom-color:#fff;
+    color:#666;
+    margin-left:-2px
+}
+.scheduler-app__weekpicker-date{
+    align-items:center;
+    border-radius:2px 2px 0 0;
+    color:#2459a9;
+    display:flex;
+    font-size:1rem;
+    font-weight:700;
+    flex-direction:row;
+    justify-content:center;
+    margin-bottom:5px;
+    max-height:27px;
+    min-height:27px;
+    position:relative
+}
+@media(min-width: 768px){
+    .scheduler-app__weekpicker-date{
+        min-height:24px;
+        max-height:24px
+    }
+}
+.scheduler-app__weekpicker-date.selected{
+    background-color:#fff;
+    border:0;
+    border-radius:4px;
+    color:#024b86
+}
+.scheduler-app__weekpicker-date.selected .scheduler-app__weekpicker-today{
+    color:#024b86
+}
+.scheduler-app__weekpicker-date.disabled{
+    color:#666;
+    pointer-events:none;
+    font-size:12px;
+    font-weight:400;
+    margin-left:-1px;
+    padding-left:15px;
+    padding-right:15px
+}
+.scheduler-app__weekpicker-date.disabled.selected{
+    background:rgba(0,0,0,0)
+}
+.scheduler-app__weekpicker-date.disabled .scheduler-app__weekpicker-today{
+    color:#6c6c6c
+}
+.scheduler-app__weekpicker-year{
+    color:#aaa;
+    position:absolute;
+    top:.25rem;
+    right:.25rem
+}
+.scheduler-app__weekpicker-today{
+    color:#024b86;
+    font-size:1rem;
+    font-weight:700;
+    color:#2459a9;
+    margin:0 auto;
+    position:static
+}
+.scheduler-app__weekpicker-container{
+    width:100%;
+    background-color:#fff;
+    border-top:1px #dedacd solid;
+    border-bottom:1px #dedacd solid;
+    box-shadow:0px 2px 5px rgba(0,0,0,.1);
+    padding:11px 25px 0px;
+    position:sticky;
+    top:0;
+    z-index:101
+}
+.scheduler-app__weekpicker-container.stuck-weekpicker{
+    padding-bottom:2rem
+}
+@media(min-width: 768px){
+    .scheduler-app__weekpicker-container{
+        padding:11px 115px 0px 115px
+    }
+}
+.scheduler-app__weekpicker-outer{
+    position:relative;
+    margin:auto
+}
+.scheduler-app__appointment-header{
+    align-items:center;
+    display:flex;
+    justify-content:space-between;
+    margin:0 auto 21px;
+    max-width:800px
+}
+.scheduler-app__appointment-title{
+    margin-top:0px;
+    font-size:1rem;
+    color:#000;
+    line-height:24px;
+    margin-bottom:0
+}
+.scheduler-app__swiper-container{
+    position:unset;
+    margin-bottom:0;
+    padding:0 8px
+}
+.scheduler-app__swiper-container .swiper-button-disabled{
+    background:rgba(0,0,0,0);
+    box-shadow:none;
+    opacity:30%
+}
+.scheduler-app__swiper-container .swiper-button-disabled:after{
+    pointer-events:none;
+    color:#8b8b8b
+}
+.scheduler-app__swiper-slider{
+    position:relative;
+    max-width:980px;
+    width:75vw;
+    margin-left:auto;
+    margin-right:auto
+}
+.scheduler-app__swiper-prev,.scheduler-app__swiper-next{
+    align-items:center;
+    background:#fff;
+    border:none;
+    border-radius:100px;
+    color:#024b86;
+    display:flex;
+    height:41px;
+    justify-content:center;
+    opacity:1;
+    position:absolute;
+    top:calc(50% - 25px);
+    width:41px;
+    z-index:1000
+}
+.scheduler-app__swiper-prev:after,.scheduler-app__swiper-next:after{
+    color:#024b86;
+    font-family:"nvicons" !important;
+    font-weight:normal;
+    font-size:1.5rem
+}
+.scheduler-app__swiper-prev:hover,.scheduler-app__swiper-prev:focus,.scheduler-app__swiper-next:hover,.scheduler-app__swiper-next:focus{
+    color:#024b86;
+    opacity:1
+}
+.scheduler-app__swiper-prev{
+    left:-36px
+}
+.scheduler-app__swiper-prev::after{
+    font-size:20px;
+    content:"";
+    text-indent:2px
+}
+.scheduler-app__swiper-next{
+    right:-40px
+}
+.scheduler-app__swiper-next::after{
+    font-size:20px;
+    content:"";
+    text-indent:2px
+}
+.scheduler-app__appointments{
+    position:relative
+}
+.scheduler-app__appointments .overlay{
+    display:block;
+    height:110%;
+    left:-25px;
+    pointer-events:none;
+    top:-20px;
+    width:100vw
+}
+@media(min-width: 768px){
+    .scheduler-app__appointments .overlay{
+        left:-40px;
+        width:110%
+    }
+}
+.scheduler-app__appointments.disabled{
+    opacity:.5
+}
+.scheduler-app__appointments.disabled:after{
+    content:"";
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    cursor:not-allowed
+}
+.scheduler-app__date-view-option{
+    align-items:center;
+    display:flex;
+    font-size:12px;
+    list-style-type:none;
+    justify-content:center;
+    margin:0;
+    padding-inline-start:0;
+    position:relative;
+    width:100%;
+    text-align:center
+}
+@media(min-width: 768px){
+    .scheduler-app__date-view-option{
+        justify-content:flex-end;
+        text-align:right
+    }
+}
+.v-toaster{
+    max-width:800px
+}
+.desktop{
+    display:none
+}
+@media(min-width: 768px){
+    .desktop{
+        display:flex
+    }
+}
+.mobile{
+    display:block
+}
+@media(min-width: 768px){
+    .mobile{
+        display:none
+    }
+}
+#overlay{
+    align-items:center;
+    background:#fff;
+    color:#666;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    position:fixed;
+    height:100%;
+    justify-content:center;
+    width:100%;
+    z-index:5000;
+    top:0;
+    left:0;
+    text-align:center;
+    opacity:.8
+}
+.rebook #overlay{
+    min-height:250px
+}
+@keyframes rotate{
+    0%{
+        transform:rotate(0deg)
+    }
+    100%{
+        transform:rotate(360deg)
+    }
+}
+.spinner{
+    margin:0 auto;
+    height:64px;
+    width:64px;
+    animation:rotate .8s infinite linear;
+    border:5px solid #024b86;
+    border-right-color:rgba(0,0,0,0);
+    border-radius:50%
+}
+.page-examSchedulingPageV2 .t-home,.page-examSchedulerRebookV2 .t-home{
+    overflow:initial !important
+}
+.page-examSchedulingPageV2 .header-container,.page-examSchedulerRebookV2 .header-container{
+    display:none;
+    visibility:hidden
+}
+.page-examSchedulingPageV2 .header-container .js-site-logo,.page-examSchedulerRebookV2 .header-container .js-site-logo{
+    width:0;
+    height:0
+}
+.scheduler-app{
+    background-color:#f3f2f0
+}
+.theme-egw .scheduler-app,.theme-walmart .scheduler-app,.theme-mo .scheduler-app{
+    background-color:#f3f3f3
+}
+.scheduler-app hr{
+    margin-top:0
+}
+.scheduler-app button:focus{
+    outline:auto
+}
+.scheduler-app .sr-only{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0, 0, 0, 0);
+    border:0
+}
+.scheduler-app #cboxOverlay{
+    background:hsla(0,0%,100%,.8)
+}
+.scheduler-app__header-logo-section{
+    align-items:center;
+    display:flex;
+    justify-content:space-between;
+    width:100%
+}
+.page-examSchedulerRebookV2 .scheduler-app__header-logo-section{
+    justify-content:start
+}
+.scheduler-app__logo-section{
+    margin-right:2rem
+}
+.scheduler-app__step-section{
+    align-items:flex-start;
+    flex-direction:column
+}
+.page-examSchedulerRebookV2 .scheduler-app__step-section{
+    margin-left:38px
+}
+.scheduler-app__signIn-section{
+    margin-left:auto
+}
+.scheduler-app__divider{
+    border:none;
+    border-top:1px solid #efefef
+}
+.scheduler-app__content-wrapper{
+    margin:0 auto
+}
+.scheduler-app__content-wrapper--white-bg{
+    background-color:#fff
+}
+.scheduler-app__content-wrapper .c-header__logo img{
+    margin-left:0
+}
+.scheduler-app__sub-header{
+    margin:auto;
+    padding:1rem 1.5rem
+}
+@media(min-width: 768px){
+    .scheduler-app__sub-header{
+        align-items:center;
+        display:flex;
+        height:86px;
+        justify-content:space-between;
+        max-width:800px;
+        padding:0px
+    }
+}
+.scheduler-app__sub-header--confirmation{
+    border-top:1px solid #efefef;
+    border-bottom:1px solid #efefef;
+    padding:20px
+}
+.scheduler-app__sub-header .c-cms-hero-block__headline{
+    margin-bottom:0;
+    top:0
+}
+.scheduler-app__ede{
+    display:flex;
+    justify-content:space-around;
+    padding:1rem 0
+}
+.scheduler-app__ede a,.scheduler-app__ede h6{
+    margin:0
+}
+.scheduler-app__ede-exit-link{
+    margin-bottom:15px;
+    text-transform:none
+}
+.scheduler-app__ede-sub-header{
+    text-transform:none
+}
+.scheduler-app__sub-title{
+    color:#000;
+    font-size:20px;
+    letter-spacing:normal;
+    line-height:24px;
+    margin-bottom:0;
+    padding-left:1.5rem
+}
+@media(min-width: 768px){
+    .scheduler-app__sub-title{
+        padding-left:0
+    }
+}
+.scheduler-app__sub-title .icon-eye-exam{
+    color:rgba(17,74,133,.3);
+    position:relative;
+    top:3px;
+    left:5px
+}
+.scheduler-app__body{
+    max-width:800px;
+    margin:auto;
+    width:100%
+}
+@media(min-width: 768px){
+    .scheduler-app__body{
+        align-items:flex-start;
+        display:flex;
+        flex-direction:row-reverse;
+        justify-content:space-between;
+        padding:1.5rem 0
+    }
+}
+.scheduler-app__main-column{
+    padding:0 1.5rem 1.5rem
+}
+@media(min-width: 768px){
+    .scheduler-app__main-column{
+        margin-right:2rem;
+        padding:0
+    }
+}
+.scheduler-app__footer-legal{
+    max-width:800px;
+    margin:auto;
+    padding-top:0
+}
+.scheduler-app__footer-legal p{
+    font-size:12px;
+    margin:0;
+    line-height:19px
+}
+.scheduler-app__button-login{
+    align-items:center;
+    color:#2459a9;
+    display:flex;
+    font-weight:400;
+    font-size:12px;
+    text-transform:initial
+}
+.scheduler-app__button-login .a-icon_icon{
+    margin-right:.25rem
+}
+.scheduler-app__signIn-section a{
+    font-size:12px;
+    text-decoration:none;
+    font-family:"Lato";
+    color:#2459a9
+}
+.scheduler-app__signIn-section a .icon-user{
+    margin-right:5px
+}
+.scheduler-app__rebook-notification{
+    max-width:800px;
+    margin:56px auto 22px;
+    padding:0 24px
+}
+.scheduler-app__rebook-notification p{
+    font-style:normal;
+    font-weight:400;
+    font-size:12px;
+    line-height:19px;
+    color:#333;
+    margin-bottom:0
+}
+.scheduler-app__footer-disclaimer-note{
+    margin-left:auto;
+    margin-right:auto;
+    max-width:800px;
+    padding:37px 27px
+}
+.scheduler-app__footer-disclaimer-note p{
+    color:#666;
+    font-size:12px;
+    line-height:14px;
+    text-align:left;
+    margin-bottom:20px
 }

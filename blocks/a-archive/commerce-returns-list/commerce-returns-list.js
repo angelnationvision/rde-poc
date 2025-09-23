@@ -22,7 +22,9 @@ export default async function decorate(block) {
     return;
   }
 
-  const { 'minified-view': minifiedViewConfig = 'false' } = readBlockConfig(block);
+  const {
+    'minified-view': minifiedViewConfig = 'false',
+  } = readBlockConfig(block);
 
   if (!checkIsAuthenticated()) {
     window.location.href = rootLink(CUSTOMER_LOGIN_PATH);
@@ -49,14 +51,10 @@ export default async function decorate(block) {
         }
         return '';
       },
-      routeReturnDetails: ({ orderNumber, returnNumber }) => rootLink(
-        `${CUSTOMER_RETURN_DETAILS_PATH}?orderRef=${orderNumber}&returnRef=${returnNumber}`,
-      ),
+      routeReturnDetails: ({ orderNumber, returnNumber }) => rootLink(`${CUSTOMER_RETURN_DETAILS_PATH}?orderRef=${orderNumber}&returnRef=${returnNumber}`),
       routeOrderDetails: ({ orderNumber }) => rootLink(`${CUSTOMER_ORDER_DETAILS_PATH}?orderRef=${orderNumber}`),
       routeReturnsList: () => rootLink(CUSTOMER_RETURNS_PATH),
-      routeProductDetails: (productData) => (productData?.product
-        ? rootLink(`/products/${productData.product.urlKey}/${productData.product.sku}`)
-        : rootLink('#')),
+      routeProductDetails: (productData) => (productData?.product ? rootLink(`/products/${productData.product.urlKey}/${productData.product.sku}`) : rootLink('#')),
     })(block);
   }
 }

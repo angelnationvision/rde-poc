@@ -1,5 +1,8 @@
 import {
-  InLineAlert, Icon, Button, provider as UI,
+  InLineAlert,
+  Icon,
+  Button,
+  provider as UI,
 } from '@dropins/tools/components.js';
 import { h } from '@dropins/tools/preact.js';
 import { events } from '@dropins/tools/event-bus.js';
@@ -22,7 +25,11 @@ import ProductAttributes from '@dropins/storefront-pdp/containers/ProductAttribu
 import ProductGallery from '@dropins/storefront-pdp/containers/ProductGallery.js';
 
 // Libs
-import { rootLink, setJsonLd, fetchPlaceholders } from '../../scripts/commerce.js';
+import {
+  rootLink,
+  setJsonLd,
+  fetchPlaceholders,
+} from '../../scripts/commerce.js';
 
 // Initializers
 import { IMAGES_SIZES } from '../../scripts/initializers/pdp.js';
@@ -31,7 +38,9 @@ import '../../scripts/initializers/wishlist.js';
 
 // Function to update the Add to Cart button text
 function updateAddToCartButtonText(addToCartInstance, inCart, labels) {
-  const buttonText = inCart ? labels.Global?.UpdateProductInCart : labels.Global?.AddProductToCart;
+  const buttonText = inCart
+    ? labels.Global?.UpdateProductInCart
+    : labels.Global?.AddProductToCart;
   if (addToCartInstance) {
     addToCartInstance.setProps((prev) => ({
       ...prev,
@@ -81,9 +90,7 @@ export default async function decorate(block) {
   const $gallery = fragment.querySelector('.product-details__gallery');
   const $header = fragment.querySelector('.product-details__header');
   const $price = fragment.querySelector('.product-details__price');
-  const $galleryMobile = fragment.querySelector(
-    '.product-details__right-column .product-details__gallery',
-  );
+  const $galleryMobile = fragment.querySelector('.product-details__right-column .product-details__gallery');
   const $shortDescription = fragment.querySelector('.product-details__short-description');
   const $options = fragment.querySelector('.product-details__options');
   const $quantity = fragment.querySelector('.product-details__quantity');
@@ -213,14 +220,19 @@ export default async function decorate(block) {
         if (valid) {
           if (isUpdateMode) {
             // --- Update existing item ---
-            const { updateProductsFromCart } = await import('@dropins/storefront-cart/api.js');
+            const { updateProductsFromCart } = await import(
+              '@dropins/storefront-cart/api.js'
+            );
 
             await updateProductsFromCart([{ ...values, uid: itemUidFromUrl }]);
 
             // --- START REDIRECT ON UPDATE ---
             const updatedSku = values?.sku;
             if (updatedSku) {
-              const cartRedirectUrl = new URL(rootLink('/cart'), window.location.origin);
+              const cartRedirectUrl = new URL(
+                rootLink('/cart'),
+                window.location.origin,
+              );
               cartRedirectUrl.searchParams.set('itemUid', itemUidFromUrl);
               window.location.href = cartRedirectUrl.toString();
             } else {
@@ -233,7 +245,9 @@ export default async function decorate(block) {
             return;
           }
           // --- Add new item ---
-          const { addProductsToCart } = await import('@dropins/storefront-cart/api.js');
+          const { addProductsToCart } = await import(
+            '@dropins/storefront-cart/api.js'
+          );
           await addProductsToCart([{ ...values }]);
         }
 
@@ -270,39 +284,31 @@ export default async function decorate(block) {
   })($addToCart);
 
   // Lifecycle Events
-  events.on(
-    'pdp/valid',
-    (valid) => {
-      // update add to cart button disabled state based on product selection validity
-      addToCart.setProps((prev) => ({ ...prev, disabled: !valid }));
-    },
-    { eager: true },
-  );
+  events.on('pdp/valid', (valid) => {
+    // update add to cart button disabled state based on product selection validity
+    addToCart.setProps((prev) => ({ ...prev, disabled: !valid }));
+  }, { eager: true });
 
   // Handle option changes
-  events.on(
-    'pdp/values',
-    () => {
-      if (wishlistToggleBtn) {
-        const configValues = pdpApi.getProductConfigurationValues();
+  events.on('pdp/values', () => {
+    if (wishlistToggleBtn) {
+      const configValues = pdpApi.getProductConfigurationValues();
 
-        // Check URL parameter for empty optionsUIDs
-        const urlOptionsUIDs = urlParams.get('optionsUIDs');
+      // Check URL parameter for empty optionsUIDs
+      const urlOptionsUIDs = urlParams.get('optionsUIDs');
 
-        // If URL has empty optionsUIDs parameter, treat as base product (no options)
-        const optionUIDs = urlOptionsUIDs === '' ? undefined : configValues?.optionsUIDs || undefined;
+      // If URL has empty optionsUIDs parameter, treat as base product (no options)
+      const optionUIDs = urlOptionsUIDs === '' ? undefined : (configValues?.optionsUIDs || undefined);
 
-        wishlistToggleBtn.setProps((prev) => ({
-          ...prev,
-          product: {
-            ...product,
-            optionUIDs,
-          },
-        }));
-      }
-    },
-    { eager: true },
-  );
+      wishlistToggleBtn.setProps((prev) => ({
+        ...prev,
+        product: {
+          ...product,
+          optionUIDs,
+        },
+      }));
+    }
+  }, { eager: true });
 
   events.on('wishlist/alert', ({ action, item }) => {
     wishlistRender.render(WishlistAlert, {
@@ -329,7 +335,9 @@ export default async function decorate(block) {
     (cartData) => {
       let itemIsInCart = false;
       if (itemUidFromUrl && cartData?.items) {
-        itemIsInCart = cartData.items.some((item) => item.uid === itemUidFromUrl);
+        itemIsInCart = cartData.items.some(
+          (item) => item.uid === itemUidFromUrl,
+        );
       }
       // Set the update mode state
       isUpdateMode = itemIsInCart;
@@ -341,31 +349,34 @@ export default async function decorate(block) {
   );
 
   // Set JSON-LD and Meta Tags
-  events.on(
-    'aem/lcp',
-    () => {
-      if (product) {
-        setJsonLdProduct(product);
-        setMetaTags(product);
-        document.title = product.name;
-      }
-    },
-    { eager: true },
-  );
+  events.on('aem/lcp', () => {
+    if (product) {
+      setJsonLdProduct(product);
+      setMetaTags(product);
+      document.title = product.name;
+    }
+  }, { eager: true });
 
   return Promise.resolve();
 }
 
 async function setJsonLdProduct(product) {
   const {
-    name, inStock, description, sku, urlKey, price, priceRange, images, attributes,
+    name,
+    inStock,
+    description,
+    sku,
+    urlKey,
+    price,
+    priceRange,
+    images,
+    attributes,
   } = product;
   const amount = priceRange?.minimum?.final?.amount || price?.final?.amount;
   const brand = attributes.find((attr) => attr.name === 'brand');
 
   // get variants
-  const { data } = await pdpApi.fetchGraphQl(
-    `
+  const { data } = await pdpApi.fetchGraphQl(`
     query GET_PRODUCT_VARIANTS($sku: String!) {
       variants(sku: $sku) {
         variants {
@@ -385,12 +396,10 @@ async function setJsonLdProduct(product) {
         }
       }
     }
-  `,
-    {
-      method: 'GET',
-      variables: { sku },
-    },
-  );
+  `, {
+    method: 'GET',
+    variables: { sku },
+  });
 
   const variants = data?.variants?.variants || [];
 
@@ -412,19 +421,15 @@ async function setJsonLdProduct(product) {
   };
 
   if (variants.length > 1) {
-    ldJson.offers.push(
-      ...variants.map((variant) => ({
-        '@type': 'Offer',
-        name: variant.product.name,
-        image: variant.product.images[0]?.url,
-        price: variant.product.price.final.amount.value,
-        priceCurrency: variant.product.price.final.amount.currency,
-        availability: variant.product.inStock
-          ? 'http://schema.org/InStock'
-          : 'http://schema.org/OutOfStock',
-        sku: variant.product.sku,
-      })),
-    );
+    ldJson.offers.push(...variants.map((variant) => ({
+      '@type': 'Offer',
+      name: variant.product.name,
+      image: variant.product.images[0]?.url,
+      price: variant.product.price.final.amount.value,
+      priceCurrency: variant.product.price.final.amount.currency,
+      availability: variant.product.inStock ? 'http://schema.org/InStock' : 'http://schema.org/OutOfStock',
+      sku: variant.product.sku,
+    })));
   } else {
     ldJson.offers.push({
       '@type': 'Offer',

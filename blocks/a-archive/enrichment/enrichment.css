@@ -3,7 +3,7 @@
 }
 
 .enrichment.block::before {
-  content: 'Enrichment';
+  content: "Enrichment";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -22,14 +22,15 @@
 .enrichment.block > div {
   flex-grow: 1;
   padding: 10px;
-  display: flex;
+  display:flex;
   justify-content: center;
 }
 
 .enrichment.block > div > div {
   padding: 10px;
-}
+  }
 
 .enrichment.block > div > div:first-child {
-  font-weight: bold;
+font-weight: bold;
 }
+

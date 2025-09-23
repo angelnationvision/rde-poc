@@ -10,6 +10,7 @@ beforeAll(() => {
 });
 
 describe('scheduler', () => {
+
   it('test', () => {
     expect(1).toBe(1); // only the button wrapper should remain
   });

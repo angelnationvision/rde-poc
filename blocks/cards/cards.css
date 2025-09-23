@@ -118,7 +118,7 @@
 
 .cards > ul > li .cards-card-pretitle p {
   color: var(--color-dark-warm);
-  font-family: var(--heading-font-family);
+  font-family: var(--avenir-black);
   font-weight: var(--font-weight-xtra-bold);
   font-size: var(--body-font-size-xxs);
   font-style: normal;
@@ -129,7 +129,7 @@
 
 .cards > ul > li .cards-card-title p {
   color: var(--color-black);
-  font-family: var(--heading-font-family);
+  font-family: var(--avenir-black);
   font-weight: var(--font-weight-xtra-bold);
   font-size: var(--body-font-size-xxxl);
   font-style: normal;
@@ -140,7 +140,7 @@
 
 .cards > ul > li .cards-card-subtitle p {
   color: var(--color-dark-warm);
-  font-family: var(--heading-font-family);
+  font-family: var(--avenir-black);
   font-weight: var(--font-weight-xtra-bold);
   font-size: var(--body-font-size-xl);
   font-style: normal;
@@ -150,7 +150,7 @@
 
 .cards > ul > li .cards-card-body-text p {
   color: var(--color-darkest-warm);
-  font-family: var(--body-font-family);
+  font-family: var(--avenir-roman);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-base);
   font-style: normal;
@@ -329,7 +329,7 @@
   margin: 0;
 }
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .cards-wrapper {
     padding: 24px 16px !important;
   }

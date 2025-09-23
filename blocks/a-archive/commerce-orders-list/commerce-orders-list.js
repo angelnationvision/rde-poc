@@ -23,9 +23,7 @@ export default async function decorate(block) {
   }
 
   const { 'minified-view': minifiedViewConfig = 'false' } = readBlockConfig(block);
-  const getProductLink = (productData) => (productData?.product
-    ? rootLink(`/products/${productData.product.urlKey}/${productData.product.sku}`)
-    : rootLink('#'));
+  const getProductLink = (productData) => (productData?.product ? rootLink(`/products/${productData.product.urlKey}/${productData.product.sku}`) : rootLink('#'));
 
   if (!checkIsAuthenticated()) {
     window.location.href = rootLink(CUSTOMER_LOGIN_PATH);
@@ -40,9 +38,7 @@ export default async function decorate(block) {
       },
       routeOrdersList: () => rootLink(CUSTOMER_ORDERS_PATH),
       routeOrderDetails: (orderNumber) => rootLink(`${CUSTOMER_ORDER_DETAILS_PATH}?orderRef=${orderNumber}`),
-      routeReturnDetails: ({ orderNumber, returnNumber }) => rootLink(
-        `${CUSTOMER_RETURN_DETAILS_PATH}?orderRef=${orderNumber}&returnRef=${returnNumber}`,
-      ),
+      routeReturnDetails: ({ orderNumber, returnNumber }) => rootLink(`${CUSTOMER_RETURN_DETAILS_PATH}?orderRef=${orderNumber}&returnRef=${returnNumber}`),
       routeOrderProduct: getProductLink,
       slots: {
         OrderItemImage: (ctx) => {

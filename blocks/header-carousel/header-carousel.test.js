@@ -1,6 +1,4 @@
-import {
-  describe, it, expect, vi, beforeEach, afterEach, beforeAll, afterAll,
-} from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach, beforeAll, afterAll } from 'vitest';
 import { JSDOM } from 'jsdom';
 
 import headerCarousel, { updateCarousel, scrollRight, scrollLeft } from './header-carousel.js';
@@ -95,7 +93,7 @@ describe('decorate function', () => {
     const props = document.createElement('div');
 
     const listItemsContainer = document.createElement('ul');
-    ['Item 1', 'Item 2', 'Item 3'].forEach((text) => {
+    ['Item 1', 'Item 2', 'Item 3'].forEach(text => {
       const li = document.createElement('li');
       li.textContent = text;
       listItemsContainer.appendChild(li);

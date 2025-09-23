@@ -17,10 +17,12 @@
     }
   ],
   "models": [
-    {
+      {
       "id": "header-myaccount",
-      "fields": []
-    }
+      "fields": [
+     
+    ]
+  }
   ],
   "filters": []
 }

@@ -1,3 +1,10 @@
+:root {
+  --gilroy: 'Gilroy-Regular', sans-serif;
+  --avenir: 'Avenir', sans-serif;
+  --myriad-pro: 'MYRIADPRO-REGULAR', sans-serif;
+  --graphik: 'Graphik-Regular', sans-serif;
+}
+
 .section.breadcrumb-container {
   background-color: var(--color-white);
 }
@@ -24,7 +31,7 @@ header .breadcrumb-nav .breadcrumb a {
   font-style: normal;
   line-height: 22.4px;
   letter-spacing: 0.28px;
-  font-family: var(--body-font-family);
+  font-family: AvenirLTPro-Book, roboto, roboto-fallback, sans-serif;
 }
 
 .breadcrumb-nav {
@@ -146,7 +153,7 @@ header .breadcrumb-nav .breadcrumb a {
 
 /* american */
 
-@media (width <= 990px) {
+@media (width <= 900px) {
   .breadcrumb.logo.block {
     display: flex;
     width: 375px;
@@ -167,7 +174,7 @@ header .breadcrumb-nav .breadcrumb a {
   header .breadcrumb-nav .breadcrumb a {
     display: flex;
     text-align: center;
-    font-family: var(--body-font-family);
+    font-family: var(--avenir);
     font-size: 14px;
     font-style: normal;
     font-weight: 800;

@@ -6,7 +6,10 @@ import { tryRenderAemAssetsImage } from '@dropins/tools/lib/aem/assets.js';
 
 // Dropin Components
 import {
-  Button, Header, ProgressSpinner, provider as UI,
+  Button,
+  Header,
+  ProgressSpinner,
+  provider as UI,
 } from '@dropins/tools/components.js';
 
 // Auth Dropin
@@ -166,22 +169,40 @@ export default async function decorate(block) {
 
   const $content = checkoutFragment.querySelector('.checkout__content');
   const $loader = checkoutFragment.querySelector('.checkout__loader');
-  const $mergedCartBanner = checkoutFragment.querySelector('.checkout__merged-cart-banner');
+  const $mergedCartBanner = checkoutFragment.querySelector(
+    '.checkout__merged-cart-banner',
+  );
 
   const $heading = checkoutFragment.querySelector('.checkout__heading');
   const $emptyCart = checkoutFragment.querySelector('.checkout__empty-cart');
-  const $serverError = checkoutFragment.querySelector('.checkout__server-error');
+  const $serverError = checkoutFragment.querySelector(
+    '.checkout__server-error',
+  );
   const $outOfStock = checkoutFragment.querySelector('.checkout__out-of-stock');
   const $login = checkoutFragment.querySelector('.checkout__login');
-  const $shippingForm = checkoutFragment.querySelector('.checkout__shipping-form');
-  const $billToShipping = checkoutFragment.querySelector('.checkout__bill-to-shipping');
+  const $shippingForm = checkoutFragment.querySelector(
+    '.checkout__shipping-form',
+  );
+  const $billToShipping = checkoutFragment.querySelector(
+    '.checkout__bill-to-shipping',
+  );
   const $delivery = checkoutFragment.querySelector('.checkout__delivery');
-  const $paymentMethods = checkoutFragment.querySelector('.checkout__payment-methods');
-  const $billingForm = checkoutFragment.querySelector('.checkout__billing-form');
-  const $orderSummary = checkoutFragment.querySelector('.checkout__order-summary');
-  const $cartSummary = checkoutFragment.querySelector('.checkout__cart-summary');
+  const $paymentMethods = checkoutFragment.querySelector(
+    '.checkout__payment-methods',
+  );
+  const $billingForm = checkoutFragment.querySelector(
+    '.checkout__billing-form',
+  );
+  const $orderSummary = checkoutFragment.querySelector(
+    '.checkout__order-summary',
+  );
+  const $cartSummary = checkoutFragment.querySelector(
+    '.checkout__cart-summary',
+  );
   const $placeOrder = checkoutFragment.querySelector('.checkout__place-order');
-  const $giftOptions = checkoutFragment.querySelector('.checkout__gift-options');
+  const $giftOptions = checkoutFragment.querySelector(
+    '.checkout__gift-options',
+  );
   const $termsAndConditions = checkoutFragment.querySelector('.checkout__terms-and-conditions');
 
   block.appendChild(checkoutFragment);
@@ -369,7 +390,9 @@ export default async function decorate(block) {
           cartSummaryListHeading.classList.add('cart-summary-list__heading');
 
           const cartSummaryListHeadingText = document.createElement('div');
-          cartSummaryListHeadingText.classList.add('cart-summary-list__heading-text');
+          cartSummaryListHeadingText.classList.add(
+            'cart-summary-list__heading-text',
+          );
 
           cartSummaryListHeadingText.innerText = title.replace(
             '({count})',
@@ -451,11 +474,19 @@ export default async function decorate(block) {
 
         const isFormVisible = (form) => form && form.offsetParent !== null;
 
-        if (success && shippingFormRef.current && isFormVisible(forms[SHIPPING_FORM_NAME])) {
+        if (
+          success
+        && shippingFormRef.current
+        && isFormVisible(forms[SHIPPING_FORM_NAME])
+        ) {
           success = shippingFormRef.current.handleValidationSubmit(false);
         }
 
-        if (success && billingFormRef.current && isFormVisible(forms[BILLING_FORM_NAME])) {
+        if (
+          success
+        && billingFormRef.current
+        && isFormVisible(forms[BILLING_FORM_NAME])
+        ) {
           success = billingFormRef.current.handleValidationSubmit(false);
         }
 
@@ -570,7 +601,9 @@ export default async function decorate(block) {
     } else if (!shippingForm) {
       const cartShippingAddress = getCartAddress(data, 'shipping');
 
-      const shippingAddressCache = sessionStorage.getItem(SHIPPING_ADDRESS_DATA_KEY);
+      const shippingAddressCache = sessionStorage.getItem(
+        SHIPPING_ADDRESS_DATA_KEY,
+      );
 
       if (cartShippingAddress && shippingAddressCache) {
         sessionStorage.removeItem(SHIPPING_ADDRESS_DATA_KEY);
@@ -620,7 +653,9 @@ export default async function decorate(block) {
     if (!billingForm) {
       const cartBillingAddress = getCartAddress(data, 'billing');
 
-      const billingAddressCache = sessionStorage.getItem(BILLING_ADDRESS_DATA_KEY);
+      const billingAddressCache = sessionStorage.getItem(
+        BILLING_ADDRESS_DATA_KEY,
+      );
 
       if (cartBillingAddress && billingAddressCache) {
         sessionStorage.removeItem(BILLING_ADDRESS_DATA_KEY);
@@ -674,9 +709,13 @@ export default async function decorate(block) {
 
       const cartShippingAddress = getCartAddress(data, 'shipping');
 
-      const shippingAddressId = cartShippingAddress ? (cartShippingAddress?.id ?? 0) : undefined;
+      const shippingAddressId = cartShippingAddress
+        ? cartShippingAddress?.id ?? 0
+        : undefined;
 
-      const shippingAddressCache = sessionStorage.getItem(SHIPPING_ADDRESS_DATA_KEY);
+      const shippingAddressCache = sessionStorage.getItem(
+        SHIPPING_ADDRESS_DATA_KEY,
+      );
 
       // clear persisted shipping address if cart has a shipping address
       if (cartShippingAddress && shippingAddressCache) {
@@ -733,9 +772,13 @@ export default async function decorate(block) {
 
       const cartBillingAddress = getCartAddress(data, 'billing');
 
-      const billingAddressId = cartBillingAddress ? (cartBillingAddress?.id ?? 0) : undefined;
+      const billingAddressId = cartBillingAddress
+        ? cartBillingAddress?.id ?? 0
+        : undefined;
 
-      const billingAddressCache = sessionStorage.getItem(BILLING_ADDRESS_DATA_KEY);
+      const billingAddressCache = sessionStorage.getItem(
+        BILLING_ADDRESS_DATA_KEY,
+      );
 
       // clear persisted billing address if cart has a billing address
       if (cartBillingAddress && billingAddressCache) {
@@ -784,7 +827,8 @@ export default async function decorate(block) {
     // Scroll to the top of the page
     window.scrollTo(0, 0);
 
-    const orderConfirmationFragment = document.createRange().createContextualFragment(`
+    const orderConfirmationFragment = document.createRange()
+      .createContextualFragment(`
       <div class="order-confirmation">
         <div class="order-confirmation__main">
           <div class="order-confirmation__block order-confirmation__header"></div>
@@ -837,7 +881,10 @@ export default async function decorate(block) {
 
     block.replaceChildren(orderConfirmationFragment);
 
-    const handleSignUpClick = async ({ inputsDefaultValueSet, addressesData }) => {
+    const handleSignUpClick = async ({
+      inputsDefaultValueSet,
+      addressesData,
+    }) => {
       const signUpForm = document.createElement('div');
       AuthProvider.render(SignUp, {
         routeSignIn: () => rootLink('/customer/login'),
@@ -858,7 +905,9 @@ export default async function decorate(block) {
       orderData,
     })($orderConfirmationHeader);
 
-    OrderProvider.render(OrderStatus, { slots: { OrderActions: () => null } })($orderStatus);
+    OrderProvider.render(OrderStatus, { slots: { OrderActions: () => null } })(
+      $orderStatus,
+    );
     OrderProvider.render(ShippingStatus)($shippingStatus);
     OrderProvider.render(CustomerDetails)($customerDetails);
     OrderProvider.render(OrderCostSummary)($orderCostSummary);

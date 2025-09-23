@@ -17,124 +17,124 @@
     }
   ],
   "models": [
-    {
-      "id": "header-search",
-      "fields": [
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "search-icon",
-          "label": "Search Icon",
-          "description": "Upload Search icons",
-          "multi": false
-        },
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "close-icon",
-          "label": "Close Icon",
-          "description": "Upload Close icons",
-          "multi": false
-        },
-        {
-          "component": "text",
-          "name": "input-placeholder",
-          "label": "Input placeholder"
-        },
-        {
-          "component": "aem-content",
-          "name": "ctapath",
-          "label": "CTA1 Path"
-        },
-        {
-          "component": "text",
-          "name": "ctapathText",
-          "label": "CTA 1"
-        },
-        {
-          "component": "select",
-          "name": "ctavariation",
-          "label": "CTA1 Type",
-          "options": [
-            {
-              "name": "primary",
-              "value": "primary"
-            },
-            {
-              "name": "input",
-              "value": "primary-variant"
-            },
-            {
-              "name": "secondary",
-              "value": "secondary"
-            },
-            {
-              "name": "input secondary",
-              "value": "secondary-variant"
-            },
-            {
-              "name": "text-btn",
-              "value": "text-btn"
-            },
-            {
-              "name": "link-btn",
-              "value": "link-btn"
-            }
-          ]
-        },
-        {
-          "component": "text",
-          "name": "suggestion",
-          "label": "Suggestion Text"
-        },
-        {
-          "component": "text",
-          "name": "result",
-          "label": "Result Text"
-        },
-        {
-          "component": "aem-content",
-          "name": "cta2path",
-          "label": "CTA2 Path"
-        },
-        {
-          "component": "text",
-          "name": "cta2pathText",
-          "label": "CTA 2"
-        },
-        {
-          "component": "select",
-          "name": "cta2variation",
-          "label": "CTA2 Type",
-          "options": [
-            {
-              "name": "primary",
-              "value": "primary"
-            },
-            {
-              "name": "input",
-              "value": "primary-variant"
-            },
-            {
-              "name": "secondary",
-              "value": "secondary"
-            },
-            {
-              "name": "input secondary",
-              "value": "secondary-variant"
-            },
-            {
-              "name": "text-btn",
-              "value": "text-btn"
-            },
-            {
-              "name": "link-btn",
-              "value": "link-btn"
-            }
-          ]
-        }
-      ]
-    }
+  {
+    "id": "header-search",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "search-icon",
+        "label": "Search Icon",
+        "description": "Upload Search icons",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "close-icon",
+        "label": "Close Icon",
+        "description": "Upload Close icons",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "input-placeholder",
+        "label": "Input placeholder"
+      },
+      {
+        "component": "aem-content",
+        "name": "ctapath",
+        "label": "CTA1 Path"
+      },
+      {
+        "component": "text",
+        "name": "ctapathText",
+        "label": "CTA 1"
+      },
+      {
+        "component": "select",
+        "name": "ctavariation",
+        "label": "CTA1 Type",
+        "options": [
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "input",
+            "value": "primary-variant"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "input secondary",
+            "value": "secondary-variant"
+          },
+          {
+            "name": "text-btn",
+            "value": "text-btn"
+          },
+          {
+            "name": "link-btn",
+            "value": "link-btn"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "suggestion",
+        "label": "Suggestion Text"
+      },
+      {
+        "component": "text",
+        "name": "result",
+        "label": "Result Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "cta2path",
+        "label": "CTA2 Path"
+      },
+      {
+        "component": "text",
+        "name": "cta2pathText",
+        "label": "CTA 2"
+      },
+      {
+        "component": "select",
+        "name": "cta2variation",
+        "label": "CTA2 Type",
+        "options": [
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "input",
+            "value": "primary-variant"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "input secondary",
+            "value": "secondary-variant"
+          },
+          {
+            "name": "text-btn",
+            "value": "text-btn"
+          },
+          {
+            "name": "link-btn",
+            "value": "link-btn"
+          }
+        ]
+      }
+    ]
+  }
   ],
   "filters": []
 }

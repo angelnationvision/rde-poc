@@ -1,6 +1,4 @@
-import {
-  describe, it, expect, beforeEach, beforeAll,
-} from 'vitest';
+import { describe, it, expect, beforeEach, beforeAll } from 'vitest';
 import { JSDOM } from 'jsdom';
 
 import linkList from './link-list.js'; // replace with actual file name
@@ -9,7 +7,7 @@ let block;
 
 beforeAll(() => {
   const dom = new JSDOM(
-    '<!DOCTYPE html><html><body><div class="section link-list-container"></div></body></html>',
+    '<!DOCTYPE html><html><body><div class="section link-list-container"></div></body></html>'
   );
   global.document = dom.window.document;
   global.window = dom.window;

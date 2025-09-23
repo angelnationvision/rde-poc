@@ -35,7 +35,7 @@
   }
 }
 
-@media (width >= 991px) {
+@media (width >= 900px) {
   .form fieldset {
     grid-template-columns: repeat(3, auto);
   }
@@ -102,7 +102,7 @@
   }
 }
 
-@media (width >= 991px) {
+@media (width >= 900px) {
   .form input,
   .form select,
   .form textarea {

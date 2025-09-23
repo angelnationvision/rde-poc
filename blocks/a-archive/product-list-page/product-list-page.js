@@ -71,8 +71,8 @@ export default async function decorate(block) {
   };
 
   return Promise.all([
-    provider.render(ResultsInfo, {})($resultInfo),
-    provider.render(Facets, {})($facets),
+    provider.render(ResultsInfo, { })($resultInfo),
+    provider.render(Facets, { })($facets),
     provider.render(ProductList, {
       routeProduct: (product) => rootLink(`/products/${product.urlKey}/${product.sku}`),
       ...categoryPathConfig,

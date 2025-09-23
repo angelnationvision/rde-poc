@@ -57,13 +57,15 @@ export default async function decorate(block) {
         if (sections.length === 1) {
           block.closest('.section').classList.add(...sections[0].classList);
           const wrapper = block.closest('.enrichment-wrapper');
-          Array.from(sections[0].children).forEach((child) => wrapper.parentNode.insertBefore(child, wrapper));
+          Array.from(sections[0].children)
+            .forEach((child) => wrapper.parentNode.insertBefore(child, wrapper));
         } else if (sections.length > 1) {
           // If multiple sections, insert them after section of block
           const blockSection = block.closest('.section');
           Array.from(sections)
             .reverse()
-            .forEach((section) => blockSection.parentNode.insertBefore(section, blockSection.nextSibling));
+            .forEach((section) => blockSection
+              .parentNode.insertBefore(section, blockSection.nextSibling));
         }
       });
   } catch (error) {

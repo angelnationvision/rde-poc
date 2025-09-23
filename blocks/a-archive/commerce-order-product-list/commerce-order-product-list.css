@@ -2,9 +2,9 @@
 } */
 
 .commerce-order-product-list {
-  margin-bottom: var(--spacing-small);
+    margin-bottom: var(--spacing-small);
 }
 
 .commerce-order-product-list .dropin-cart-item a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }

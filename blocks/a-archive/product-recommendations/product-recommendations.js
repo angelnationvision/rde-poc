@@ -77,7 +77,12 @@ export default async function decorate(block) {
   let isLoading = false;
   let loadTimeout = null;
 
-  async function loadRecommendation(context, isVisible, container, forceReload = false) {
+  async function loadRecommendation(
+    context,
+    isVisible,
+    container,
+    forceReload = false,
+  ) {
     // Only load once the recommendation becomes visible
     if (!isVisible) {
       return;
@@ -137,7 +142,8 @@ export default async function decorate(block) {
               } else {
                 // Select Options Button
                 UI.render(Button, {
-                  children: labels.Global?.SelectProductOptions,
+                  children:
+                    labels.Global?.SelectProductOptions,
                   href: rootLink(`/products/${ctx.item.urlKey}/${ctx.item.sku}`),
                   variant: 'tertiary',
                 })(addToCart);
@@ -250,12 +256,8 @@ export default async function decorate(block) {
   window.adobeDataLayer.push((dl) => {
     dl.addEventListener('adobeDataLayer:change', handlePageTypeChanges, { path: 'pageContext' });
     dl.addEventListener('adobeDataLayer:change', handleProductChanges, { path: 'productContext' });
-    dl.addEventListener('adobeDataLayer:change', handleCategoryChanges, {
-      path: 'categoryContext',
-    });
-    dl.addEventListener('adobeDataLayer:change', handleCartChanges, {
-      path: 'shoppingCartContext',
-    });
+    dl.addEventListener('adobeDataLayer:change', handleCategoryChanges, { path: 'categoryContext' });
+    dl.addEventListener('adobeDataLayer:change', handleCartChanges, { path: 'shoppingCartContext' });
   });
 
   if (isMobile) {

@@ -13,7 +13,7 @@ export default function decorate(block) {
     const contentWrapper = document.createElement('div');
     contentWrapper.classList.add('multi-column-content-wrapper');
 
-    columns.forEach((contentColumn) => {
+    columns.forEach(contentColumn => {
       const children = Array.from(contentColumn.children);
       if (children.length === 4) {
         contentColumn.classList.add('multi-column-content');

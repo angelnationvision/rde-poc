@@ -21,9 +21,7 @@ export default async function decorate(block) {
 
       const encodedOrderRef = encodeURIComponent(orderRefFromUrl || newOrderRef);
 
-      return checkIsAuthenticated()
-        ? rootLink(`${CUSTOMER_CREATE_RETURN_PATH}?orderRef=${encodedOrderRef}`)
-        : rootLink(`${CREATE_RETURN_PATH}?orderRef=${encodedOrderRef}`);
+      return checkIsAuthenticated() ? rootLink(`${CUSTOMER_CREATE_RETURN_PATH}?orderRef=${encodedOrderRef}`) : rootLink(`${CREATE_RETURN_PATH}?orderRef=${encodedOrderRef}`);
     },
     routeOnSuccess: () => rootLink('/cart'),
   })(block);

@@ -18,55 +18,57 @@
     }
   ],
   "models": [
-    {
+      {
       "id": "header-favorite-icon",
       "fields": [
         {
-          "component": "text",
-          "valueType": "string",
-          "name": "fav-title",
-          "label": "Favorite Icon",
-          "description": "Enter text to display when no items are marked as favorites."
-        },
-        {
-          "component": "aem-content",
-          "name": "signInLink",
-          "label": "SignIn Link",
-          "description": "Enter the URL of the Sign In page for users to log in.",
-          "required": true
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "signInLinkText",
-          "label": "SignIn Link Text"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "signInText",
-          "label": "SignIn Text",
-          "description": "Message to show when the user is not signed in."
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "fav-title-items",
-          "label": "Favorite Icon",
-          "description": "Enter text to display when  one or more items are marked as favorites."
-        },
-        {
-          "component": "aem-content",
-          "name": "fav-ctapath",
-          "label": "Favorite CTA Path"
-        },
-        {
-          "component": "text",
-          "name": "fav-ctapathText",
-          "label": "Favorite CTA Text"
-        }
-      ]
-    }
+        "component": "text",
+        "valueType": "string",
+        "name": "fav-title",
+        "label": "Favorite Icon",
+        "description": "Enter text to display when no items are marked as favorites."
+      },
+      {
+        "component": "aem-content",
+        "name": "signInLink",
+        "label": "SignIn Link",
+        "description": "Enter the URL of the Sign In page for users to log in.",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "signInLinkText",
+        "label": "SignIn Link Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "signInText",
+        "label": "SignIn Text",
+        "description": "Message to show when the user is not signed in."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fav-title-items",
+        "label": "Favorite Icon",
+        "description": "Enter text to display when  one or more items are marked as favorites."
+      },
+      {
+        "component": "aem-content",
+        "name": "fav-ctapath",
+        "label": "Favorite CTA Path"
+      },
+      {
+        "component": "text",
+        "name": "fav-ctapathText",
+        "label": "Favorite CTA Text"
+      }
+
+      
+    ]
+  }
   ],
   "filters": []
 }

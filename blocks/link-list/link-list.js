@@ -20,7 +20,7 @@ function toggleLinkList(e) {
 }
 
 function generateLinkListDom(block) {
-  const props = [...block.children].map((row) => row.firstElementChild);
+  const props = [...block.children].map(row => row.firstElementChild);
   const [linkListOrientation, linkListTitle, linkListDetail] = props;
   const orientationClassName = linkListOrientation.textContent || 'vertical';
   block.parentElement.classList.add(orientationClassName);

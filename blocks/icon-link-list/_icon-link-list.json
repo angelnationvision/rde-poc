@@ -7,39 +7,42 @@
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
-            "template": {
-              "name": "Icon Link List",
-              "model": "icon-link-list",
-              "filter": "icon-link-list",
-              "icon": {
-                "name": "icon",
-                "model": "icon"
-              }
+                "template": {
+                  "name": "Icon Link List",
+                  "model": "icon-link-list",
+                  "filter": "icon-link-list",
+                  "icon": {
+                    "name": "icon",
+                    "model": "icon"
+                  }
+                }
+
             }
-          }
         }
       }
     },
     {
-      "title": "Footer Icon",
-      "id": "icon",
-      "plugins": {
-        "xwalk": {
-          "page": {
-            "resourceType": "core/franklin/components/block/v1/block",
-            "template": {
-              "name": "Icon",
-              "model": "icon"
+          "title": "Footer Icon",
+          "id": "icon",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Icon",
+                  "model": "icon"
+                }
+              }
             }
           }
         }
-      }
-    }
+
   ],
   "models": [
-    {
+      {
       "id": "icon-link-list",
-      "fields": []
+      "fields": [
+      ]
     }
   ],
   "filters": ["icon"]
