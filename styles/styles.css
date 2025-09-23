@@ -20,6 +20,10 @@
 @import url('./eyeglassworld.css');
 @import url('./militaryoptical.css');
 
+body {
+  color: red;
+}
+
 :root {
   /* colors */
   --background-color: white;
