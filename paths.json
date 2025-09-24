@@ -1,12 +1,12 @@
 {
   "mappings": [
-    "/content/americasbest/:/",
-    "/content/americasbest/configuration:/.helix/config.json",
-    "/content/americasbest/headers:/.helix/headers.json",
-    "/content/americasbest/metadata:/metadata.json",
-    "/content/americasbest.resource/enrichment/enrichment.json:/enrichment/enrichment.json"
+    "/content/abnew/:/",
+    "/content/abnew/configuration:/.helix/config.json",
+    "/content/abnew/headers:/.helix/headers.json",
+    "/content/abnew/metadata:/metadata.json",
+    "/content/abnew.resource/enrichment/enrichment.json:/enrichment/enrichment.json"
   ],
   "includes": [
-    "/content/americasbest/"
+    "/content/abnew/"
   ]
 }
