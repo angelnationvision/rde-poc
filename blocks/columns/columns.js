@@ -1,9 +1,4 @@
 export default function decorate(block) {
- /*   const addClassesc = (element, classesc) => {
-    classesc.split(',').forEach((c) => {
-      element.classList.add(toClassName(c.trim()));
-    });
-  };*/
   console.log("angel test");
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);

@@ -638,7 +638,7 @@
     "id": "columns",
     "fields": [
       {
-        "component": "text",
+        "component": "number",
         "valueType": "number",
         "name": "columns",
         "value": "",
@@ -652,23 +652,25 @@
         "value": 0
       },
       {
-        "component": "aem-tag",
-        "valueType": "number",
-        "name": "cq:tags",
-        "value": "",
-        "label": "AEM-Tag"
-      },
-      {
-        "component": "text-input",
-        "label": "Simple Text 1",
-        "name": "text",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "rte",
-        "label": "Rich Text",
-        "valueType": "string"
+        "component": "container",
+        "label": "Container",
+        "name": "container",
+        "valueType": "string",
+        "collapsible": true,
+        "fields": [
+          {
+            "component": "text-input",
+            "label": "Simple Text 1",
+            "name": "text",
+            "valueType": "string"
+          },
+          {
+            "component": "text-input",
+            "label": "Simple Text 2",
+            "name": "text2",
+            "valueType": "string"
+          }
+        ]
       },
       {
         "component": "text",
