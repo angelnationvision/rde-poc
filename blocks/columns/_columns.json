@@ -29,7 +29,7 @@
         },
         {
         "component": "number",
-        "name": "columns",
+        "name": "number",
         "label": "Number Columns",
         "valueType": "number",
         "value": 0
