@@ -170,7 +170,7 @@
     "id": "column",
     "components": [
       "column-item",
-      "accordion-item",
+      "button-item",
       "text-nvi",
       "image",
       "button",
