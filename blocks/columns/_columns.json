@@ -29,8 +29,8 @@
         },
         {
         "component": "number",
-        "name": "number",
-        "label": "Number",
+        "name": "columns",
+        "label": "Number Columns",
         "valueType": "number",
         "value": 0
         },
@@ -62,7 +62,7 @@
         },
         {
       "component": "multiselect",
-      "name": "multiselect",
+      "name": "classes",
       "label": "Multi Select",
       "valueType": "string",
       "options": [
