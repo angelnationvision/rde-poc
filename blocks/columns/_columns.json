@@ -8,8 +8,7 @@
           "page": {
             "resourceType": "core/franklin/components/columns/v1/columns",
             "template": {
-              "columns": "2",
-              "rows": "1"
+              "columns": "2"
             }
           }
         }
@@ -41,18 +40,18 @@
           "component": "number",
           "valueType": "number",
           "name": "columns",
-          "value": "",
+          "value": "2",
           "label": "Number of Columns",
           "validation": {
-            "numberMin": 1,
-            "numberMax": 4,
-            "customErrorMsg": "You can only add 1 thru 4 columns"
+            "numberMin": 0,
+            "numberMax": 6,
+            "customErrorMsg": "1 thru 6 columns"
           }
         },
         {
       "component": "multiselect",
       "name": "classes",
-      "label": "Multi Select",
+      "label": "Gap Here",
       "valueType": "string",
       "options": [
         { "name": "Option 1", "value": "option1" },
@@ -98,17 +97,7 @@
      {
       "id": "column-item",
       "fields": [
-        {
-      "component": "multiselect",
-      "name": "classes",
-      "label": "Multi Select",
-      "valueType": "string",
-      "options": [
-        { "name": "Desktop Item", "value": "option1" },
-        { "name": "Mobile Option 2", "value": "option2" }
-      ]
-    },
-         {
+       {
         "component": "select",
         "name": "classes",
         "value": "",
