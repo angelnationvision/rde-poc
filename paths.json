@@ -2,9 +2,7 @@
   "mappings": [
     "/content/abnew/:/",
     "/content/abnew/configuration:/.helix/config.json",
-    "/content/abnew/headers:/.helix/headers.json",
-    "/content/abnew/metadata:/metadata.json",
-    "/content/abnew.resource/enrichment/enrichment.json:/enrichment/enrichment.json"
+    "/content/abnew/metadata:/metadata.json"
   ],
   "includes": [
     "/content/abnew/"
