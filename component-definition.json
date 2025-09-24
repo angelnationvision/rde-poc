@@ -96,14 +96,31 @@
           }
         },
         {
-          "title": "Columns - Test 12:30",
+          "title": "Columns",
           "id": "columns",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/columns/v1/columns",
                 "template": {
-                  "columns": "2"
+                  "columns": "2",
+                  "rows": "1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Columns - NVI 10:30",
+          "id": "columns",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "name": "Columns - NVI",
+                  "model": "columns-nvi",
+                  "filter": "columns-nvi"
                 }
               }
             }

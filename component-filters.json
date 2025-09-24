@@ -15,23 +15,24 @@
     "id": "section",
     "components": [
       "accordion",
+      "button",
       "button-nvi",
       "carousel",
       "columns",
+      "columns-nvi",
       "embed",
       "linksidebar",
       "modal",
-      "relatedarticles",
       "tabs",
       "table",
       "text-nvi",
       "title-nvi",
       "video",
-      "button",
       "cards",
       "hero",
       "image",
       "infoblock",
+      "productcard",
       "producttile",
       "teaser",
       "visuallinks",
@@ -74,23 +75,24 @@
     "id": "content-section",
     "components": [
       "accordion",
+      "button",
       "button-nvi",
       "carousel",
       "columns",
+      "columns-nvi",
       "embed",
       "linksidebar",
       "modal",
-      "relatedarticles",
       "tabs",
       "table",
       "text-nvi",
       "title-nvi",
       "video",
-      "button",
       "cards",
       "hero",
       "image",
       "infoblock",
+      "productcard",
       "producttile",
       "teaser",
       "visuallinks",
@@ -112,23 +114,24 @@
     "id": "article-section",
     "components": [
       "accordion",
+      "button",
       "button-nvi",
       "carousel",
       "columns",
+      "columns-nvi",
       "embed",
       "linksidebar",
       "modal",
-      "relatedarticles",
       "tabs",
       "table",
       "text-nvi",
       "title-nvi",
       "video",
-      "button",
       "cards",
       "hero",
       "image",
       "infoblock",
+      "productcard",
       "producttile",
       "teaser",
       "visuallinks"
@@ -159,6 +162,21 @@
     ]
   },
   {
+    "id": "columns-nvi",
+    "components": [
+      "column-nvi"
+    ]
+  },
+  {
+    "id": "column-nvi",
+    "components": [
+      "text-nvi",
+      "image",
+      "button-nvi",
+      "title-nvi"
+    ]
+  },
+  {
     "id": "columns",
     "components": [
       "column"
@@ -167,10 +185,10 @@
   {
     "id": "column",
     "components": [
-      "text-nvi",
+      "text",
       "image",
-      "button-nvi",
-      "title-nvi"
+      "button",
+      "title"
     ]
   },
   "icon",

@@ -635,7 +635,7 @@
     ]
   },
   {
-    "id": "columns",
+    "id": "columns-nvi",
     "fields": [
       {
         "component": "text",
@@ -861,7 +861,7 @@
     ]
   },
   {
-    "id": "column",
+    "id": "column-nvi",
     "fields": [
       {
         "component": "select",
@@ -1059,6 +1059,25 @@
             ]
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "columns",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Columns"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "value": "",
+        "label": "Rows"
       }
     ]
   },

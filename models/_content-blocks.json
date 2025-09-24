@@ -1,16 +1,16 @@
 [
   "accordion",
+   "button",
   "button-nvi",
-      "carousel",
-         "columns",
-      "embed",
-      "linksidebar",
-      "modal",
-       "relatedarticles",
-      "tabs",
+   "carousel",
+   "columns",
+   "columns-nvi",
+   "embed",
+   "linksidebar",
+   "modal",
+   "tabs",
       "table",
       "text-nvi",
       "title-nvi",
-      "video",
-      "button"
+      "video"    
 ]

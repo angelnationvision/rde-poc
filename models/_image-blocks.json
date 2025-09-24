@@ -3,6 +3,7 @@
   "hero",
       "image",
       "infoblock",
+        "productcard",
       "producttile",
       "teaser",
       "visuallinks"
