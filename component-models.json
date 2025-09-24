@@ -645,25 +645,30 @@
         "label": "Columns"
       },
       {
+        "component": "number",
+        "name": "number",
+        "label": "Number",
+        "valueType": "number",
+        "value": 0
+      },
+      {
         "component": "aem-tag",
         "valueType": "number",
-        "name": "aem-tag",
+        "name": "cq:tags",
         "value": "",
         "label": "AEM-Tag"
       },
       {
-        "component": "aem-content",
-        "valueType": "number",
-        "name": "aem-content",
-        "value": "",
-        "label": "AEM-content"
+        "component": "text-input",
+        "label": "Simple Text 1",
+        "name": "text",
+        "valueType": "string"
       },
       {
-        "component": "container",
-        "valueType": "string",
-        "name": "container",
-        "value": "",
-        "label": "Container"
+        "component": "richtext",
+        "name": "rte",
+        "label": "Rich Text",
+        "valueType": "string"
       },
       {
         "component": "text",
@@ -674,35 +679,17 @@
       },
       {
         "component": "multiselect",
-        "name": "classes",
-        "value": "",
-        "label": "Title Styles - MultiSelect",
-        "description": "",
+        "name": "multiselect",
+        "label": "Multi Select",
         "valueType": "string",
         "options": [
           {
-            "name": "Heading 1",
-            "value": "heading-1"
+            "name": "Option 1",
+            "value": "option1"
           },
           {
-            "name": "Heading 2",
-            "value": "heading-2"
-          },
-          {
-            "name": "Heading 3",
-            "value": "heading-3"
-          },
-          {
-            "name": "Heading 4",
-            "value": "heading-4"
-          },
-          {
-            "name": "Subheading",
-            "value": "s-medium"
-          },
-          {
-            "name": "Subheading Bold",
-            "value": "s-bold"
+            "name": "Option 2",
+            "value": "option2"
           }
         ]
       },
