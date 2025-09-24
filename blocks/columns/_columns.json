@@ -110,6 +110,13 @@
             "numberMax": 4,
             "customErrorMsg": "You can only add 1 thru 4 columns"
           }
+        },
+          {
+          "component": "richtext",
+          "name": "classes",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
         }
   ]
 }
