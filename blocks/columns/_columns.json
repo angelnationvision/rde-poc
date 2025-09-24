@@ -1,7 +1,7 @@
 {
   "definitions": [
     {
-      "title": "Column - 12:10",
+      "title": "Columns",
       "id": "columns",
       "plugins": {
         "xwalk": {
@@ -33,93 +33,6 @@
           "name": "rows",
           "value": "",
           "label": "Rows"
-        },
-         {
-        "component": "select",
-        "name": "classes",
-        "value": "",
-        "label": "Title Style First",
-        "description": "",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Heading 1",
-            "value": "heading-1"
-          },
-          {
-            "name": "Heading 2",
-            "value": "heading-2"
-          },
-          {
-            "name": "Heading 3",
-            "value": "heading-3"
-          },
-         {
-            "name": "Heading 4",
-            "value": "heading-4"
-          },
-           {
-            "name": "Subheading",
-            "value": "s-medium"
-          },
-          {
-            "name": "Subheading Bold",
-            "value": "s-bold"
-          }
-        ]
-      },
-       {
-        "component": "select",
-        "name": "classes",
-        "value": "",
-        "label": "Title Styles Second",
-        "description": "",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Heading 1",
-            "value": "heading-1"
-          },
-          {
-            "name": "Heading 2",
-            "value": "heading-2"
-          },
-          {
-            "name": "Heading 3",
-            "value": "heading-3"
-          },
-         {
-            "name": "Heading 4",
-            "value": "heading-4"
-          },
-           {
-            "name": "Subheading",
-            "value": "s-medium"
-          },
-          {
-            "name": "Subheading Bold",
-            "value": "s-bold"
-          }
-        ]
-      }
-      ]
-    },
-    {
-      "id": "column",
-      "fields": [
-        {
-          "component": "text",
-          "valueType": "number",
-          "name": "columns",
-          "value": "",
-          "label": "Columns"
-        },
-        {
-          "component": "text",
-          "valueType": "number",
-          "name": "rows",
-          "value": "",
-          "label": "Rows"
         }
       ]
     }
@@ -127,18 +40,11 @@
   "filters": [
     {
       "id": "columns",
-      "components": [
-        "column"
-      ]
+      "components": ["column"]
     },
     {
       "id": "column",
-      "components": [
-        "text",
-        "image",
-        "button",
-        "title"
-      ]
+      "components": ["text", "image", "button", "title"]
     }
   ]
 }
