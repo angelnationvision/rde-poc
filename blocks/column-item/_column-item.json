@@ -20,7 +20,7 @@
   ],
   "models": [
     {
-      "id": "columns",
+      "id": "column-item",
       "fields": [
         {
           "component": "number",
@@ -79,40 +79,12 @@
         ]
       }
       ]
-    },
-     {
-      "id": "column-item",
-      "fields": [
-        {
-          "component": "number",
-          "valueType": "number",
-          "name": "columns",
-          "value": "",
-          "label": "Number of Columns",
-          "validation": {
-            "numberMin": 1,
-            "numberMax": 4,
-            "customErrorMsg": "You can only add 1 thru 4 columns"
-          }
-        },
-          {
-          "component": "richtext",
-          "name": "classes",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
-        }
-  ]
-}
+    }
   ],
   "filters": [
-    {
-      "id": "columns",
-      "components": ["column","column-item"]
-    },
-    {
-      "id": "column",
-      "components": ["column-item", "text-nvi", "image", "button", "title-nvi"]
+     {
+      "id": "column-item",
+      "components": []
     }
   ]
 }

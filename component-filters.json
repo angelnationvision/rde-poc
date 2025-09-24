@@ -163,21 +163,8 @@
     ]
   },
   {
-    "id": "columns",
-    "components": [
-      "column",
-      "column-item"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "column-item",
-      "text-nvi",
-      "image",
-      "button",
-      "title-nvi"
-    ]
+    "id": "column-item",
+    "components": []
   },
   {
     "id": "columns",
