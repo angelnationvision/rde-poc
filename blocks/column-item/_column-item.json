@@ -1,22 +1,7 @@
 {
   "definitions": [
-    {
-      "title": "Columns - 1:35pm",
-      "id": "columns",
-      "plugins": {
-        "xwalk": {
-          "page": {
-            "resourceType": "core/franklin/components/columns/v1/columns",
-            "template": {
-              "columns": "2",
-              "rows": "1"
-            }
-          }
-        }
-      }
-    },
      {
-      "title": "Column Item",
+      "title": "Column Item - 2pm",
       "id": "column-item",
       "plugins": {
         "xwalk": {

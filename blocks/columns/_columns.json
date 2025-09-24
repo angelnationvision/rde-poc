@@ -1,7 +1,7 @@
 {
   "definitions": [
     {
-      "title": "Columns - 1:35pm",
+      "title": "Columns - 2pmpm",
       "id": "columns",
       "plugins": {
         "xwalk": {
@@ -10,23 +10,6 @@
             "template": {
               "columns": "2",
               "rows": "1"
-            }
-          }
-        }
-      }
-    },
-     {
-      "title": "Column Item",
-      "id": "column-item",
-      "plugins": {
-        "xwalk": {
-          "page": {
-            "resourceType": "core/franklin/components/block/v1/block/item",
-            "template": {
-              "name": "Column Item",
-              "model": "column-item",
-              "summary": "Lorem Ipsum",
-              "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat consequat dui, sit amet ...</p>"
             }
           }
         }
