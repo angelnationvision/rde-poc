@@ -31,6 +31,23 @@
           }
         }
       }
+    },
+    {
+      "title": "Column Button Item - 2pm",
+      "id": "button-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/button/v1/button",
+            "template": {
+              "name": "Column Item",
+              "model": "button-item",
+              "summary": "Lorem Ipsum",
+              "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat consequat dui, sit amet ...</p>"
+            }
+          }
+        }
+      }
     }
   ],
   "models": [
@@ -103,7 +120,7 @@
     },
     {
       "id": "column",
-      "components": ["column-item", "accordion-item","text-nvi", "image", "button", "title-nvi"]
+      "components": ["column-item", "button-item","text-nvi", "image", "button", "title-nvi"]
     }
   ]
 }
