@@ -4,7 +4,8 @@ export default function decorate(block) {
       element.classList.add(toClassName(c.trim()));
     });
   };
-
+  console.log("angel test");
+  console.log(addClassesc);
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
 
