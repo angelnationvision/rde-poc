@@ -695,7 +695,7 @@
       },
       {
         "component": "select",
-        "name": "classes",
+        "name": "classesc",
         "value": "",
         "label": "Title Styles",
         "description": "",
