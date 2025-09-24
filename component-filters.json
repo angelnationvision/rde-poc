@@ -164,16 +164,16 @@
   {
     "id": "columns",
     "components": [
-      "accordion-item"
+      "column"
     ]
   },
   {
     "id": "column",
     "components": [
-      "text",
+      "text-nvi",
       "image",
       "button",
-      "title"
+      "title-nvi"
     ]
   },
   "icon",

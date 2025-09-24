@@ -14,23 +14,6 @@
           }
         }
       }
-    },
-    {
-      "title": "Accordion Item",
-      "id": "accordion-item",
-      "plugins": {
-        "xwalk": {
-          "page": {
-            "resourceType": "core/franklin/components/block/v1/block/item",
-            "template": {
-              "name": "Accordion Item",
-              "model": "accordion-item",
-              "summary": "Lorem Ipsum",
-              "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat consequat dui, sit amet ...</p>"
-            }
-          }
-        }
-      }
     }
   ],
   "models": [
@@ -124,11 +107,11 @@
   "filters": [
     {
       "id": "columns",
-      "components": ["accordion-item"]
+      "components": ["column"]
     },
     {
       "id": "column",
-      "components": ["text", "image", "button", "title"]
+      "components": ["text-nvi", "image", "button", "title-nvi"]
     }
   ]
 }
