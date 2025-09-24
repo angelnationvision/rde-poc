@@ -20,6 +20,9 @@
           "...": "../blocks/columns/_*.json#/definitions"
         },
          {
+          "...": "../blocks/column-item/_*.json#/definitions"
+        },
+         {
           "...": "../blocks/embed/_*.json#/definitions"
         }, 
          {
