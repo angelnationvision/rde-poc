@@ -170,6 +170,7 @@
     "id": "columns",
     "components": [
       "column",
+      "accordion-item",
       "column-item"
     ]
   },
@@ -177,6 +178,7 @@
     "id": "column",
     "components": [
       "column-item",
+      "accordion-item",
       "text-nvi",
       "image",
       "button",

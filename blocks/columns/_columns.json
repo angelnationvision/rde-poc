@@ -82,11 +82,11 @@
   "filters": [
     {
       "id": "columns",
-      "components": ["column","column-item"]
+      "components": ["column","accordion-item","column-item"]
     },
     {
       "id": "column",
-      "components": ["column-item", "text-nvi", "image", "button", "title-nvi"]
+      "components": ["column-item", "accordion-item","text-nvi", "image", "button", "title-nvi"]
     }
   ]
 }
