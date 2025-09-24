@@ -642,19 +642,14 @@
         "valueType": "number",
         "name": "columns",
         "value": "",
-        "label": "Columns"
-      },
-      {
-        "component": "number",
-        "name": "number",
-        "label": "Number Columns",
-        "valueType": "number",
-        "value": 0
+        "label": "Columns",
+        "numberMin": "1",
+        "numberMax": "4"
       },
       {
         "component": "container",
         "label": "Container",
-        "name": "container",
+        "name": "classes",
         "valueType": "string",
         "collapsible": true,
         "fields": [
