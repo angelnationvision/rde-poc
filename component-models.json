@@ -726,6 +726,97 @@
     ]
   },
   {
+    "id": "columns",
+    "fields": [
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Number of Columns",
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 4,
+          "customErrorMsg": "You can only add 1 thru 4 columns"
+        }
+      },
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Multi Select",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Option 1",
+            "value": "option1"
+          },
+          {
+            "name": "Option 2",
+            "value": "option2"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Title Styles",
+        "description": "",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Heading 1",
+            "value": "heading-1"
+          },
+          {
+            "name": "Heading 2",
+            "value": "heading-2"
+          },
+          {
+            "name": "Heading 3",
+            "value": "heading-3"
+          },
+          {
+            "name": "Heading 4",
+            "value": "heading-4"
+          },
+          {
+            "name": "Subheading",
+            "value": "s-medium"
+          },
+          {
+            "name": "Subheading Bold",
+            "value": "s-bold"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "column-item",
+    "fields": [
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Number of Columns",
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 4,
+          "customErrorMsg": "You can only add 1 thru 4 columns"
+        }
+      },
+      {
+        "component": "richtext",
+        "name": "classes",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "commerce-mini-cart",
     "fields": [
       {
