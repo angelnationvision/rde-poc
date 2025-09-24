@@ -700,6 +700,21 @@
     ]
   },
   {
+    "id": "column",
+    "fields": [
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Number of Columns",
+        "numberMin": 1,
+        "numberMax": 4,
+        "customErrorMsg": "You can only add 1 thru 4 columns"
+      }
+    ]
+  },
+  {
     "id": "commerce-mini-cart",
     "fields": [
       {
