@@ -32,7 +32,6 @@
         }
       }
     }
-
   ],
   "models": [
     {
@@ -124,7 +123,7 @@
   "filters": [
     {
       "id": "columns",
-      "components": ["column"]
+      "components": ["column","column-item"]
     },
     {
       "id": "column",

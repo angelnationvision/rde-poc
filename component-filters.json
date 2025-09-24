@@ -164,7 +164,8 @@
   {
     "id": "columns",
     "components": [
-      "column"
+      "column",
+      "column-item"
     ]
   },
   {
