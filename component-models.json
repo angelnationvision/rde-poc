@@ -643,8 +643,9 @@
         "name": "columns",
         "value": "",
         "label": "Columns",
-        "numberMin": "1",
-        "numberMax": "4"
+        "numberMin": 1,
+        "numberMax": 4,
+        "customErrorMsg": "You can only add 1 thru 4 columns"
       },
       {
         "component": "container",
