@@ -635,36 +635,8 @@
     ]
   },
   {
-    "id": "columns",
+    "id": "column-item",
     "fields": [
-      {
-        "component": "number",
-        "valueType": "number",
-        "name": "columns",
-        "value": "2",
-        "label": "Number of Columns",
-        "validation": {
-          "numberMin": 0,
-          "numberMax": 6,
-          "customErrorMsg": "1 thru 6 columns"
-        }
-      },
-      {
-        "component": "multiselect",
-        "name": "classes",
-        "label": "Gap Here",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Option 1",
-            "value": "option1"
-          },
-          {
-            "name": "Option 2",
-            "value": "option2"
-          }
-        ]
-      },
       {
         "component": "select",
         "name": "classes",
@@ -702,8 +674,36 @@
     ]
   },
   {
-    "id": "column-item",
+    "id": "columns",
     "fields": [
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "columns",
+        "value": "2",
+        "label": "Number of Columns",
+        "validation": {
+          "numberMin": 0,
+          "numberMax": 6,
+          "customErrorMsg": "1 thru 6 columns"
+        }
+      },
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Gap Here",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Option 1",
+            "value": "option1"
+          },
+          {
+            "name": "Option 2",
+            "value": "option2"
+          }
+        ]
+      },
       {
         "component": "select",
         "name": "classes",
