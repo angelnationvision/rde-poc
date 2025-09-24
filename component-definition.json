@@ -111,22 +111,6 @@
           }
         },
         {
-          "title": "Columns - NVI noon",
-          "id": "columns",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/columns/v1/columns",
-                "template": {
-                  "name": "Columns - NVI",
-                  "model": "columns-nvi",
-                  "filter": "columns-nvi"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Embed",
           "id": "embed",
           "plugins": {

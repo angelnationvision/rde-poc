@@ -162,21 +162,6 @@
     ]
   },
   {
-    "id": "columns-nvi",
-    "components": [
-      "column-nvi"
-    ]
-  },
-  {
-    "id": "column-nvi",
-    "components": [
-      "text-nvi",
-      "image",
-      "button-nvi",
-      "title-nvi"
-    ]
-  },
-  {
     "id": "columns",
     "components": [
       "column"
