@@ -14,6 +14,23 @@
           }
         }
       }
+    },
+    {
+      "title": "Column Item - 2pm",
+      "id": "column-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/columns/v1/columns",
+            "template": {
+              "name": "Column Item",
+              "model": "column-item",
+              "summary": "Lorem Ipsum",
+              "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat consequat dui, sit amet ...</p>"
+            }
+          }
+        }
+      }
     }
   ],
   "models": [
