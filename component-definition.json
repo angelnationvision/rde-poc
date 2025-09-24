@@ -96,7 +96,7 @@
           }
         },
         {
-          "title": "Columns",
+          "title": "Column - 12:10",
           "id": "columns",
           "plugins": {
             "xwalk": {
