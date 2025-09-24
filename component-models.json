@@ -645,11 +645,100 @@
         "label": "Columns"
       },
       {
-        "component": "text",
+        "component": "aem-tag",
         "valueType": "number",
-        "name": "rows",
+        "name": "aem-tag",
         "value": "",
-        "label": "Rows"
+        "label": "AEM-Tag"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "number",
+        "name": "aem-content",
+        "value": "",
+        "label": "AEM-content"
+      },
+      {
+        "component": "container",
+        "valueType": "string",
+        "name": "container",
+        "value": "",
+        "label": "Container"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Text"
+      },
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "value": "",
+        "label": "Title Styles - MultiSelect",
+        "description": "",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Heading 1",
+            "value": "heading-1"
+          },
+          {
+            "name": "Heading 2",
+            "value": "heading-2"
+          },
+          {
+            "name": "Heading 3",
+            "value": "heading-3"
+          },
+          {
+            "name": "Heading 4",
+            "value": "heading-4"
+          },
+          {
+            "name": "Subheading",
+            "value": "s-medium"
+          },
+          {
+            "name": "Subheading Bold",
+            "value": "s-bold"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Title Styles",
+        "description": "",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Heading 1",
+            "value": "heading-1"
+          },
+          {
+            "name": "Heading 2",
+            "value": "heading-2"
+          },
+          {
+            "name": "Heading 3",
+            "value": "heading-3"
+          },
+          {
+            "name": "Heading 4",
+            "value": "heading-4"
+          },
+          {
+            "name": "Subheading",
+            "value": "s-medium"
+          },
+          {
+            "name": "Subheading Bold",
+            "value": "s-bold"
+          }
+        ]
       }
     ]
   },
