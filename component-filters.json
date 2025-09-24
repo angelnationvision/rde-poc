@@ -140,7 +140,8 @@
   {
     "id": "accordion",
     "components": [
-      "accordion-item"
+      "accordion-item",
+      "column-item"
     ]
   },
   {
