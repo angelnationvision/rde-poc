@@ -643,9 +643,11 @@
         "name": "columns",
         "value": "",
         "label": "Number of Columns",
-        "numberMin": 1,
-        "numberMax": 4,
-        "customErrorMsg": "You can only add 1 thru 4 columns"
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 4,
+          "customErrorMsg": "You can only add 1 thru 4 columns"
+        }
       },
       {
         "component": "multiselect",
@@ -665,7 +667,7 @@
       },
       {
         "component": "select",
-        "name": "classesc",
+        "name": "classes",
         "value": "",
         "label": "Title Styles",
         "description": "",
@@ -700,7 +702,7 @@
     ]
   },
   {
-    "id": "column",
+    "id": "column-item",
     "fields": [
       {
         "component": "number",
@@ -708,9 +710,11 @@
         "name": "columns",
         "value": "",
         "label": "Number of Columns",
-        "numberMin": 1,
-        "numberMax": 4,
-        "customErrorMsg": "You can only add 1 thru 4 columns"
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 4,
+          "customErrorMsg": "You can only add 1 thru 4 columns"
+        }
       }
     ]
   },
