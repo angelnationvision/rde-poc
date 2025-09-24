@@ -14,27 +14,7 @@ export default async function decorate(block) {
   // decorate footer DOM
   block.textContent = '';
   const footer = document.createElement('div');
-  while (fragment.firstElementChild) {
-    const a = fragment.querySelector('.default-content-wrapper p');
-    const currYear = new Date().getFullYear().toString();
-    const originalCopyright = a.textContent;
-    if (originalCopyright) {
-      const updatedCopyright = originalCopyright.replace(/(\d{4})[–-]\d{4}/, `$1–${currYear}`);
-      a.textContent = updatedCopyright;
-    }
-
-    // checking if the div has radio button
-    if (fragment.firstElementChild.hasAttribute('data-radio')) {
-      if (fragment.firstElementChild.getAttribute('data-radio') === 'americas best') {
-        block.classList.add('footer-americas-bg');
-      } else if (fragment.firstElementChild.getAttribute('data-radio') === 'vistaOpt') {
-        block.classList.add('footer-vistaopt-bg');
-      } else if (fragment.firstElementChild.getAttribute('data-radio') === 'eyeglass') {
-        block.classList.add('footer-eyeglass-bg');
-      }
-    }
-    footer.append(fragment.firstElementChild);
-  }
+  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
   block.append(footer);
 }
