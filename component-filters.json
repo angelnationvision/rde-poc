@@ -164,7 +164,7 @@
   {
     "id": "columns",
     "components": [
-      "column"
+      "accordion-item"
     ]
   },
   {
