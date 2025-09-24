@@ -110,12 +110,12 @@
           }
         },
         {
-          "title": "Column Item - 2:30pm",
+          "title": "Column Item - 2:40pm",
           "id": "column-item",
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
+                "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Column Item",
                   "model": "column-item",
