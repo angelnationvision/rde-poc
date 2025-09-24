@@ -1,7 +1,7 @@
 {
   "definitions": [
     {
-      "title": "Columns - 1:10pm",
+      "title": "Columns - 1:20pm",
       "id": "columns",
       "plugins": {
         "xwalk": {
@@ -25,38 +25,10 @@
           "valueType": "number",
           "name": "columns",
           "value": "",
-          "label": "Columns",
+          "label": "Number of Columns",
           "numberMin": 1,
           "numberMax": 4,
           "customErrorMsg": "You can only add 1 thru 4 columns"
-        },
-         {
-      "component": "container",
-      "label": "Container",
-      "name": "classes",
-      "valueType": "string",
-      "collapsible": true,
-      "fields": [
-        {
-          "component": "text-input",
-          "label": "Simple Text 1",
-          "name": "text",
-          "valueType": "string"
-        },
-        {
-          "component": "text-input",
-          "label": "Simple Text 2",
-          "name": "text2",
-          "valueType": "string"
-        }
-      ]
-    },
-         {
-          "component": "text",
-          "valueType": "string",
-          "name": "text",
-          "value": "",
-          "label": "Text"
         },
         {
       "component": "multiselect",
