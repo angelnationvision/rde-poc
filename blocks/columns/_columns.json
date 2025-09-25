@@ -65,6 +65,28 @@
           }
         ]
       },
+      {
+      "component": "select",
+      "label": "Select",
+      "name": "select",
+      "valueType": "string",
+      "options": [
+        { "name": "Option 1", "value": "option1" },
+        { "name": "Option 2", "value": "option2" }
+      ]
+    },
+       {
+          "component": "text",
+          "label": "First Column",
+          "name": "text",
+          "valueType": "string"
+        },
+       {
+      "component": "richtext",
+      "name": "rte",
+      "label": "Rich Text",
+      "valueType": "string"
+    },
        {
       "component": "container",
       "label": "Container First Col",
