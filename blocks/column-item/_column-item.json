@@ -29,13 +29,13 @@
       "fields": [
         {
           "component": "text",
-          "label": "Simple Text 1",
+          "label": "Simple Text text",
           "name": "text",
           "valueType": "string"
         },
         {
           "component": "text",
-          "label": "Simple Text 2",
+          "label": "Simple Text title",
           "name": "title",
           "valueType": "string"
         },
