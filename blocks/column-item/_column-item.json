@@ -1,7 +1,7 @@
 {
   "definitions": [
     {
-      "title": "Column Modifications - 9:20",
+      "title": "Column Modifications - 1pm",
       "id": "column-item",
       "plugins": {
         "xwalk": {
@@ -28,15 +28,15 @@
       "collapsible": true,
       "fields": [
         {
-          "component": "text-input",
+          "component": "text",
           "label": "Simple Text 1",
           "name": "text",
           "valueType": "string"
         },
         {
-          "component": "text-input",
+          "component": "text",
           "label": "Simple Text 2",
-          "name": "text2",
+          "name": "title",
           "valueType": "string"
         },
         {

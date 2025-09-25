@@ -645,15 +645,15 @@
         "collapsible": true,
         "fields": [
           {
-            "component": "text-input",
+            "component": "text",
             "label": "Simple Text 1",
             "name": "text",
             "valueType": "string"
           },
           {
-            "component": "text-input",
+            "component": "text",
             "label": "Simple Text 2",
-            "name": "text2",
+            "name": "title",
             "valueType": "string"
           },
           {
@@ -768,118 +768,33 @@
         "component": "select",
         "name": "classes",
         "value": "",
-        "label": "Title Styles",
+        "label": "Gap Space",
         "description": "",
         "valueType": "string",
         "options": [
           {
-            "name": "Heading 1",
-            "value": "heading-1"
+            "name": "X-Small",
+            "value": "gap-xsmall"
           },
           {
-            "name": "Heading 2",
-            "value": "heading-2"
+            "name": "Small",
+            "value": "gap-small"
           },
           {
-            "name": "Heading 3",
-            "value": "heading-3"
+            "name": "Medium",
+            "value": "gap-med"
           },
           {
-            "name": "Heading 4",
-            "value": "heading-4"
+            "name": "Large",
+            "value": "gap-large"
           },
           {
-            "name": "Subheading",
-            "value": "s-medium"
+            "name": "X-Large",
+            "value": "gap-xlarge"
           },
           {
-            "name": "Subheading Bold",
-            "value": "s-bold"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "label": "Select",
-        "name": "select",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Option 1",
-            "value": "option1"
-          },
-          {
-            "name": "Option 2",
-            "value": "option2"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "label": "First Column",
-        "name": "text",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "rte",
-        "label": "Rich Text",
-        "valueType": "string"
-      },
-      {
-        "component": "container",
-        "label": "Container First Col",
-        "name": "container-firstcol",
-        "valueType": "string",
-        "collapsible": true,
-        "fields": [
-          {
-            "component": "text-input",
-            "label": "First Column",
-            "name": "text",
-            "valueType": "string"
-          },
-          {
-            "component": "select",
-            "name": "classes-firstcol",
-            "value": "",
-            "label": "Title Styles",
-            "description": "",
-            "valueType": "string",
-            "options": [
-              {
-                "name": "Heading 1",
-                "value": "heading-1"
-              },
-              {
-                "name": "Heading 2",
-                "value": "heading-2"
-              },
-              {
-                "name": "Heading 3",
-                "value": "heading-3"
-              },
-              {
-                "name": "Heading 4",
-                "value": "heading-4"
-              }
-            ]
-          },
-          {
-            "component": "multiselect",
-            "name": "classes",
-            "label": "Gap Here",
-            "valueType": "string",
-            "options": [
-              {
-                "name": "Option 1",
-                "value": "option1"
-              },
-              {
-                "name": "Option 2",
-                "value": "option2"
-              }
-            ]
+            "name": "2X-Large",
+            "value": "gap-xxlarge"
           }
         ]
       }
