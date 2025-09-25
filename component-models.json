@@ -652,9 +652,8 @@
           },
           {
             "component": "text",
-            "label": "Simple Text title",
             "name": "title",
-            "valueType": "string"
+            "label": "Title"
           },
           {
             "component": "select",

@@ -34,10 +34,9 @@
           "valueType": "string"
         },
         {
-          "component": "text",
-          "label": "Simple Text title",
-          "name": "title",
-          "valueType": "string"
+        "component": "text",
+        "name": "title",
+        "label": "Title"
         },
         {
         "component": "select",
