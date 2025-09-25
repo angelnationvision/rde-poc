@@ -1,11 +1,14 @@
 export default function decorate(block) {
-  console.log("angel test");
   const cols = [...block.firstElementChild.children];
-  block.classList.add(`columns-${cols.length}-cols`);
+  block.classList.add('columns-main');
 
-  // setup image columns
+  // setup columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
+      col.parentElement.classList.add('grid-container'); 
+      
+      //Replace with authoring field
+      col.classList.add('colspan-default'); 
       const pic = col.querySelector('picture');
       if (pic) {
         const picWrapper = pic.closest('div');
