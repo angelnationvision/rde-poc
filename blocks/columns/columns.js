@@ -1,6 +1,7 @@
 export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
   block.classList.add('columns-main');
+  console.log("columns");
 
   // setup columns
   [...block.children].forEach((row) => {
