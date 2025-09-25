@@ -64,6 +64,99 @@
             "value": "gap-xxlarge"
           }
         ]
+      },
+             {
+        "component": "select",
+        "name": "ctavariation",
+        "label": "Desktop Column Span",
+        "options": [
+          {
+            "name": "primary",
+            "value": "desktop-colone"
+          },
+          {
+            "name": "input",
+            "value": "desktop-coltwo"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "input secondary",
+            "value": "secondary-variant"
+          },
+          {
+            "name": "text-btn",
+            "value": "text-btn"
+          },
+          {
+            "name": "link-btn",
+            "value": "link-btn"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "ctavariation1",
+        "label": "Mobile Column Span",
+        "options": [
+          {
+            "name": "primary",
+            "value": "mobile-colone"
+          },
+          {
+            "name": "input",
+            "value": "mobile-coltwo"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "input secondary",
+            "value": "secondary-variant"
+          },
+          {
+            "name": "text-btn",
+            "value": "text-btn"
+          },
+          {
+            "name": "link-btn",
+            "value": "link-btn"
+          }
+        ]
+      },
+       {
+        "component": "select",
+        "name": "ctavariation3",
+        "label": "Inner Spacing",
+        "options": [
+          {
+            "name": "primary",
+            "value": "spacingone"
+          },
+          {
+            "name": "input",
+            "value": "spacingtwo"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "input secondary",
+            "value": "secondary-variant"
+          },
+          {
+            "name": "text-btn",
+            "value": "text-btn"
+          },
+          {
+            "name": "link-btn",
+            "value": "link-btn"
+          }
+        ]
       }
       ]
     }
