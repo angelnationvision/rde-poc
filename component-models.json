@@ -638,6 +638,37 @@
     "id": "column-item",
     "fields": [
       {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Title Styles",
+        "description": "",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Heading 1",
+            "value": "heading-1"
+          },
+          {
+            "name": "Heading 2",
+            "value": "heading-2"
+          },
+          {
+            "name": "Heading 3",
+            "value": "heading-3"
+          },
+          {
+            "name": "Heading 4",
+            "value": "heading-4"
+          }
+        ]
+      },
+      {
         "component": "container",
         "label": "Container",
         "name": "container",
