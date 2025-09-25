@@ -728,6 +728,22 @@
                 "value": "heading-4"
               }
             ]
+          },
+          {
+            "component": "multiselect",
+            "name": "classes",
+            "label": "Gap Here",
+            "valueType": "string",
+            "options": [
+              {
+                "name": "Option 1",
+                "value": "option1"
+              },
+              {
+                "name": "Option 2",
+                "value": "option2"
+              }
+            ]
           }
         ]
       }
@@ -747,22 +763,6 @@
           "numberMax": 6,
           "customErrorMsg": "1 thru 6 columns"
         }
-      },
-      {
-        "component": "multiselect",
-        "name": "classes",
-        "label": "Gap Here",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Option 1",
-            "value": "option1"
-          },
-          {
-            "name": "Option 2",
-            "value": "option2"
-          }
-        ]
       },
       {
         "component": "select",
@@ -795,6 +795,63 @@
           {
             "name": "Subheading Bold",
             "value": "s-bold"
+          }
+        ]
+      },
+      {
+        "component": "container",
+        "label": "Container First Col",
+        "name": "container-firstcol",
+        "valueType": "string",
+        "collapsible": true,
+        "fields": [
+          {
+            "component": "text-input",
+            "label": "First Column",
+            "name": "text",
+            "valueType": "string"
+          },
+          {
+            "component": "select",
+            "name": "classes",
+            "value": "",
+            "label": "Title Styles",
+            "description": "",
+            "valueType": "string",
+            "options": [
+              {
+                "name": "Heading 1",
+                "value": "heading-1"
+              },
+              {
+                "name": "Heading 2",
+                "value": "heading-2"
+              },
+              {
+                "name": "Heading 3",
+                "value": "heading-3"
+              },
+              {
+                "name": "Heading 4",
+                "value": "heading-4"
+              }
+            ]
+          },
+          {
+            "component": "multiselect",
+            "name": "classes",
+            "label": "Gap Here",
+            "valueType": "string",
+            "options": [
+              {
+                "name": "Option 1",
+                "value": "option1"
+              },
+              {
+                "name": "Option 2",
+                "value": "option2"
+              }
+            ]
           }
         ]
       }

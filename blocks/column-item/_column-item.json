@@ -111,7 +111,17 @@
             "value": "heading-4"
           }
         ]
-      }
+      },
+        {
+      "component": "multiselect",
+      "name": "classes",
+      "label": "Gap Here",
+      "valueType": "string",
+      "options": [
+        { "name": "Option 1", "value": "option1" },
+        { "name": "Option 2", "value": "option2" }
+      ]
+    }
       ]
         }
       ]
