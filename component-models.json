@@ -813,7 +813,7 @@
           },
           {
             "component": "select",
-            "name": "classes",
+            "name": "classes-firstcol",
             "value": "",
             "label": "Title Styles",
             "description": "",
