@@ -27,9 +27,9 @@ const gapClass = gapName[1];
         const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
         console.log('Found elements:', matching_elements);
         const getElement = matching_elements.at(-1);
-        const getClassname = getElement.innerText();
         console.log("get Element", getElement);
-        console.log("get classname", getClassname);
+        const getElementclass = getElement.innerHTML();
+        console.log("get classname", getElementclass);
 
        }
       else {
