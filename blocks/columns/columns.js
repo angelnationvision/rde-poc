@@ -9,8 +9,10 @@ export default function decorate(block) {
   // setup columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
+      var attr = $('div[class*=gap-]').attr('class');
+      console.log(attr);
       console.log(col.parentElement);
-      col.parentElement.classList.add('grid-container'); 
+      col.parentElement.classList.add('grid-container',attr); 
       
       //Replace with authoring field
       col.classList.add('colspan-default'); 
