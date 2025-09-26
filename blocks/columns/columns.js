@@ -22,4 +22,5 @@ console.log(gapClass);
   });
 
   block.classList.add('columns-main');
+  block.classList.remove(gapClass);
 }
