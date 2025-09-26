@@ -20,15 +20,18 @@ const gapClass = gapName[1];
       const searchText = "colspan-";
       console.log(nodeList.innerHTML.includes(searchText));
       
-      /*const elementsArray = Array.from(nodeList);
-      console.log("element array");
-      console.log(elementsArray);
-      const foundElement = elementsArray.find(element => {
-              return element.innerHTML.includes(searchText); 
-        }); 
-        if (foundElement) {
-          console.log("Found element:", foundElement);
-        }  */
+        const selection = col;
+        let i = -1;
+
+        console.info("SELECTION", selection);
+        let targetIndex;
+        while(++i < selection.length){
+          if(selection[i].innerHTML.indexOf(searchText) > -1){
+            targetIndex = i;
+          }
+        }
+        console.info("targetIndex", targetIndex);
+        console.info("TARGET", selection[targetIndex]);
 
       if (nodeList.innerHTML.includes(searchText)) {
         console.log("true - Yes has object");
