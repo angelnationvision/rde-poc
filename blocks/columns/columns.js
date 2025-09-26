@@ -18,9 +18,12 @@ const gapClass = gapName[1];
         }
       }
 
+
+
+
       //Created colnode prefix in case others use the classname within their blocks 
      const colnode = "colnode-";
-     if (col.innerHTML.includes(colnode)) {
+   //  if (col.innerHTML.includes(colnode)) {
         col.parentElement.removeAttribute("style");
         const all_elements_array = Array.from(document.querySelectorAll('*'));
         const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
@@ -29,7 +32,7 @@ const gapClass = gapName[1];
         console.log(eleString);
         col.classList.add(eleString);
         //const remove = getElement.remove();
-       }
+     //  }
     });
   });
   block.classList.remove(gapClass);
