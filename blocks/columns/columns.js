@@ -22,6 +22,9 @@ const gapClass = gapName[1];
       if (myString.filter(searchTerm)) {
         console.log(`"${myString}" contains "${searchTerm}"`); 
       }
+      else {
+        console.log("no colspan");
+      }
 
     });
   });
