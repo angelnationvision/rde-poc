@@ -24,20 +24,18 @@ const gapClass = gapName[1];
     const all_elements_array = Array.from(document.querySelectorAll('*'));
     const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
     console.log('Found elements:', matching_elements);
+    const getElement = matching_element.at(-1);
+    console.log("get Element", getElement)
 
 
 //Good Code Below
-     if (col.innerHTML.includes(colnode)) {
-
+   /*  if (col.innerHTML.includes(colnode)) {
         console.log("true - Yes has object");
         console.log(col);
-
        }
       else {
         console.log("false - nope");
-      }
-
-
+      }*/
     });
   });
   block.classList.remove(gapClass);
