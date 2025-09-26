@@ -7,7 +7,7 @@ export default function decorate(block) {
     [...row.children].forEach((col) => {
       const attr = document.querySelector('[class*="gap-"]');
       console.log("foreach area");
-      col.parentElement.classList.add('attr');
+      col.parentElement.classList.add(attr);
       col.classList.add('colspan-default'); 
       const pic = col.querySelector('picture');
       if (pic) {
