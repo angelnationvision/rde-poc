@@ -28,6 +28,7 @@ console.log(matchingElements);
     var nodeList = col;
      if (nodeList.innerHTML.includes(colspan)) {
         console.log("true - Yes has object");
+        console.log(col);
 
        }
       else {
