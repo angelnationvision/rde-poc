@@ -17,15 +17,9 @@ const gapClass = gapName[1];
         }
       }
       console.log(col);
-      const myObject = col;
-        const searchValue = 'searchThis';
-        const foundKey = Object.keys(myObject).find(key => myObject[key] === searchValue);
-
-        console.log(foundKey);
-
-
-      const myString = "test colspan";
+      const myString = col;
       const searchTerm = "colspan";
+      console.log(`"${myString}" contains "${searchTerm}"`); 
 
       if (myString.includes(searchTerm)) {
         console.log(`"${myString}" contains "${searchTerm}"`); 
