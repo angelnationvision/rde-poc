@@ -21,9 +21,6 @@ const gapClass = gapName[1];
       const searchTerm = "colspan";
       console.log(`"${myString}" contains "${searchTerm}"`); 
 
-      if (myString.includes(searchTerm)) {
-        console.log(`"${myString}" contains "${searchTerm}"`); 
-      }
     });
   });
   block.classList.remove(gapClass);
