@@ -21,7 +21,7 @@ const gapClass = gapName[1];
 const nodeList = col; // Example: Select all <div> elements
 
 // 2. Define the text you're looking for
-const searchText = "example text";
+const searchText = "colspan";
 
 // 3. Convert the NodeList to an array and filter it
 const matchingElements = Array.from(nodeList).filter(element => {
