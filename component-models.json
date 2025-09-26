@@ -736,8 +736,8 @@
       },
       {
         "component": "select",
-        "name": "innerspacing",
-        "label": "Inner Spacing",
+        "name": "topspacing",
+        "label": "Top Spacing",
         "options": [
           {
             "name": "Top - small",
@@ -750,7 +750,14 @@
           {
             "name": "Top - large",
             "value": "gridtop-lg"
-          },
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "bottomspacing",
+        "label": "Bottom Spacing",
+        "options": [
           {
             "name": "Bottom - small",
             "value": "gridbottom-sm"
@@ -767,7 +774,7 @@
       },
       {
         "component": "select",
-        "name": "bgcolor",
+        "name": "gridbc",
         "label": "Background Color",
         "options": [
           {
