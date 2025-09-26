@@ -19,7 +19,9 @@ const gapClass = gapName[1];
       console.log(col);
 
       const nodeList = col; 
+      console.log(nodeList);
       const searchText = "colspan-5";
+      console.log(searchText);
 
       const matchingElements = Array.from(nodeList).filter(element => {
         return element.textContent.includes(searchText);
