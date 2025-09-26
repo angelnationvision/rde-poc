@@ -1,21 +1,21 @@
 export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
   var attr = document.querySelector('[class*="gap-"]');
-  console.log(attr.className);
-
+   console.log(attr.className);
+  
+  
   block.classList.add('columns-main');
-  console.log("columns");
-  console.log(cols);
-  console.log( block.classList);
+  console.log("columns area");
+  console.log(cols[0]);
+
 
 
   // setup columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
+      console.log("foreach area");
       console.log(col.parentElement);
-      col.parentElement.classList.add('grid-container',attr); 
-      
-      //Replace with authoring field
+      col.parentElement.classList.add('grid-container'); 
       col.classList.add('colspan-default'); 
       const pic = col.querySelector('picture');
       if (pic) {
