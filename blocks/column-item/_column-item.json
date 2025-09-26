@@ -22,97 +22,145 @@
       "fields": [
         {
         "component": "select",
-        "name": "ctavariation",
+        "name": "desktop",
         "label": "Desktop Column Span",
         "options": [
           {
-            "name": "primary",
-            "value": "desktop-colone"
+            "name": "1",
+            "value": "colspan-1"
           },
           {
-            "name": "input",
-            "value": "desktop-coltwo"
+            "name": "2",
+            "value": "colspan-2"
           },
           {
-            "name": "secondary",
-            "value": "secondary"
+            "name": "3",
+            "value": "colspan-3"
           },
           {
-            "name": "input secondary",
-            "value": "secondary-variant"
+            "name": "4",
+            "value": "colspan-4"
           },
           {
-            "name": "text-btn",
-            "value": "text-btn"
+            "name": "5",
+            "value": "colspan-5"
           },
           {
-            "name": "link-btn",
-            "value": "link-btn"
+            "name": "6",
+            "value": "colspan-6"
+          },
+          {
+            "name": "7",
+            "value": "colspan-7"
+          },
+           {
+            "name": "8",
+            "value": "colspan-8"
+          },
+           {
+            "name": "9",
+            "value": "colspan-9"
+          },
+           {
+            "name": "10",
+            "value": "colspan-10"
+          },
+           {
+            "name": "11",
+            "value": "colspan-11"
+          },
+           {
+            "name": "12",
+            "value": "colspan-12"
           }
         ]
       },
       {
         "component": "select",
-        "name": "ctavariation1",
+        "name": "mobile",
         "label": "Mobile Column Span",
         "options": [
           {
-            "name": "primary",
-            "value": "mobile-colone"
+            "name": "1 - 25%",
+            "value": "colspan-m-1"
           },
           {
-            "name": "input",
-            "value": "mobile-coltwo"
+            "name": "2 - Half",
+            "value": "colspan-m-2"
           },
           {
-            "name": "secondary",
-            "value": "secondary"
+            "name": "3 - 75%",
+            "value": "colspan-m-3"
           },
           {
-            "name": "input secondary",
-            "value": "secondary-variant"
-          },
-          {
-            "name": "text-btn",
-            "value": "text-btn"
-          },
-          {
-            "name": "link-btn",
-            "value": "link-btn"
+            "name": "4 - Full",
+            "value": "colspan-m-4"
           }
         ]
       },
        {
         "component": "select",
-        "name": "ctavariation3",
+        "name": "innerspacing",
         "label": "Inner Spacing",
         "options": [
           {
-            "name": "primary",
-            "value": "spacingone"
+            "name": "Top - small",
+            "value": "gridtop-sm"
           },
           {
-            "name": "input",
-            "value": "spacingtwo"
+            "name": "Top - med",
+            "value": "gridtop-md"
           },
           {
-            "name": "secondary",
-            "value": "secondary"
+            "name": "Top - large",
+            "value": "gridtop-lg"
           },
           {
-            "name": "input secondary",
-            "value": "secondary-variant"
+            "name": "Bottom - small",
+            "value": "gridbottom-sm"
           },
           {
-            "name": "text-btn",
-            "value": "text-btn"
+            "name": "Bottom - med",
+            "value": "gridbottom-md"
           },
           {
-            "name": "link-btn",
-            "value": "link-btn"
+            "name": "Bottom - large",
+            "value": "gridbottom-lg"
+          }
+        ]
+      },
+       {
+        "component": "select",
+        "name": "bgcolor",
+        "label": "Background Color",
+        "options": [
+          {
+            "name": "getthese",
+            "value": "gridbgcolor-colorname"
+          },
+          {
+            "name": "getthese",
+            "value": "gridbgcolor-colorname"
+          },
+          {
+            "name": "getthese",
+            "value": "gridbgcolor-colorname"
+          },
+          {
+            "name": "getthese",
+            "value": "gridbgcolor-colorname"
+          },
+          {
+            "name": "getthese",
+            "value": "gridbgcolor-colorname"
+          },
+          {
+            "name": "getthese",
+            "value": "gridbgcolor-colorname"
           }
         ]
       }
+      
     ]
     }
       ],

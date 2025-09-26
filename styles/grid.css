@@ -4,8 +4,6 @@
   grid-template-columns: repeat(12, 1fr); 
   margin: 0 auto;
 }
-
-
 @media (width >= 990px) {
   .colspan-default {
     grid-column: span 1; 
@@ -49,7 +47,7 @@
 }
 
 @media (width <= 990px) {
-  .colspan-m-default {
+   .colspan-default {
     grid-column: span 12; 
   }
   .colspan-m-1 {
