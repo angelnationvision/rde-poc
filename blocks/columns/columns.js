@@ -32,6 +32,8 @@ const matching_elements = all_elements_array.filter(element => element.innerHTML
 
 console.log('Found elements:', matching_elements);
 
+matching_elements.classList.add("test");
+
 //Good Code Below
 
      if (nodeList.innerHTML.includes(colnode)) {
