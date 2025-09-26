@@ -3,8 +3,6 @@ const cols = [...block.firstElementChild.children];
 const attr = document.querySelector('[class*="gap-"]');
 const gapName = attr.className.split(" ");
 const gapClass = gapName[1];
-const colNumber = cols.length;
-console.log(colNumber);
 // setup columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
