@@ -17,11 +17,7 @@ const gapClass = gapName[1];
         }
       }
       console.log(col);
-              const myObject = {
-          key1: 'value1',
-          key2: 'searchThis',
-          key3: 'value3'
-        };
+      const myObject = col;
         const searchValue = 'searchThis';
         const foundKey = Object.keys(myObject).find(key => myObject[key] === searchValue);
 
