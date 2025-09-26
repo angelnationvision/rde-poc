@@ -1,15 +1,14 @@
 export default function decorate(block) {
 const cols = [...block.firstElementChild.children];
+const attr = document.querySelector('[class*="gap-"]');
+const gapName = attr.className.split(" ");
+const gapClass = gapName[1];
+console.log(gapClass);
 
   // setup columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
-      const attr = document.querySelector('[class*="gap-"]');
-      const gapName = attr.className.split(" ");
-      const gapClass = gapName[1];
-      console.log(gapClass);
-
-      col.parentElement.classList.add('grid-container');
+      col.parentElement.classList.add('grid-container', gapClass);
       col.classList.add('colspan-default'); 
       const pic = col.querySelector('picture');
       if (pic) {
