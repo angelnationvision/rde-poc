@@ -19,7 +19,8 @@ console.log(gapClass);
       }
     });
   });
-
-  block.classList.add('columns-main');
   block.classList.remove(gapClass);
+  block.classList.add(`columns-${cols.length}-cols`)
+  block.classList.add('columns-main');
+
 }
