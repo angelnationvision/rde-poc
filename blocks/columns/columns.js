@@ -7,6 +7,7 @@ const gapClass = gapName[1];
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
       col.parentElement.classList.add('grid-container', gapClass);
+      console.log(window.innterWidth);
       if (window.innerWidth > '900px') {
           col.parentElement.setAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
       }
