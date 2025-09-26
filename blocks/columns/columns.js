@@ -6,7 +6,7 @@ const cols = [...block.firstElementChild.children];
     [...row.children].forEach((col) => {
       const attr = document.querySelector('[class*="gap-"]');
       const gapName = attr.className.split(" ");
-      const gapClass = gapName[2]
+      const gapClass = gapName[1];
       console.log(gapClass);
 
       col.parentElement.classList.add('grid-container');
