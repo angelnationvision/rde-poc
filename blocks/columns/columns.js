@@ -1,12 +1,12 @@
 export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
-const attr = document.querySelector('[class*="gap-"]')[2];
-console.log(attr);
+const attr = document.querySelector('[class*="gap-"]');
+console.log(attr.className);
 
   // setup columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
-      col.parentElement.classList.add('grid-container', attr);
+      col.parentElement.classList.add('grid-container');
       col.classList.add('colspan-default'); 
       const pic = col.querySelector('picture');
       if (pic) {
