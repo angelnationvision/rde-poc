@@ -17,12 +17,22 @@ const gapClass = gapName[1];
         }
       }
       console.log(col);
+              const myObject = {
+          key1: 'value1',
+          key2: 'searchThis',
+          key3: 'value3'
+        };
+        const searchValue = 'searchThis';
+        const foundKey = Object.keys(myObject).find(key => myObject[key] === searchValue);
+
+        console.log(foundKey);
+
 
       const myString = "test colspan";
       const searchTerm = "colspan";
 
-      if (col.includes(searchTerm)) {
-        console.log(`"${col}" contains "${searchTerm}"`); 
+      if (myString.includes(searchTerm)) {
+        console.log(`"${myString}" contains "${searchTerm}"`); 
       }
     });
   });
