@@ -17,15 +17,16 @@ const gapClass = gapName[1];
         }
       }
 
-    const colspan = "colspan-";
-    var select = col;
+  
 const matchingElements = Array.from(col).filter(element =>
   element.innerHTML.includes('colspan')
 );
 console.log("matchingElements");
 console.log(matchingElements);
 
-     if (select.innerHTML.includes(colspan)) {
+    const colspan = "colspan-";
+    var nodeList = col;
+     if (nodeList.innerHTML.includes(colspan)) {
         console.log("true - Yes has object");
 
        }
