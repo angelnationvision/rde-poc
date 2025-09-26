@@ -17,9 +17,11 @@ const gapClass = gapName[1];
           picWrapper.classList.add('columns-img-col');
         }
       }
-    const colnode = "colnode-";
 
+      //Created colnode prefix in case others use the classname within their blocks 
+     const colnode = "colnode-";
      if (col.innerHTML.includes(colnode)) {
+        col.parentElement.removeAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
         const all_elements_array = Array.from(document.querySelectorAll('*'));
         const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
         const getElement = matching_elements.at(-1);
