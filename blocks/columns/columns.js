@@ -16,7 +16,10 @@ const gapClass = gapName[1];
           picWrapper.classList.add('columns-img-col');
         }
       }
-
+      console.log(col);
+     const getRoot = document.getElementsByClassName('grid-container');
+     console.log(getRoot);
+     
       const myString = "test colspan";
       const searchTerm = "colspan";
 
