@@ -7,7 +7,12 @@ const gapClass = gapName[1];
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
       col.parentElement.classList.add('grid-container', gapClass);
-      col.parentElement.setAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
+      if (window.innerWidth > '900px') {
+          col.parentElement.setAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
+      }
+      else {
+          col.parentElement.setAttribute("style",`grid-template-columns: repeat(1, 1fr)`);
+      }
       const pic = col.querySelector('picture');
       if (pic) {
         const picWrapper = pic.closest('div');
