@@ -17,11 +17,10 @@ const gapClass = gapName[1];
         }
       }
       const nodeList = col; 
-      
       const searchText = "colspan-";
       console.log(nodeList.innerHTML.includes(searchText));
       
-      const elementsArray = Array.from(nodeList);
+      /*const elementsArray = Array.from(nodeList);
       console.log("element array");
       console.log(elementsArray);
       const foundElement = elementsArray.find(element => {
@@ -29,7 +28,7 @@ const gapClass = gapName[1];
         }); 
         if (foundElement) {
           console.log("Found element:", foundElement);
-        }  
+        }  */
 
       if (nodeList.innerHTML.includes(searchText)) {
         console.log("true - Yes has object");
