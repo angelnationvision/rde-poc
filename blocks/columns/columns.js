@@ -17,14 +17,12 @@ const gapClass = gapName[1];
         }
       }
       console.log(col);
-     const getRoot = document.getElementsByClassName('grid-container');
-     console.log(getRoot);
-     
+
       const myString = "test colspan";
       const searchTerm = "colspan";
 
-      if (myString.includes(searchTerm)) {
-        console.log(`"${myString}" contains "${searchTerm}"`); 
+      if (col.includes(searchTerm)) {
+        console.log(`"${col}" contains "${searchTerm}"`); 
       }
     });
   });
