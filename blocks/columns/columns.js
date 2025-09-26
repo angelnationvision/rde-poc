@@ -4,16 +4,6 @@ const attr = document.querySelector('[class*="gap-"]');
 const gapName = attr.className.split(" ");
 const gapClass = gapName[1];
 
-const colnode = "colnode-";
-const all_elements_array = Array.from(document.querySelectorAll('*')); 
-const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
-            const getElement = matching_elements.at(-1);
-            console.log(getElement);
-            const eleString = getElement.textContent.trim().replace('colnode-', '');
-            console.log(eleString);
-       
-        col.classList.add(eleString);
-
 // setup columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
@@ -29,7 +19,7 @@ const matching_elements = all_elements_array.filter(element => element.innerHTML
       }
 
       //Created colnode prefix in case others use the classname within their blocks 
-            const colnode = "colnode-";
+       /*     const colnode = "colnode-";
             const all_elements_array = Array.from(document.querySelectorAll('*')); 
             const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
             const getElement = matching_elements.at(-1);
@@ -37,15 +27,26 @@ const matching_elements = all_elements_array.filter(element => element.innerHTML
             const eleString = getElement.textContent.trim().replace('colnode-', '');
             console.log(eleString);
        
-        col.classList.add(eleString);
+        col.classList.add(eleString);*/
 
         //const remove = getElement.remove();
 
-        if (eleString == null) {
+      /*  if (eleString == null) {
           col.parentElement.setAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
-        }
+        }*/
     });
   });
+const colnode = "colnode-";
+const all_elements_array = Array.from(document.querySelectorAll('*')); 
+const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
+const getElement = matching_elements.at(-1);
+console.log(getElement);
+            const eleString = getElement.textContent.trim().replace('colnode-', '');
+            console.log(eleString);
+       
+       // col.classList.add(eleString);
+
+
   block.classList.remove(gapClass);
   block.classList.add(`columns-${cols.length}-cols`)
   block.classList.add('columns-main');
