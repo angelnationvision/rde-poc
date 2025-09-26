@@ -1,5 +1,7 @@
+@media (width <= 990px) {
 .grid-container {
     grid-template-columns: repeat(1, 1fr) !important
+}
 }
 
 .grid-left {
