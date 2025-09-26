@@ -25,7 +25,7 @@ const gapClass = gapName[1];
         console.log('Found elements:', matching_elements);
         const getElement = matching_elements.at(-1);
         console.log("get Element", getElement);
-        const eleString = getElement.textContent.trim();
+        const eleString = getElement.textContent.trim().replace('colnode-', '');
         console.log(eleString);
         //const remove = getElement.remove();
        }
