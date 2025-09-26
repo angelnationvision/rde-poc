@@ -7,8 +7,8 @@ const gapClass = gapName[1];
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
       col.parentElement.classList.add('grid-container', gapClass);
-      console.log(window.innterWidth);
-      if (window.innerWidth > '900px') {
+      console.log(document.window.innerWidth);
+      if (document.window.innerWidth > '900px') {
           col.parentElement.setAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
       }
       else {
@@ -27,5 +27,13 @@ const gapClass = gapName[1];
   block.classList.remove(gapClass);
   block.classList.add(`columns-${cols.length}-cols`)
   block.classList.add('columns-main');
+
+  /*Column Item Code*/
+      console.log("column item");
+const colspan = document.querySelector('[class*="colspan"]');
+    console.log(colspan);
+ if (colspan) {
+    console.log("colspan is here");
+ }
 
 }

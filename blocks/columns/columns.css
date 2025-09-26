@@ -1,1 +1,28 @@
+.grid-left {
+    text-align: left;
+}
+.grid-center {
+    text-align: center;
+}
+.grid-right {
+    text-align: right;
+}
+.gridtop-sm {
+    padding-top: 8px;
+}
+.gridtop-md {
+     padding-top: 16px;
+}
+.gridtop-lg {
+     padding-top: 24px;
+}
+.gridbottom-sm {
+     padding-top: 8px;
+}
+.gridbottom-md {
+    padding-top: 16px;
+}
+.gridbottom-lg {
+    padding-top: 24px;
+}
 
