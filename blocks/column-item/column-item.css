@@ -1,4 +1,13 @@
 
+.grid-left {
+    text-align: left;
+}
+.grid-center {
+    text-align: center;
+}
+.grid-right {
+    text-align: right;
+}
 .gridtop-sm {
     padding-top: 8px;
 }
