@@ -644,51 +644,51 @@
         "options": [
           {
             "name": "1",
-            "value": "colspan-1"
+            "value": "colnode-colspan-1"
           },
           {
             "name": "2",
-            "value": "colspan-2"
+            "value": "colnode-colspan-2"
           },
           {
             "name": "3 - 25%",
-            "value": "colspan-3"
+            "value": "colnode-colspan-3"
           },
           {
             "name": "4",
-            "value": "colspan-4"
+            "value": "colnode-colspan-4"
           },
           {
             "name": "5",
-            "value": "colspan-5"
+            "value": "colnode-colspan-5"
           },
           {
             "name": "6 - 50%",
-            "value": "colspan-6"
+            "value": "colnode-colspan-6"
           },
           {
             "name": "7",
-            "value": "colspan-7"
+            "value": "colnode-colspan-7"
           },
           {
             "name": "8",
-            "value": "colspan-8"
+            "value": "colnode-colspan-8"
           },
           {
             "name": "9 - 75%",
-            "value": "colspan-9"
+            "value": "colnode-colspan-9"
           },
           {
             "name": "10",
-            "value": "colspan-10"
+            "value": "colnode-colspan-10"
           },
           {
             "name": "11",
-            "value": "colspan-11"
+            "value": "colnode-colspan-11"
           },
           {
             "name": "12 - 100%",
-            "value": "colspan-12"
+            "value": "colnode-colspan-12"
           }
         ]
       },

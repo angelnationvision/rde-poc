@@ -18,18 +18,8 @@ const gapClass = gapName[1];
       }
 
   
-    const colspan = "colspan-";
+    const colnode = "colnode-";
     var nodeList = col;
-var aTags = document.getElementsByTagName("p");
-var searchText = "colspan-";
-var found;
-
-for (var i = 0; i < aTags.length; i++) {
-  if (aTags[i].textContent == searchText) {
-    found = aTags[i];
-    break;
-  }
-}
 
      if (nodeList.innerHTML.includes(colspan)) {
         console.log("true - Yes has object");
