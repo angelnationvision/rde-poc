@@ -1,5 +1,8 @@
 export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
+  var attr = document.querySelector('[class*="gap-"]');
+  console.log(attr.className);
+
   block.classList.add('columns-main');
   console.log("columns");
   console.log(cols);
@@ -9,8 +12,6 @@ export default function decorate(block) {
   // setup columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
-      var attr = document.querySelector('[class*="gap-"]');
-      console.log(attr.className);
       console.log(col.parentElement);
       col.parentElement.classList.add('grid-container',attr); 
       
