@@ -19,7 +19,9 @@ const gapClass = gapName[1];
       console.log(col);
       const myString = col;
       const searchTerm = "colspan";
-      console.log(`"${myString}" contains "${searchTerm}"`); 
+      if (myString.filter(searchTerm)) {
+        console.log(`"${myString}" contains "${searchTerm}"`); 
+      }
 
     });
   });
