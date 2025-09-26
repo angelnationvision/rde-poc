@@ -5,13 +5,11 @@ const cols = [...block.firstElementChild.children];
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
       console.log(col.className);
+      col.classList.remove ('columns block');
       const attr = document.querySelector('[class*="gap-"]');
       console.log(attr.className);
 
-
-
-
-      col.parentElement.classList.add('grid-container');
+      col.parentElement.classList.add('grid-container', attr);
       col.classList.add('colspan-default'); 
       const pic = col.querySelector('picture');
       if (pic) {
