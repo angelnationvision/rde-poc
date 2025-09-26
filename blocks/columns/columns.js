@@ -21,23 +21,20 @@ const gapClass = gapName[1];
     const colnode = "colnode-";
     var nodeList = Array.from(col);
 
-    const all_elements_array = Array.from(document.querySelectorAll('*'));
-    const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
-    console.log('Found elements:', matching_elements);
-    const getElement = matching_elements.at(-1);
-    //const getClassname = getElement.innerHTML();
-    console.log("get Element", getElement);
-    //console.log("get classname", getClassname);
-
-
-//Good Code Below
-   /*  if (col.innerHTML.includes(colnode)) {
+     if (col.innerHTML.includes(colnode)) {
         console.log("true - Yes has object");
-        console.log(col);
+         const all_elements_array = Array.from(document.querySelectorAll('*'));
+        const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
+        console.log('Found elements:', matching_elements);
+        const getElement = matching_elements.at(-1);
+        const getClassname = getElement.innerText();
+        console.log("get Element", getElement);
+        console.log("get classname", getClassname);
+
        }
       else {
         console.log("false - nope");
-      }*/
+      }
     });
   });
   block.classList.remove(gapClass);
