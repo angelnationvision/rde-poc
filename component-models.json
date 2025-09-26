@@ -639,7 +639,7 @@
     "fields": [
       {
         "component": "select",
-        "name": "ctavariation",
+        "name": "desktopgap",
         "label": "Desktop Column Span",
         "options": [
           {

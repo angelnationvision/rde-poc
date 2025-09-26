@@ -110,7 +110,7 @@
           }
         },
         {
-          "title": "Column Modifications - 1pm",
+          "title": "Column Item",
           "id": "column-item",
           "plugins": {
             "xwalk": {

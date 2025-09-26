@@ -1,7 +1,7 @@
 {
   "definitions": [
     {
-      "title": "Column Modifications - 1pm",
+      "title": "Column Item",
       "id": "column-item",
       "plugins": {
         "xwalk": {
@@ -22,7 +22,7 @@
       "fields": [
         {
         "component": "select",
-        "name": "ctavariation",
+        "name": "desktopgap",
         "label": "Desktop Column Span",
         "options": [
           {
