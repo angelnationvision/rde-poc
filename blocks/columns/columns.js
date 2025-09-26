@@ -16,6 +16,13 @@ const gapClass = gapName[1];
           picWrapper.classList.add('columns-img-col');
         }
       }
+
+      const myString = col;
+      const searchTerm = "colspan";
+
+      if (myString.includes(searchTerm)) {
+        console.log(`"${myString}" contains "${searchTerm}"`); 
+      }
     });
   });
   block.classList.remove(gapClass);
@@ -25,8 +32,5 @@ const gapClass = gapName[1];
   /*Column Item Code*/
       console.log("column item");
       
-if (your_string.indexOf('colspan') > -1) {
-  console.log("colspan found inside your_string");
-}
 
 }
