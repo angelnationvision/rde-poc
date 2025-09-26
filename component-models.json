@@ -651,7 +651,7 @@
             "value": "colspan-2"
           },
           {
-            "name": "3",
+            "name": "3 - 25%",
             "value": "colspan-3"
           },
           {
@@ -663,7 +663,7 @@
             "value": "colspan-5"
           },
           {
-            "name": "6",
+            "name": "6 - 50%",
             "value": "colspan-6"
           },
           {
@@ -675,7 +675,7 @@
             "value": "colspan-8"
           },
           {
-            "name": "9",
+            "name": "9 - 75%",
             "value": "colspan-9"
           },
           {
@@ -687,7 +687,7 @@
             "value": "colspan-11"
           },
           {
-            "name": "12",
+            "name": "12 - 100%",
             "value": "colspan-12"
           }
         ]
@@ -702,7 +702,7 @@
             "value": "colspan-m-1"
           },
           {
-            "name": "2 - Half",
+            "name": "2 - 50%",
             "value": "colspan-m-2"
           },
           {
@@ -710,7 +710,7 @@
             "value": "colspan-m-3"
           },
           {
-            "name": "4 - Full",
+            "name": "4 - 100%",
             "value": "colspan-m-4"
           }
         ]
