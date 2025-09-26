@@ -4,7 +4,7 @@ const cols = [...block.firstElementChild.children];
   // setup columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
-      const attr = document.querySelector('[class*="gap-"][2]');
+      const attr = document.querySelector('[class*="gap-"]');
       console.log(attr.className);
 
       col.parentElement.classList.add('grid-container');
