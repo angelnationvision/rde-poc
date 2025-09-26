@@ -21,7 +21,21 @@ const gapClass = gapName[1];
     const colnode = "colnode-";
     var nodeList = col;
 
-     if (nodeList.innerHTML.includes(colspan)) {
+// Get a list of all elements as an array
+const all_elements_array = Array.from(document.querySelectorAll('*'));
+
+// Define the string you are looking for
+const search_string = 'colnode-';
+
+// Filter the array to get only the elements that include the string in their innerHTML
+const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(search_string));
+
+console.log('Found elements:', matching_elements);
+
+//Good Code Below
+
+     if (nodeList.innerHTML.includes(colnode)) {
+
         console.log("true - Yes has object");
         console.log(col);
 
