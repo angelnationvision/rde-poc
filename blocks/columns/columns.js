@@ -27,7 +27,7 @@ const gapClass = gapName[1];
         console.log('Found elements:', matching_elements);
         const getElement = matching_elements.at(-1);
         console.log("get Element", getElement);
-        const eleString = String(getElement);
+        const eleString = String(getElement).textContent;
         console.log(eleString);
         const trimElement = eleString.htmlString.replace(/<p>/g, "").replace(/<\/p>/g, "");
         console.log(trimElement);
