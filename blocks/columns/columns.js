@@ -9,7 +9,7 @@ console.log(colNumber);
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
       col.parentElement.classList.add('grid-container', gapClass);
-      col.parentElement.attr("style='grid-template-columns: repeat(5, 1fr)'");
+      col.parentElement.setAttribute("style='grid-template-columns: repeat(5, 1fr)'");
       const pic = col.querySelector('picture');
       if (pic) {
         const picWrapper = pic.closest('div');
