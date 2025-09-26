@@ -19,10 +19,10 @@ const gapClass = gapName[1];
 
   
     const colnode = "colnode-";
-    var nodeList = col;
+    var nodeList = Array.from(col);
 
     const all_elements_array = Array.from(document.querySelectorAll('*'));
-    const matching_elements = col.filter(element => element.innerHTML.includes(colnode));
+    const matching_elements = nodeList.filter(element => element.innerHTML.includes(colnode));
     console.log('Found elements:', matching_elements);
 
 
