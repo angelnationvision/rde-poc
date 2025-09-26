@@ -32,7 +32,7 @@ const gapClass = gapName[1];
 
       if (nodeList.innerHTML.includes(searchText)) {
         console.log("true - Yes has object");
-        const getcol = document.querySelectorAll(':contains("colspan-")');
+        const getcol = col.querySelectorAll(':contains("colspan-")');
         console.log(getcol);
       }
       else {
