@@ -17,47 +17,17 @@ const gapClass = gapName[1];
         }
       }
 
-      const colspan = "colspan-";
-      const selection = col;
-      let i = -1;
-
-      console.info("SELECTION", selection);
-      let targetIndex;
-      while(++i < selection.length){
-        if(selection[i].innerHTML.indexOf(colspan) > -1) {
-          targetIndex = i;
-        }
-      }
-      console.info("targetIndex", targetIndex);
-      console.info("TARGET", selection[targetIndex]);
-
-
-
-
-
-/*
-      const nodeList = col; 
-      const searchText = "colspan-";
-      console.log(nodeList.innerHTML.includes(searchText));
-      
-        let i = -1;
-
-        console.info("SELECTION", nodeList);
-        let targetIndex;
-        while(++i < selection.length){
-          if(selection[i].innerHTML.indexOf(searchText) > -1){
-            targetIndex = i;
-          }
-        }
-        console.info("targetIndex", targetIndex);
-        console.info("TARGET", selection[targetIndex]);
-
-      if (nodeList.innerHTML.includes(searchText)) {
+    const colspan = "colspan-";
+    var select = col;
+    const filtered = [...select].filter(section => section.children[0].innerText == "colspan-")
+    console.log(filtered);
+     if (nodeList.innerHTML.includes(colspan)) {
         console.log("true - Yes has object");
+
        }
       else {
         console.log("false - nope");
-      }*/
+      }
 
     });
   });
