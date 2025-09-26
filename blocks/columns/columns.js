@@ -22,13 +22,12 @@ const gapClass = gapName[1];
     var nodeList = Array.from(col);
 
     const all_elements_array = Array.from(document.querySelectorAll('*'));
-    const matching_elements = nodeList.filter(element => element.innerHTML.includes(colnode));
+    const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
     console.log('Found elements:', matching_elements);
 
 
 //Good Code Below
-/*
-     if (nodeList.innerHTML.includes(colnode)) {
+     if (col.innerHTML.includes(colnode)) {
 
         console.log("true - Yes has object");
         console.log(col);
@@ -36,7 +35,7 @@ const gapClass = gapName[1];
        }
       else {
         console.log("false - nope");
-      }*/
+      }
 
 
     });
