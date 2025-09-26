@@ -16,10 +16,7 @@ const gapClass = gapName[1];
           picWrapper.classList.add('columns-img-col');
         }
       }
-
-  
     const colnode = "colnode-";
-    var nodeList = Array.from(col);
 
      if (col.innerHTML.includes(colnode)) {
         const all_elements_array = Array.from(document.querySelectorAll('*'));
@@ -27,10 +24,10 @@ const gapClass = gapName[1];
         console.log('Found elements:', matching_elements);
         const getElement = matching_elements.at(-1);
         console.log("get Element", getElement);
-        const eleString = String(getElement).textContent;
+        const eleString = getElement.textContent.trim();
         console.log(eleString);
-        const trimElement = eleString.htmlString.replace(/<p>/g, "").replace(/<\/p>/g, "");
-        console.log(trimElement);
+        //const trimElement = eleString.htmlString.replace(/<p>/g, "").replace(/<\/p>/g, "");
+        //console.log(trimElement);
 
         //const remove = getElement.remove();
        }
