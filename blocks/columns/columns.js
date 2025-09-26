@@ -28,17 +28,12 @@ const gapClass = gapName[1];
         const getElement = matching_elements.at(-1);
         console.log("get Element", getElement);
         const eleString = String(getElement);
-        console.log(typeof eleString);
-        //const trimElement = eleString.htmlString.replace(/<p>/g, "").replace(/<\/p>/g, "");
-        //console.log(trimElement);
+        console.log(eleString);
+        const trimElement = eleString.htmlString.replace(/<p>/g, "").replace(/<\/p>/g, "");
+        console.log(trimElement);
 
         //const remove = getElement.remove();
-      
-
        }
-      else {
-        console.log("false - nope");
-      }
     });
   });
   block.classList.remove(gapClass);
