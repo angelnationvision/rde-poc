@@ -3,12 +3,13 @@ const cols = [...block.firstElementChild.children];
 const attr = document.querySelector('[class*="gap-"]');
 const gapName = attr.className.split(" ");
 const gapClass = gapName[1];
-console.log(gapClass);
-
-  // setup columns
+const colNumber = cols.length;
+console.log(colNumber);
+// setup columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
       col.parentElement.classList.add('grid-container', gapClass);
+      col.parentElement.attr("style='grid-template-columns: repeat(5, 1fr)'");
       const pic = col.querySelector('picture');
       if (pic) {
         const picWrapper = pic.closest('div');
