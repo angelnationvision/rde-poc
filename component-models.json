@@ -751,7 +751,7 @@
       },
       {
         "component": "select",
-        "name": "gridbc",
+        "name": "backgroundcolorcol",
         "label": "Background Color",
         "options": [
           {
