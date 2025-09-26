@@ -694,29 +694,6 @@
       },
       {
         "component": "select",
-        "name": "mobile",
-        "label": "Mobile Column Span",
-        "options": [
-          {
-            "name": "1 - 25%",
-            "value": "colspanm-1"
-          },
-          {
-            "name": "2 - 50%",
-            "value": "colspanm-2"
-          },
-          {
-            "name": "3 - 75%",
-            "value": "colspanm-3"
-          },
-          {
-            "name": "4 - 100%",
-            "value": "colspanm-4"
-          }
-        ]
-      },
-      {
-        "component": "select",
         "name": "alignment",
         "label": "Alignment",
         "options": [
