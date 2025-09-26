@@ -30,9 +30,8 @@ const search_string = 'colnode-';
 // Filter the array to get only the elements that include the string in their innerHTML
 const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(search_string));
 
-console.log('Found elements:', matching_elements);
+console.log('Found elements:', matching_elements.innerHTML);
 
-matching_elements.classList.add("test");
 
 //Good Code Below
 
