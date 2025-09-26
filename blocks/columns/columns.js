@@ -22,10 +22,10 @@ const gapClass = gapName[1];
 const matchingElements = Array.from(col).filter(element =>
   element.innerHTML.includes('colspan')
 );
-
+console.log("matchingElements");
 console.log(matchingElements);
 
-     if (nodeList.innerHTML.includes(colspan)) {
+     if (select.innerHTML.includes(colspan)) {
         console.log("true - Yes has object");
 
        }
