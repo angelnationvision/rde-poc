@@ -26,8 +26,8 @@ const gapClass = gapName[1];
         console.log("get Element", getElement);
         const eleString = getElement.textContent.trim();
         console.log(eleString);
-        //const trimElement = eleString.htmlString.replace(/<p>/g, "").replace(/<\/p>/g, "");
-        //console.log(trimElement);
+        const trimElement = eleString.htmlString.replace(/colnode-/g, "");
+        console.log(trimElement);
 
         //const remove = getElement.remove();
        }
