@@ -5,8 +5,9 @@ const cols = [...block.firstElementChild.children];
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
       const attr = document.querySelector('[class*="gap-"]');
-      console.log(attr.className[2]);
-      console.log(attr.className.split(" ").pop());
+      const gapName = attr.className.split(" ");
+      const gapClass = gapName[2]
+      console.log(gapClass);
 
       col.parentElement.classList.add('grid-container');
       col.classList.add('colspan-default'); 
