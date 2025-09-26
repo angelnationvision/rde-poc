@@ -17,7 +17,7 @@ const gapClass = gapName[1];
         }
       }
 
-      const myString = col;
+      const myString = "test colspan";
       const searchTerm = "colspan";
 
       if (myString.includes(searchTerm)) {
