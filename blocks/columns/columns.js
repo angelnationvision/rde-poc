@@ -28,8 +28,8 @@ const gapClass = gapName[1];
         console.log('Found elements:', matching_elements);
         const getElement = matching_elements.at(-1);
         console.log("get Element", getElement);
-        const getElementclass = getElement.innerHTML();
-        console.log("get classname", getElementclass);
+        const remove = getElement.remove();
+      
 
        }
       else {
