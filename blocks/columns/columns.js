@@ -25,7 +25,9 @@ const gapClass = gapName[1];
     const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
     console.log('Found elements:', matching_elements);
     const getElement = matching_elements.at(-1);
-    console.log("get Element", getElement)
+    const getClassname = getElement.innerHTML();
+    console.log("get Element", getElement);
+    console.log("get classname", getClassname);
 
 
 //Good Code Below
