@@ -22,11 +22,10 @@ const gapClass = gapName[1];
      if (col.innerHTML.includes(colnode)) {
         const all_elements_array = Array.from(document.querySelectorAll('*'));
         const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
-        console.log('Found elements:', matching_elements);
         const getElement = matching_elements.at(-1);
-        console.log("get Element", getElement);
         const eleString = getElement.textContent.trim().replace('colnode-', '');
         console.log(eleString);
+        col.classList.add("test");
         //const remove = getElement.remove();
        }
     });
