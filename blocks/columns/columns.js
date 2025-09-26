@@ -19,8 +19,9 @@ const gapClass = gapName[1];
 
     const colspan = "colspan-";
     var select = col;
-    const filtered = [...select].filter(section => section.children[0].innerText == "colspan-")
-    console.log(filtered);
+   const getItems = col.querySelectorAll('p');
+   console.log(getItems);
+   
      if (nodeList.innerHTML.includes(colspan)) {
         console.log("true - Yes has object");
 
