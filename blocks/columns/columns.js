@@ -9,7 +9,6 @@ console.log(gapClass);
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
       col.parentElement.classList.add('grid-container', gapClass);
-      col.classList.add('colspan-default'); 
       const pic = col.querySelector('picture');
       if (pic) {
         const picWrapper = pic.closest('div');

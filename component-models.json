@@ -699,19 +699,19 @@
         "options": [
           {
             "name": "1 - 25%",
-            "value": "colspan-m-1"
+            "value": "colspanm-1"
           },
           {
             "name": "2 - 50%",
-            "value": "colspan-m-2"
+            "value": "colspanm-2"
           },
           {
             "name": "3 - 75%",
-            "value": "colspan-m-3"
+            "value": "colspanm-3"
           },
           {
             "name": "4 - 100%",
-            "value": "colspan-m-4"
+            "value": "colspanm-4"
           }
         ]
       },
