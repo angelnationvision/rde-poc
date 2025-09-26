@@ -1,6 +1,10 @@
 export default function decorate(block) {
-  const cols = [...block.firstElementChild.children];
+const cols = [...block.firstElementChild.children];
+console.log("root div");
+console.log(cols.className);
+
 const attr = document.querySelector('[class*="gap-"]');
+
 console.log(attr.className);
 
   // setup columns
@@ -19,6 +23,5 @@ console.log(attr.className);
     });
   });
 
-  block.classList.add('columns-main');
-  console.log("columns area");
+  block.classList.add('columns-main columns');
 }
