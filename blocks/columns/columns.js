@@ -16,14 +16,33 @@ const gapClass = gapName[1];
           picWrapper.classList.add('columns-img-col');
         }
       }
+
+      const colspan = "colspan-";
+      const selection = col;
+      let i = -1;
+
+      console.info("SELECTION", selection);
+      let targetIndex;
+      while(++i < selection.length){
+        if(selection[i].innerHTML.indexOf(colspan) > -1) {
+          targetIndex = i;
+        }
+      }
+      console.info("targetIndex", targetIndex);
+      console.info("TARGET", selection[targetIndex]);
+
+
+
+
+
+/*
       const nodeList = col; 
       const searchText = "colspan-";
       console.log(nodeList.innerHTML.includes(searchText));
       
-        const selection = col;
         let i = -1;
 
-        console.info("SELECTION", selection);
+        console.info("SELECTION", nodeList);
         let targetIndex;
         while(++i < selection.length){
           if(selection[i].innerHTML.indexOf(searchText) > -1){
@@ -35,12 +54,10 @@ const gapClass = gapName[1];
 
       if (nodeList.innerHTML.includes(searchText)) {
         console.log("true - Yes has object");
-        const getcol = col.querySelectorAll(':contains("colspan-")');
-        console.log(getcol);
-      }
+       }
       else {
         console.log("false - nope");
-      }
+      }*/
 
     });
   });
