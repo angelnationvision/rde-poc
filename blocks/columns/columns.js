@@ -3,6 +3,11 @@ const cols = [...block.firstElementChild.children];
 const attr = document.querySelector('[class*="gap-"]');
 const gapName = attr.className.split(" ");
 const gapClass = gapName[1];
+const h1Element = document.querySelector('h1'); // Selects the first h1 element
+if (h1Element) { // Check if the h1 element exists
+  h1Element.classList.add('colspan-'); // Appends 'your-new-class'
+}
+
 // setup columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
@@ -26,9 +31,6 @@ const gapClass = gapName[1];
         console.log("get Element", getElement);
         const eleString = getElement.textContent.trim();
         console.log(eleString);
-        const trimElement = eleString.htmlString.replace(/colnode-/g, "");
-        console.log(trimElement);
-
         //const remove = getElement.remove();
        }
     });
