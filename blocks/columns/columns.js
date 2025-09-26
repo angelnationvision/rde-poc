@@ -17,9 +17,13 @@ const gapClass = gapName[1];
         }
       }
       const nodeList = col; 
-      const elementsArray = Array.from(nodeList);
+      
       const searchText = "colspan-";
       console.log(nodeList.innerHTML.includes(searchText));
+      
+      const elementsArray = Array.from(nodeList);
+      console.log("element array");
+      console.log(elementsArray);
       const foundElement = elementsArray.find(element => {
               return element.innerHTML.includes(searchText); 
         }); 
@@ -28,14 +32,10 @@ const gapClass = gapName[1];
         }  
 
       if (nodeList.innerHTML.includes(searchText)) {
-       
-        const getcolSpan = nodeList.innerHTML.includes(searchText);
-        console.log(getcolSpan);
-        console.log("Yes has object");
-
+        console.log("true - Yes has object");
       }
       else {
-        console.log("nope");
+        console.log("false - nope");
       }
 
     });
