@@ -20,12 +20,13 @@ const gapClass = gapName[1];
       //Created colnode prefix in case others use the classname within their blocks 
             const colnode = "colnode-";
             const allequal = "allequal";
-       //If even one is all equal, then does not read any other ones
+       //If one column item is all equal, then does not read any other ones
           if (col.innerHTML.includes(allequal)) {
             col.parentElement.setAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
+            
             //Remves all from DOM
             const all_elements_array = Array.from(col.querySelectorAll('*')); 
-            const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
+            const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(alleuqal));
             const getElement = matching_elements.at(-1);
             const remove = getElement.remove();
           }
