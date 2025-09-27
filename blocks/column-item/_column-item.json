@@ -79,19 +79,38 @@
        {
         "component": "select",
         "name": "alignment",
-        "label": "Alignment",
+        "label": "Alignment - Desktop",
         "options": [
           {
             "name": "Left",
-            "value": "colgrid-left"
+            "value": "colgrid-d-left"
           },
           {
             "name": "Center",
-            "value": "colgrid-center"
+            "value": "colgrid-d-center"
           },
           {
             "name": "Right",
-            "value": "colgrid-right"
+            "value": "colgrid-d-right"
+          }
+        ]
+      },
+       {
+        "component": "select",
+        "name": "alignment",
+        "label": "Alignment - Mobile",
+        "options": [
+          {
+            "name": "Left",
+            "value": "colgrid-m-left"
+          },
+          {
+            "name": "Center",
+            "value": "colgrid-m-center"
+          },
+          {
+            "name": "Right",
+            "value": "colgrid-m-right"
           }
         ]
       },

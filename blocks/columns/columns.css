@@ -1,18 +1,29 @@
 @media (width <= 990px) {
-.grid-container {
-    grid-template-columns: repeat(1, 1fr) !important;
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .colgrid-m-left {
+        text-align: left;
+    }
+    .colgrid-m-center {
+        text-align: center;
+    }
+    .colgrid-m-right {
+        text-align: right;
+    }
 }
+@media (width <= 990px) {
+    .colgrid-d-left {
+        text-align: left;
+    }
+    .colgrid-d-center {
+        text-align: center;
+    }
+    .colgrid-d-right {
+        text-align: right;
+    }
 }
 
-.colgrid-left {
-    text-align: left;
-}
-.colgrid-center {
-    text-align: center;
-}
-.colgrid-right {
-    text-align: right;
-}
 .colgrid-top-sm {
     padding-top: 8px;
 }
