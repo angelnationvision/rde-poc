@@ -695,7 +695,7 @@
       },
       {
         "component": "select",
-        "name": "colbg",
+        "name": "trynewname",
         "label": "Column Background Color",
         "valueType": "string",
         "options": [
@@ -715,7 +715,7 @@
       },
       {
         "component": "select",
-        "name": "alignment",
+        "name": "alignmentd",
         "label": "Alignment - Desktop",
         "valueType": "string",
         "options": [
