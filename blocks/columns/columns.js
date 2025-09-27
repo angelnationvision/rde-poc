@@ -1,13 +1,21 @@
 export default function decorate(block) {
 const cols = [...block.firstElementChild.children];
-const attr = document.querySelector('[class*="gap-"]');
-const gapName = attr.className.split(" ");
-const gapClass = gapName[1];
+
+
 
 // setup columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
-      col.parentElement.classList.add('grid-container', gapClass);
+const attr = document.querySelector('[class*="gap-"]');
+      if (col.innerHTML.includes(attr)) {
+          const gapName = attr.className.split(" ");
+          const gapClass = gapName[1];
+          col.parentElement.classList.add('grid-container', gapClass);
+      }
+      else {
+          col.parentElement.classList.add('grid-container');
+      }
+          
       col.parentElement.setAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
       const pic = col.querySelector('picture');
       if (pic) {
