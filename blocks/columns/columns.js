@@ -18,35 +18,28 @@ const gapClass = gapName[1];
         }
       }
       //Created colnode prefix in case others use the classname within their blocks 
-             const colnode = "colnode-";
-       
-       
-             //Checks each item Appends to each of the individual columns and uses default 1 if author didn't author
-            if (col.innerHTML.includes(colnode)) {
-                const all_elements_array = Array.from(col.querySelectorAll('*')); 
-                const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
-                const getElement = matching_elements.at(-1);
-                const eleString = getElement.textContent.trim().replace('colnode-', '');
-                col.classList.add(eleString);
-                const remove = getElement.remove();
-            }
-            else {
-              col.classList.add('colspan-1');
-            }
-/*
-            const all_elements_array = Array.from(document.querySelectorAll('*')); 
-            const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
-            const getElement = matching_elements.at(-1);
-            console.log(getElement);
-            const eleString = getElement.textContent.trim().replace('colnode-', '');
-            console.log(eleString);
-            col.classList.add(eleString);*/
-
-        //const remove = getElement.remove();
-
-      /*  if (eleString == null) {
-          col.parentElement.setAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
-        }*/
+            const colnode = "colnode-";
+            const allequal = "allequal";
+       //If even one is all equal, then does not read any other ones
+          if (col.innerHTML.includes(allequal)) {
+            col.parentElement.setAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
+            //Remves all from DOM
+          }
+          else {
+              //Checks each item Appends to each of the individual columns and uses default 1 if author didn't author
+              if (col.innerHTML.includes(colnode)) {
+                  const all_elements_array = Array.from(col.querySelectorAll('*')); 
+                  const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
+                  const getElement = matching_elements.at(-1);
+                  const eleString = getElement.textContent.trim().replace('colnode-', '');
+                  col.classList.add(eleString);
+                  const remove = getElement.remove();
+              }
+              else {
+                col.classList.add('colspan-1');
+              }
+          }
+    
     });
   });
 

@@ -24,6 +24,7 @@
         "component": "select",
         "name": "desktop",
         "label": "Desktop Column Span",
+        "required": true,
         "options": [
           {
             "name": "All Equal Columns",
