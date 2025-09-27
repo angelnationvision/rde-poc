@@ -695,21 +695,21 @@
       },
       {
         "component": "select",
-        "name": "trynewname",
+        "name": "somename",
         "label": "Column Bkg Color",
         "valueType": "string",
         "options": [
           {
             "name": "Gray",
-            "value": "colgrid-color-a"
+            "value": "colgrid-c-a"
           },
           {
-            "name": "Bottom - med",
-            "value": "colgrid-color-b"
+            "name": "Blue",
+            "value": "colgrid-c-b"
           },
           {
-            "name": "Bottom - large",
-            "value": "colgrid-color-xxx"
+            "name": "Somecolor",
+            "value": "colgrid-c-xxx"
           }
         ]
       },
