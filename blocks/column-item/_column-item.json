@@ -24,7 +24,6 @@
         "component": "select",
         "name": "desktop",
         "label": "Desktop Column Span",
-        "required": true,
         "options": [
           {
             "name": "1",
@@ -97,7 +96,7 @@
       },
        {
         "component": "select",
-        "name": "alignment",
+        "name": "alignmentmobile",
         "label": "Alignment - Mobile",
         "options": [
           {
