@@ -34,11 +34,8 @@ const gapClass = gapName[1];
                 matching_elements_cg.forEach(function(item, index, array) {
                    const eleStringcg = item.textContent.trim();
                     col.classList.add(eleStringcg);
-                     console.log(eleStringcg);
+                    const removecg = item.remove();
                 });
-                    
-              
-             // const removecg = getElementcg.remove();
             }
     
     });
