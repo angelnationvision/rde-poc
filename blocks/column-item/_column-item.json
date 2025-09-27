@@ -75,6 +75,25 @@
           }
         ]
       },
+      {
+        "component": "select",
+        "name": "colbg",
+        "label": "Column Background Color",
+        "options": [
+          {
+            "name": "Gray",
+            "value": "colgrid-color-xxx"
+          },
+          {
+            "name": "Bottom - med",
+            "value": "colgrid-color-xxx"
+          },
+          {
+            "name": "Bottom - large",
+            "value": "colgrid-color-xxx"
+          }
+        ]
+      },      
        {
         "component": "select",
         "name": "alignment",
@@ -96,7 +115,7 @@
       },
        {
         "component": "select",
-        "name": "alignmentm",
+        "name": "alignmentmobile",
         "label": "Alignment - Mobile",
         "options": [
           {
@@ -115,8 +134,8 @@
       },
        {
         "component": "multiselect",
-        "name": "topspacing",
-        "label": "Top Spacing",
+        "name": "spacing",
+        "label": "Spacing",
         "options": [
           {
             "name": "Top - small",
@@ -143,26 +162,7 @@
             "value": "colgrid-bottom-lg"
           }
         ]
-      },
-       {
-        "component": "select",
-        "name": "colbg",
-        "label": "Column Background Color",
-        "options": [
-          {
-            "name": "Gray",
-            "value": "colgrid-color-xxx"
-          },
-          {
-            "name": "Bottom - med",
-            "value": "colgrid-color-xxx"
-          },
-          {
-            "name": "Bottom - large",
-            "value": "colgrid-color-xxx"
-          }
-        ]
-      }      
+      }
     ]
     }
       ],
