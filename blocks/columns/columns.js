@@ -11,7 +11,7 @@ const cols = [...block.firstElementChild.children];
     if (attr != null) {
           const gapName = attr.className.split(" ");
           const gapClass = gapName[1];
-          col.classList.add(gapClass);
+          cols.parentElement.classList.add(gapClass);
           block.classList.remove(gapClass);
       }
       col.parentElement.classList.add('grid-container');    
