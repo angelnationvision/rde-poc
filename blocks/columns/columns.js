@@ -8,8 +8,7 @@ const cols = [...block.firstElementChild.children];
     [...row.children].forEach((col) => {
     const attr = document.querySelector('[class*="gap-"]');
     console.log(attr);
-    if (col.innerHTML.includes(attr)) {
-
+    if (attr != null) {
           const gapName = attr.className.split(" ");
           const gapClass = gapName[1];
           col.firstElementChild.classList.add(gapClass);
