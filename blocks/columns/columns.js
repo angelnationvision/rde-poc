@@ -33,15 +33,12 @@ const gapClass = gapName[1];
               const matching_elements_cg = all_elements_array.filter(element => element.innerHTML.includes(colgrid));
                 console.log(matching_elements_cg);
                 matching_elements_cg.forEach(function(item, index, array) {
-                      console.log(`Item: ${item}, Index: ${index}`);
+
+                      console.log(`Item: ${item}.textContent.trim(), Index: ${index}`);
                     });
                 const getElementcg = matching_elements_cg.at(-1);
-                console.log(getElementcg);
-                matching_elements_cg.forEach(me => {
-                      console.log(`Hello, ${me}!`);
-                      const eleStringcg = getElementcg.textContent.trim();
+                 const eleStringcg = getElementcg.textContent.trim();
                       col.classList.add(eleStringcg);
-                });
               
              // const removecg = getElementcg.remove();
             }
