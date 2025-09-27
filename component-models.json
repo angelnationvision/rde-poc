@@ -696,7 +696,7 @@
       {
         "component": "select",
         "name": "trynewname",
-        "label": "Column Background Color",
+        "label": "Column Bkg Color",
         "valueType": "string",
         "options": [
           {
