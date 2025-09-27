@@ -33,8 +33,7 @@ const cols = [...block.firstElementChild.children];
               const getElement = matching_elements.at(-1);
               const eleString = getElement.textContent.trim().replace('colnode-', '');
               col.classList.add(eleString);
-              getElement.classList.add('dnone');
-              getElement.setAttribute("aria-hidden","true");
+              getElement.remove();
             }    
            if (col.innerHTML.includes(colgrid)) {
               const matching_elements_cg = all_elements_array.filter(element => element.innerHTML.includes(colgrid));
