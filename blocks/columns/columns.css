@@ -12,7 +12,7 @@
         text-align: right;
     }
 }
-@media (width <= 990px) {
+@media (width >= 990px) {
     .colgrid-d-left {
         text-align: left;
     }
