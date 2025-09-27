@@ -33,14 +33,14 @@ const cols = [...block.firstElementChild.children];
               const getElement = matching_elements.at(-1);
               const eleString = getElement.textContent.trim().replace('colnode-', '');
               col.classList.add(eleString);
-              getElement.remove();
+              getElement.classList.add('dnone');
             }    
            if (col.innerHTML.includes(colgrid)) {
               const matching_elements_cg = all_elements_array.filter(element => element.innerHTML.includes(colgrid));
                 matching_elements_cg.forEach(function(item, index, array) {
-                   const eleStringcg = item.textContent.trim();
-                    col.classList.add(eleStringcg);
-                  item.remove();
+                  const eleStringcg = item.textContent.trim();
+                  col.classList.add(eleStringcg);
+                  item.classList.add('dnone');
                 });
             }
     
