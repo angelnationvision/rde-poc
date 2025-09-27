@@ -17,23 +17,19 @@ const gapClass = gapName[1];
           picWrapper.classList.add('columns-img-col');
         }
       }  
-
-      //Created colnode prefix in case others use the grid classname within their blocks
             const colnode = "colnode-";
+            const colgrid = "colgrid-"; 
             const all_elements_array = Array.from(col.querySelectorAll('*'));           
+            
             if (col.innerHTML.includes(colnode)) {
               const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
               const getElement = matching_elements.at(-1);
               const eleString = getElement.textContent.trim().replace('colnode-', '');
               col.classList.add(eleString);
               const remove = getElement.remove();
-            }
-
-      //Created colgrid prefix for all other classes
-            const colgrid = "colgrid-";
-            const all_elements_arraycg = Array.from(col.querySelectorAll('*'));           
+            }    
            if (col.innerHTML.includes(colgrid)) {
-              const matching_elements_cg = all_elements_arraycg.filter(element => element.innerHTML.includes(colgrid));
+              const matching_elements_cg = all_elements_array.filter(element => element.innerHTML.includes(colgrid));
               const getElementcg = matching_elements_cg.at(-1);
               const eleStringcg = getElementcg.textContent.trim();
               col.classList.add(eleStringcg);
