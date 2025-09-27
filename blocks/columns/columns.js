@@ -24,6 +24,10 @@ const gapClass = gapName[1];
           if (col.innerHTML.includes(allequal)) {
             col.parentElement.setAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
             //Remves all from DOM
+            const all_elements_array = Array.from(col.querySelectorAll('*')); 
+            const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
+            const getElement = matching_elements.at(-1);
+            const remove = getElement.remove();
           }
           else {
               //Checks each item Appends to each of the individual columns and uses default 1 if author didn't author
