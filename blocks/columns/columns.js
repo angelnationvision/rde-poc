@@ -32,7 +32,7 @@ const gapClass = gapName[1];
            if (col.innerHTML.includes(colgrid)) {
               const matching_elements_cg = all_elements_array.filter(element => element.innerHTML.includes(colgrid));
                 matching_elements_cg.forEach(function(item, index, array) {
-                   const eleStringcg = item.textContent.trim().replace(/<p>/g, "");
+                   const eleStringcg = item.innerHTML.trim().replace(/<p>/g, "");
                       console.log(item);
                 });
                 const getElementcg = matching_elements_cg.at(-1);
