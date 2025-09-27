@@ -20,10 +20,10 @@ const gapClass = gapName[1];
 
       //Created colnode prefix in case others use the classname within their blocks 
             const colnode = "colnode-";
-            console.log(col);
             if (col.innerHTML.includes(colnode)) {
                console.log("true - Yes has object");
-                console.log(col);
+               console.log(col);
+               col.filter(element => element.innerHTML.includes(colnode));
             }
             else {
               console.log("false - nope");
