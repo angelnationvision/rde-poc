@@ -20,10 +20,11 @@
      {
       "id": "column-item",
       "fields": [
-        {
+      {
         "component": "select",
         "name": "desktop",
         "label": "Desktop Column Span",
+        "valueType": "string",
         "options": [
           {
             "name": "1",
@@ -79,6 +80,7 @@
         "component": "select",
         "name": "colbg",
         "label": "Column Background Color",
+        "valueType": "string",
         "options": [
           {
             "name": "Gray",
@@ -98,6 +100,7 @@
         "component": "select",
         "name": "alignment",
         "label": "Alignment - Desktop",
+        "valueType": "string",
         "options": [
           {
             "name": "Left",
@@ -113,10 +116,11 @@
           }
         ]
       },
-       {
+          {
         "component": "select",
-        "name": "alignmentmobile",
+        "name": "alignmentm",
         "label": "Alignment - Mobile",
+        "valueType": "string",
         "options": [
           {
             "name": "Left",
@@ -133,9 +137,10 @@
         ]
       },
        {
-        "component": "multiselect",
-        "name": "spacing",
-        "label": "Spacing",
+        "component": "select",
+        "name": "topspace",
+        "label": "Top Spacing",
+         "valueType": "string",
         "options": [
           {
             "name": "Top - small",
@@ -148,7 +153,15 @@
           {
             "name": "Top - large",
             "value": "colgrid-top-lg"
-          },
+          }
+        ]
+      },
+       {
+        "component": "select",
+        "name": "bottomspace",
+        "label": "Bottom Spacing",
+         "valueType": "string",
+        "options": [
           {
             "name": "Bottom - small",
             "value": "colgrid-bottom-sm"
