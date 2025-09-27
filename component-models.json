@@ -700,15 +700,15 @@
         "options": [
           {
             "name": "Left",
-            "value": "grid-left"
+            "value": "colgrid-left"
           },
           {
             "name": "Center",
-            "value": "grid-center"
+            "value": "colgrid-center"
           },
           {
             "name": "Right",
-            "value": "grid-right"
+            "value": "colgrid-right"
           }
         ]
       },
@@ -719,15 +719,15 @@
         "options": [
           {
             "name": "Top - small",
-            "value": "gridtop-sm"
+            "value": "colgrid-top-sm"
           },
           {
             "name": "Top - med",
-            "value": "gridtop-md"
+            "value": "colgrid-top-md"
           },
           {
             "name": "Top - large",
-            "value": "gridtop-lg"
+            "value": "colgrid-top-lg"
           }
         ]
       },
@@ -738,46 +738,34 @@
         "options": [
           {
             "name": "Bottom - small",
-            "value": "gridbottom-sm"
+            "value": "colgrid-bottom-sm"
           },
           {
             "name": "Bottom - med",
-            "value": "gridbottom-md"
+            "value": "colgrid-bottom--md"
           },
           {
             "name": "Bottom - large",
-            "value": "gridbottom-lg"
+            "value": "colgrid-bottom--lg"
           }
         ]
       },
       {
         "component": "select",
-        "name": "backgroundcolorcol",
-        "label": "Background Color",
+        "name": "gridcolor",
+        "label": "Column Background Color",
         "options": [
           {
-            "name": "getthese",
-            "value": "gridbgcolor-colorname"
+            "name": "Gray",
+            "value": "colgrid-color-xxx"
           },
           {
-            "name": "getthese",
-            "value": "gridbgcolor-colorname"
+            "name": "Bottom - med",
+            "value": "colgrid-color-xxx"
           },
           {
-            "name": "getthese",
-            "value": "gridbgcolor-colorname"
-          },
-          {
-            "name": "getthese",
-            "value": "gridbgcolor-colorname"
-          },
-          {
-            "name": "getthese",
-            "value": "gridbgcolor-colorname"
-          },
-          {
-            "name": "getthese",
-            "value": "gridbgcolor-colorname"
+            "name": "Bottom - large",
+            "value": "colgrid-color-xxx"
           }
         ]
       }
