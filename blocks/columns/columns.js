@@ -23,7 +23,8 @@ const gapClass = gapName[1];
             if (col.innerHTML.includes(colnode)) {
                console.log("true - Yes has object");
                console.log(col);
-               col.filter(element => element.innerHTML.includes(colnode));
+               const all_elements_array = Array.from(col.querySelectorAll('*')); 
+             console.log(all_elements_array);
             }
             else {
               console.log("false - nope");
