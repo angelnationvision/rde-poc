@@ -29,14 +29,14 @@ const gapClass = gapName[1];
               console.log("false - nope");
             }
 
-
+/*
             const all_elements_array = Array.from(document.querySelectorAll('*')); 
             const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
             const getElement = matching_elements.at(-1);
             console.log(getElement);
             const eleString = getElement.textContent.trim().replace('colnode-', '');
             console.log(eleString);
-            col.classList.add(eleString);
+            col.classList.add(eleString);*/
 
         //const remove = getElement.remove();
 
