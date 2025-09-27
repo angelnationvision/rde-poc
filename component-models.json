@@ -641,11 +641,8 @@
         "component": "select",
         "name": "desktop",
         "label": "Desktop Column Span",
+        "required": true,
         "options": [
-          {
-            "name": "All Equal Columns",
-            "value": "allequal"
-          },
           {
             "name": "1",
             "value": "colnode-colspan-1"
