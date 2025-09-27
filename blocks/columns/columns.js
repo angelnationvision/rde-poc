@@ -19,8 +19,7 @@ const gapClass = gapName[1];
       }  
       //Created colnode prefix in case others use the classname within their blocks 
             const colnode = "colnode-";
-            const all_elements_array = Array.from(col.querySelectorAll('*')); 
-
+            const all_elements_array = Array.from(col.querySelectorAll('*'));           
             //Checks each item Appends to each of the individual columns and uses default 1 if author didn't author
             if (col.innerHTML.includes(colnode)) {
               const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
@@ -28,10 +27,10 @@ const gapClass = gapName[1];
               const eleString = getElement.textContent.trim().replace('colnode-', '');
               col.classList.add(eleString);
               const remove = getElement.remove();
+              const nocolspan = false;
             }
             else {
-              console.log("test");
-              //col.classList.add('colspan-1');
+              //Does nothing
             }
     
     });

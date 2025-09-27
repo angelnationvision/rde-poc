@@ -1,34 +1,34 @@
 @media (width <= 990px) {
 .grid-container {
-    grid-template-columns: repeat(1, 1fr) !important
+    grid-template-columns: repeat(1, 1fr) !important;
 }
 }
 
-.grid-left {
+.colgrid-left {
     text-align: left;
 }
-.grid-center {
+.colgrid-center {
     text-align: center;
 }
-.grid-right {
+.colgrid-right {
     text-align: right;
 }
-.gridtop-sm {
+.colgrid-top-sm {
     padding-top: 8px;
 }
-.gridtop-md {
+.colgrid-top-md {
      padding-top: 16px;
 }
-.gridtop-lg {
+.colgrid-top-lg {
      padding-top: 24px;
 }
-.gridbottom-sm {
+.colgrid-bottom-sm {
      padding-top: 8px;
 }
-.gridbottom-md {
+.colgrid-bottom-md {
     padding-top: 16px;
 }
-.gridbottom-lg {
+.colgrid-bottom-lg {
     padding-top: 24px;
 }
 
