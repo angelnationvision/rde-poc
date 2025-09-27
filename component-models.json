@@ -701,11 +701,11 @@
         "options": [
           {
             "name": "Gray",
-            "value": "colgrid-color-xxx"
+            "value": "colgrid-color-a"
           },
           {
             "name": "Bottom - med",
-            "value": "colgrid-color-xxx"
+            "value": "colgrid-color-b"
           },
           {
             "name": "Bottom - large",
