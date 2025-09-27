@@ -26,7 +26,7 @@ const gapClass = gapName[1];
             
             //Remves all from DOM
             const all_elements_array = Array.from(col.querySelectorAll('*')); 
-            const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(alleuqal));
+            const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(allequal));
             const getElement = matching_elements.at(-1);
             const remove = getElement.remove();
           }
