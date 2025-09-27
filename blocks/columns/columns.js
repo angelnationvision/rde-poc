@@ -20,32 +20,39 @@ const gapClass = gapName[1];
       //Created colnode prefix in case others use the classname within their blocks 
             const colnode = "colnode-";
             const allequal = "allequal";
-       //If one column item is all equal, then does not read any other ones
-          if (col.innerHTML.includes(allequal)) {
+          const all_elements_array = Array.from(col.querySelectorAll('*')); 
+           
+        //Look at all cols for all equal selected - if so, delete all others
+         if (col.innerHTML.includes(allequal)) {
             col.parentElement.setAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
-            
-            //Remves all from DOM
-            const all_elements_array = Array.from(col.querySelectorAll('*')); 
+       
             const matching_elements_equal = all_elements_array.filter(element => element.innerHTML.includes(allequal));
-            const getElementequal = matching_elements_equal.at(-1);
-            const remove = getElementeuqal.remove();
-
-            const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
-            console.log(matching_elements);
+            const getElementeq = matching_elements_equal.at(-1);
+            const removeeq = getElementeq.remove();
+            const allequalvalue = true;
           }
           else {
-              //Checks each item Appends to each of the individual columns and uses default 1 if author didn't author
-              if (col.innerHTML.includes(colnode)) {
-                  const all_elements_array = Array.from(col.querySelectorAll('*')); 
-                  const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
-                  const getElement = matching_elements.at(-1);
-                  const eleString = getElement.textContent.trim().replace('colnode-', '');
-                  col.classList.add(eleString);
-                  const remove = getElement.remove();
-              }
-              else {
-                col.classList.add('colspan-1');
-              }
+            //All equal was true above - so now delete the rest
+            if (allequalvalue) {
+              console.log("all equal was triggered and dont run anything else");
+              const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
+              const getElement = matching_elements.at(-1);
+              const remove = getElement.remove();
+            }
+            //All equal was not true
+            else {
+                  //Checks each item Appends to each of the individual columns and uses default 1 if author didn't author
+                  if (col.innerHTML.includes(colnode)) {
+                      const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
+                      const getElement = matching_elements.at(-1);
+                      const eleString = getElement.textContent.trim().replace('colnode-', '');
+                      col.classList.add(eleString);
+                      const remove = getElement.remove();
+                  }
+                  else {
+                    col.classList.add('colspan-1');
+                  }
+            }
           }
     
     });
