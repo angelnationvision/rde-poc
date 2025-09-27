@@ -11,9 +11,10 @@ const cols = [...block.firstElementChild.children];
     if (attr != null) {
           const gapName = attr.className.split(" ");
           const gapClass = gapName[1];
-          col.firstElementChild.classList.add(gapClass);
+          col.parentElement.children[0].classList.add(gapClass);
+          block.classList.remove(gapClass);
       }
-       col.parentElement.classList.add('grid-container');    
+      col.parentElement.classList.add('grid-container');    
       col.parentElement.setAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
       const pic = col.querySelector('picture');
       if (pic) {
@@ -47,7 +48,7 @@ const cols = [...block.firstElementChild.children];
     });
   });
 
-  block.classList.remove(gapClass);
+ 
   block.classList.add(`columns-${cols.length}-cols`)
   block.classList.add('columns-main');
 
