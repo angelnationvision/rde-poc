@@ -34,6 +34,7 @@ const cols = [...block.firstElementChild.children];
               const eleString = getElement.textContent.trim().replace('colnode-', '');
               col.classList.add(eleString);
               getElement.classList.add('dnone');
+              getElement.setAttribute("aria-hidden","true");
             }    
            if (col.innerHTML.includes(colgrid)) {
               const matching_elements_cg = all_elements_array.filter(element => element.innerHTML.includes(colgrid));
@@ -41,6 +42,7 @@ const cols = [...block.firstElementChild.children];
                   const eleStringcg = item.textContent.trim();
                   col.classList.add(eleStringcg);
                   item.classList.add('dnone');
+                  item.setAttribute("aria-hidden","true");
                 });
             }
     
