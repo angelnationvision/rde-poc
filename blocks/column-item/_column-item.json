@@ -104,7 +104,7 @@
         "options": [
           {
             "name": "Left",
-            "value": "colgrid-color-left"
+            "value": "colgrid-d-left"
           },
           {
             "name": "Center",
