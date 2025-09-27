@@ -731,7 +731,7 @@
         ]
       },
       {
-        "component": "select",
+        "component": "multi",
         "name": "topspacing",
         "label": "Top Spacing",
         "options": [
@@ -746,31 +746,24 @@
           {
             "name": "Top - large",
             "value": "colgrid-top-lg"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "name": "bottomspacing",
-        "label": "Bottom Spacing",
-        "options": [
+          },
           {
             "name": "Bottom - small",
             "value": "colgrid-bottom-sm"
           },
           {
             "name": "Bottom - med",
-            "value": "colgrid-bottom--md"
+            "value": "colgrid-bottom-md"
           },
           {
             "name": "Bottom - large",
-            "value": "colgrid-bottom--lg"
+            "value": "colgrid-bottom-lg"
           }
         ]
       },
       {
         "component": "select",
-        "name": "gridcolor",
+        "name": "colbg",
         "label": "Column Background Color",
         "options": [
           {
