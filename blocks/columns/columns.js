@@ -10,12 +10,9 @@ const attr = document.querySelector('[class*="gap-"]');
       if (col.innerHTML.includes(attr)) {
           const gapName = attr.className.split(" ");
           const gapClass = gapName[1];
-          col.parentElement.classList.add('grid-container', gapClass);
+          col.firstElementChild.classList.add(gapClass);
       }
-      else {
-          col.parentElement.classList.add('grid-container');
-      }
-          
+       col.parentElement.classList.add('grid-container');    
       col.parentElement.setAttribute("style",`grid-template-columns: repeat(${cols.length}, 1fr)`);
       const pic = col.querySelector('picture');
       if (pic) {
