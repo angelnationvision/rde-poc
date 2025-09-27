@@ -33,7 +33,6 @@ const gapClass = gapName[1];
             else {
               col.classList.add('colspan-1');
             }
-
 /*
             const all_elements_array = Array.from(document.querySelectorAll('*')); 
             const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
