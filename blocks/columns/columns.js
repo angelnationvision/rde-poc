@@ -21,22 +21,17 @@ const gapClass = gapName[1];
              const colnode = "colnode-";
        
        
-             //Appends to each of the individual columns
+             //Checks each item Appends to each of the individual columns and uses default 1 if author didn't author
             if (col.innerHTML.includes(colnode)) {
-                console.log("true - Yes has object");
-                console.log(col);
                 const all_elements_array = Array.from(col.querySelectorAll('*')); 
-                console.log(all_elements_array);
                 const matching_elements = all_elements_array.filter(element => element.innerHTML.includes(colnode));
                 const getElement = matching_elements.at(-1);
-                console.log(getElement);
                 const eleString = getElement.textContent.trim().replace('colnode-', '');
-                console.log(eleString);
                 col.classList.add(eleString);
                 const remove = getElement.remove();
             }
             else {
-              console.log("false - nope");
+              col.classList.add('colspan-1');
             }
 
 /*
