@@ -31,10 +31,9 @@ const gapClass = gapName[1];
             }    
            if (col.innerHTML.includes(colgrid)) {
               const matching_elements_cg = all_elements_array.filter(element => element.innerHTML.includes(colgrid));
-                console.log(matching_elements_cg);
                 matching_elements_cg.forEach(function(item, index, array) {
-
-                      console.log(`Item: ${item}.textContent.trim(), Index: ${index}`);
+                    const getItems = ${item}[0];
+                      console.log(getItems);
                     });
                 const getElementcg = matching_elements_cg.at(-1);
                  const eleStringcg = getElementcg.textContent.trim();
